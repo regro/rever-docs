@@ -74,6 +74,111 @@
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p>Avast! Welcome to the rever tutorial! This document will teach you the ropes of releasing
 software with rever.  Let’s go sailing!</p>
+<div class="section" id="writing-custom-activities">
+<h2>Writing Custom Activities<a class="headerlink" href="#writing-custom-activities" title="Permalink to this headline">¶</a></h2>
+<p>In your <code class="docutils literal"><span class="pre">rever.xsh</span></code> file, you have the ability to provide additional, custom activies that
+are specific to your project. Each activity is composed of a few different components:</p>
+<ul class="simple">
+<li>A string name that uniquely identifies the activity</li>
+<li>A callable that performs the actions for the release activity</li>
+<li>A set of strings that specify the dependencies for this activity,
+by default this is an empty set.</li>
+<li>A callable that is able to undo the action of the activity (optional)</li>
+<li>A description of the activity</li>
+</ul>
+<p>There are a couple of ways to write activities. The easiest is to use the activity decorator.</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+</pre></div>
+</div>
+<p>Simply use this on a function to create an activity of the name of the function.  For example,
+let’s write a simple activity that runs the test suite with pytest:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+
+<span class="nd">@activity</span>
+<span class="k">def</span> <span class="nf">run_tests</span><span class="p">():</span>
+    <span class="n">cd</span> <span class="n">tests</span>
+    <span class="n">pytest</span>
+    <span class="n">cd</span> <span class="o">..</span>
+
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;run_tests&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Furthermore, like with other activities, custom activities can accept arguments and keyword
+arguments. These are then settable by environment variables.  Let’s say that we only want to
+test specific files, but by default we want to test all of them. We could instead write the following,</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+
+<span class="nd">@activity</span>
+<span class="k">def</span> <span class="nf">run_tests</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;Running the test suite.&quot;&quot;&quot;</span>
+    <span class="n">cd</span> <span class="n">tests</span>
+    <span class="n">pytest</span> <span class="k">@</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+    <span class="n">cd</span> <span class="o">..</span>
+
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;run_tests&#39;</span><span class="p">]</span>
+
+<span class="c1"># by default, the environment variable $RUN_TESTS_FILES will be mapped</span>
+<span class="c1"># to the files kwarg of the run_tests() function.</span>
+<span class="nv">$RUN_TESTS_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;test_me.py&#39;</span><span class="p">,</span> <span class="s1">&#39;test_you.py&#39;</span><span class="n">u</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Also note that in the above, the docstring of the function becomes the description for the
+activity automatically!  You can also set the <code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">deps</span></code>, <code class="docutils literal"><span class="pre">undo</span></code>, and <code class="docutils literal"><span class="pre">desc</span></code>.  For
+example, if you want to make the tests depenendent on another install activity, you could write:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nd">@activity</span><span class="p">(</span><span class="n">deps</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;install&#39;</span><span class="p">})</span>
+<span class="k">def</span> <span class="nf">run_tests</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;Running the test suite.&quot;&quot;&quot;</span>
+    <span class="n">cd</span> <span class="n">tests</span>
+    <span class="n">pytest</span> <span class="k">@</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+    <span class="n">cd</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>In certain situations, it is also useful for activities to know how to undo themselves. For example,
+consider the case where you want to build a source tarball. If the user rewinds this activity,
+the tarball should be deleted from the filesystem. Activities have an <code class="docutils literal"><span class="pre">undoer()</span></code> decorator
+(like <code class="docutils literal"><span class="pre">setter()</span></code> and <code class="docutils literal"><span class="pre">deleter()</span></code> for properties) that registers an undo function. Thus, our
+source tarball activity could be implemented as:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tarball&#39;</span><span class="p">]</span>
+
+<span class="nd">@activity</span>
+<span class="k">def</span> <span class="nf">tarball</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Creates a source tarball&quot;&quot;&quot;</span>
+    <span class="n">tar</span> <span class="n">czf</span> <span class="n">project</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">src</span><span class="o">/</span>
+
+<span class="nd">@tarball.undoer</span>
+<span class="k">def</span> <span class="nf">tarball</span><span class="p">():</span>
+    <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">project</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>Alternatively, if you really need a lot of fine grained control or encapsulation, you can also
+iomport the <code class="docutils literal"><span class="pre">Activity</span></code> class and subclass it.  Note that when you define an activity this way,
+it does not register an instance of this activity for you in the <code class="docutils literal"><span class="pre">$DAG</span></code>.  You have to take
+care of this bookeeping yourself. For example, the tarball activity can be implemented as
+follows:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">Activity</span>
+
+<span class="k">class</span> <span class="nc">Tarball</span><span class="p">(</span><span class="n">Activity</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tarball&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;install&#39;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Creates a source tarball&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;project.tar.gz&#39;</span><span class="p">):</span>
+        <span class="n">tar</span> <span class="n">czf</span> <span class="k">@</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="n">src</span><span class="o">/</span>
+
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+
+
+<span class="nv">$DAG</span><span class="p">[</span><span class="s1">&#39;tarball&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tarball</span><span class="p">()</span>  <span class="c1"># register the activity</span>
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tarball&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -84,7 +189,16 @@ software with rever.  Let’s go sailing!</p>
         <div class="sphinxsidebarwrapper">
         <p class="logo"><a href="index.html" title="index">
           <img class="logo" src="_static/longship-256.png" alt="Logo"/>
-        </a></p>
+        </a></p><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#writing-custom-activities">Writing Custom Activities</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="dependencies.html"
