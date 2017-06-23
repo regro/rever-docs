@@ -1,0 +1,243 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Activity Base Class (rever.cctivity) &#8212; rever 0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Directed Acyclic Graph Tools (rever.dag)" href="dag.html" />
+    <link rel="prev" title="Tag Activity (rever.tag_activity)" href="tag_activity.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/api/activity.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="dag.html" title="Directed Acyclic Graph Tools (rever.dag)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tag_activity.html" title="Tag Activity (rever.tag_activity)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.0.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rever.activity">
+<span id="activity-base-class-rever-cctivity"></span><span id="rever-activity"></span><h1>Activity Base Class (<code class="docutils literal"><span class="pre">rever.cctivity</span></code>)<a class="headerlink" href="#module-rever.activity" title="Permalink to this headline">¶</a></h1>
+<p>Provides basic activity funtionality.</p>
+<dl class="class">
+<dt id="rever.activity.Activity">
+<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">Activity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset()</em>, <em>func=None</em>, <em>undo=None</em>, <em>args=None</em>, <em>kwargs=None</em>, <em>desc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activity representing a node in DAG of release tasks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str, optional</p>
+<blockquote>
+<div><p>Name of the activity.</p>
+</div></blockquote>
+<p><strong>deps</strong> : set of str, optional</p>
+<blockquote>
+<div><p>Set of activities that must be completed before this activity is
+executed.</p>
+</div></blockquote>
+<p><strong>func</strong> : callable, optional</p>
+<blockquote>
+<div><p>Function to perform as activity when this activities is executed (called).</p>
+</div></blockquote>
+<p><strong>undo</strong> : callable, optional</p>
+<blockquote>
+<div><p>Function to undo this activities behaviour and reset the repo state.</p>
+</div></blockquote>
+<p><strong>args</strong> : tuple, optional</p>
+<blockquote>
+<div><p>Arguments to be supplied to the <code class="docutils literal"><span class="pre">func(*args)</span></code>, if needed.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : mapping, optional</p>
+<blockquote>
+<div><p>Keyword arguments to be supplied to the <code class="docutils literal"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
+</div></blockquote>
+<p><strong>desc</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>A short description of this activity</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rever.activity.Activity.all_kwargs">
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all kwargs for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activity.Activity.kwargs_from_env">
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains possible func() kwarg from the environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activity.Activity.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverts to the last instance of this activity. This default implementation
+uses the revision in the log file from the last time that the activity was
+started. This may be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activity.Activity.undoer">
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the undo function for this activity.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.activity.activity">
+<code class="descclassname">rever.activity.</code><code class="descname">activity</code><span class="sig-paren">(</span><em>name=None</em>, <em>deps=frozenset()</em>, <em>undo=None</em>, <em>desc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.activity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator that turns the function into an activity. The arguments here have the
+same meaning as they do in the Activity class constructor. This decorator also
+registers the activity in the $DAG.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="tag_activity.html"
+                          title="Previous page">&larr; Tag Activity (<code class="docutils literal"><span class="pre">rever.tag_activity</span></code>)</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="dag.html"
+                          title="Next page">&rarr; Directed Acyclic Graph Tools (<code class="docutils literal"><span class="pre">rever.dag</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/activity.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="dag.html" title="Directed Acyclic Graph Tools (rever.dag)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tag_activity.html" title="Tag Activity (rever.tag_activity)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.0.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -1,0 +1,358 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Version Control System Utilities (rever.vcsutils) &#8212; rever 0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environment (rever.environ)" href="environ.html" />
+    <link rel="prev" title="Logging (rever.logger)" href="logger.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/api/vcsutils.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="environ.html" title="Environment (rever.environ)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="logger.html" title="Logging (rever.logger)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.0.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rever.vcsutils">
+<span id="version-control-system-utilities-rever-vcsutils"></span><span id="rever-vcsutils"></span><h1>Version Control System Utilities (<code class="docutils literal"><span class="pre">rever.vcsutils</span></code>)<a class="headerlink" href="#module-rever.vcsutils" title="Permalink to this headline">¶</a></h1>
+<p>Some version control utilities for rever</p>
+<dl class="function">
+<dt id="rever.vcsutils.checkout">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">checkout</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.checkout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks out a revision.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.commit">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">commit</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commits a revision to the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.current_branch">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">current_branch</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current branch for the user’s version control system.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.current_rev">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">current_rev</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_rev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current revision for the user’s version control system.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.del_remote_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">del_remote_tag</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_remote_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a tag from the remote repository.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.del_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">del_tag</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a tag from the local repository.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_checkout">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_checkout</code><span class="sig-paren">(</span><em>rev</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_checkout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks out a branch name, tag, or other revision.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_commit">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_commit</code><span class="sig-paren">(</span><em>message=’Rever commit’</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commits to the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_current_branch">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_current_branch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_current_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current branch for git</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_current_rev">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_current_rev</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_current_rev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the current git revison hash for storage and rewinding purposes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_del_remote_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_del_remote_tag</code><span class="sig-paren">(</span><em>tag</em>, <em>remote</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_del_remote_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a tag from a remote repo</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_del_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_del_tag</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_del_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a tag from the local repo</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_latest_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_latest_tag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_latest_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recent tag in the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_merge">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_merge</code><span class="sig-paren">(</span><em>src</em>, <em>into</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges commits from a src branch into another branch.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_push">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_push</code><span class="sig-paren">(</span><em>remote</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes up to a remote and target branch</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_push_tags">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_push_tags</code><span class="sig-paren">(</span><em>remote</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_push_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes up tags to a remote</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_reset_hard">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_reset_hard</code><span class="sig-paren">(</span><em>rev</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_reset_hard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a git reset –hard to a revision.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_tag</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tags the current head, forcibly.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_track">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_track</code><span class="sig-paren">(</span><em>files</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a list of files to the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.latest_tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">latest_tag</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.latest_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retruns the most recent tag in the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.make_vcs_dispatcher">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">make_vcs_dispatcher</code><span class="sig-paren">(</span><em>vcsfuncs</em>, <em>name=’vcs_dispatcher’</em>, <em>doc=’dispatches to a version control function’</em>, <em>err=’no func for handling the version contol system !{r}’</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.make_vcs_dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a function that dispatches to different version control systems,
+depending on the users setting for $REVER_VCS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vcsfuncs</strong> : dict</p>
+<blockquote>
+<div><p>Maps the string names of version control systems (e.g. ‘git’ or ‘hg’) to
+a function for handling that particular action.</p>
+</div></blockquote>
+<p><strong>name</strong> : str, optional</p>
+<blockquote>
+<div><p>Dispatcher funtion name.</p>
+</div></blockquote>
+<p><strong>doc</strong> : str, optional</p>
+<blockquote>
+<div><p>Doctring for the dispatcher.</p>
+</div></blockquote>
+<p><strong>err</strong> : str, optional</p>
+<blockquote>
+<div><p>Error message if the version control system name is not found in vcsfuncs.
+This is formatted with the value of $REVER_VCS.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>vcs_dispatcher</strong> : function</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.merge">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">merge</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges one revision into another.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.push">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">push</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes up to a remote URL a target branch or revision.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.push_tags">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">push_tags</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes up tags to a remote URL.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.rewind">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">rewind</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.rewind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the version control system to a previous state.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.tag">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">tag</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tags the current head.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.track">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">track</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify files to track in the repo.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="logger.html"
+                          title="Previous page">&larr; Logging (<code class="docutils literal"><span class="pre">rever.logger</span></code>)</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="environ.html"
+                          title="Next page">&rarr; Environment (<code class="docutils literal"><span class="pre">rever.environ</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/vcsutils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="environ.html" title="Environment (rever.environ)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="logger.html" title="Logging (rever.logger)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.0.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -1,0 +1,267 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Environment Variables &#8212; rever 0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/cloud.base.js"></script>
+    <script type="text/javascript" src="_static/cloud.js"></script>
+    <link rel="shortcut icon" href="_static/longship.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Rever API" href="api/index.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/envvars.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="api/index.html" title="Rever API"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">rever 0.0.0 documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="environment-variables">
+<h1>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
+<p>The following displays information about the environment variables that
+affect xonsh performance in some way. It also lists their default values, if
+applicable.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#activities"><span class="std std-ref">$ACTIVITIES</span></a></td>
+<td><a class="reference internal" href="#dag"><span class="std std-ref">$DAG</span></a></td>
+<td><a class="reference internal" href="#logger"><span class="std std-ref">$LOGGER</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
+<td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
+<td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="listing">
+<h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="activities">
+<span id="id1"></span><h3>$ACTIVITIES<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h3>
+<p>Default list of activity names for rever to execute, if they have not already been executed.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> []</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="dag">
+<span id="id2"></span><h3>$DAG<a class="headerlink" href="#dag" title="Permalink to this headline">¶</a></h3>
+<p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
+<p><strong>configurable:</strong> True</p>
+<dl class="docutils">
+<dt><strong>default:</strong> {‘changelog’: &lt;rever.changelog.Changelog object at 0x7efee5544c88&gt;,</dt>
+<dd>‘tag’: &lt;rever.tag_activity.Tag object at 0x7efee5544be0&gt;,
+‘version_bump’: &lt;rever.version_bump.VersionBump object at 0x7efee5512c88&gt;}</dd>
+</dl>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="logger">
+<span id="id3"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
+<p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7efee550e160&gt;</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="rever-dir">
+<span id="id4"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
+<p>Path to directory used for storing rever temporary files.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘rever’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="rever-vcs">
+<span id="id5"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
+<p>Name of version control system to use, such as ‘git’ or ‘hg’</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘git’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="running-activities">
+<span id="id6"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
+<p>List of activity names that rever is actually executing.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> []</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="version">
+<span id="id7"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<p>Version string of new version that is being released.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘x.y.z’</p>
+<p><strong>store_as_str:</strong> False</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="index.html" title="index">
+          <img class="logo" src="_static/longship-256.png" alt="Logo"/>
+        </a></p><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Environment Variables</a><ul>
+<li><a class="reference internal" href="#listing">Listing</a><ul>
+<li><a class="reference internal" href="#activities">$ACTIVITIES</a></li>
+<li><a class="reference internal" href="#dag">$DAG</a></li>
+<li><a class="reference internal" href="#logger">$LOGGER</a></li>
+<li><a class="reference internal" href="#rever-dir">$REVER_DIR</a></li>
+<li><a class="reference internal" href="#rever-vcs">$REVER_VCS</a></li>
+<li><a class="reference internal" href="#running-activities">$RUNNING_ACTIVITIES</a></li>
+<li><a class="reference internal" href="#version">$VERSION</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="tutorial.html"
+                          title="Previous page">&larr; Tutorial</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="api/index.html"
+                          title="Next page">&rarr; Rever API</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/envvars.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="api/index.html" title="Rever API"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">rever 0.0.0 documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
