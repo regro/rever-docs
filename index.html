@@ -7,17 +7,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Rever: Releaser of Versions! &#8212; rever 0.0.0 documentation</title>
-    
+    <title>Rever: Releaser of Versions! &#8212; rever 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.0.0',
+        VERSION:     '0.1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -54,7 +51,7 @@
         <li class="right" >
           <a href="dependencies.html" title="Dependencies"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
-    <li><a href="#">rever 0.0.0 documentation</a> &#187;</li>
+    <li><a href="#">rever 0.1.0 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -77,6 +74,19 @@ as easy as running a single command. Rever…</p>
 <li>is easily extensible, allowing your project to execute custom release activities, and</li>
 <li>allows you to undo release activities, in the event of a mistake!</li>
 </ul>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>To get started with rever, first put a <code class="docutils literal"><span class="pre">rever.xsh</span></code> file in the root directory of your
+source repository,</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
+<span class="nv">$TAG_PUSH</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>Then, run rever from this directory to execute the release actions you specified.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>$ rever <span class="m">1</span>.42
+</pre></div>
+</div>
+</div>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <p><strong>Installation:</strong></p>
@@ -95,6 +105,7 @@ as easy as running a single command. Rever…</p>
 <p><strong>Configuration &amp; Setup:</strong></p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="activities.html">Activities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="envvars.html">Environment Variables</a></li>
 </ul>
 </div>
@@ -121,7 +132,7 @@ as easy as running a single command. Rever…</p>
 </div>
 <div class="section" id="development-dependencies">
 <h1>Development Dependencies<a class="headerlink" href="#development-dependencies" title="Permalink to this headline">¶</a></h1>
-<p>If you want to develop xonsh, it is extremely recommended to install the dependencies
+<p>If you want to develop rever, it is extremely recommended to install the dependencies
 listed in <a class="reference external" href="https://github.com/ergs/rever/blob/master/requirements/docs.txt">requirements/docs.txt</a>
 (to generate documentation) and
 <a class="reference external" href="https://github.com/ergs/rever/blob/master/requirements/tests.txt">requirements/tests.txt</a>
@@ -184,7 +195,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
   content: "";
   padding: .38em 0;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-  box-shadow: 0 0.07em 0.4em 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.07em 0.4em 0 rgba(0, 0, 0, 0.3);'
   pointer-events: auto;
 }
 
@@ -218,6 +229,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
     <h3><a href="#">Page contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Rever: Releaser of Versions!</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
 <li><a class="reference internal" href="#contents">Contents</a><ul>
 </ul>
 </li>
@@ -289,7 +301,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
         <li class="right" >
           <a href="dependencies.html" title="Dependencies"
              >next</a> &nbsp; &nbsp;</li>
-    <li><a href="#">rever 0.0.0 documentation</a> &#187;</li>
+    <li><a href="#">rever 0.1.0 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -297,7 +309,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

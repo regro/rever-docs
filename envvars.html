@@ -7,17 +7,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Environment Variables &#8212; rever 0.0.0 documentation</title>
-    
+    <title>Environment Variables &#8212; rever 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.0.0',
+        VERSION:     '0.1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -34,7 +31,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Rever API" href="api/index.html" />
-    <link rel="prev" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Activities" href="activities.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/envvars.html"/>
@@ -56,9 +53,9 @@
           <a href="api/index.html" title="Rever API"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tutorial.html" title="Tutorial"
+          <a href="activities.html" title="Activities"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.0.0 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.1.0 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -111,9 +108,9 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘changelog’: &lt;rever.changelog.Changelog object at 0x7efe7f2b55f8&gt;,</dt>
-<dd>‘tag’: &lt;rever.tag_activity.Tag object at 0x7efe825396a0&gt;,
-‘version_bump’: &lt;rever.version_bump.VersionBump object at 0x7efe7e0becf8&gt;}</dd>
+<dt><strong>default:</strong> {‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b51369bfba8&gt;,</dt>
+<dd>‘tag’: &lt;rever.activities.tag.Tag object at 0x2b51358bdf28&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b5132829fd0&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -122,7 +119,7 @@ applicable.</p>
 <span id="id3"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7efe7dc7c940&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b5136750f60&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -189,8 +186,8 @@ applicable.</p>
   </div>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="tutorial.html"
-                          title="Previous page">&larr; Tutorial</a></p>
+    <p class="topless"><a href="activities.html"
+                          title="Previous page">&larr; Activities</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
@@ -250,9 +247,9 @@ applicable.</p>
           <a href="api/index.html" title="Rever API"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tutorial.html" title="Tutorial"
+          <a href="activities.html" title="Activities"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.0.0 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.1.0 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -260,7 +257,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

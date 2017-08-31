@@ -1,0 +1,330 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Activities &#8212; rever 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/cloud.base.js"></script>
+    <script type="text/javascript" src="_static/cloud.js"></script>
+    <link rel="shortcut icon" href="_static/longship.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Environment Variables" href="envvars.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/activities.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="envvars.html" title="Environment Variables"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">rever 0.1.0 documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="activities">
+<h1>Activities<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h1>
+<p>The following displays information about the release activities that come stock
+with rever.</p>
+<table border="1" class="colwidths-auto docutils">
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></td>
+<td>Manages keeping a changelog up-to-date.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
+<td>Runs a command</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<td>Tags the current version and pushes the tag up to a remote repository.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<td>Changes the version to the value of $VERSION.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="listing">
+<h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="changelog">
+<span id="id1"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
+<p>Access the Changelog activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
+</pre></div>
+</div>
+<p>Manages keeping a changelog up-to-date.</p>
+<p>This activity takes a number of different input parameters as
+configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">filename:</th><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">pattern:</th><td class="field-body"><p class="first">str, Python regex that is used to find the location in the file
+where new changelog entries should be placed. The default is
+‘.. current developments’.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">header:</th><td class="field-body"><p class="first">str or callable that accepts a single version argument, this
+is the replacement that goes above the new merge entries.
+This should contain a string that matches the pattern arg
+so that the next release may be inserted automatically.
+The default value is:</p>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="cp">.. current developments</span>
+
+v$VERSION
+
+====================
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">news:</th><td class="field-body"><p class="first">str, path to directory containing news files. The default is ‘news’.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">ignore:</th><td class="field-body"><p class="first last">list of str, regexes of filenames in the news directory to ignore.
+The default is [‘TEMPLATE’].</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<div class="section" id="command">
+<span id="id2"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<p>Access the Command activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
+</pre></div>
+</div>
+<p>Runs a command</p>
+<p>Optionally, an undo command can also be given to undo the given command</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The recommended way to create a command is with the
+<a class="reference internal" href="api/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">The name of the activity. Should be unique.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
+xonsh command.</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<div class="section" id="tag">
+<span id="id3"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<p>Access the Tag activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
+</pre></div>
+</div>
+<p>Tags the current version and pushes the tag up to a remote
+repository.</p>
+<p>This activity takes the following parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">template:</th><td class="field-body">str, the template string to tag the version with,
+by default this is ‘$VERSION’</td>
+</tr>
+<tr class="field-even field"><th class="field-name">push:</th><td class="field-body">bool, flag for whether or not the current head and tag
+sould be pushed, default True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">remote:</th><td class="field-body">str or None, remote URL to push tags to. The default
+is None, which is only valid whrn push=False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">target:</th><td class="field-body">str or None, remote branch target to push tags to. The default
+is None, which uses the current branch.</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<div class="section" id="versionbump">
+<span id="id4"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<p>Access the VersionBump activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
+</pre></div>
+</div>
+<p>Changes the version to the value of $VERSION.</p>
+<p>This activity requires the ‘patterns’ argumenent be supplied.
+This argument is an iterable of 3-tuples consisting of:</p>
+<ul class="simple">
+<li>filename, str - file to update the version in</li>
+<li>pattern, str - A Python regular expression that specifies
+how to find matching lines for the replacement string</li>
+<li>new, str or function returning a string - the replacement
+template as a string or a simple callable that accepts the
+version. If it is a string, it is expanded with environment
+variables.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># replace __version__ in init file</span>
+    <span class="p">(</span><span class="s1">&#39;src/__init__.py&#39;</span><span class="p">,</span> <span class="s1">&#39;__version__\s*=.*&#39;</span><span class="p">,</span> <span class="s2">&quot;__version__ = &#39;$VERSION&#39;&quot;</span><span class="p">),</span>
+
+    <span class="c1"># replace version in appveyor</span>
+    <span class="p">(</span><span class="s1">&#39;.appveyor.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;version:\s*&#39;</span><span class="p">,</span>
+      <span class="p">(</span><span class="k">lambda</span> <span class="n">ver</span><span class="p">:</span> <span class="s1">&#39;version: </span><span class="si">{0}</span><span class="s1">.{{build}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ver</span><span class="p">))),</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="index.html" title="index">
+          <img class="logo" src="_static/longship-256.png" alt="Logo"/>
+        </a></p><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Activities</a><ul>
+<li><a class="reference internal" href="#listing">Listing</a><ul>
+<li><a class="reference internal" href="#changelog">Changelog</a></li>
+<li><a class="reference internal" href="#command">Command</a></li>
+<li><a class="reference internal" href="#tag">Tag</a></li>
+<li><a class="reference internal" href="#versionbump">VersionBump</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="tutorial.html"
+                          title="Previous page">&larr; Tutorial</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="envvars.html"
+                          title="Next page">&rarr; Environment Variables</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/activities.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="envvars.html" title="Environment Variables"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">rever 0.1.0 documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

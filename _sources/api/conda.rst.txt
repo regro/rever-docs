@@ -1,10 +1,10 @@
-.. _rever_changelog:
+.. _rever_conda:
 
 ********************************************************************************
-CHANGELOG Management Activity (``rever.activities.changelog``)
+Conda Tools (``rever.conda``)
 ********************************************************************************
 
-.. automodule:: rever.activities.changelog
+.. automodule:: rever.conda
     :members:
     :undoc-members:
     :inherited-members:

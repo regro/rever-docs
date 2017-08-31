@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Tag Activity (rever.activities.tag) &#8212; rever 0.1.0 documentation</title>
+    <title>Command Activity (rever.activities.command) &#8212; rever 0.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
@@ -30,11 +30,11 @@
     <link rel="shortcut icon" href="../_static/longship.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Command Activity (rever.activities.command)" href="command.html" />
-    <link rel="prev" title="CHANGELOG Management Activity (rever.activities.changelog)" href="changelog.html" />
+    <link rel="next" title="Activity Base Class (rever.cctivity)" href="activity.html" />
+    <link rel="prev" title="Tag Activity (rever.activities.tag)" href="tag_activity.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/tag_activity.html"/>
+    <link rel="canonical" href="http://xon.sh/api/command.html"/>
 
   </head>
   <body>
@@ -50,10 +50,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="command.html" title="Command Activity (rever.activities.command)"
+          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
+          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
 
@@ -68,57 +68,58 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-rever.activities.tag">
-<span id="tag-activity-rever-activities-tag"></span><span id="rever-tag-activity"></span><h1>Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)<a class="headerlink" href="#module-rever.activities.tag" title="Permalink to this headline">¶</a></h1>
-<p>Activity for bumpimg version.</p>
-<dl class="class">
-<dt id="rever.activities.tag.Tag">
-<em class="property">class </em><code class="descclassname">rever.activities.tag.</code><code class="descname">Tag</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'changelog'</em>, <em>'version_bump'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tags the current version and pushes the tag up to a remote
-repository.</p>
-<p>This activity takes the following parameters:</p>
+  <div class="section" id="command-activity-rever-activities-command">
+<span id="rever-command-activity"></span><h1>Command Activity (<code class="docutils literal"><span class="pre">rever.activities.command</span></code>)<a class="headerlink" href="#command-activity-rever-activities-command" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="rever.activities.command.command">
+<code class="descclassname">rever.activities.command.</code><code class="descname">command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a command activity</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Template:</th><td class="field-body">str, the template string to tag the version with,
-by default this is ‘$VERSION’</td>
+<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body">The name of the activity. Should be unique.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Push:</th><td class="field-body">bool, flag for whether or not the current head and tag
-sould be pushed, default True.</td>
+<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Remote:</th><td class="field-body">str or None, remote URL to push tags to. The default
-is None, which is only valid whrn push=False.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Target:</th><td class="field-body">str or None, remote branch target to push tags to. The default
-is None, which uses the current branch.</td>
+<tr class="field-odd field"><th class="field-name">Undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
+xonsh command.</td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="rever.activities.tag.Tag.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.all_kwargs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns all kwargs for this activity.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">command</span>
+
+<span class="n">command</span><span class="p">(</span><span class="s1">&#39;mycommand&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;command to run&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;command to undo&gt;&#39;</span><span class="p">)</span>
+
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mycommand&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
 </dd></dl>
 
-<dl class="method">
-<dt id="rever.activities.tag.Tag.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
-<dd><p>Obtains possible func() kwarg from the environment.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rever.activities.tag.Tag.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Undoes the tagging operation.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rever.activities.tag.Tag.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undoer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator that sets the undo function for this activity.</p>
-</dd></dl>
-
+<dl class="class">
+<dt id="rever.activities.command.Command">
+<em class="property">class </em><code class="descclassname">rever.activities.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.Command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a command</p>
+<p>Optionally, an undo command can also be given to undo the given command</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The recommended way to create a command is with the
+<a class="reference internal" href="#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body">The name of the activity. Should be unique.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
+xonsh command.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -134,18 +135,18 @@ is None, which uses the current branch.</td>
         </a></p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="changelog.html"
-                          title="Previous page">&larr; CHANGELOG Management Activity (<code class="docutils literal"><span class="pre">rever.activities.changelog</span></code>)</a></p>
+    <p class="topless"><a href="tag_activity.html"
+                          title="Previous page">&larr; Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="command.html"
-                          title="Next page">&rarr; Command Activity (<code class="docutils literal"><span class="pre">rever.activities.command</span></code>)</a></p>
+    <p class="topless"><a href="activity.html"
+                          title="Next page">&rarr; Activity Base Class (<code class="docutils literal"><span class="pre">rever.cctivity</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/api/tag_activity.rst.txt"
+      <li><a href="../_sources/api/command.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -192,10 +193,10 @@ is None, which uses the current branch.</td>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="command.html" title="Command Activity (rever.activities.command)"
+          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
+          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
 
