@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Search &#8212; rever 0.1.0 documentation</title>
+    <title>Notes for using rever &#8212; rever 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
@@ -24,23 +24,15 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/jquery.cookie.js"></script>
     <script type="text/javascript" src="_static/cloud.base.js"></script>
     <script type="text/javascript" src="_static/cloud.js"></script>
     <link rel="shortcut icon" href="_static/longship.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-  
+    <link rel="search" title="Search" href="search.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/search.html"/>
-
+    <link rel="canonical" href="http://xon.sh/usepatterns.html"/>
 
   </head>
   <body>
@@ -67,29 +59,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script type="text/javascript">$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    From here you can search these documents. Enter your search
-    words into the box below and click "search". Note that the search
-    function will automatically search for all of the words. Pages
-    containing fewer words won't appear in the result list.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="notes-for-using-rever">
+<h1>Notes for using rever<a class="headerlink" href="#notes-for-using-rever" title="Permalink to this headline">¶</a></h1>
+<p>Rever is a very powerful versioning and release tool. Like all good tools there are use patterns to maximizing your productivity.</p>
+<p>1. Always commit all changes before versioning/tagging the code, since rever will commit any changes. While rever can undo the changes it makes all non version changes will be lost upon a rever undo!
+1. You can undo a rever command by <code class="docutils literal"><span class="pre">rever</span> <span class="pre">$version</span> <span class="pre">-u</span> <span class="pre">command1,command2</span></code>
+1. You will need to insert a <code class="docutils literal"><span class="pre">__version__=='a.b.c'</span></code> in the top most <code class="docutils literal"><span class="pre">__init__.py</span></code> file.
+1. You will need to change the docs <code class="docutils literal"><span class="pre">conf.py</span></code> to use the version by importing it from the top most <code class="docutils literal"><span class="pre">__init__.py</span></code> file.
+.. code-block:: python</p>
+<blockquote>
+<div><p># The short X.Y version.</p>
+<p>version = REVER_VERSION.rsplit(‘.’,1)[0]</p>
+<p># The full version, including alpha/beta/rc tags.</p>
+<p>release = REVER_VERSION</p>
+</div></blockquote>
+</div>
+
 
           </div>
         </div>
@@ -99,6 +84,23 @@
         <p class="logo"><a href="index.html" title="index">
           <img class="logo" src="_static/longship-256.png" alt="Logo"/>
         </a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usepatterns.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
     

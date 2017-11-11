@@ -20,6 +20,7 @@
 ./_sources/envvars.rst.txt
 ./_sources/index.rst.txt
 ./_sources/tutorial.rst.txt
+./_sources/usepatterns.rst.txt
 ./_static/ajax-loader.gif
 ./_static/basic.css
 ./_static/cloud.base.js
@@ -81,3 +82,4 @@
 ./search.html
 ./searchindex.js
 ./tutorial.html
+./usepatterns.html
