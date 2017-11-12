@@ -73,24 +73,44 @@
 with rever.</p>
 <table border="1" class="colwidths-auto docutils">
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#bibtex"><span class="std std-ref">BibTex</span></a></td>
+<td>Writes a BibTex reference for the version of software</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></td>
 <td>Manages keeping a changelog up-to-date.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
 <td>Runs a command</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="listing">
 <h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bibtex">
+<span id="id1"></span><h3>BibTex<a class="headerlink" href="#bibtex" title="Permalink to this headline">¶</a></h3>
+<p>Access the BibTex activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.bibtex</span> <span class="kn">import</span> <span class="n">BibTex</span>
+</pre></div>
+</div>
+<p>Writes a BibTex reference for the version of software</p>
+<dl class="docutils">
+<dt>Minimal <code class="docutils literal"><span class="pre">rever.xsh</span></code>::</dt>
+<dd>‘’’
+$BIBTEX_PROJECT_NAME = &lt;my_project&gt;  # The name of your project
+$BIBTEX_AUTHORS = [‘Name1’, ‘Name2’]  # The name of the authors
+$BIBTEX_URL = &lt;URL to Project&gt;  # A URL to the code
+‘’‘</dd>
+</dl>
+<hr class="docutils" />
+</div>
 <div class="section" id="changelog">
-<span id="id1"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
 <p>Access the Changelog activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
 </pre></div>
@@ -136,7 +156,7 @@ The default is [‘TEMPLATE’].</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="command">
-<span id="id2"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
 <p>Access the Command activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
 </pre></div>
@@ -164,7 +184,7 @@ xonsh command.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id3"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -193,7 +213,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id4"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -239,6 +259,7 @@ variables.</li>
     <ul>
 <li><a class="reference internal" href="#">Activities</a><ul>
 <li><a class="reference internal" href="#listing">Listing</a><ul>
+<li><a class="reference internal" href="#bibtex">BibTex</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#tag">Tag</a></li>

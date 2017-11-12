@@ -85,6 +85,32 @@ takes a single argument (that is $VERSION) and returns a string.</p>
 <dd><p>Context manager for temporarily entering into a directory.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="rever.tools.render_authors">
+<code class="descclassname">rever.tools.</code><code class="descname">render_authors</code><span class="sig-paren">(</span><em>authors</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.render_authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a list of of tuples of authors into valid bibtex</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>authors: list of str</strong></p>
+<blockquote>
+<div><p>The authors eg [‘Your name in nicely formatted bibtex’].
+Please see <code class="docutils literal"><span class="pre">&lt;http://nwalsh.com/tex/texhelp/bibtx-23.html&gt;</span></code> for
+information about how to format your name for bibtex</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str:</p>
+<blockquote class="last">
+<div><p>Valid bibtex authors</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
