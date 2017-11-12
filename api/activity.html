@@ -119,6 +119,12 @@ executed.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="rever.activity.Activity.clear_kwargs_from_env">
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes kwarg from the environment, if they exist.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="rever.activity.Activity.kwargs_from_env">
 <code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
@@ -136,6 +142,13 @@ started. This may be overridden in a subclass.</p>
 <dt id="rever.activity.Activity.undoer">
 <code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rever.activity.Activity.env_names">
+<code class="descname">env_names</code><a class="headerlink" href="#rever.activity.Activity.env_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping parameter names to the names of environment
+varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
 
 </dd></dl>

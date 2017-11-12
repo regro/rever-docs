@@ -83,12 +83,12 @@ applicable.</p>
 <td><a class="reference internal" href="#dag"><span class="std std-ref">$DAG</span></a></td>
 <td><a class="reference internal" href="#logger"><span class="std std-ref">$LOGGER</span></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#python"><span class="std std-ref">$PYTHON</span></a></td>
+<td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
 <td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
-<td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
-<td>&#160;</td>
+<tr class="row-odd"><td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
+<td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -108,10 +108,11 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2afd211c7ac8&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2afd2124de10&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2afd2124d9b0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2afd1c660588&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b1762c7d748&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b1761b4b710&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b1762bc82e8&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b1762b9b860&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b1762c93cf8&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -120,12 +121,20 @@ applicable.</p>
 <span id="id3"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2afd2122c860&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b17624017f0&gt;</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="python">
+<span id="id4"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Path to Python executable that rever is run with or “python”.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-dir">
-<span id="id4"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to directory used for storing rever temporary files.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘rever’</p>
@@ -133,7 +142,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-vcs">
-<span id="id5"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
 <p>Name of version control system to use, such as ‘git’ or ‘hg’</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘git’</p>
@@ -141,7 +150,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="running-activities">
-<span id="id6"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
 <p>List of activity names that rever is actually executing.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> []</p>
@@ -149,7 +158,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="version">
-<span id="id7"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <p>Version string of new version that is being released.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘x.y.z’</p>
@@ -174,6 +183,7 @@ applicable.</p>
 <li><a class="reference internal" href="#activities">$ACTIVITIES</a></li>
 <li><a class="reference internal" href="#dag">$DAG</a></li>
 <li><a class="reference internal" href="#logger">$LOGGER</a></li>
+<li><a class="reference internal" href="#python">$PYTHON</a></li>
 <li><a class="reference internal" href="#rever-dir">$REVER_DIR</a></li>
 <li><a class="reference internal" href="#rever-vcs">$REVER_VCS</a></li>
 <li><a class="reference internal" href="#running-activities">$RUNNING_ACTIVITIES</a></li>

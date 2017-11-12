@@ -82,10 +82,13 @@ with rever.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
 <td>Runs a command</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<td>Uploads a package to the Python Package Index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -183,8 +186,34 @@ xonsh command.</td>
 </table>
 <hr class="docutils" />
 </div>
+<div class="section" id="pypi">
+<span id="id4"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<p>Access the PyPI activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
+</pre></div>
+</div>
+<p>Uploads a package to the Python Package Index.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$PYPI_RC:</th><td class="field-body">str, path to the pypirc file, default <code class="docutils literal"><span class="pre">~/.pypirc</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$PYPI_BUILD_COMMANDS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The commands to run in setup.py
+that will build the project, default <code class="docutils literal"><span class="pre">['sdist']</span></code>.  Other examples
+include <code class="docutils literal"><span class="pre">'bdist'</span></code> or <code class="docutils literal"><span class="pre">'bdist_wininst'</span></code>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
 <div class="section" id="tag">
-<span id="id4"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -213,7 +242,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id5"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -262,6 +291,7 @@ variables.</li>
 <li><a class="reference internal" href="#bibtex">BibTex</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
+<li><a class="reference internal" href="#pypi">PyPI</a></li>
 <li><a class="reference internal" href="#tag">Tag</a></li>
 <li><a class="reference internal" href="#versionbump">VersionBump</a></li>
 </ul>
