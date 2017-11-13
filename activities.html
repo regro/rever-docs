@@ -82,13 +82,16 @@ with rever.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
 <td>Runs a command</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></td>
+<td>Updates conda-forge feedstocks.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -186,8 +189,85 @@ xonsh command.</td>
 </table>
 <hr class="docutils" />
 </div>
+<div class="section" id="condaforge">
+<span id="id4"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
+<p>Access the CondaForge activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
+</pre></div>
+</div>
+<p>Updates conda-forge feedstocks.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FEEDSTOCK:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or None, feedstock name or URL,
+default <code class="docutils literal"><span class="pre">$PROJECT-feedstock</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_PROTOCOL:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, one of <code class="docutils literal"><span class="pre">'ssh'</span></code>, <code class="docutils literal"><span class="pre">'http'</span></code>, or <code class="docutils literal"><span class="pre">'https'</span></code>
+that specifies how the activity should interact with github when
+cloning, pulling, or pushing to the feedstock repo. Note that
+<code class="docutils literal"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
+The default  is <code class="docutils literal"><span class="pre">'ssh'</span></code>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_SOURCE_URL:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, the URL that the recipe will use to
+download the source code. This is needed so that we may update the
+hash of the downloaded file. This string is evaluated with the current
+environment. Default
+<code class="docutils literal"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_HASH_TYPE:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, the type of hash that the recipe uses, eg
+<code class="docutils literal"><span class="pre">'md5'</span></code> or <code class="docutils literal"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal"><span class="pre">'sha256'</span></code>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_PATTERNS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list or 3-tuples of str, this is list of
+(filename, pattern-regex, replacement) tuples that is evaluated
+inside of the recipe directory. This is similar to the version bump
+pattern structure. Both the pattern-regex str and the replacement str
+will have environment variables expanded. The following environment
+variables are added for this evaluation:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</li>
+<li><code class="docutils literal"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>.</li>
+</ul>
+<p>The default patterns match most standard recipes.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_PULL_REQUEST:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should open
+a pull request to the upstream conda-forge feestock, default True.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_RERENDER:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">bool, whether the activity should rerender the
+feedstock using conda-smithy, default True.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Other environment variables that affect the behavior are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$GITHUB_CREDFILE</span></code>: the credential file to use.</li>
+<li><code class="docutils literal"><span class="pre">$GITHUB_ORG</span></code>: the github organization that the project belongs to.</li>
+<li><code class="docutils literal"><span class="pre">$GITHUB_REPO</span></code>: the github repository of theproject.</li>
+<li><code class="docutils literal"><span class="pre">$PROJECT</span></code>: the name of the project being released.</li>
+<li><code class="docutils literal"><span class="pre">$REVER_CONFIG_DIR</span></code>: the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</li>
+</ul>
+<hr class="docutils" />
+</div>
 <div class="section" id="pypi">
-<span id="id4"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyPI activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -210,10 +290,14 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 </tr>
 </tbody>
 </table>
+<p>Other environment variables that affect the behavior are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$PYTHON</span></code>: the path to the Python interpreter.</li>
+</ul>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id5"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -242,7 +326,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id6"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -291,6 +375,7 @@ variables.</li>
 <li><a class="reference internal" href="#bibtex">BibTex</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
+<li><a class="reference internal" href="#condaforge">CondaForge</a></li>
 <li><a class="reference internal" href="#pypi">PyPI</a></li>
 <li><a class="reference internal" href="#tag">Tag</a></li>
 <li><a class="reference internal" href="#versionbump">VersionBump</a></li>

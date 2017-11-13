@@ -81,14 +81,22 @@ applicable.</p>
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#activities"><span class="std std-ref">$ACTIVITIES</span></a></td>
 <td><a class="reference internal" href="#dag"><span class="std std-ref">$DAG</span></a></td>
+<td><a class="reference internal" href="#github-credfile"><span class="std std-ref">$GITHUB_CREDFILE</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#github-org"><span class="std std-ref">$GITHUB_ORG</span></a></td>
+<td><a class="reference internal" href="#github-repo"><span class="std std-ref">$GITHUB_REPO</span></a></td>
 <td><a class="reference internal" href="#logger"><span class="std std-ref">$LOGGER</span></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#python"><span class="std std-ref">$PYTHON</span></a></td>
-<td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
-<td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#project"><span class="std std-ref">$PROJECT</span></a></td>
+<td><a class="reference internal" href="#python"><span class="std std-ref">$PYTHON</span></a></td>
+<td><a class="reference internal" href="#rever-config-dir"><span class="std std-ref">$REVER_CONFIG_DIR</span></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
-<td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
+<td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
+<td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
+<td><a class="reference internal" href="#website-url"><span class="std std-ref">$WEBSITE_URL</span></a></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -108,33 +116,74 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b1762c7d748&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b1761b4b710&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b1762bc82e8&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2b1762b9b860&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b1762c93cf8&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b75cee9eeb8&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b75cde07710&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b75ceacec50&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b75ceddaf98&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b75ceeb7940&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b75ceeb70f0&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
+<div class="section" id="github-credfile">
+<span id="id3"></span><h3>$GITHUB_CREDFILE<a class="headerlink" href="#github-credfile" title="Permalink to this headline">¶</a></h3>
+<p>GitHub credential file to use</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="github-org">
+<span id="id4"></span><h3>$GITHUB_ORG<a class="headerlink" href="#github-org" title="Permalink to this headline">¶</a></h3>
+<p>GitHub organization name</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="github-repo">
+<span id="id5"></span><h3>$GITHUB_REPO<a class="headerlink" href="#github-repo" title="Permalink to this headline">¶</a></h3>
+<p>GitHub repository name</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="logger">
-<span id="id3"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b17624017f0&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b75cef9cac8&gt;</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="project">
+<span id="id7"></span><h3>$PROJECT<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<p>Project name</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="python">
-<span id="id4"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
+<div class="section" id="rever-config-dir">
+<span id="id9"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
+<p>Path to rever configuration directory</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="rever-dir">
-<span id="id5"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to directory used for storing rever temporary files.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘rever’</p>
@@ -142,7 +191,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-vcs">
-<span id="id6"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
+<span id="id11"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
 <p>Name of version control system to use, such as ‘git’ or ‘hg’</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘git’</p>
@@ -150,7 +199,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="running-activities">
-<span id="id7"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
+<span id="id12"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
 <p>List of activity names that rever is actually executing.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> []</p>
@@ -158,10 +207,18 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="version">
-<span id="id8"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<span id="id13"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <p>Version string of new version that is being released.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘x.y.z’</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="website-url">
+<span id="id14"></span><h3>$WEBSITE_URL<a class="headerlink" href="#website-url" title="Permalink to this headline">¶</a></h3>
+<p>Project URL, usually for docs.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> ‘’</p>
 <p><strong>store_as_str:</strong> False</p>
 </div>
 </div>
@@ -182,12 +239,18 @@ applicable.</p>
 <li><a class="reference internal" href="#listing">Listing</a><ul>
 <li><a class="reference internal" href="#activities">$ACTIVITIES</a></li>
 <li><a class="reference internal" href="#dag">$DAG</a></li>
+<li><a class="reference internal" href="#github-credfile">$GITHUB_CREDFILE</a></li>
+<li><a class="reference internal" href="#github-org">$GITHUB_ORG</a></li>
+<li><a class="reference internal" href="#github-repo">$GITHUB_REPO</a></li>
 <li><a class="reference internal" href="#logger">$LOGGER</a></li>
+<li><a class="reference internal" href="#project">$PROJECT</a></li>
 <li><a class="reference internal" href="#python">$PYTHON</a></li>
+<li><a class="reference internal" href="#rever-config-dir">$REVER_CONFIG_DIR</a></li>
 <li><a class="reference internal" href="#rever-dir">$REVER_DIR</a></li>
 <li><a class="reference internal" href="#rever-vcs">$REVER_VCS</a></li>
 <li><a class="reference internal" href="#running-activities">$RUNNING_ACTIVITIES</a></li>
 <li><a class="reference internal" href="#version">$VERSION</a></li>
+<li><a class="reference internal" href="#website-url">$WEBSITE_URL</a></li>
 </ul>
 </li>
 </ul>

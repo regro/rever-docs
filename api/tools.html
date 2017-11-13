@@ -80,9 +80,21 @@ takes a single argument (that is $VERSION) and returns a string.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="rever.tools.hash_url">
+<code class="descclassname">rever.tools.</code><code class="descname">hash_url</code><span class="sig-paren">(</span><em>url</em>, <em>hash='sha256'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.hash_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hashes a URL, with a progress bar, and returns the hex representation</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="rever.tools.indir">
 <code class="descclassname">rever.tools.</code><code class="descname">indir</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.indir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Context manager for temporarily entering into a directory.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.tools.progress">
+<code class="descclassname">rever.tools.</code><code class="descname">progress</code><span class="sig-paren">(</span><em>count</em>, <em>total</em>, <em>prefix=''</em>, <em>suffix=''</em>, <em>width=60</em>, <em>file=None</em>, <em>fill='`·.</em>, <em>¸</em>, <em>.·*¯`·.</em>, <em>¸</em>, <em>.·*¯'</em>, <em>color=None</em>, <em>empty=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>CLI progress bar</p>
 </dd></dl>
 
 <dl class="function">
@@ -105,6 +117,41 @@ information about how to format your name for bibtex</p>
 <blockquote class="last">
 <div><p>Valid bibtex authors</p>
 </div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.tools.replace_in_file">
+<code class="descclassname">rever.tools.</code><code class="descname">replace_in_file</code><span class="sig-paren">(</span><em>pattern</em>, <em>new</em>, <em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.replace_in_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces a given pattern in a file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.tools.stream_url_progress">
+<code class="descclassname">rever.tools.</code><code class="descname">stream_url_progress</code><span class="sig-paren">(</span><em>url</em>, <em>verb='downloading'</em>, <em>chunksize=1024</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.stream_url_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator yielding successive bytes from a URL.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>url</strong> : str</p>
+<blockquote>
+<div><p>URL to open and stream</p>
+</div></blockquote>
+<p><strong>verb</strong> : str</p>
+<blockquote>
+<div><p>Verb to prefix the url downloading with, default ‘downloading’</p>
+</div></blockquote>
+<p><strong>chunksize</strong> : int</p>
+<blockquote>
+<div><p>Number of bytes to return, defaults to 1 kb.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">yields the bytes which is at most chunksize in length.</p>
 </td>
 </tr>
 </tbody>
