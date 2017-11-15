@@ -85,8 +85,14 @@ with rever.</p>
 <tr class="row-even"><td><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></td>
 <td>Updates conda-forge feedstocks.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#dockeractivity"><span class="std std-ref">DockerActivity</span></a></td>
+<td>An activity that executes within a docker container.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
+<td>Runs pytest inside of a container.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
@@ -266,8 +272,48 @@ is where the GitHub credential files are stored by default.</li>
 </ul>
 <hr class="docutils" />
 </div>
+<div class="section" id="dockeractivity">
+<span id="id5"></span><h3>DockerActivity<a class="headerlink" href="#dockeractivity" title="Permalink to this headline">¶</a></h3>
+<p>Access the DockerActivity activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">DockerActivity</span>
+</pre></div>
+</div>
+<p>An activity that executes within a docker container.</p>
+<p>A Docker activity, by default will respect the following environment
+variables, if they are set:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_IMAGE:</th><td class="field-body">str, Name of the image to run, defaults to
+$DOCKER_INSTALL_IMAGE. Environment variables will be expanded when
+the activity is run.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_LANG:</th><td class="field-body">str, Language to execute the body in, default xonsh.
+This may also be a full path to an executable.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_ARGS:</th><td class="field-body">sequence of str, Extra arguments to pass in after
+the executable but before the main body. Defaults to the standard
+compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_ENV:</th><td class="field-body">bool or dict, Environment to use. This has the same meaning as in
+<code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
+more details, default True.</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, DockerActivities are macro context managers. This allows you
+to set the code block by entering the context:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>with! DockerActivity(name=&#39;myactivity&#39;):
+    echo &quot;I will be run in the docker container!&quot;
+</pre></div>
+</div>
+<p>Entering the context manager will also automatically register the
+activity in the DAG.</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="pypi">
-<span id="id5"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id6"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyPI activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -296,8 +342,17 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 </ul>
 <hr class="docutils" />
 </div>
+<div class="section" id="pytest">
+<span id="id7"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<p>Access the PyTest activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
+</pre></div>
+</div>
+<p>Runs pytest inside of a container.</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="tag">
-<span id="id6"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -326,7 +381,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id7"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id9"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -376,7 +431,9 @@ variables.</li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
+<li><a class="reference internal" href="#dockeractivity">DockerActivity</a></li>
 <li><a class="reference internal" href="#pypi">PyPI</a></li>
+<li><a class="reference internal" href="#pytest">PyTest</a></li>
 <li><a class="reference internal" href="#tag">Tag</a></li>
 <li><a class="reference internal" href="#versionbump">VersionBump</a></li>
 </ul>

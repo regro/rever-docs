@@ -93,7 +93,7 @@ takes a single argument (that is $VERSION) and returns a string.</p>
 
 <dl class="function">
 <dt id="rever.tools.progress">
-<code class="descclassname">rever.tools.</code><code class="descname">progress</code><span class="sig-paren">(</span><em>count</em>, <em>total</em>, <em>prefix=''</em>, <em>suffix=''</em>, <em>width=60</em>, <em>file=None</em>, <em>fill='`·.</em>, <em>¸</em>, <em>.·*¯`·.</em>, <em>¸</em>, <em>.·*¯'</em>, <em>color=None</em>, <em>empty=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.progress" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rever.tools.</code><code class="descname">progress</code><span class="sig-paren">(</span><em>count</em>, <em>total=None</em>, <em>prefix=''</em>, <em>suffix=''</em>, <em>width=60</em>, <em>file=None</em>, <em>fill='`·.</em>, <em>¸</em>, <em>.·*¯`·.</em>, <em>¸</em>, <em>.·*¯'</em>, <em>color=None</em>, <em>empty=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.progress" title="Permalink to this definition">¶</a></dt>
 <dd><p>CLI progress bar</p>
 </dd></dl>
 
@@ -131,7 +131,7 @@ information about how to format your name for bibtex</p>
 
 <dl class="function">
 <dt id="rever.tools.stream_url_progress">
-<code class="descclassname">rever.tools.</code><code class="descname">stream_url_progress</code><span class="sig-paren">(</span><em>url</em>, <em>verb='downloading'</em>, <em>chunksize=1024</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.stream_url_progress" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rever.tools.</code><code class="descname">stream_url_progress</code><span class="sig-paren">(</span><em>url</em>, <em>verb='downloading'</em>, <em>chunksize=1024</em>, <em>width=60</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.stream_url_progress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator yielding successive bytes from a URL.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
