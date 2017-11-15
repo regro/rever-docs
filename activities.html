@@ -370,36 +370,16 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
-the documentation. This must be an absolute path. Defaults to
-<code class="docutils literal"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
+<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
 to place the built docs in, default <code class="docutils literal"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
-build the docs, default <code class="docutils literal"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal"><span class="pre">'{docs_dir}'</span></code> is
-present in the string, then the string will be formated with the
-value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
-builders. Default to no extra options.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal"><span class="pre">''</span></code>, <code class="docutils literal"><span class="pre">'a4'</span></code>,
-<code class="docutils literal"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
-option.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
-This defaults to <code class="docutils literal"><span class="pre">['html']</span></code>.</td>
+<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
+build the docs, default <code class="docutils literal"><span class="pre">'$DOCKER_WORKDIR/docs/_build'</span></code>.</td>
 </tr>
 </tbody>
 </table>
-<p>As a dockerized activity, the docker environment variables affect the execution
-of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
