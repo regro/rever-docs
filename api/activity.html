@@ -155,7 +155,7 @@ varaibles that the activity looks for when it is executed.</p>
 
 <dl class="class">
 <dt id="rever.activity.DockerActivity">
-<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">DockerActivity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset()</em>, <em>func=None</em>, <em>undo=None</em>, <em>desc=None</em>, <em>image=None</em>, <em>lang='xonsh'</em>, <em>run_args=('-c'</em>, <em>)</em>, <em>code=None</em>, <em>env=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">DockerActivity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset()</em>, <em>func=None</em>, <em>undo=None</em>, <em>desc=None</em>, <em>image=None</em>, <em>lang='xonsh'</em>, <em>run_args=('-c'</em>, <em>)</em>, <em>code=None</em>, <em>env=True</em>, <em>mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>An activity that executes within a docker container.</p>
 <p>A Docker activity, by default will respect the following environment
 variables, if they are set:</p>
@@ -177,6 +177,10 @@ compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>
 <tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_ENV:</th><td class="field-body">bool or dict, Environment to use. This has the same meaning as in
 <code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_MOUNT:</th><td class="field-body">list of dict, Locations to mount in the running container.
+This has the same meaning as in <code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>.
+Please see that function for more details, default does not mount anything.</td>
 </tr>
 </tbody>
 </table>
@@ -237,10 +241,16 @@ is called, or set by entering the activity as a macro context manager.
 In this last case, the context block is set as the code.</p>
 </div></blockquote>
 <p><strong>env</strong> : bool or dict, optional</p>
-<blockquote class="last">
+<blockquote>
 <div><p>Environment to use. This has the same meaning as in
 <code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</p>
+</div></blockquote>
+<p><strong>mounts</strong> : list of dict, optional</p>
+<blockquote class="last">
+<div><p>Locations to mount in the running container. This has the same meaning as
+ing <code class="docutils literal"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
+does not mount anything.</p>
 </div></blockquote>
 </td>
 </tr>
