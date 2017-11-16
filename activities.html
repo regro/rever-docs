@@ -91,19 +91,22 @@ with rever.</p>
 <tr class="row-even"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
 <td>Activity for pushing documentation up to GitHub pages.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#ghrelease"><span class="std std-ref">GHRelease</span></a></td>
+<td>Performs a github release.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
 <td>Runs pytest inside of a container.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
 <td>Runs sphinx inside of a container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -165,8 +168,13 @@ v$VERSION
 <tr class="field-even field"><th class="field-name">news:</th><td class="field-body"><p class="first">str, path to directory containing news files. The default is ‘news’.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">ignore:</th><td class="field-body"><p class="first last">list of str, regexes of filenames in the news directory to ignore.
+<tr class="field-odd field"><th class="field-name">ignore:</th><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory to ignore.
 The default is [‘TEMPLATE’].</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">latest:</th><td class="field-body"><p class="first last">str, file to write just the latest part of the changelog to.
+This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated in the
+current environment.</p>
 </td>
 </tr>
 </tbody>
@@ -357,8 +365,45 @@ sphinx activity.</td>
 </table>
 <hr class="docutils" />
 </div>
+<div class="section" id="ghrelease">
+<span id="id7"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
+<p>Access the GHRelease activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
+</pre></div>
+</div>
+<p>Performs a github release.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_NAME:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, Name of the release.  This is evaluated with the
+version. Default is <code class="docutils literal"><span class="pre">$VERSION</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_NOTES:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, Release notes to send to the release
+page. If None (the default), this is read from <code class="docutils literal"><span class="pre">$CHANGELOG_LATEST</span></code>,
+if present, or failing that <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. If neither file exists,
+an empty string is passes in.</td>
+</tr>
+</tbody>
+</table>
+<p>Other environment variables that affect the behavior are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$GITHUB_CREDFILE</span></code>: the credential file to use.</li>
+<li><code class="docutils literal"><span class="pre">$GITHUB_ORG</span></code>: the github organization that the project belongs to.</li>
+<li><code class="docutils literal"><span class="pre">$GITHUB_REPO</span></code>: the github repository of the project.</li>
+<li><code class="docutils literal"><span class="pre">$REVER_CONFIG_DIR</span></code>: the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</li>
+<li><code class="docutils literal"><span class="pre">$CHANGELOG_LATEST</span></code>: path to the latest release notes file
+created by the changelog activity.</li>
+</ul>
+<hr class="docutils" />
+</div>
 <div class="section" id="pypi">
-<span id="id7"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyPI activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -388,7 +433,7 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id8"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id9"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyTest activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -397,7 +442,7 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id9"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>Access the Sphinx activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -441,7 +486,7 @@ of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id10"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id11"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -470,7 +515,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id11"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id12"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -522,6 +567,7 @@ variables.</li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
 <li><a class="reference internal" href="#dockeractivity">DockerActivity</a></li>
 <li><a class="reference internal" href="#ghpages">GHPages</a></li>
+<li><a class="reference internal" href="#ghrelease">GHRelease</a></li>
 <li><a class="reference internal" href="#pypi">PyPI</a></li>
 <li><a class="reference internal" href="#pytest">PyTest</a></li>
 <li><a class="reference internal" href="#sphinx">Sphinx</a></li>

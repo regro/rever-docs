@@ -106,8 +106,13 @@ v$VERSION
 <tr class="field-even field"><th class="field-name">News:</th><td class="field-body"><p class="first">str, path to directory containing news files. The default is ‘news’.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Ignore:</th><td class="field-body"><p class="first last">list of str, regexes of filenames in the news directory to ignore.
+<tr class="field-odd field"><th class="field-name">Ignore:</th><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory to ignore.
 The default is [‘TEMPLATE’].</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Latest:</th><td class="field-body"><p class="first last">str, file to write just the latest part of the changelog to.
+This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated in the
+current environment.</p>
 </td>
 </tr>
 </tbody>
