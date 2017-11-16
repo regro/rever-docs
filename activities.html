@@ -89,7 +89,7 @@ with rever.</p>
 <td>An activity that executes within a docker container.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
-<td>Activity for pushing documentation up to GitHub pages</td>
+<td>Activity for pushing documentation up to GitHub pages.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
@@ -329,6 +329,32 @@ activity in the DAG.</p>
 </pre></div>
 </div>
 <p>Activity for pushing documentation up to GitHub pages.</p>
+<p>This activity uses the following environment variable:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$GHPAGES_REPO:</th><td class="field-body">str, the URL of the GitHUb pages repository.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$GHPAGES_BRANCH:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the GitHub pages branch name, i.e. either
+<code class="docutils literal"><span class="pre">gh-pages</span></code> or <code class="docutils literal"><span class="pre">master</span></code>.  If not provided, the activity will
+attempt to deduce it from the repo name.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$GHPAGES_COPY:</th><td class="field-body">list or str 2-tuples, This is a list of (src, dst)
+pairs of files to copy from the project into the gh-pages repo.
+These pairs will have environment variables expanded and it is
+evaluated in the current directory (where rever was run from).
+src files or directories that don’t exist will be skipped.
+After variable expansion, this list will be deduplicated.
+Additionally, the environment variable <code class="docutils literal"><span class="pre">$GHPAGES_REPO_DIR</span></code>
+is added to allow easy access to the local clone of the
+repo, which is at <code class="docutils literal"><span class="pre">$REVER_DIR/ghpages-repo</span></code>. By default,
+this will look in the sphinx html directory created by the
+sphinx activity.</td>
+</tr>
+</tbody>
+</table>
 <hr class="docutils" />
 </div>
 <div class="section" id="pypi">
