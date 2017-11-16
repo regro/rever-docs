@@ -88,19 +88,22 @@ with rever.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#dockeractivity"><span class="std std-ref">DockerActivity</span></a></td>
 <td>An activity that executes within a docker container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
+<td>Activity for pushing documentation up to GitHub pages</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
 <td>Runs pytest inside of a container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
 <td>Runs sphinx inside of a container.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -319,8 +322,17 @@ to set the code block by entering the context:</p>
 activity in the DAG.</p>
 <hr class="docutils" />
 </div>
+<div class="section" id="ghpages">
+<span id="id6"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
+<p>Access the GHPages activity via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
+</pre></div>
+</div>
+<p>Activity for pushing documentation up to GitHub pages.</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="pypi">
-<span id="id6"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyPI activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -350,7 +362,7 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id7"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>Access the PyTest activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -359,7 +371,7 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id8"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id9"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>Access the Sphinx activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -370,20 +382,40 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
+<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
+the documentation. This must be an absolute path. Defaults to
+<code class="docutils literal"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
 to place the built docs in, default <code class="docutils literal"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
-build the docs, default <code class="docutils literal"><span class="pre">'$DOCKER_WORKDIR/docs/_build'</span></code>.</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
+build the docs, default <code class="docutils literal"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal"><span class="pre">'{docs_dir}'</span></code> is
+present in the string, then the string will be formated with the
+value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
+builders. Default to no extra options.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal"><span class="pre">''</span></code>, <code class="docutils literal"><span class="pre">'a4'</span></code>,
+<code class="docutils literal"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
+option.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
+This defaults to <code class="docutils literal"><span class="pre">['html']</span></code>.</td>
 </tr>
 </tbody>
 </table>
+<p>As a dockerized activity, the docker environment variables affect the execution
+of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id9"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>Access the Tag activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -412,7 +444,7 @@ is None, which uses the current branch.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id10"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id11"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>Access the VersionBump activity via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -463,6 +495,7 @@ variables.</li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
 <li><a class="reference internal" href="#dockeractivity">DockerActivity</a></li>
+<li><a class="reference internal" href="#ghpages">GHPages</a></li>
 <li><a class="reference internal" href="#pypi">PyPI</a></li>
 <li><a class="reference internal" href="#pytest">PyTest</a></li>
 <li><a class="reference internal" href="#sphinx">Sphinx</a></li>
