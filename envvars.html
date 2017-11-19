@@ -117,7 +117,7 @@ applicable.</p>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#rever-config-dir"><span class="std std-ref">$REVER_CONFIG_DIR</span></a></td>
 <td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
-<td><a class="reference internal" href="#rever-force"><span class="std std-ref">$REVER_FORCE</span></a></td>
+<td><a class="reference internal" href="#rever-forced"><span class="std std-ref">$REVER_FORCED</span></a></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
 <td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
@@ -144,16 +144,16 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2ac1a22fcc50&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2ac1a0ebf710&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2ac1a1f105c0&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2ac1a1fb0438&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2ac1a22d5d68&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2ac1a22d3cf8&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2ac1a1e8a668&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2ac1a1e8a240&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2ac1a1e8a198&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2ac1a1e8ac18&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b11d8913048&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b11d3930748&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b11d8968860&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b11d8afdf28&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b11d8929128&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b11d89294e0&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b11d8a49470&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b11d8a49208&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b11d8a6db70&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b11d8a6da20&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -338,7 +338,7 @@ applicable.</p>
 <span id="id25"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2ac19d482588&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b11d8afd080&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -374,8 +374,8 @@ applicable.</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
-<div class="section" id="rever-force">
-<span id="id30"></span><h3>$REVER_FORCE<a class="headerlink" href="#rever-force" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="rever-forced">
+<span id="id30"></span><h3>$REVER_FORCED<a class="headerlink" href="#rever-forced" title="Permalink to this headline">¶</a></h3>
 <p>Path to directory used for storing rever temporary files.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> False</p>
@@ -458,7 +458,7 @@ applicable.</p>
 <li><a class="reference internal" href="#python">$PYTHON</a></li>
 <li><a class="reference internal" href="#rever-config-dir">$REVER_CONFIG_DIR</a></li>
 <li><a class="reference internal" href="#rever-dir">$REVER_DIR</a></li>
-<li><a class="reference internal" href="#rever-force">$REVER_FORCE</a></li>
+<li><a class="reference internal" href="#rever-forced">$REVER_FORCED</a></li>
 <li><a class="reference internal" href="#rever-vcs">$REVER_VCS</a></li>
 <li><a class="reference internal" href="#running-activities">$RUNNING_ACTIVITIES</a></li>
 <li><a class="reference internal" href="#version">$VERSION</a></li>
