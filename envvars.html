@@ -117,11 +117,15 @@ applicable.</p>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#rever-config-dir"><span class="std std-ref">$REVER_CONFIG_DIR</span></a></td>
 <td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
-<td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
+<td><a class="reference internal" href="#rever-force"><span class="std std-ref">$REVER_FORCE</span></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
+<td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
 <td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
-<td><a class="reference internal" href="#website-url"><span class="std std-ref">$WEBSITE_URL</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#website-url"><span class="std std-ref">$WEBSITE_URL</span></a></td>
+<td>&#160;</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -140,16 +144,16 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b633a8bf828&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b63398e3710&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b6339e524e0&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b633aa86f98&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b633a8d6198&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b633a8d6d30&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b633a8d6898&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b633a8bfa20&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2b633a8bff60&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b633a8bfc18&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b2d6d675be0&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b2d6c66b710&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b2d6d7105f8&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b2d6d690198&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b2d6d66d1d0&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b2d6d63fe10&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b2d6d7aa780&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b2d6d7aaa90&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b2d6d7aafd0&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b2d6d7aae10&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -334,7 +338,7 @@ applicable.</p>
 <span id="id25"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b6335ea5588&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b2d6d845be0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -370,16 +374,24 @@ applicable.</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
+<div class="section" id="rever-force">
+<span id="id30"></span><h3>$REVER_FORCE<a class="headerlink" href="#rever-force" title="Permalink to this headline">¶</a></h3>
+<p>Path to directory used for storing rever temporary files.</p>
+<p><strong>configurable:</strong> True</p>
+<p><strong>default:</strong> False</p>
+<p><strong>store_as_str:</strong> False</p>
+<hr class="docutils" />
+</div>
 <div class="section" id="rever-vcs">
-<span id="id30"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
-<p>Name of version control system to use, such as ‘git’ or ‘hg’</p>
+<span id="id31"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
+<p>Whethere or not to force potentially unsafe activities in rever.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘git’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="running-activities">
-<span id="id31"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
+<span id="id32"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
 <p>List of activity names that rever is actually executing.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> []</p>
@@ -387,7 +399,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="version">
-<span id="id32"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<span id="id33"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <p>Version string of new version that is being released.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘x.y.z’</p>
@@ -395,7 +407,7 @@ applicable.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="website-url">
-<span id="id33"></span><h3>$WEBSITE_URL<a class="headerlink" href="#website-url" title="Permalink to this headline">¶</a></h3>
+<span id="id34"></span><h3>$WEBSITE_URL<a class="headerlink" href="#website-url" title="Permalink to this headline">¶</a></h3>
 <p>Project URL, usually for docs.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘’</p>
@@ -446,6 +458,7 @@ applicable.</p>
 <li><a class="reference internal" href="#python">$PYTHON</a></li>
 <li><a class="reference internal" href="#rever-config-dir">$REVER_CONFIG_DIR</a></li>
 <li><a class="reference internal" href="#rever-dir">$REVER_DIR</a></li>
+<li><a class="reference internal" href="#rever-force">$REVER_FORCE</a></li>
 <li><a class="reference internal" href="#rever-vcs">$REVER_VCS</a></li>
 <li><a class="reference internal" href="#running-activities">$RUNNING_ACTIVITIES</a></li>
 <li><a class="reference internal" href="#version">$VERSION</a></li>

@@ -169,12 +169,17 @@ v$VERSION
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">ignore:</th><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory to ignore.
-The default is [‘TEMPLATE’].</p>
+The default is to ignore the template file.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">latest:</th><td class="field-body"><p class="first last">str, file to write just the latest part of the changelog to.
+<tr class="field-even field"><th class="field-name">latest:</th><td class="field-body"><p class="first">str, file to write just the latest part of the changelog to.
 This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated in the
 current environment.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
+new directory</p>
 </td>
 </tr>
 </tbody>
