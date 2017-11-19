@@ -160,6 +160,16 @@ Otherwise, the pattern itself must contain all leading whitespace.</p>
 </table>
 </dd></dl>
 
+<dl class="function">
+<dt id="rever.tools.user_group">
+<code class="descclassname">rever.tools.</code><code class="descname">user_group</code><span class="sig-paren">(</span><em>filename</em>, <em>return_ids=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.user_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the user and group name for a file, and optionally ids too.
+returns (user_name, group_name) if return_ids is False. If True, returns
+(user_name, group_name, user_id, group_id).  On windows, the
+user id and group id will be None and the group name will be the same
+as the user name.</p>
+</dd></dl>
+
 </div>
 
 
