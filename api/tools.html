@@ -125,8 +125,10 @@ information about how to format your name for bibtex</p>
 
 <dl class="function">
 <dt id="rever.tools.replace_in_file">
-<code class="descclassname">rever.tools.</code><code class="descname">replace_in_file</code><span class="sig-paren">(</span><em>pattern</em>, <em>new</em>, <em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.replace_in_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replaces a given pattern in a file</p>
+<code class="descclassname">rever.tools.</code><code class="descname">replace_in_file</code><span class="sig-paren">(</span><em>pattern</em>, <em>new</em>, <em>fname</em>, <em>leading_whitespace=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.replace_in_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces a given pattern in a file. If leading whitespace is True,
+whitespace at the begining of a line will be captured and preserved.
+Otherwise, the pattern itself must contain all leading whitespace.</p>
 </dd></dl>
 
 <dl class="function">
