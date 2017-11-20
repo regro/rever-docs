@@ -8,12 +8,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>CHANGELOG Management Activity (rever.activities.changelog) &#8212; rever 0.2.3 documentation</title>
-    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
+        URL_ROOT:    '../../',
         VERSION:     '0.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -21,20 +21,20 @@
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../_static/cloud.base.js"></script>
-    <script type="text/javascript" src="../_static/cloud.js"></script>
-    <link rel="shortcut icon" href="../_static/longship.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tag Activity (rever.activities.tag)" href="tag_activity.html" />
-    <link rel="prev" title="Version Bump Activity (rever.activities.version_bump)" href="version_bump.html" />
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Command Activity (rever.activities.command)" href="command.html" />
+    <link rel="prev" title="BibTex Activity (rever.activities.bibtex)" href="bibtex.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/changelog.html"/>
+    <link rel="canonical" href="http://xon.sh/api/activities/changelog.html"/>
 
   </head>
   <body>
@@ -44,20 +44,21 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
+          <a href="command.html" title="Command Activity (rever.activities.command)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="version_bump.html" title="Version Bump Activity (rever.activities.version_bump)"
+          <a href="bibtex.html" title="BibTex Activity (rever.activities.bibtex)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li> 
       </ul>
     </div>
     </div>
@@ -75,22 +76,24 @@
 <dt id="rever.activities.changelog.Changelog">
 <em class="property">class </em><code class="descclassname">rever.activities.changelog.</code><code class="descname">Changelog</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manages keeping a changelog up-to-date.</p>
-<p>This activity takes a number of different input parameters as
-configuration.</p>
+<p>This activity may be configured with the following envionment variables:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Filename:</th><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_FILENAME:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Pattern:</th><td class="field-body"><p class="first">str, Python regex that is used to find the location in the file
-where new changelog entries should be placed. The default is
-‘.. current developments’.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_PATTERN:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, Python regex that is used to find the location
+in the file where new changelog entries should be placed. The default is
+<code class="docutils literal"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Header:</th><td class="field-body"><p class="first">str or callable that accepts a single version argument, this
-is the replacement that goes above the new merge entries.
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_HEADER:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or callable that accepts a single version argument,
+this is the replacement that goes above the new merge entries.
 This should contain a string that matches the pattern arg
 so that the next release may be inserted automatically.
 The default value is:</p>
@@ -103,21 +106,25 @@ v$VERSION
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">News:</th><td class="field-body"><p class="first">str, path to directory containing news files. The default is ‘news’.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_NEWS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to directory containing news files.
+The default is <code class="docutils literal"><span class="pre">'news'</span></code>.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Ignore:</th><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory to ignore.
-The default is to ignore the template file.</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_IGNORE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory
+to ignore. The default is to ignore the template file.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Latest:</th><td class="field-body"><p class="first">str, file to write just the latest part of the changelog to.
-This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated in the
-current environment.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest part of the
+changelog to. This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
+in the current environment.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
-new directory</p>
+news directory. The default is <code class="docutils literal"><span class="pre">'TEMPLATE'</span></code>.</p>
 </td>
 </tr>
 </tbody>
@@ -202,29 +209,29 @@ varaibles that the activity looks for when it is executed.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-        <p class="logo"><a href="../index.html" title="index">
-          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
         </a></p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="version_bump.html"
-                          title="Previous page">&larr; Version Bump Activity (<code class="docutils literal"><span class="pre">rever.activities.version_bump</span></code>)</a></p>
+    <p class="topless"><a href="bibtex.html"
+                          title="Previous page">&larr; BibTex Activity (<code class="docutils literal"><span class="pre">rever.activities.bibtex</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="tag_activity.html"
-                          title="Next page">&rarr; Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)</a></p>
+    <p class="topless"><a href="command.html"
+                          title="Next page">&rarr; Command Activity (<code class="docutils literal"><span class="pre">rever.activities.command</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/api/changelog.rst.txt"
+      <li><a href="../../_sources/api/activities/changelog.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="../../search.html" method="get">
       <div><input type="text" name="q" /></div>
       <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
@@ -259,20 +266,21 @@ varaibles that the activity looks for when it is executed.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
+          <a href="command.html" title="Command Activity (rever.activities.command)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="version_bump.html" title="Version Bump Activity (rever.activities.version_bump)"
+          <a href="bibtex.html" title="BibTex Activity (rever.activities.bibtex)"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li> 
       </ul>
     </div>
     </div>

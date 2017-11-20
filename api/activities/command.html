@@ -8,12 +8,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Command Activity (rever.activities.command) &#8212; rever 0.2.3 documentation</title>
-    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
+        URL_ROOT:    '../../',
         VERSION:     '0.2.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -21,20 +21,20 @@
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../_static/cloud.base.js"></script>
-    <script type="text/javascript" src="../_static/cloud.js"></script>
-    <link rel="shortcut icon" href="../_static/longship.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Activity Base Class (rever.cctivity)" href="activity.html" />
-    <link rel="prev" title="Tag Activity (rever.activities.tag)" href="tag_activity.html" />
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conda Forge Activity (rever.activities.conda_forge)" href="conda_forge.html" />
+    <link rel="prev" title="CHANGELOG Management Activity (rever.activities.changelog)" href="changelog.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/command.html"/>
+    <link rel="canonical" href="http://xon.sh/api/activities/command.html"/>
 
   </head>
   <body>
@@ -44,20 +44,21 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
+          <a href="conda_forge.html" title="Conda Forge Activity (rever.activities.conda_forge)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li> 
       </ul>
     </div>
     </div>
@@ -78,12 +79,19 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body">The name of the activity. Should be unique.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
-xonsh command.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>The name of the activity. Should be unique.</p>
+</div></blockquote>
+<p><strong>command</strong> : str</p>
+<blockquote>
+<div><p>The command to be run. Should be a valid xonsh command.</p>
+</div></blockquote>
+<p><strong>undo_command</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Command to undo the activity. Should be a valid xonsh command.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -111,12 +119,19 @@ xonsh command.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Name:</th><td class="field-body">The name of the activity. Should be unique.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
-xonsh command.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote>
+<div><p>The name of the activity. Should be unique.</p>
+</div></blockquote>
+<p><strong>command</strong> : str</p>
+<blockquote>
+<div><p>The command to be run. Should be a valid xonsh command.</p>
+</div></blockquote>
+<p><strong>undo_command</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Command to undo the activity. Should be a valid xonsh command.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
@@ -130,29 +145,29 @@ xonsh command.</td>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-        <p class="logo"><a href="../index.html" title="index">
-          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
         </a></p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="tag_activity.html"
-                          title="Previous page">&larr; Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)</a></p>
+    <p class="topless"><a href="changelog.html"
+                          title="Previous page">&larr; CHANGELOG Management Activity (<code class="docutils literal"><span class="pre">rever.activities.changelog</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="activity.html"
-                          title="Next page">&rarr; Activity Base Class (<code class="docutils literal"><span class="pre">rever.cctivity</span></code>)</a></p>
+    <p class="topless"><a href="conda_forge.html"
+                          title="Next page">&rarr; Conda Forge Activity (<code class="docutils literal"><span class="pre">rever.activities.conda_forge</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/api/command.rst.txt"
+      <li><a href="../../_sources/api/activities/command.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="../../search.html" method="get">
       <div><input type="text" name="q" /></div>
       <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
@@ -187,20 +202,21 @@ xonsh command.</td>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
+          <a href="conda_forge.html" title="Conda Forge Activity (rever.activities.conda_forge)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tag_activity.html" title="Tag Activity (rever.activities.tag)"
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li> 
       </ul>
     </div>
     </div>

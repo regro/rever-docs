@@ -31,7 +31,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Environment Variables" href="envvars.html" />
-    <link rel="prev" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Notes for using rever" href="usepatterns.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/activities.html"/>
@@ -53,7 +53,7 @@
           <a href="envvars.html" title="Environment Variables"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tutorial.html" title="Tutorial"
+          <a href="usepatterns.html" title="Notes for using rever"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">rever 0.2.3 documentation</a> &#187;</li>
  
@@ -74,7 +74,7 @@ with rever.</p>
 <table border="1" class="colwidths-auto docutils">
 <tbody valign="top">
 <tr class="row-odd"><td><a class="reference internal" href="#bibtex"><span class="std std-ref">BibTex</span></a></td>
-<td>Writes a BibTex reference for the version of software</td>
+<td>Writes a BibTex reference for the version of software.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></td>
 <td>Manages keeping a changelog up-to-date.</td>
@@ -85,31 +85,28 @@ with rever.</p>
 <tr class="row-even"><td><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></td>
 <td>Updates conda-forge feedstocks.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#dockeractivity"><span class="std std-ref">DockerActivity</span></a></td>
-<td>An activity that executes within a docker container.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
 <td>Activity for pushing documentation up to GitHub pages.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#ghrelease"><span class="std std-ref">GHRelease</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#ghrelease"><span class="std std-ref">GHRelease</span></a></td>
 <td>Performs a github release.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nose"><span class="std std-ref">Nose</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#nose"><span class="std std-ref">Nose</span></a></td>
 <td>Runs nose tests inside of a container.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
 <td>Runs pytest inside of a container.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
 <td>Runs sphinx inside of a container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
 <td>Tags the current version and pushes the tag up to a remote repository.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -118,44 +115,84 @@ with rever.</p>
 <h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="bibtex">
 <span id="id1"></span><h3>BibTex<a class="headerlink" href="#bibtex" title="Permalink to this headline">¶</a></h3>
-<p>Access the BibTex activity via:</p>
+<p>The BibTex activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.bibtex</span> <span class="kn">import</span> <span class="n">BibTex</span>
 </pre></div>
 </div>
-<p>Writes a BibTex reference for the version of software</p>
-<dl class="docutils">
-<dt>Minimal <code class="docutils literal"><span class="pre">rever.xsh</span></code>::</dt>
-<dd>‘’’
-$BIBTEX_PROJECT_NAME = &lt;my_project&gt;  # The name of your project
-$BIBTEX_AUTHORS = [‘Name1’, ‘Name2’]  # The name of the authors
-$BIBTEX_URL = &lt;URL to Project&gt;  # A URL to the code
-‘’‘</dd>
-</dl>
-<hr class="docutils" />
-</div>
-<div class="section" id="changelog">
-<span id="id2"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
-<p>Access the Changelog activity via:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
-</pre></div>
-</div>
-<p>Manages keeping a changelog up-to-date.</p>
-<p>This activity takes a number of different input parameters as
-configuration.</p>
+<p>Writes a BibTex reference for the version of software.</p>
+<p>Environment variables that directly affect the behaviour of this
+activity are:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">filename:</th><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_BIBFILE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, The filename to create. Defaults to
+<code class="docutils literal"><span class="pre">'bibtex.bib'</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$BIBTEX_PROJECT_NAME:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, The name of the project. This is expanded
+in the current envrionment, default <code class="docutils literal"><span class="pre">$PROJECT</span></code>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_AUTHORS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, The name of the authors to credit
+in the citation. Default has no authors.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$BIBTEX_URL:</th><td class="field-body">str, URL to the project. This is expanded in the current
+environment, default <code class="docutils literal"><span class="pre">'$WEBSITE_URL'</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Other environment variables that affect the behaviour of the bibtex
+activity are:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$PROJECT:</th><td class="field-body">Used as the default project name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$WEBSITE_URL:</th><td class="field-body">Used as the default URL.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$VERSION:</th><td class="field-body">Used in the bibtex entry as part of the identifier.</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bibtex&#39;</span><span class="p">]</span>
+
+<span class="nv">$BIBTEX_BIBFILE</span> <span class="o">=</span> <span class="s1">&#39;bibtex.bib&#39;</span>
+<span class="nv">$BIBTEX_PROJECT_NAME</span> <span class="o">=</span> <span class="s1">&#39;$PROJECT&#39;</span>
+<span class="nv">$BIBTEX_AUTHORS</span> <span class="o">=</span> <span class="p">()</span>
+<span class="nv">$BIBTEX_URL</span> <span class="o">=</span> <span class="s1">&#39;$WEBSITE_URL&#39;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="changelog">
+<span id="id2"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
+<p>The Changelog activity class is available via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
+</pre></div>
+</div>
+<p>Manages keeping a changelog up-to-date.</p>
+<p>This activity may be configured with the following envionment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_FILENAME:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">pattern:</th><td class="field-body"><p class="first">str, Python regex that is used to find the location in the file
-where new changelog entries should be placed. The default is
-‘.. current developments’.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_PATTERN:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, Python regex that is used to find the location
+in the file where new changelog entries should be placed. The default is
+<code class="docutils literal"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">header:</th><td class="field-body"><p class="first">str or callable that accepts a single version argument, this
-is the replacement that goes above the new merge entries.
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_HEADER:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or callable that accepts a single version argument,
+this is the replacement that goes above the new merge entries.
 This should contain a string that matches the pattern arg
 so that the next release may be inserted automatically.
 The default value is:</p>
@@ -168,30 +205,46 @@ v$VERSION
 </div>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">news:</th><td class="field-body"><p class="first">str, path to directory containing news files. The default is ‘news’.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_NEWS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to directory containing news files.
+The default is <code class="docutils literal"><span class="pre">'news'</span></code>.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">ignore:</th><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory to ignore.
-The default is to ignore the template file.</p>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_IGNORE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory
+to ignore. The default is to ignore the template file.</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">latest:</th><td class="field-body"><p class="first">str, file to write just the latest part of the changelog to.
-This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated in the
-current environment.</p>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest part of the
+changelog to. This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
+in the current environment.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
-new directory</p>
+news directory. The default is <code class="docutils literal"><span class="pre">'TEMPLATE'</span></code>.</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;changelog&#39;</span><span class="p">]</span>
+
+<span class="nv">$CHANGELOG_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;CHANGELOG&#39;</span>
+<span class="nv">$CHANGELOG_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;.. current developments&#39;</span>
+<span class="nv">$CHANGELOG_HEADER</span> <span class="o">=</span> <span class="s1">&#39;.. current developments</span><span class="se">\n\n</span><span class="s1">v$VERSION</span><span class="se">\n</span><span class="s1">====================</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+<span class="nv">$CHANGELOG_NEWS</span> <span class="o">=</span> <span class="s1">&#39;news&#39;</span>
+<span class="nv">$CHANGELOG_IGNORE</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$CHANGELOG_LATEST</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/LATEST&#39;</span>
+<span class="nv">$CHANGELOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;TEMPLATE&#39;</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="command">
 <span id="id3"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
-<p>Access the Command activity via:</p>
+<p>The Command activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
 </pre></div>
 </div>
@@ -200,26 +253,13 @@ new directory</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The recommended way to create a command is with the
-<a class="reference internal" href="api/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
+<a class="reference internal" href="api/activities/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">The name of the activity. Should be unique.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">command:</th><td class="field-body">The command to be run. Should be a valid xonsh command.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">undo_command:</th><td class="field-body">(optional) Command to undo the activity. Should be a valid
-xonsh command.</td>
-</tr>
-</tbody>
-</table>
 <hr class="docutils" />
 </div>
 <div class="section" id="condaforge">
 <span id="id4"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
-<p>Access the CondaForge activity via:</p>
+<p>The CondaForge activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
 </pre></div>
 </div>
@@ -284,63 +324,57 @@ feedstock using conda-smithy, default True.</p>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">$GITHUB_CREDFILE</span></code>: the credential file to use.</li>
-<li><code class="docutils literal"><span class="pre">$GITHUB_ORG</span></code>: the github organization that the project belongs to.</li>
-<li><code class="docutils literal"><span class="pre">$GITHUB_REPO</span></code>: the github repository of the project.</li>
-<li><code class="docutils literal"><span class="pre">$PROJECT</span></code>: the name of the project being released.</li>
-<li><code class="docutils literal"><span class="pre">$REVER_CONFIG_DIR</span></code>: the user’s config directory for rever, which
-is where the GitHub credential files are stored by default.</li>
-</ul>
-<hr class="docutils" />
-</div>
-<div class="section" id="dockeractivity">
-<span id="id5"></span><h3>DockerActivity<a class="headerlink" href="#dockeractivity" title="Permalink to this headline">¶</a></h3>
-<p>Access the DockerActivity activity via:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">DockerActivity</span>
-</pre></div>
-</div>
-<p>An activity that executes within a docker container.</p>
-<p>A Docker activity, by default will respect the following environment
-variables, if they are set:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_IMAGE:</th><td class="field-body">str, Name of the image to run, defaults to
-$DOCKER_INSTALL_IMAGE. Environment variables will be expanded when
-the activity is run.</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">$GITHUB_CREDFILE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">the credential file to use. This should NOT be
+set in the rever.xsh file</td>
 </tr>
-<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_LANG:</th><td class="field-body">str, Language to execute the body in, default xonsh.
-This may also be a full path to an executable.</td>
+<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">the github organization that the project belongs to.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_ARGS:</th><td class="field-body">sequence of str, Extra arguments to pass in after
-the executable but before the main body. Defaults to the standard
-compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</td>
+<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_ENV:</th><td class="field-body">bool or dict, Environment to use. This has the same meaning as in
-<code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
-more details, default True.</td>
+<tr class="field-even field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_MOUNT:</th><td class="field-body">list of dict, Locations to mount in the running container.
-This has the same meaning as in <code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>.
-Please see that function for more details, default does not mount anything.</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</td>
 </tr>
 </tbody>
 </table>
-<p>Additionally, DockerActivities are macro context managers. This allows you
-to set the code block by entering the context:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>with! DockerActivity(name=&#39;myactivity&#39;):
-    echo &quot;I will be run in the docker container!&quot;
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
+
+<span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="s1">&#39;ssh&#39;</span>
+<span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz&#39;</span>
+<span class="nv">$CONDA_FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="s1">&#39;sha256&#39;</span>
+<span class="nv">$CONDA_FORGE_PATTERNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  version:</span><span class="se">\\</span><span class="s1">s*[A-Za-z0-9._-]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  version: &quot;$VERSION&quot;&#39;</span><span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et version = &quot;.*&quot; %}&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et version = &quot;$VERSION&quot; %}&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  number:.*&#39;</span><span class="p">,</span> <span class="s1">&#39;  number: 0&#39;</span><span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et $HASH_TYPE = &quot;[0-9A-Fa-f]+&quot; %}&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et $HASH_TYPE = &quot;$HASH&quot; %}&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE:</span><span class="se">\\</span><span class="s1">s*[0-9A-Fa-f]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE: $HASH&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </div>
-<p>Entering the context manager will also automatically register the
-activity in the DAG.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="ghpages">
-<span id="id6"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
-<p>Access the GHPages activity via:</p>
+<span id="id5"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
+<p>The GHPages activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
 </pre></div>
 </div>
@@ -371,11 +405,22 @@ sphinx activity.</td>
 </tr>
 </tbody>
 </table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghpages&#39;</span><span class="p">]</span>
+
+<span class="nv">$GHPAGES_REPO</span> <span class="o">=</span> <span class="s1">&#39;&lt;no default value&gt;&#39;</span>
+<span class="nv">$GHPAGES_BRANCH</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$GHPAGES_COPY</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;$SPHINX_HOST_DIR/html&#39;</span><span class="p">,</span> <span class="s1">&#39;$GHPAGES_REPO_DIR&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;$REVER_DIR/sphinx-build/html&#39;</span><span class="p">,</span> <span class="s1">&#39;$GHPAGES_REPO_DIR&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="ghrelease">
-<span id="id7"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
-<p>Access the GHRelease activity via:</p>
+<span id="id6"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
+<p>The GHRelease activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
 </pre></div>
 </div>
@@ -399,20 +444,39 @@ an empty string is passes in.</td>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">$GITHUB_CREDFILE</span></code>: the credential file to use.</li>
-<li><code class="docutils literal"><span class="pre">$GITHUB_ORG</span></code>: the github organization that the project belongs to.</li>
-<li><code class="docutils literal"><span class="pre">$GITHUB_REPO</span></code>: the github repository of the project.</li>
-<li><code class="docutils literal"><span class="pre">$REVER_CONFIG_DIR</span></code>: the user’s config directory for rever, which
-is where the GitHub credential files are stored by default.</li>
-<li><code class="docutils literal"><span class="pre">$CHANGELOG_LATEST</span></code>: path to the latest release notes file
-created by the changelog activity.</li>
-</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$GITHUB_CREDFILE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">the credential file to use.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">the github organization that the project belongs to.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">path to the latest release notes file
+created by the changelog activity.</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghrelease&#39;</span><span class="p">]</span>
+
+<span class="nv">$GHRELEASE_NAME</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
+<span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="nose">
-<span id="id8"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
-<p>Access the Nose activity via:</p>
+<span id="id7"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
+<p>The Nose activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
 </pre></div>
 </div>
@@ -429,11 +493,18 @@ nose command. By default no additional arguments are sent.</td>
 </tr>
 </tbody>
 </table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nose&#39;</span><span class="p">]</span>
+
+<span class="nv">$NOSE_COMMAND</span> <span class="o">=</span> <span class="s1">&#39;nosetests&#39;</span>
+<span class="nv">$NOSE_ARGS</span> <span class="o">=</span> <span class="p">()</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="pypi">
-<span id="id9"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
-<p>Access the PyPI activity via:</p>
+<span id="id8"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<p>The PyPI activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
 </div>
@@ -456,23 +527,55 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">$PYTHON</span></code>: the path to the Python interpreter.</li>
-</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$PYTHON:</th><td class="field-body">the path to the Python interpreter.</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pypi&#39;</span><span class="p">]</span>
+
+<span class="nv">$PYPI_RC</span> <span class="o">=</span> <span class="s1">&#39;$HOME/.pypirc&#39;</span>
+<span class="nv">$PYPI_BUILD_COMMANDS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sdist&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$PYPI_UPLOAD</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id10"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
-<p>Access the PyTest activity via:</p>
+<span id="id9"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<p>The PyTest activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
 </div>
 <p>Runs pytest inside of a container.</p>
+<p>The environment variable that affects the behaviour of this activity is:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$PYTEST_COMMAND:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the test command to run. The defaults to
+<code class="docutils literal"><span class="pre">'pytest'</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, the <code class="docutils literal"><span class="pre">$DOCKER_*</span></code> environment variables will affect the
+behaviour of the conatiner that is used for testing.</p>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pytest&#39;</span><span class="p">]</span>
+
+<span class="nv">$PYTEST_COMMAND</span> <span class="o">=</span> <span class="s1">&#39;pytest&#39;</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id11"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
-<p>Access the Sphinx activity via:</p>
+<span id="id10"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<p>The Sphinx activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
 </div>
@@ -512,11 +615,22 @@ This defaults to <code class="docutils literal"><span class="pre">['html']</span
 </table>
 <p>As a dockerized activity, the docker environment variables affect the execution
 of the sphinx activity.</p>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx&#39;</span><span class="p">]</span>
+
+<span class="nv">$SPHINX_DOCS_DIR</span> <span class="o">=</span> <span class="s1">&#39;$DOCKER_HOME/$PROJECT/docs&#39;</span>
+<span class="nv">$SPHINX_HOST_DIR</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/sphinx-build&#39;</span>
+<span class="nv">$SPHINX_BUILD_DIR</span> <span class="o">=</span> <span class="s1">&#39;{docs_dir}/_build&#39;</span>
+<span class="nv">$SPHINX_OPTS</span> <span class="o">=</span> <span class="p">()</span>
+<span class="nv">$SPHINX_PAPER</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="nv">$SPHINX_BUILDERS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id12"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
-<p>Access the Tag activity via:</p>
+<span id="id11"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<p>The Tag activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
 </div>
@@ -527,50 +641,79 @@ repository.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">template:</th><td class="field-body">str, the template string to tag the version with,
+<tr class="field-odd field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
 by default this is ‘$VERSION’</td>
 </tr>
-<tr class="field-even field"><th class="field-name">push:</th><td class="field-body">bool, flag for whether or not the current head and tag
+<tr class="field-even field"><th class="field-name">$TAG_PUSH:</th><td class="field-body">bool, flag for whether or not the current head and tag
 sould be pushed, default True.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">remote:</th><td class="field-body">str or None, remote URL to push tags to. The default
-is None, which is only valid whrn push=False.</td>
+<tr class="field-odd field"><th class="field-name">$TAG_REMOTE:</th><td class="field-body">str or None, remote URL to push tags to. The default
+is None, which is only valid when push=False.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">target:</th><td class="field-body">str or None, remote branch target to push tags to. The default
-is None, which uses the current branch.</td>
+<tr class="field-even field"><th class="field-name">$TAG_TARGET:</th><td class="field-body">str or None, remote branch to push to once the tag has been made.
+The default is None, which uses the current branch.</td>
 </tr>
 </tbody>
 </table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
+
+<span class="nv">$TAG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
+<span class="nv">$TAG_PUSH</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id13"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
-<p>Access the VersionBump activity via:</p>
+<span id="id12"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<p>The VersionBump activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
 </div>
 <p>Changes the version to the value of $VERSION.</p>
-<p>This activity requires the ‘patterns’ argumenent be supplied.
+<p>This activity is parameterized by the following environment
+variable:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$VERSION_BUMP_PATTERNS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of 3-tuples of str,
+This activity is only usefule if replacement patterns are supplied to it.
 This argument is an iterable of 3-tuples consisting of:</p>
 <ul class="simple">
 <li>filename, str - file to update the version in</li>
 <li>pattern, str - A Python regular expression that specifies
-how to find matching lines for the replacement string</li>
+how to find matching lines for the replacement string.
+Leading whitespace will be captured and replaced. The pattern
+here can start at the first non-whitespace character.</li>
 <li>new, str or function returning a string - the replacement
 template as a string or a simple callable that accepts the
 version. If it is a string, it is expanded with environment
 variables.</li>
 </ul>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c1"># replace __version__ in init file</span>
-    <span class="p">(</span><span class="s1">&#39;src/__init__.py&#39;</span><span class="p">,</span> <span class="s1">&#39;__version__\s*=.*&#39;</span><span class="p">,</span> <span class="s2">&quot;__version__ = &#39;$VERSION&#39;&quot;</span><span class="p">),</span>
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
+    # replace __version__ in init file
+    (&#39;src/__init__.py&#39;, &#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
-    <span class="c1"># replace version in appveyor</span>
-    <span class="p">(</span><span class="s1">&#39;.appveyor.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;version:\s*&#39;</span><span class="p">,</span>
-      <span class="p">(</span><span class="k">lambda</span> <span class="n">ver</span><span class="p">:</span> <span class="s1">&#39;version: </span><span class="si">{0}</span><span class="s1">.{{build}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ver</span><span class="p">))),</span>
-  <span class="o">...</span>
-<span class="p">]</span>
+    # replace version in appveyor
+    (&#39;.appveyor.yml&#39;, &#39;version:\s*&#39;,
+      (lambda ver: &#39;version: {0}.{{build}}&#39;.format(ver))),
+  ...
+]
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;version_bump&#39;</span><span class="p">]</span>
+
+<span class="nv">$VERSION_BUMP_PATTERNS</span> <span class="o">=</span> <span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -594,7 +737,6 @@ variables.</li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
-<li><a class="reference internal" href="#dockeractivity">DockerActivity</a></li>
 <li><a class="reference internal" href="#ghpages">GHPages</a></li>
 <li><a class="reference internal" href="#ghrelease">GHRelease</a></li>
 <li><a class="reference internal" href="#nose">Nose</a></li>
@@ -612,8 +754,8 @@ variables.</li>
   </div>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="tutorial.html"
-                          title="Previous page">&larr; Tutorial</a></p>
+    <p class="topless"><a href="usepatterns.html"
+                          title="Previous page">&larr; Notes for using rever</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
@@ -673,7 +815,7 @@ variables.</li>
           <a href="envvars.html" title="Environment Variables"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tutorial.html" title="Tutorial"
+          <a href="usepatterns.html" title="Notes for using rever"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">rever 0.2.3 documentation</a> &#187;</li>
  

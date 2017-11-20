@@ -30,6 +30,8 @@
     <link rel="shortcut icon" href="_static/longship.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Activities" href="activities.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/usepatterns.html"/>
@@ -47,6 +49,12 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="activities.html" title="Activities"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">rever 0.2.3 documentation</a> &#187;</li>
  
       </ul>
@@ -61,18 +69,25 @@
             
   <div class="section" id="notes-for-using-rever">
 <h1>Notes for using rever<a class="headerlink" href="#notes-for-using-rever" title="Permalink to this headline">¶</a></h1>
-<p>Rever is a very powerful versioning and release tool. Like all good tools there are use patterns to maximizing your productivity.</p>
-<p>1. Always commit all changes before versioning/tagging the code, since rever will commit any changes. While rever can undo the changes it makes all non version changes will be lost upon a rever undo!
-1. You can undo a rever command by <code class="docutils literal"><span class="pre">rever</span> <span class="pre">$version</span> <span class="pre">-u</span> <span class="pre">command1,command2</span></code>
-1. You will need to insert a <code class="docutils literal"><span class="pre">__version__=='a.b.c'</span></code> in the top most <code class="docutils literal"><span class="pre">__init__.py</span></code> file.
-1. You will need to change the docs <code class="docutils literal"><span class="pre">conf.py</span></code> to use the version by importing it from the top most <code class="docutils literal"><span class="pre">__init__.py</span></code> file.
-.. code-block:: python</p>
-<blockquote>
-<div><p># The short X.Y version.</p>
-<p>version = REVER_VERSION.rsplit(‘.’,1)[0]</p>
-<p># The full version, including alpha/beta/rc tags.</p>
-<p>release = REVER_VERSION</p>
-</div></blockquote>
+<p>Rever is a very powerful versioning and release tool. Like all good tools
+there are use patterns to maximizing your productivity.</p>
+<ol class="arabic simple">
+<li>Always commit all changes before versioning/tagging the code, since rever
+will commit any changes. While rever can undo the changes it makes all
+non-version changes will be lost upon a rever undo!</li>
+<li>You can undo a rever command by <code class="docutils literal"><span class="pre">rever</span> <span class="pre">$version</span> <span class="pre">-u</span> <span class="pre">command1,command2</span></code></li>
+<li>You will need to insert a <code class="docutils literal"><span class="pre">__version__=='a.b.c'</span></code> in the top most
+<code class="docutils literal"><span class="pre">__init__.py</span></code> file.</li>
+<li>You will need to change the docs <code class="docutils literal"><span class="pre">conf.py</span></code> to use the version by
+importing it from the top most <code class="docutils literal"><span class="pre">__init__.py</span></code> file.</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># The short X.Y version.</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">REVER_VERSION</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># The full version, including alpha/beta/rc tags.</span>
+<span class="n">release</span> <span class="o">=</span> <span class="n">REVER_VERSION</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -84,6 +99,16 @@
         <p class="logo"><a href="index.html" title="index">
           <img class="logo" src="_static/longship-256.png" alt="Logo"/>
         </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="tutorial.html"
+                          title="Previous page">&larr; Tutorial</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="activities.html"
+                          title="Next page">&rarr; Activities</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -133,6 +158,12 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="activities.html" title="Activities"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> &nbsp; &nbsp;</li>
     <li><a href="index.html">rever 0.2.3 documentation</a> &#187;</li>
  
       </ul>

@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nose Tests Activity (rever.activities.nose) &#8212; rever 0.2.3 documentation</title>
+    <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Package Index Activity (rever.activities.pypi)" href="pypi.html" />
+    <link rel="prev" title="GitHub Release Activity (rever.activities.ghrelease)" href="ghrelease.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/api/activities/nose.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="pypi.html" title="Python Package Index Activity (rever.activities.pypi)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ghrelease.html" title="GitHub Release Activity (rever.activities.ghrelease)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rever.activities.nose">
+<span id="nose-tests-activity-rever-activities-nose"></span><span id="rever-activities-nose"></span><h1>Nose Tests Activity (<code class="docutils literal"><span class="pre">rever.activities.nose</span></code>)<a class="headerlink" href="#module-rever.activities.nose" title="Permalink to this headline">¶</a></h1>
+<p>Activity for running nosetests inside of a container.</p>
+<dl class="class">
+<dt id="rever.activities.nose.Nose">
+<em class="property">class </em><code class="descclassname">rever.activities.nose.</code><code class="descname">Nose</code><a class="headerlink" href="#rever.activities.nose.Nose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs nose tests inside of a container.</p>
+<p>Environment variables that modify this activity’s behaviour are:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$NOSE_COMMAND:</th><td class="field-body">str, nose command to execute, defaults to ‘nosetests’.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$NOSE_ARGS:</th><td class="field-body">str or list of str, additional arguments to send to the
+nose command. By default no additional arguments are sent.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rever.activities.nose.Nose.all_kwargs">
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all kwargs for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.clear_kwargs_from_env">
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes kwarg from the environment, if they exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.kwargs_from_env">
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains possible func() kwarg from the environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.setup">
+<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activities setup() initialization function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.setupper">
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setupper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the setup function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverts to the last instance of this activity. This default implementation
+uses the revision in the log file from the last time that the activity was
+started. This may be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.nose.Nose.undoer">
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undoer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the undo function for this activity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rever.activities.nose.Nose.code">
+<code class="descname">code</code><a class="headerlink" href="#rever.activities.nose.Nose.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get’s the code to execute in the docker container.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rever.activities.nose.Nose.env_names">
+<code class="descname">env_names</code><a class="headerlink" href="#rever.activities.nose.Nose.env_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping parameter names to the names of environment
+varaibles that the activity looks for when it is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="ghrelease.html"
+                          title="Previous page">&larr; GitHub Release Activity (<code class="docutils literal"><span class="pre">rever.activities.ghrelease</span></code>)</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="pypi.html"
+                          title="Next page">&rarr; Python Package Index Activity (<code class="docutils literal"><span class="pre">rever.activities.pypi</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/activities/nose.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="pypi.html" title="Python Package Index Activity (rever.activities.pypi)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ghrelease.html" title="GitHub Release Activity (rever.activities.ghrelease)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

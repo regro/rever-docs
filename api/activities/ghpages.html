@@ -1,0 +1,262 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GitHub Pages Activity (rever.activities.ghpages) &#8212; rever 0.2.3 documentation</title>
+    <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GitHub Release Activity (rever.activities.ghrelease)" href="ghrelease.html" />
+    <link rel="prev" title="Conda Forge Activity (rever.activities.conda_forge)" href="conda_forge.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/api/activities/ghpages.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ghrelease.html" title="GitHub Release Activity (rever.activities.ghrelease)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="conda_forge.html" title="Conda Forge Activity (rever.activities.conda_forge)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rever.activities.ghpages">
+<span id="github-pages-activity-rever-activities-ghpages"></span><span id="rever-activities-ghpages"></span><h1>GitHub Pages Activity (<code class="docutils literal"><span class="pre">rever.activities.ghpages</span></code>)<a class="headerlink" href="#module-rever.activities.ghpages" title="Permalink to this headline">¶</a></h1>
+<p>Activity for pushing documentation to GitHub pages.</p>
+<dl class="class">
+<dt id="rever.activities.ghpages.GHPages">
+<em class="property">class </em><code class="descclassname">rever.activities.ghpages.</code><code class="descname">GHPages</code><a class="headerlink" href="#rever.activities.ghpages.GHPages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activity for pushing documentation up to GitHub pages.</p>
+<p>This activity uses the following environment variable:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$GHPAGES_REPO:</th><td class="field-body">str, the URL of the GitHUb pages repository.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$GHPAGES_BRANCH:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the GitHub pages branch name, i.e. either
+<code class="docutils literal"><span class="pre">gh-pages</span></code> or <code class="docutils literal"><span class="pre">master</span></code>.  If not provided, the activity will
+attempt to deduce it from the repo name.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$GHPAGES_COPY:</th><td class="field-body">list or str 2-tuples, This is a list of (src, dst)
+pairs of files to copy from the project into the gh-pages repo.
+These pairs will have environment variables expanded and it is
+evaluated in the current directory (where rever was run from).
+src files or directories that don’t exist will be skipped.
+After variable expansion, this list will be deduplicated.
+Additionally, the environment variable <code class="docutils literal"><span class="pre">$GHPAGES_REPO_DIR</span></code>
+is added to allow easy access to the local clone of the
+repo, which is at <code class="docutils literal"><span class="pre">$REVER_DIR/ghpages-repo</span></code>. By default,
+this will look in the sphinx html directory created by the
+sphinx activity.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.all_kwargs">
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all kwargs for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.clear_kwargs_from_env">
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes kwarg from the environment, if they exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.kwargs_from_env">
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains possible func() kwarg from the environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.setup">
+<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activities setup() initialization function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.setupper">
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.setupper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the setup function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverts to the last instance of this activity. This default implementation
+uses the revision in the log file from the last time that the activity was
+started. This may be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.ghpages.GHPages.undoer">
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.GHPages.undoer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the undo function for this activity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rever.activities.ghpages.GHPages.env_names">
+<code class="descname">env_names</code><a class="headerlink" href="#rever.activities.ghpages.GHPages.env_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping parameter names to the names of environment
+varaibles that the activity looks for when it is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.activities.ghpages.branch_name">
+<code class="descclassname">rever.activities.ghpages.</code><code class="descname">branch_name</code><span class="sig-paren">(</span><em>repo</em>, <em>branch=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.branch_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the gh-pages branch name for a repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.activities.ghpages.expand_copy">
+<code class="descclassname">rever.activities.ghpages.</code><code class="descname">expand_copy</code><span class="sig-paren">(</span><em>copy</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghpages.expand_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expands a list or (src, dst) tuples into a deduplicated list where
+the src is guaranteed to exist, and src and dst are returned as absolute
+paths.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="conda_forge.html"
+                          title="Previous page">&larr; Conda Forge Activity (<code class="docutils literal"><span class="pre">rever.activities.conda_forge</span></code>)</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="ghrelease.html"
+                          title="Next page">&rarr; GitHub Release Activity (<code class="docutils literal"><span class="pre">rever.activities.ghrelease</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/activities/ghpages.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ghrelease.html" title="GitHub Release Activity (rever.activities.ghrelease)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="conda_forge.html" title="Conda Forge Activity (rever.activities.conda_forge)"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">rever 0.2.3 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

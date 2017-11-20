@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Conda Tools (rever.conda) &#8212; rever 0.2.3 documentation</title>
+    <title>GitHub Interface (rever.github) &#8212; rever 0.2.3 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
@@ -30,11 +30,11 @@
     <link rel="shortcut icon" href="../_static/longship.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Docker Interface (rever.docker)" href="docker.html" />
-    <link rel="prev" title="Misc. Tools (rever.tools)" href="tools.html" />
+    <link rel="next" title="Developer’s Guide" href="../devguide.html" />
+    <link rel="prev" title="Docker Interface (rever.docker)" href="docker.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/conda.html"/>
+    <link rel="canonical" href="http://xon.sh/api/github.html"/>
 
   </head>
   <body>
@@ -50,10 +50,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="docker.html" title="Docker Interface (rever.docker)"
+          <a href="../devguide.html" title="Developer’s Guide"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tools.html" title="Misc. Tools (rever.tools)"
+          <a href="docker.html" title="Docker Interface (rever.docker)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
@@ -68,17 +68,44 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-rever.conda">
-<span id="conda-tools-rever-conda"></span><span id="rever-conda"></span><h1>Conda Tools (<code class="docutils literal"><span class="pre">rever.conda</span></code>)<a class="headerlink" href="#module-rever.conda" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-rever.github">
+<span id="github-interface-rever-github"></span><span id="rever-github"></span><h1>GitHub Interface (<code class="docutils literal"><span class="pre">rever.github</span></code>)<a class="headerlink" href="#module-rever.github" title="Permalink to this headline">¶</a></h1>
+<p>This module contains tools for interacting with GitHub.</p>
 <dl class="function">
-<dt id="rever.conda.run_in_conda_env">
-<code class="descclassname">rever.conda.</code><code class="descname">run_in_conda_env</code><span class="sig-paren">(</span><em>packages</em>, <em>envname='rever-env'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.conda.run_in_conda_env" title="Permalink to this definition">¶</a></dt>
-<dd><p>Context manager to run in a conda environment</p>
-<p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">run_in_conda_env</span><span class="p">([</span><span class="s1">&#39;python=3&#39;</span><span class="p">]):</span>
-<span class="gp">... </span>    <span class="o">./</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
-</pre></div>
-</div>
+<dt id="rever.github.credfilename">
+<code class="descclassname">rever.github.</code><code class="descname">credfilename</code><span class="sig-paren">(</span><em>credfile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.credfilename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path to the creditial file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.github.ensure_github">
+<code class="descclassname">rever.github.</code><code class="descname">ensure_github</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.ensure_github" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure we have github3 befire running a function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.github.login">
+<code class="descclassname">rever.github.</code><code class="descname">login</code><span class="sig-paren">(</span><em>credfile=None</em>, <em>return_username=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a github object that is logged in.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.github.read_credfile">
+<code class="descclassname">rever.github.</code><code class="descname">read_credfile</code><span class="sig-paren">(</span><em>credfile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.read_credfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads in a credentials file and returns the username, token, and id.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.github.two_factor">
+<code class="descclassname">rever.github.</code><code class="descname">two_factor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.two_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>2 Factor Authentication callback function, called by
+<code class="docutils literal"><span class="pre">github3.authorize()</span></code> as needed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.github.write_credfile">
+<code class="descclassname">rever.github.</code><code class="descname">write_credfile</code><span class="sig-paren">(</span><em>credfile=None</em>, <em>username=''</em>, <em>password=''</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.write_credfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquires a github token and writes a credentials file.</p>
 </dd></dl>
 
 </div>
@@ -94,18 +121,18 @@
         </a></p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="tools.html"
-                          title="Previous page">&larr; Misc. Tools (<code class="docutils literal"><span class="pre">rever.tools</span></code>)</a></p>
+    <p class="topless"><a href="docker.html"
+                          title="Previous page">&larr; Docker Interface (<code class="docutils literal"><span class="pre">rever.docker</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="docker.html"
-                          title="Next page">&rarr; Docker Interface (<code class="docutils literal"><span class="pre">rever.docker</span></code>)</a></p>
+    <p class="topless"><a href="../devguide.html"
+                          title="Next page">&rarr; Developer’s Guide</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/api/conda.rst.txt"
+      <li><a href="../_sources/api/github.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -152,10 +179,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="docker.html" title="Docker Interface (rever.docker)"
+          <a href="../devguide.html" title="Developer’s Guide"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="tools.html" title="Misc. Tools (rever.tools)"
+          <a href="docker.html" title="Docker Interface (rever.docker)"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.2.3 documentation</a> &#187;</li>
 
