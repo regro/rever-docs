@@ -99,7 +99,8 @@ or from source.</p>
 <li><p class="first">Setup a <code class="docutils literal"><span class="pre">rever.xsh</span></code> file in the root directory of your source repository.
 Here is a simplified example from <code class="docutils literal"><span class="pre">rever</span></code> itself,</p>
 <blockquote>
-<div><div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span>
+<div><div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$PROJECT</span> <span class="o">=</span> <span class="s1">&#39;rever&#39;</span>
+<span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span>
               <span class="s1">&#39;version_bump&#39;</span><span class="p">,</span>  <span class="c1"># Changes the version number in various source files (setup.py, __init__.py, etc)</span>
               <span class="s1">&#39;changelog&#39;</span><span class="p">,</span>  <span class="c1"># Uses files in the news folder to create a changelog for release</span>
               <span class="s1">&#39;tag&#39;</span><span class="p">,</span>  <span class="c1"># Creates a tag for the new version number</span>
