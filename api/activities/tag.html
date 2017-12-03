@@ -71,12 +71,11 @@
             
   <div class="section" id="module-rever.activities.tag">
 <span id="tag-activity-rever-activities-tag"></span><span id="rever-tag-activity"></span><h1>Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)<a class="headerlink" href="#module-rever.activities.tag" title="Permalink to this headline">¶</a></h1>
-<p>Activity for bumpimg version.</p>
+<p>Activity for locally creating tags.</p>
 <dl class="class">
 <dt id="rever.activities.tag.Tag">
 <em class="property">class </em><code class="descclassname">rever.activities.tag.</code><code class="descname">Tag</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'version_bump'</em>, <em>'changelog'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tags the current version and pushes the tag up to a remote
-repository.</p>
+<dd><p>Locally tags the current version.</p>
 <p>This activity takes the following parameters:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -84,15 +83,6 @@ repository.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
 by default this is ‘$VERSION’</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_PUSH:</th><td class="field-body">bool, flag for whether or not the current head and tag
-sould be pushed, default True.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$TAG_REMOTE:</th><td class="field-body">str or None, remote URL to push tags to. The default
-is None, which is only valid when push=False.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TARGET:</th><td class="field-body">str or None, remote branch to push to once the tag has been made.
-The default is None, which uses the current branch.</td>
 </tr>
 </tbody>
 </table>

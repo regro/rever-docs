@@ -94,19 +94,22 @@ with rever.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#nose"><span class="std std-ref">Nose</span></a></td>
 <td>Runs nose tests inside of a container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#pushtag"><span class="std std-ref">PushTag</span></a></td>
+<td>Pushes the current tag up to a remote repository.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
 <td>Uploads a package to the Python Package Index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
 <td>Runs pytest inside of a container.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
 <td>Runs sphinx inside of a container.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
-<td>Tags the current version and pushes the tag up to a remote repository.</td>
+<tr class="row-even"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
+<td>Locally tags the current version.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
 <td>Changes the version to the value of $VERSION.</td>
 </tr>
 </tbody>
@@ -508,8 +511,44 @@ nose command. By default no additional arguments are sent.</td>
 </div>
 <hr class="docutils" />
 </div>
+<div class="section" id="pushtag">
+<span id="id8"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
+<p>The PushTag activity class is available via:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
+</pre></div>
+</div>
+<p>Pushes the current tag up to a remote repository.</p>
+<p>This activity takes the following parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_REMOTE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$PUSH_TAG_TARGET:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, remote branch to push to once the tag has been made.
+The default is None, which uses the current branch.</td>
+</tr>
+</tbody>
+</table>
+<p>Other environment variables that affect the behavior are:</p>
+<p>:$GITHUB_ORG str or None, GitHub org to push to if no $TAG_REMOTE
+:$GITHUB_REPO = str or None GitHub repo to push to if no $TAG_REMOTE
+:$TAG_TEMPLATE: str, the template string to tag the version with,</p>
+<blockquote>
+<div>by default this is ‘$VERSION’. This is used in undoing remote tags</div></blockquote>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
+
+<span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$PUSH_TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
 <div class="section" id="pypi">
-<span id="id8"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id9"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The PyPI activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -552,7 +591,7 @@ include <code class="docutils literal"><span class="pre">'bdist'</span></code> o
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id9"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>The PyTest activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -580,7 +619,7 @@ behaviour of the conatiner that is used for testing.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id10"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id11"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>The Sphinx activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -635,13 +674,12 @@ of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id11"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id12"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>The Tag activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
 </div>
-<p>Tags the current version and pushes the tag up to a remote
-repository.</p>
+<p>Locally tags the current version.</p>
 <p>This activity takes the following parameters:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -650,30 +688,18 @@ repository.</p>
 <tr class="field-odd field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
 by default this is ‘$VERSION’</td>
 </tr>
-<tr class="field-even field"><th class="field-name">$TAG_PUSH:</th><td class="field-body">bool, flag for whether or not the current head and tag
-sould be pushed, default True.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$TAG_REMOTE:</th><td class="field-body">str or None, remote URL to push tags to. The default
-is None, which is only valid when push=False.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TARGET:</th><td class="field-body">str or None, remote branch to push to once the tag has been made.
-The default is None, which uses the current branch.</td>
-</tr>
 </tbody>
 </table>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
 
 <span class="nv">$TAG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
-<span class="nv">$TAG_PUSH</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nv">$TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id12"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id13"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>The VersionBump activity class is available via:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -746,6 +772,7 @@ variables.</li>
 <li><a class="reference internal" href="#ghpages">GHPages</a></li>
 <li><a class="reference internal" href="#ghrelease">GHRelease</a></li>
 <li><a class="reference internal" href="#nose">Nose</a></li>
+<li><a class="reference internal" href="#pushtag">PushTag</a></li>
 <li><a class="reference internal" href="#pypi">PyPI</a></li>
 <li><a class="reference internal" href="#pytest">PyTest</a></li>
 <li><a class="reference internal" href="#sphinx">Sphinx</a></li>
