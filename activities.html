@@ -317,8 +317,13 @@ a pull request to the upstream conda-forge feestock, default True.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_RERENDER:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">bool, whether the activity should rerender the
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should rerender the
 feedstock using conda-smithy, default True.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">bool, whether the activity should create a new fork of
+the feedstock if it doesn’t exist already, default True.</p>
 </td>
 </tr>
 </tbody>
@@ -368,6 +373,7 @@ is where the GitHub credential files are stored by default.</td>
 <span class="p">)</span>
 <span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$CONDA_FORGE_FORK</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </div>
 <hr class="docutils" />
