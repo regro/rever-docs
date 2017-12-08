@@ -7,34 +7,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Tag Activity (rever.activities.tag) &#8212; rever 0.2.5 documentation</title>
-    <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>Tag Activity (rever.activities.tag) &#8212; rever 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.2.5',
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
         SOURCELINK_SUFFIX: '.txt'
       };
     </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="../../_static/cloud.base.js"></script>
-    <script type="text/javascript" src="../../_static/cloud.js"></script>
-    <link rel="shortcut icon" href="../../_static/longship.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Version Bump Activity (rever.activities.version_bump)" href="version_bump.html" />
-    <link rel="prev" title="Sphinx Documentation Activity (rever.activities.sphinx)" href="sphinx.html" />
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command Activity (rever.activities.command)" href="command.html" />
+    <link rel="prev" title="CHANGELOG Management Activity (rever.activities.changelog)" href="changelog.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/activities/tag.html"/>
+    <link rel="canonical" href="http://xon.sh/api/tag_activity.html"/>
 
   </head>
   <body>
@@ -44,21 +44,20 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
+          <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="version_bump.html" title="Version Bump Activity (rever.activities.version_bump)"
+          <a href="command.html" title="Command Activity (rever.activities.command)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="sphinx.html" title="Sphinx Documentation Activity (rever.activities.sphinx)"
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">rever 0.2.5 documentation</a> &#187;</li>
+    <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
       </ul>
     </div>
     </div>
@@ -71,18 +70,28 @@
             
   <div class="section" id="module-rever.activities.tag">
 <span id="tag-activity-rever-activities-tag"></span><span id="rever-tag-activity"></span><h1>Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)<a class="headerlink" href="#module-rever.activities.tag" title="Permalink to this headline">¶</a></h1>
-<p>Activity for locally creating tags.</p>
+<p>Activity for bumpimg version.</p>
 <dl class="class">
 <dt id="rever.activities.tag.Tag">
-<em class="property">class </em><code class="descclassname">rever.activities.tag.</code><code class="descname">Tag</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'version_bump'</em>, <em>'changelog'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Locally tags the current version.</p>
+<em class="property">class </em><code class="descclassname">rever.activities.tag.</code><code class="descname">Tag</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'changelog'</em>, <em>'version_bump'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tags the current version and pushes the tag up to a remote
+repository.</p>
 <p>This activity takes the following parameters:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
+<tr class="field-odd field"><th class="field-name">Template:</th><td class="field-body">str, the template string to tag the version with,
 by default this is ‘$VERSION’</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Push:</th><td class="field-body">bool, flag for whether or not the current head and tag
+sould be pushed, default True.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Remote:</th><td class="field-body">str or None, remote URL to push tags to. The default
+is None, which is only valid whrn push=False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Target:</th><td class="field-body">str or None, remote branch target to push tags to. The default
+is None, which uses the current branch.</td>
 </tr>
 </tbody>
 </table>
@@ -102,18 +111,6 @@ by default this is ‘$VERSION’</td>
 <dt id="rever.activities.tag.Tag.kwargs_from_env">
 <code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rever.activities.tag.Tag.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rever.activities.tag.Tag.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setupper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
@@ -145,29 +142,29 @@ varaibles that the activity looks for when it is executed.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-        <p class="logo"><a href="../../index.html" title="index">
-          <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
         </a></p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="sphinx.html"
-                          title="Previous page">&larr; Sphinx Documentation Activity (<code class="docutils literal"><span class="pre">rever.activities.sphinx</span></code>)</a></p>
+    <p class="topless"><a href="changelog.html"
+                          title="Previous page">&larr; CHANGELOG Management Activity (<code class="docutils literal"><span class="pre">rever.activities.changelog</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="version_bump.html"
-                          title="Next page">&rarr; Version Bump Activity (<code class="docutils literal"><span class="pre">rever.activities.version_bump</span></code>)</a></p>
+    <p class="topless"><a href="command.html"
+                          title="Next page">&rarr; Command Activity (<code class="docutils literal"><span class="pre">rever.activities.command</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/api/activities/tag.rst.txt"
+      <li><a href="../_sources/api/tag_activity.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <div><input type="text" name="q" /></div>
       <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
@@ -202,21 +199,20 @@ varaibles that the activity looks for when it is executed.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
+          <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="version_bump.html" title="Version Bump Activity (rever.activities.version_bump)"
+          <a href="command.html" title="Command Activity (rever.activities.command)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="sphinx.html" title="Sphinx Documentation Activity (rever.activities.sphinx)"
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">rever 0.2.5 documentation</a> &#187;</li>
+    <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
       </ul>
     </div>
     </div>

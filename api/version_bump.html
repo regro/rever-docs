@@ -1,0 +1,231 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Version Bump Activity (rever.activities.version_bump) &#8212; rever 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="shortcut icon" href="../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CHANGELOG Management Activity (rever.activities.changelog)" href="changelog.html" />
+    <link rel="prev" title="Rever API" href="index.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/api/version_bump.html"/>
+
+  </head>
+  <body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Rever API"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-rever.activities.version_bump">
+<span id="version-bump-activity-rever-activities-version-bump"></span><span id="rever-version-bump"></span><h1>Version Bump Activity (<code class="docutils literal"><span class="pre">rever.activities.version_bump</span></code>)<a class="headerlink" href="#module-rever.activities.version_bump" title="Permalink to this headline">¶</a></h1>
+<p>Activity for bumping version.</p>
+<dl class="class">
+<dt id="rever.activities.version_bump.VersionBump">
+<em class="property">class </em><code class="descclassname">rever.activities.version_bump.</code><code class="descname">VersionBump</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the version to the value of $VERSION.</p>
+<p>This activity requires the ‘patterns’ argumenent be supplied.
+This argument is an iterable of 3-tuples consisting of:</p>
+<ul class="simple">
+<li>filename, str - file to update the version in</li>
+<li>pattern, str - A Python regular expression that specifies
+how to find matching lines for the replacement string</li>
+<li>new, str or function returning a string - the replacement
+template as a string or a simple callable that accepts the
+version. If it is a string, it is expanded with environment
+variables.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># replace __version__ in init file</span>
+    <span class="p">(</span><span class="s1">&#39;src/__init__.py&#39;</span><span class="p">,</span> <span class="s1">&#39;__version__\s*=.*&#39;</span><span class="p">,</span> <span class="s2">&quot;__version__ = &#39;$VERSION&#39;&quot;</span><span class="p">),</span>
+
+    <span class="c1"># replace version in appveyor</span>
+    <span class="p">(</span><span class="s1">&#39;.appveyor.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;version:\s*&#39;</span><span class="p">,</span>
+      <span class="p">(</span><span class="k">lambda</span> <span class="n">ver</span><span class="p">:</span> <span class="s1">&#39;version: </span><span class="si">{0}</span><span class="s1">.{{build}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ver</span><span class="p">))),</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="rever.activities.version_bump.VersionBump.all_kwargs">
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all kwargs for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.version_bump.VersionBump.clear_kwargs_from_env">
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes kwarg from the environment, if they exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.version_bump.VersionBump.kwargs_from_env">
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains possible func() kwarg from the environment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.version_bump.VersionBump.undo">
+<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverts to the last instance of this activity. This default implementation
+uses the revision in the log file from the last time that the activity was
+started. This may be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.version_bump.VersionBump.undoer">
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undoer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the undo function for this activity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rever.activities.version_bump.VersionBump.env_names">
+<code class="descname">env_names</code><a class="headerlink" href="#rever.activities.version_bump.VersionBump.env_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping parameter names to the names of environment
+varaibles that the activity looks for when it is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="index.html"
+                          title="Previous page">&larr; Rever API</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="changelog.html"
+                          title="Next page">&rarr; CHANGELOG Management Activity (<code class="docutils literal"><span class="pre">rever.activities.changelog</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/version_bump.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="changelog.html" title="CHANGELOG Management Activity (rever.activities.changelog)"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Rever API"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">rever 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
