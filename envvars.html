@@ -144,18 +144,18 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f1dcc35b240&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f1dca464f98&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f1dc9b5d630&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f1dca818080&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f1dca7f4fd0&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7f1dca7f4a90&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f1dca7b0ef0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f1dca80fef0&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f1dca80f198&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f1dca7b0048&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7f1dca7b02e8&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f1dca7b0cc0&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2abe314fb7b8&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2abe32200048&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2abe32240908&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2abe32370b70&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2abe32365da0&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2abe32365b38&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2abe3232a390&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2abe3232aa90&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2abe3232a860&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2abe3232a8d0&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2abe3232a668&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2abe3232a940&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -340,7 +340,7 @@ applicable.</p>
 <span id="id25"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f1dcee0bba8&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2abe2db03f28&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -356,7 +356,7 @@ applicable.</p>
 <span id="id27"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/opt/conda/bin/python’</p>
+<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -364,7 +364,7 @@ applicable.</p>
 <span id="id28"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to rever configuration directory</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/root/.config/rever’</p>
+<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -388,7 +388,7 @@ applicable.</p>
 <span id="id31"></span><h3>$REVER_USER<a class="headerlink" href="#rever-user" title="Permalink to this headline">¶</a></h3>
 <p>Name of the user who ran the rever command.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘root’</p>
+<p><strong>default:</strong> ‘travis’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>

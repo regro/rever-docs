@@ -524,7 +524,9 @@ nose command. By default no additional arguments are sent.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_REMOTE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to.</td>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to. If <code class="docutils literal"><span class="pre">$REVER_VCS</span></code> is
+set to <code class="docutils literal"><span class="pre">'git'</span></code> and both <code class="docutils literal"><span class="pre">$GITHUB_ORG</span></code> and <code class="docutils literal"><span class="pre">$GITHUB_REPO</span></code> are also set,
+this variable will default to <code class="docutils literal"><span class="pre">git&#64;github.com:$GITHUB_ORG/$GITHUB_REPO.git</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$PUSH_TAG_TARGET:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, remote branch to push to once the tag has been made.
@@ -533,11 +535,21 @@ The default is None, which uses the current branch.</td>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
-<p>:$GITHUB_ORG str or None, GitHub org to push to if no $TAG_REMOTE
-:$GITHUB_REPO = str or None GitHub repo to push to if no $TAG_REMOTE
-:$TAG_TEMPLATE: str, the template string to tag the version with,</p>
-<blockquote>
-<div>by default this is ‘$VERSION’. This is used in undoing remote tags</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">$REVER_VCS:</th><td class="field-body">str or None, is used to help specify default remote URLs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">str or None, GitHub org to push to if no <code class="docutils literal"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">str or None GitHub repo to push to if no <code class="docutils literal"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
+by default this is ‘$VERSION’. This is used in undoing remote tags</td>
+</tr>
+</tbody>
+</table>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
 
