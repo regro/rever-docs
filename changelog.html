@@ -6,21 +6,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Rever Change Log &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.2.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -35,8 +27,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/changelog.html"/>
 
-  </head>
-  <body>
+  </head><body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -76,9 +67,9 @@ rever will now attempt to find the associated token, delete it, and reissue it.<
 <p><strong>Changed:</strong></p>
 <ul class="simple">
 <li>If fork doesn’t exist for conda-forge activity then create one</li>
-<li><code class="docutils literal"><span class="pre">$PROJECT</span></code> in use docs example</li>
+<li><code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code> in use docs example</li>
 <li>Logger now records version</li>
-<li><code class="docutils literal"><span class="pre">compute_activities_completed</span></code> now checks version numbers as well</li>
+<li><code class="docutils literal notranslate"><span class="pre">compute_activities_completed</span></code> now checks version numbers as well</li>
 <li>Tagging and pushing the tags up to a remote are now separate activities</li>
 </ul>
 </div>
@@ -86,13 +77,13 @@ rever will now attempt to find the associated token, delete it, and reissue it.<
 <h2>v0.2.4<a class="headerlink" href="#v0-2-4" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
 <ul class="simple">
-<li>Use Rever’s own whitespace parsing in Rever’s <code class="docutils literal"><span class="pre">rever.xsh</span></code> file</li>
+<li>Use Rever’s own whitespace parsing in Rever’s <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file</li>
 <li>New activity for running nosetests inside of a docker container.</li>
 <li>Setup framework that allows activities to initialize themseleves in
 a project has been added.</li>
 <li>Chacgelog setup functionality added.</li>
-<li><code class="docutils literal"><span class="pre">rever</span> <span class="pre">setup</span></code> will now perform some project level setup,
-specifically adding the <code class="docutils literal"><span class="pre">$REVER_DIR</span></code> to the gitignore file,
+<li><code class="docutils literal notranslate"><span class="pre">rever</span> <span class="pre">setup</span></code> will now perform some project level setup,
+specifically adding the <code class="docutils literal notranslate"><span class="pre">$REVER_DIR</span></code> to the gitignore file,
 if applicable.</li>
 </ul>
 <p><strong>Changed:</strong></p>
@@ -103,7 +94,7 @@ and replace leading whitespace.  Patterns and replacement strings may start
 at the first non-whitespace character.</li>
 <li>Addressed annoyance where sphinx documentation files were created
 with root ownership. The user and group of sphinx files will now
-match the user oand group of the <code class="docutils literal"><span class="pre">$SPHINX_HOST_DIR</span></code> on the host.</li>
+match the user oand group of the <code class="docutils literal notranslate"><span class="pre">$SPHINX_HOST_DIR</span></code> on the host.</li>
 </ul>
 </div>
 <div class="section" id="v0-2-3">
@@ -118,10 +109,10 @@ match the user oand group of the <code class="docutils literal"><span class="pre
 <p><strong>Changed:</strong></p>
 <ul class="simple">
 <li>Conda smithy does not correctly rerender unless the feedstock
-directory is called <code class="docutils literal"><span class="pre">$PROJECT</span></code> or <code class="docutils literal"><span class="pre">$PROJECT-feedstock</span></code>,
+directory is called <code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code> or <code class="docutils literal notranslate"><span class="pre">$PROJECT-feedstock</span></code>,
 thus the feedstock dir has been updated.</li>
-<li>Python package name changed to <code class="docutils literal"><span class="pre">re-ver</span></code>, since the
-PyPI name <code class="docutils literal"><span class="pre">rever</span></code> is taken (even though no one has
+<li>Python package name changed to <code class="docutils literal notranslate"><span class="pre">re-ver</span></code>, since the
+PyPI name <code class="docutils literal notranslate"><span class="pre">rever</span></code> is taken (even though no one has
 uploaded a package).</li>
 </ul>
 <p><strong>Fixed:</strong></p>
@@ -134,7 +125,7 @@ it shouldn’t have been doing that.</li>
 <h2>v0.2.1<a class="headerlink" href="#v0-2-1" title="Permalink to this headline">¶</a></h2>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
-<li>Fixed <code class="docutils literal"><span class="pre">eval_version</span></code> import in ghrelease.</li>
+<li>Fixed <code class="docutils literal notranslate"><span class="pre">eval_version</span></code> import in ghrelease.</li>
 </ul>
 </div>
 <div class="section" id="v0-2-0">
@@ -205,12 +196,14 @@ it shouldn’t have been doing that.</li>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -256,7 +249,7 @@ it shouldn’t have been doing that.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

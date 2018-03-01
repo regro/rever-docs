@@ -6,21 +6,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Activity Base Class (rever.acctivity) &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.2.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -36,8 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/api/activity.html"/>
 
-  </head>
-  <body>
+  </head><body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -69,7 +60,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-rever.activity">
-<span id="activity-base-class-rever-acctivity"></span><span id="rever-activity"></span><h1>Activity Base Class (<code class="docutils literal"><span class="pre">rever.acctivity</span></code>)<a class="headerlink" href="#module-rever.activity" title="Permalink to this headline">¶</a></h1>
+<span id="activity-base-class-rever-acctivity"></span><span id="rever-activity"></span><h1>Activity Base Class (<code class="docutils literal notranslate"><span class="pre">rever.acctivity</span></code>)<a class="headerlink" href="#module-rever.activity" title="Permalink to this headline">¶</a></h1>
 <p>Provides basic activity funtionality.</p>
 <dl class="class">
 <dt id="rever.activity.Activity">
@@ -102,11 +93,11 @@ executed.</p>
 </div></blockquote>
 <p><strong>args</strong> : tuple, optional</p>
 <blockquote>
-<div><p>Arguments to be supplied to the <code class="docutils literal"><span class="pre">func(*args)</span></code>, if needed.</p>
+<div><p>Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : mapping, optional</p>
 <blockquote>
-<div><p>Keyword arguments to be supplied to the <code class="docutils literal"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
+<div><p>Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
 </div></blockquote>
 <p><strong>desc</strong> : str, optional</p>
 <blockquote class="last">
@@ -188,21 +179,21 @@ This may also be a full path to an executable.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_ARGS:</th><td class="field-body">sequence of str, Extra arguments to pass in after
 the executable but before the main body. Defaults to the standard
-compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</td>
+compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_ENV:</th><td class="field-body">bool or dict, Environment to use. This has the same meaning as in
-<code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
+<code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_MOUNT:</th><td class="field-body">list of dict, Locations to mount in the running container.
-This has the same meaning as in <code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>.
+This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>.
 Please see that function for more details, default does not mount anything.</td>
 </tr>
 </tbody>
 </table>
 <p>Additionally, DockerActivities are macro context managers. This allows you
 to set the code block by entering the context:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>with! DockerActivity(name=&#39;myactivity&#39;):
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>with! DockerActivity(name=&#39;myactivity&#39;):
     echo &quot;I will be run in the docker container!&quot;
 </pre></div>
 </div>
@@ -247,7 +238,7 @@ path to an executable.</p>
 <p><strong>run_args</strong> : sequence of str, optional</p>
 <blockquote>
 <div><p>Extra arguments to pass in after the executable but before the
-main body. Defaults to the standard compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</p>
+main body. Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </div></blockquote>
 <p><strong>code</strong> : str or None, optional</p>
 <blockquote>
@@ -259,13 +250,13 @@ In this last case, the context block is set as the code.</p>
 <p><strong>env</strong> : bool or dict, optional</p>
 <blockquote>
 <div><p>Environment to use. This has the same meaning as in
-<code class="docutils literal"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
+<code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</p>
 </div></blockquote>
 <p><strong>mounts</strong> : list of dict, optional</p>
 <blockquote class="last">
 <div><p>Locations to mount in the running container. This has the same meaning as
-ing <code class="docutils literal"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
+ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </div></blockquote>
 </td>
@@ -360,12 +351,12 @@ as the DockerActivity class.</p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="activities/version_bump.html"
-                          title="Previous page">&larr; Version Bump Activity (<code class="docutils literal"><span class="pre">rever.activities.version_bump</span></code>)</a></p>
+                          title="Previous page">&larr; Version Bump Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.version_bump</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
     <p class="topless"><a href="dag.html"
-                          title="Next page">&rarr; Directed Acyclic Graph Tools (<code class="docutils literal"><span class="pre">rever.dag</span></code>)</a></p>
+                          title="Next page">&rarr; Directed Acyclic Graph Tools (<code class="docutils literal notranslate"><span class="pre">rever.dag</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -376,12 +367,14 @@ as the DockerActivity class.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -431,7 +424,7 @@ as the DockerActivity class.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

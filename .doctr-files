@@ -41,6 +41,7 @@
 ./_static/comment-close.png
 ./_static/comment.png
 ./_static/doctools.js
+./_static/documentation_options.js
 ./_static/down-pressed.png
 ./_static/down.png
 ./_static/file.png
@@ -51,7 +52,7 @@
 ./_static/icon-seealso.png
 ./_static/icon-todo.png
 ./_static/icon-warning.png
-./_static/jquery-3.1.0.js
+./_static/jquery-3.2.1.js
 ./_static/jquery.cookie.js
 ./_static/jquery.js
 ./_static/longship-256-white.png

@@ -6,21 +6,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Docker Interface (rever.docker) &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.2.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -36,8 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/api/docker.html"/>
 
-  </head>
-  <body>
+  </head><body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -69,18 +60,18 @@
           <div class="body" role="main">
             
   <div class="section" id="module-rever.docker">
-<span id="docker-interface-rever-docker"></span><span id="rever-docker"></span><h1>Docker Interface (<code class="docutils literal"><span class="pre">rever.docker</span></code>)<a class="headerlink" href="#module-rever.docker" title="Permalink to this headline">¶</a></h1>
+<span id="docker-interface-rever-docker"></span><span id="rever-docker"></span><h1>Docker Interface (<code class="docutils literal notranslate"><span class="pre">rever.docker</span></code>)<a class="headerlink" href="#module-rever.docker" title="Permalink to this headline">¶</a></h1>
 <p>Dockers tools for rever.</p>
 <dl class="class">
 <dt id="rever.docker.InContainer">
 <em class="property">class </em><code class="descclassname">rever.docker.</code><code class="descname">InContainer</code><span class="sig-paren">(</span><em>image=None</em>, <em>lang='xonsh'</em>, <em>args=('-c'</em>, <em>)</em>, <em>env=True</em>, <em>mounts=()</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.InContainer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Macro context manager for running code within a container. This runs
 a command of the following form within the container:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lang</span> <span class="n">args</span> <span class="n">block</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lang</span> <span class="n">args</span> <span class="n">block</span>
 </pre></div>
 </div>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">xonsh</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;echo Wow Mom!</span><span class="se">\n</span><span class="s2">&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xonsh</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;echo Wow Mom!</span><span class="se">\n</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>This allows you to run your own code within a container without having to
@@ -102,22 +93,22 @@ path to an executable.</p>
 <p><strong>args</strong> : sequence of str, optional</p>
 <blockquote>
 <div><p>Extra arguments to pass in after the executable but before the main body.
-Defaults to the standard compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</p>
+Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </div></blockquote>
 <p><strong>env</strong> : bool or dict, optional</p>
 <blockquote>
-<div><p>Environment to use. This has the same meaning as in <code class="docutils literal"><span class="pre">run_in_container()</span></code>.
+<div><p>Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
 Please see that function for more details, default True.</p>
 </div></blockquote>
 <p><strong>mounts</strong> : list of dict, optional</p>
 <blockquote>
 <div><p>Locations to mount in the running container. This has the same meaning as
-ing <code class="docutils literal"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
+ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dict, optional</p>
 <blockquote class="last">
-<div><p>All other keyword arguments are passed into <code class="docutils literal"><span class="pre">ensure_images()</span></code> when the
+<div><p>All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
 context is entered.</p>
 </div></blockquote>
 </td>
@@ -210,22 +201,22 @@ path to an executable.</p>
 <p><strong>args</strong> : sequence of str, optional</p>
 <blockquote>
 <div><p>Extra arguments to pass in after the executable but before the main body.
-Defaults to the standard compile flag <code class="docutils literal"><span class="pre">'-c'</span></code>.</p>
+Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </div></blockquote>
 <p><strong>env</strong> : bool or dict, optional</p>
 <blockquote>
-<div><p>Environment to use. This has the same meaning as in <code class="docutils literal"><span class="pre">run_in_container()</span></code>.
+<div><p>Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
 Please see that function for more details, default True.</p>
 </div></blockquote>
 <p><strong>mounts</strong> : list of dict, optional</p>
 <blockquote>
 <div><p>Locations to mount in the running container. This has the same meaning as
-in <code class="docutils literal"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
+in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </div></blockquote>
 <p><strong>kwargs</strong> : dict, optional</p>
 <blockquote>
-<div><p>All other keyword arguments are passed into <code class="docutils literal"><span class="pre">ensure_images()</span></code> when the
+<div><p>All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
 context is entered.</p>
 </div></blockquote>
 </td>
@@ -288,11 +279,11 @@ Otherwise, this is a dictionary of enviroment variable names (str) to values (st
 <div><p>This is a list of dictionaries that specifies files or directories, volumes, or
 temporary file systems to mount.  Valid keys in the dictionary are:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">'type'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'src'</span></code> or <code class="docutils literal"><span class="pre">'source'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'dst'</span></code> or <code class="docutils literal"><span class="pre">'destination'</span></code> or <code class="docutils literal"><span class="pre">'target'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'ro'</span></code> or  <code class="docutils literal"><span class="pre">'readonly'</span></code></li>
-<li><code class="docutils literal"><span class="pre">'consistency'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'type'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'src'</span></code> or <code class="docutils literal notranslate"><span class="pre">'source'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'dst'</span></code> or <code class="docutils literal notranslate"><span class="pre">'destination'</span></code> or <code class="docutils literal notranslate"><span class="pre">'target'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'ro'</span></code> or  <code class="docutils literal notranslate"><span class="pre">'readonly'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'consistency'</span></code></li>
 </ul>
 <p>See <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems">https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems</a>
 for more information</p>
@@ -354,12 +345,12 @@ don’t support –mount.</p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="conda.html"
-                          title="Previous page">&larr; Conda Tools (<code class="docutils literal"><span class="pre">rever.conda</span></code>)</a></p>
+                          title="Previous page">&larr; Conda Tools (<code class="docutils literal notranslate"><span class="pre">rever.conda</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
     <p class="topless"><a href="github.html"
-                          title="Next page">&rarr; GitHub Interface (<code class="docutils literal"><span class="pre">rever.github</span></code>)</a></p>
+                          title="Next page">&rarr; GitHub Interface (<code class="docutils literal notranslate"><span class="pre">rever.github</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -370,12 +361,14 @@ don’t support –mount.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -425,7 +418,7 @@ don’t support –mount.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

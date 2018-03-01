@@ -6,21 +6,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sphinx Documentation Activity (rever.activities.sphinx) &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.2.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -36,8 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/api/activities/sphinx.html"/>
 
-  </head>
-  <body>
+  </head><body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -70,7 +61,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-rever.activities.sphinx">
-<span id="sphinx-documentation-activity-rever-activities-sphinx"></span><span id="rever-activities-sphinx"></span><h1>Sphinx Documentation Activity (<code class="docutils literal"><span class="pre">rever.activities.sphinx</span></code>)<a class="headerlink" href="#module-rever.activities.sphinx" title="Permalink to this headline">¶</a></h1>
+<span id="sphinx-documentation-activity-rever-activities-sphinx"></span><span id="rever-activities-sphinx"></span><h1>Sphinx Documentation Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.sphinx</span></code>)<a class="headerlink" href="#module-rever.activities.sphinx" title="Permalink to this headline">¶</a></h1>
 <p>Activity for building sphinx documentation. The doc building happens inside of a docker
 container. However, the sphinx build directory is mounted into $REVER_DIR/sphinx-build, so the
 built docs are available on the host.</p>
@@ -86,28 +77,28 @@ built docs are available on the host.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
 the documentation. This must be an absolute path. Defaults to
-<code class="docutils literal"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
-to place the built docs in, default <code class="docutils literal"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
+to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
-build the docs, default <code class="docutils literal"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal"><span class="pre">'{docs_dir}'</span></code> is
+build the docs, default <code class="docutils literal notranslate"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal notranslate"><span class="pre">'{docs_dir}'</span></code> is
 present in the string, then the string will be formated with the
 value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
 builders. Default to no extra options.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal"><span class="pre">''</span></code>, <code class="docutils literal"><span class="pre">'a4'</span></code>,
-<code class="docutils literal"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
+<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
 option.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
-This defaults to <code class="docutils literal"><span class="pre">['html']</span></code>.</td>
+This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -186,12 +177,12 @@ varaibles that the activity looks for when it is executed.</p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="pytest.html"
-                          title="Previous page">&larr; PyTest Activity (<code class="docutils literal"><span class="pre">rever.activities.pytest</span></code>)</a></p>
+                          title="Previous page">&larr; PyTest Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.pytest</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
     <p class="topless"><a href="tag.html"
-                          title="Next page">&rarr; Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)</a></p>
+                          title="Next page">&rarr; Tag Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.tag</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -202,12 +193,14 @@ varaibles that the activity looks for when it is executed.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -258,7 +251,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
