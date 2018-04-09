@@ -70,39 +70,33 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str, optional</p>
-<blockquote>
-<div><p>Name of the activity.</p>
-</div></blockquote>
-<p><strong>deps</strong> : set of str, optional</p>
-<blockquote>
-<div><p>Set of activities that must be completed before this activity is
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Name of the activity.</p>
+</dd>
+<dt><strong>deps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
+<dd><p class="first last">Set of activities that must be completed before this activity is
 executed.</p>
-</div></blockquote>
-<p><strong>func</strong> : callable, optional</p>
-<blockquote>
-<div><p>Function to perform as activity when this activities is executed (called).</p>
-</div></blockquote>
-<p><strong>undo</strong> : callable, optional</p>
-<blockquote>
-<div><p>Function to undo this activities behaviour and reset the repo state.</p>
-</div></blockquote>
-<p><strong>setup</strong> : callable, optional</p>
-<blockquote>
-<div><p>Function to help initialize the activity.</p>
-</div></blockquote>
-<p><strong>args</strong> : tuple, optional</p>
-<blockquote>
-<div><p>Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
-</div></blockquote>
-<p><strong>kwargs</strong> : mapping, optional</p>
-<blockquote>
-<div><p>Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
-</div></blockquote>
-<p><strong>desc</strong> : str, optional</p>
-<blockquote class="last">
-<div><p>A short description of this activity</p>
-</div></blockquote>
+</dd>
+<dt><strong>func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
+<dd><p class="first last">Function to perform as activity when this activities is executed (called).</p>
+</dd>
+<dt><strong>undo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
+<dd><p class="first last">Function to undo this activities behaviour and reset the repo state.</p>
+</dd>
+<dt><strong>setup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
+<dd><p class="first last">Function to help initialize the activity.</p>
+</dd>
+<dt><strong>args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple, optional</span></dt>
+<dd><p class="first last">Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
+</dd>
+<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping, optional</span></dt>
+<dd><p class="first last">Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
+</dd>
+<dt><strong>desc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">A short description of this activity</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -203,62 +197,53 @@ activity in the DAG.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str, optional</p>
-<blockquote>
-<div><p>Name of the activity.</p>
-</div></blockquote>
-<p><strong>deps</strong> : set of str, optional</p>
-<blockquote>
-<div><p>Set of activities that must be completed before this activity is
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Name of the activity.</p>
+</dd>
+<dt><strong>deps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
+<dd><p class="first last">Set of activities that must be completed before this activity is
 executed.</p>
-</div></blockquote>
-<p><strong>func</strong> : callable, optional</p>
-<blockquote>
-<div><p>Function to perform as activity when this activities is executed
+</dd>
+<dt><strong>func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
+<dd><p class="first last">Function to perform as activity when this activities is executed
 (called).  The default _func method is good enough for most cases.</p>
-</div></blockquote>
-<p><strong>undo</strong> : callable, optional</p>
-<blockquote>
-<div><p>Function to undo this activities behaviour and reset the repo state.</p>
-</div></blockquote>
-<p><strong>desc</strong> : str, optional</p>
-<blockquote>
-<div><p>A short description of this activity</p>
-</div></blockquote>
-<p><strong>image</strong> : str or None, optional</p>
-<blockquote>
-<div><p>Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE.
+</dd>
+<dt><strong>undo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
+<dd><p class="first last">Function to undo this activities behaviour and reset the repo state.</p>
+</dd>
+<dt><strong>desc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">A short description of this activity</p>
+</dd>
+<dt><strong>image</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
+<dd><p class="first last">Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE.
 Environment variables will be expanded when the activity is run.</p>
-</div></blockquote>
-<p><strong>lang</strong> : str, optional</p>
-<blockquote>
-<div><p>Language to execute the body in, default xonsh. This may also be a full
+</dd>
+<dt><strong>lang</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Language to execute the body in, default xonsh. This may also be a full
 path to an executable.</p>
-</div></blockquote>
-<p><strong>run_args</strong> : sequence of str, optional</p>
-<blockquote>
-<div><p>Extra arguments to pass in after the executable but before the
+</dd>
+<dt><strong>run_args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str, optional</span></dt>
+<dd><p class="first last">Extra arguments to pass in after the executable but before the
 main body. Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
-</div></blockquote>
-<p><strong>code</strong> : str or None, optional</p>
-<blockquote>
-<div><p>The code to execute in the docker container with lang. If this is
+</dd>
+<dt><strong>code</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
+<dd><p class="first last">The code to execute in the docker container with lang. If this is
 None, it may be on the instance itself, passed in when the activity
 is called, or set by entering the activity as a macro context manager.
 In this last case, the context block is set as the code.</p>
-</div></blockquote>
-<p><strong>env</strong> : bool or dict, optional</p>
-<blockquote>
-<div><p>Environment to use. This has the same meaning as in
+</dd>
+<dt><strong>env</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or dict, optional</span></dt>
+<dd><p class="first last">Environment to use. This has the same meaning as in
 <code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</p>
-</div></blockquote>
-<p><strong>mounts</strong> : list of dict, optional</p>
-<blockquote class="last">
-<div><p>Locations to mount in the running container. This has the same meaning as
+</dd>
+<dt><strong>mounts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of dict, optional</span></dt>
+<dd><p class="first last">Locations to mount in the running container. This has the same meaning as
 ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -424,7 +409,7 @@ as the DockerActivity class.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

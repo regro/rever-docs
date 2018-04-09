@@ -197,27 +197,28 @@ depending on the users setting for $REVER_VCS.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vcsfuncs</strong> : dict</p>
-<blockquote>
-<div><p>Maps the string names of version control systems (e.g. ‘git’ or ‘hg’) to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>vcsfuncs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Maps the string names of version control systems (e.g. ‘git’ or ‘hg’) to
 a function for handling that particular action.</p>
-</div></blockquote>
-<p><strong>name</strong> : str, optional</p>
-<blockquote>
-<div><p>Dispatcher funtion name.</p>
-</div></blockquote>
-<p><strong>doc</strong> : str, optional</p>
-<blockquote>
-<div><p>Doctring for the dispatcher.</p>
-</div></blockquote>
-<p><strong>err</strong> : str, optional</p>
-<blockquote>
-<div><p>Error message if the version control system name is not found in vcsfuncs.
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Dispatcher funtion name.</p>
+</dd>
+<dt><strong>doc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Doctring for the dispatcher.</p>
+</dd>
+<dt><strong>err</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd><p class="first last">Error message if the version control system name is not found in vcsfuncs.
 This is formatted with the value of $REVER_VCS.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>vcs_dispatcher</strong> : function</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vcs_dispatcher</strong> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -353,7 +354,7 @@ This is formatted with the value of $REVER_VCS.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

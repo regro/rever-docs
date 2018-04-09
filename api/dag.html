@@ -70,38 +70,35 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dag</strong> : dict of names to activities</p>
-<blockquote>
-<div><p>A DAG of all possible activities</p>
-</div></blockquote>
-<p><strong>ends</strong> : set of str</p>
-<blockquote>
-<div><p>End points to compute.</p>
-</div></blockquote>
-<p><strong>done</strong> : set of str, optional</p>
-<blockquote>
-<div><p>The nodes that have already been computed</p>
-</div></blockquote>
-<p><strong>path</strong> : list of str, optional</p>
-<blockquote>
-<div><p>This is the return value of which activities to execute in which order.</p>
-</div></blockquote>
-<p><strong>already_done</strong> : list of str</p>
-<blockquote>
-<div><p>The return value  of the activities that have already been computed
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>dag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict of names to activities</span></dt>
+<dd><p class="first last">A DAG of all possible activities</p>
+</dd>
+<dt><strong>ends</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str</span></dt>
+<dd><p class="first last">End points to compute.</p>
+</dd>
+<dt><strong>done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
+<dd><p class="first last">The nodes that have already been computed</p>
+</dd>
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str, optional</span></dt>
+<dd><p class="first last">This is the return value of which activities to execute in which order.</p>
+</dd>
+<dt><strong>already_done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">The return value  of the activities that have already been computed
 that would otherwise need to be computed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>path</strong> : list of str</p>
-<blockquote>
-<div><p>The path through the DAG.</p>
-</div></blockquote>
-<p><strong>already_done</strong> : list of str</p>
-<blockquote class="last">
-<div><p>Activities that have already been computed that would otherwise need to
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">The path through the DAG.</p>
+</dd>
+<dt><strong>already_done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">Activities that have already been computed that would otherwise need to
 be computed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -195,7 +192,7 @@ be computed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
