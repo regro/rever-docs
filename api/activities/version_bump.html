@@ -6,13 +6,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Version Bump Activity (rever.activities.version_bump) &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -22,13 +30,14 @@
     <link rel="shortcut icon" href="../../_static/longship.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity Base Class (rever.acctivity)" href="../activity.html" />
+    <link rel="next" title="Activity Base Class (rever.cctivity)" href="../activity.html" />
     <link rel="prev" title="Tag Activity (rever.activities.tag)" href="tag.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/api/activities/version_bump.html"/>
 
-  </head><body>
+  </head>
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -41,7 +50,7 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../activity.html" title="Activity Base Class (rever.acctivity)"
+          <a href="../activity.html" title="Activity Base Class (rever.cctivity)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="tag.html" title="Tag Activity (rever.activities.tag)"
@@ -61,7 +70,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-rever.activities.version_bump">
-<span id="version-bump-activity-rever-activities-version-bump"></span><span id="rever-version-bump"></span><h1>Version Bump Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.version_bump</span></code>)<a class="headerlink" href="#module-rever.activities.version_bump" title="Permalink to this headline">¶</a></h1>
+<span id="version-bump-activity-rever-activities-version-bump"></span><span id="rever-version-bump"></span><h1>Version Bump Activity (<code class="docutils literal"><span class="pre">rever.activities.version_bump</span></code>)<a class="headerlink" href="#module-rever.activities.version_bump" title="Permalink to this headline">¶</a></h1>
 <p>Activity for bumping version.</p>
 <dl class="class">
 <dt id="rever.activities.version_bump.VersionBump">
@@ -89,7 +98,7 @@ version. If it is a string, it is expanded with environment
 variables.</li>
 </ul>
 <p>For example:</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
     (&#39;src/__init__.py&#39;, &#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
@@ -171,12 +180,12 @@ varaibles that the activity looks for when it is executed.</p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="tag.html"
-                          title="Previous page">&larr; Tag Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.tag</span></code>)</a></p>
+                          title="Previous page">&larr; Tag Activity (<code class="docutils literal"><span class="pre">rever.activities.tag</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
     <p class="topless"><a href="../activity.html"
-                          title="Next page">&rarr; Activity Base Class (<code class="docutils literal notranslate"><span class="pre">rever.acctivity</span></code>)</a></p>
+                          title="Next page">&rarr; Activity Base Class (<code class="docutils literal"><span class="pre">rever.cctivity</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -187,14 +196,12 @@ varaibles that the activity looks for when it is executed.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -230,7 +237,7 @@ varaibles that the activity looks for when it is executed.</p>
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../activity.html" title="Activity Base Class (rever.acctivity)"
+          <a href="../activity.html" title="Activity Base Class (rever.cctivity)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="tag.html" title="Tag Activity (rever.activities.tag)"
@@ -245,7 +252,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

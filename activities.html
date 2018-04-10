@@ -6,13 +6,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Activities &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -28,7 +36,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/activities.html"/>
 
-  </head><body>
+  </head>
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -110,7 +119,7 @@ with rever.</p>
 <div class="section" id="bibtex">
 <span id="id1"></span><h3>BibTex<a class="headerlink" href="#bibtex" title="Permalink to this headline">¶</a></h3>
 <p>The BibTex activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.bibtex</span> <span class="kn">import</span> <span class="n">BibTex</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.bibtex</span> <span class="kn">import</span> <span class="n">BibTex</span>
 </pre></div>
 </div>
 <p>Writes a BibTex reference for the version of software.</p>
@@ -122,18 +131,18 @@ activity are:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_BIBFILE:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, The filename to create. Defaults to
-<code class="docutils literal notranslate"><span class="pre">'bibtex.bib'</span></code>.</td>
+<code class="docutils literal"><span class="pre">'bibtex.bib'</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$BIBTEX_PROJECT_NAME:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str, The name of the project. This is expanded
-in the current envrionment, default <code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code>.</td>
+in the current envrionment, default <code class="docutils literal"><span class="pre">$PROJECT</span></code>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_AUTHORS:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, The name of the authors to credit
 in the citation. Default has no authors.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">$BIBTEX_URL:</th><td class="field-body">str, URL to the project. This is expanded in the current
-environment, default <code class="docutils literal notranslate"><span class="pre">'$WEBSITE_URL'</span></code>.</td>
+environment, default <code class="docutils literal"><span class="pre">'$WEBSITE_URL'</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -151,8 +160,8 @@ activity are:</p>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bibtex&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bibtex&#39;</span><span class="p">]</span>
 
 <span class="nv">$BIBTEX_BIBFILE</span> <span class="o">=</span> <span class="s1">&#39;bibtex.bib&#39;</span>
 <span class="nv">$BIBTEX_PROJECT_NAME</span> <span class="o">=</span> <span class="s1">&#39;$PROJECT&#39;</span>
@@ -165,7 +174,7 @@ activity are:</p>
 <div class="section" id="changelog">
 <span id="id2"></span><h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
 <p>The Changelog activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.changelog</span> <span class="kn">import</span> <span class="n">Changelog</span>
 </pre></div>
 </div>
 <p>Manages keeping a changelog up-to-date.</p>
@@ -181,7 +190,7 @@ activity are:</p>
 <tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_PATTERN:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, Python regex that is used to find the location
 in the file where new changelog entries should be placed. The default is
-<code class="docutils literal notranslate"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
+<code class="docutils literal"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_HEADER:</th></tr>
@@ -190,7 +199,7 @@ this is the replacement that goes above the new merge entries.
 This should contain a string that matches the pattern arg
 so that the next release may be inserted automatically.
 The default value is:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. current developments</span>
+<div class="highlight-rst"><div class="highlight"><pre><span></span><span class="cp">.. current developments</span>
 
 v$VERSION
 
@@ -201,7 +210,7 @@ v$VERSION
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_NEWS:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to directory containing news files.
-The default is <code class="docutils literal notranslate"><span class="pre">'news'</span></code>.</p>
+The default is <code class="docutils literal"><span class="pre">'news'</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_IGNORE:</th></tr>
@@ -211,19 +220,19 @@ to ignore. The default is to ignore the template file.</p>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest part of the
-changelog to. This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
+changelog to. This defaults to <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
 in the current environment.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
-news directory. The default is <code class="docutils literal notranslate"><span class="pre">'TEMPLATE'</span></code>.</p>
+news directory. The default is <code class="docutils literal"><span class="pre">'TEMPLATE'</span></code>.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;changelog&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;changelog&#39;</span><span class="p">]</span>
 
 <span class="nv">$CHANGELOG_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;CHANGELOG&#39;</span>
 <span class="nv">$CHANGELOG_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;.. current developments&#39;</span>
@@ -239,7 +248,7 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 <div class="section" id="command">
 <span id="id3"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
 <p>The Command activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
 </pre></div>
 </div>
 <p>Runs a command</p>
@@ -247,14 +256,14 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The recommended way to create a command is with the
-<a class="reference internal" href="api/activities/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal notranslate"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
+<a class="reference internal" href="api/activities/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="condaforge">
 <span id="id4"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
 <p>The CondaForge activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
 </pre></div>
 </div>
 <p>Updates conda-forge feedstocks.</p>
@@ -266,15 +275,15 @@ environment variables:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FEEDSTOCK:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or None, feedstock name or URL,
-default <code class="docutils literal notranslate"><span class="pre">$PROJECT-feedstock</span></code>.</p>
+default <code class="docutils literal"><span class="pre">$PROJECT-feedstock</span></code>.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_PROTOCOL:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, one of <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'http'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'https'</span></code>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, one of <code class="docutils literal"><span class="pre">'ssh'</span></code>, <code class="docutils literal"><span class="pre">'http'</span></code>, or <code class="docutils literal"><span class="pre">'https'</span></code>
 that specifies how the activity should interact with github when
 cloning, pulling, or pushing to the feedstock repo. Note that
-<code class="docutils literal notranslate"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
-The default  is <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>.</p>
+<code class="docutils literal"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
+The default  is <code class="docutils literal"><span class="pre">'ssh'</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_SOURCE_URL:</th></tr>
@@ -282,12 +291,12 @@ The default  is <code class="docutils literal notranslate"><span class="pre">'ss
 download the source code. This is needed so that we may update the
 hash of the downloaded file. This string is evaluated with the current
 environment. Default
-<code class="docutils literal notranslate"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
+<code class="docutils literal"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_HASH_TYPE:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, the type of hash that the recipe uses, eg
-<code class="docutils literal notranslate"><span class="pre">'md5'</span></code> or <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>.</p>
+<code class="docutils literal"><span class="pre">'md5'</span></code> or <code class="docutils literal"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal"><span class="pre">'sha256'</span></code>.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_PATTERNS:</th></tr>
@@ -298,9 +307,9 @@ pattern structure. Both the pattern-regex str and the replacement str
 will have environment variables expanded. The following environment
 variables are added for this evaluation:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</li>
-<li><code class="docutils literal notranslate"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</li>
+<li><code class="docutils literal"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal"><span class="pre">$SOURCE_URL</span></code>.</li>
 </ul>
 <p>The default patterns match most standard recipes.</p>
 </td>
@@ -343,8 +352,8 @@ is where the GitHub credential files are stored by default.</td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
 
 <span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="s1">&#39;ssh&#39;</span>
@@ -375,7 +384,7 @@ is where the GitHub credential files are stored by default.</td>
 <div class="section" id="ghpages">
 <span id="id5"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
 <p>The GHPages activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
 </pre></div>
 </div>
 <p>Activity for pushing documentation up to GitHub pages.</p>
@@ -388,7 +397,7 @@ is where the GitHub credential files are stored by default.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$GHPAGES_BRANCH:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str, the GitHub pages branch name, i.e. either
-<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code>.  If not provided, the activity will
+<code class="docutils literal"><span class="pre">gh-pages</span></code> or <code class="docutils literal"><span class="pre">master</span></code>.  If not provided, the activity will
 attempt to deduce it from the repo name.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$GHPAGES_COPY:</th><td class="field-body">list or str 2-tuples, This is a list of (src, dst)
@@ -397,16 +406,16 @@ These pairs will have environment variables expanded and it is
 evaluated in the current directory (where rever was run from).
 src files or directories that don’t exist will be skipped.
 After variable expansion, this list will be deduplicated.
-Additionally, the environment variable <code class="docutils literal notranslate"><span class="pre">$GHPAGES_REPO_DIR</span></code>
+Additionally, the environment variable <code class="docutils literal"><span class="pre">$GHPAGES_REPO_DIR</span></code>
 is added to allow easy access to the local clone of the
-repo, which is at <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/ghpages-repo</span></code>. By default,
+repo, which is at <code class="docutils literal"><span class="pre">$REVER_DIR/ghpages-repo</span></code>. By default,
 this will look in the sphinx html directory created by the
 sphinx activity.</td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghpages&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghpages&#39;</span><span class="p">]</span>
 
 <span class="nv">$GHPAGES_REPO</span> <span class="o">=</span> <span class="s1">&#39;&lt;no default value&gt;&#39;</span>
 <span class="nv">$GHPAGES_BRANCH</span> <span class="o">=</span> <span class="bp">None</span>
@@ -421,7 +430,7 @@ sphinx activity.</td>
 <div class="section" id="ghrelease">
 <span id="id6"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
 <p>The GHRelease activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
 </pre></div>
 </div>
 <p>Performs a github release.</p>
@@ -433,21 +442,13 @@ environment variables:</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_NAME:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, Name of the release.  This is evaluated with the
-version. Default is <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code></td>
+version. Default is <code class="docutils literal"><span class="pre">$VERSION</span></code></td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_NOTES:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, Release notes to send to the release
-page. If None (the default), this is read from <code class="docutils literal notranslate"><span class="pre">$CHANGELOG_LATEST</span></code>,
-if present, or failing that <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. If neither file exists,
+page. If None (the default), this is read from <code class="docutils literal"><span class="pre">$CHANGELOG_LATEST</span></code>,
+if present, or failing that <code class="docutils literal"><span class="pre">$REVER_DIR/LATEST</span></code>. If neither file exists,
 an empty string is passes in.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_PREPEND:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, string to prepend to the release notes,
-defaults to ‘’</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_APPEND:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, string to append to the release notes,
-defaults to ‘’</td>
 </tr>
 </tbody>
 </table>
@@ -473,13 +474,11 @@ created by the changelog activity.</td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghrelease&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghrelease&#39;</span><span class="p">]</span>
 
 <span class="nv">$GHRELEASE_NAME</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -487,7 +486,7 @@ created by the changelog activity.</td>
 <div class="section" id="nose">
 <span id="id7"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
 <p>The Nose activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
 </pre></div>
 </div>
 <p>Runs nose tests inside of a container.</p>
@@ -503,8 +502,8 @@ nose command. By default no additional arguments are sent.</td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nose&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nose&#39;</span><span class="p">]</span>
 
 <span class="nv">$NOSE_COMMAND</span> <span class="o">=</span> <span class="s1">&#39;nosetests&#39;</span>
 <span class="nv">$NOSE_ARGS</span> <span class="o">=</span> <span class="p">()</span>
@@ -515,7 +514,7 @@ nose command. By default no additional arguments are sent.</td>
 <div class="section" id="pushtag">
 <span id="id8"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
 <p>The PushTag activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
 </pre></div>
 </div>
 <p>Pushes the current tag up to a remote repository.</p>
@@ -525,9 +524,7 @@ nose command. By default no additional arguments are sent.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_REMOTE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to. If <code class="docutils literal notranslate"><span class="pre">$REVER_VCS</span></code> is
-set to <code class="docutils literal notranslate"><span class="pre">'git'</span></code> and both <code class="docutils literal notranslate"><span class="pre">$GITHUB_ORG</span></code> and <code class="docutils literal notranslate"><span class="pre">$GITHUB_REPO</span></code> are also set,
-this variable will default to <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:$GITHUB_ORG/$GITHUB_REPO.git</span></code>.</td>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$PUSH_TAG_TARGET:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, remote branch to push to once the tag has been made.
@@ -536,23 +533,13 @@ The default is None, which uses the current branch.</td>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$REVER_VCS:</th><td class="field-body">str or None, is used to help specify default remote URLs.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">str or None, GitHub org to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">str or None GitHub repo to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
-by default this is ‘$VERSION’. This is used in undoing remote tags</td>
-</tr>
-</tbody>
-</table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
+<p>:$GITHUB_ORG str or None, GitHub org to push to if no $TAG_REMOTE
+:$GITHUB_REPO = str or None GitHub repo to push to if no $TAG_REMOTE
+:$TAG_TEMPLATE: str, the template string to tag the version with,</p>
+<blockquote>
+<div>by default this is ‘$VERSION’. This is used in undoing remote tags</div></blockquote>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
 
 <span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$PUSH_TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
@@ -563,7 +550,7 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</td>
 <div class="section" id="pypi">
 <span id="id9"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The PyPI activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
 </div>
 <p>Uploads a package to the Python Package Index.</p>
@@ -573,12 +560,12 @@ environment variables:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PYPI_RC:</th><td class="field-body">str, path to the pypirc file, default <code class="docutils literal notranslate"><span class="pre">~/.pypirc</span></code>.</td>
+<tr class="field-odd field"><th class="field-name">$PYPI_RC:</th><td class="field-body">str, path to the pypirc file, default <code class="docutils literal"><span class="pre">~/.pypirc</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$PYPI_BUILD_COMMANDS:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The commands to run in setup.py
-that will build the project, default <code class="docutils literal notranslate"><span class="pre">['sdist']</span></code>.  Other examples
-include <code class="docutils literal notranslate"><span class="pre">'bdist'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bdist_wininst'</span></code>.</td>
+that will build the project, default <code class="docutils literal"><span class="pre">['sdist']</span></code>.  Other examples
+include <code class="docutils literal"><span class="pre">'bdist'</span></code> or <code class="docutils literal"><span class="pre">'bdist_wininst'</span></code>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
 </tr>
@@ -593,8 +580,8 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pypi&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pypi&#39;</span><span class="p">]</span>
 
 <span class="nv">$PYPI_RC</span> <span class="o">=</span> <span class="s1">&#39;$HOME/.pypirc&#39;</span>
 <span class="nv">$PYPI_BUILD_COMMANDS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sdist&#39;</span><span class="p">,</span> <span class="p">)</span>
@@ -606,7 +593,7 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <div class="section" id="pytest">
 <span id="id10"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>The PyTest activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
 </div>
 <p>Runs pytest inside of a container.</p>
@@ -617,14 +604,14 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name" colspan="2">$PYTEST_COMMAND:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the test command to run. The defaults to
-<code class="docutils literal notranslate"><span class="pre">'pytest'</span></code>.</td>
+<code class="docutils literal"><span class="pre">'pytest'</span></code>.</td>
 </tr>
 </tbody>
 </table>
-<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">$DOCKER_*</span></code> environment variables will affect the
+<p>Additionally, the <code class="docutils literal"><span class="pre">$DOCKER_*</span></code> environment variables will affect the
 behaviour of the conatiner that is used for testing.</p>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pytest&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pytest&#39;</span><span class="p">]</span>
 
 <span class="nv">$PYTEST_COMMAND</span> <span class="o">=</span> <span class="s1">&#39;pytest&#39;</span>
 </pre></div>
@@ -634,7 +621,7 @@ behaviour of the conatiner that is used for testing.</p>
 <div class="section" id="sphinx">
 <span id="id11"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>The Sphinx activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
 </div>
 <p>Runs sphinx inside of a container.</p>
@@ -646,35 +633,35 @@ behaviour of the conatiner that is used for testing.</p>
 <tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
 the documentation. This must be an absolute path. Defaults to
-<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
+<code class="docutils literal"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
-to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
+to place the built docs in, default <code class="docutils literal"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
-build the docs, default <code class="docutils literal notranslate"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal notranslate"><span class="pre">'{docs_dir}'</span></code> is
+build the docs, default <code class="docutils literal"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal"><span class="pre">'{docs_dir}'</span></code> is
 present in the string, then the string will be formated with the
 value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
 builders. Default to no extra options.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
+<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal"><span class="pre">''</span></code>, <code class="docutils literal"><span class="pre">'a4'</span></code>,
+<code class="docutils literal"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
 option.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
-This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</td>
+This defaults to <code class="docutils literal"><span class="pre">['html']</span></code>.</td>
 </tr>
 </tbody>
 </table>
 <p>As a dockerized activity, the docker environment variables affect the execution
 of the sphinx activity.</p>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx&#39;</span><span class="p">]</span>
 
 <span class="nv">$SPHINX_DOCS_DIR</span> <span class="o">=</span> <span class="s1">&#39;$DOCKER_HOME/$PROJECT/docs&#39;</span>
 <span class="nv">$SPHINX_HOST_DIR</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/sphinx-build&#39;</span>
@@ -689,7 +676,7 @@ of the sphinx activity.</p>
 <div class="section" id="tag">
 <span id="id12"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>The Tag activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
 </div>
 <p>Locally tags the current version.</p>
@@ -703,8 +690,8 @@ by default this is ‘$VERSION’</td>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
 
 <span class="nv">$TAG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
 </pre></div>
@@ -714,7 +701,7 @@ by default this is ‘$VERSION’</td>
 <div class="section" id="versionbump">
 <span id="id13"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>The VersionBump activity class is available via:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
 </div>
 <p>Changes the version to the value of $VERSION.</p>
@@ -740,7 +727,7 @@ version. If it is a string, it is expanded with environment
 variables.</li>
 </ul>
 <p>For example:</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
+<div class="last highlight-default"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
     (&#39;src/__init__.py&#39;, &#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
@@ -755,8 +742,8 @@ variables.</li>
 </tr>
 </tbody>
 </table>
-<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;version_bump&#39;</span><span class="p">]</span>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;version_bump&#39;</span><span class="p">]</span>
 
 <span class="nv">$VERSION_BUMP_PATTERNS</span> <span class="o">=</span> <span class="p">()</span>
 </pre></div>
@@ -817,14 +804,12 @@ variables.</li>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -873,7 +858,7 @@ variables.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

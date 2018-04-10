@@ -6,13 +6,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Directed Acyclic Graph Tools (rever.dag) &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -23,12 +31,13 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Logging (rever.logger)" href="logger.html" />
-    <link rel="prev" title="Activity Base Class (rever.acctivity)" href="activity.html" />
+    <link rel="prev" title="Activity Base Class (rever.cctivity)" href="activity.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/api/dag.html"/>
 
-  </head><body>
+  </head>
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -44,7 +53,7 @@
           <a href="logger.html" title="Logging (rever.logger)"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="activity.html" title="Activity Base Class (rever.acctivity)"
+          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.2.5 documentation</a> &#187;</li>
 
@@ -60,7 +69,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-rever.dag">
-<span id="directed-acyclic-graph-tools-rever-dag"></span><span id="rever-dag"></span><h1>Directed Acyclic Graph Tools (<code class="docutils literal notranslate"><span class="pre">rever.dag</span></code>)<a class="headerlink" href="#module-rever.dag" title="Permalink to this headline">¶</a></h1>
+<span id="directed-acyclic-graph-tools-rever-dag"></span><span id="rever-dag"></span><h1>Directed Acyclic Graph Tools (<code class="docutils literal"><span class="pre">rever.dag</span></code>)<a class="headerlink" href="#module-rever.dag" title="Permalink to this headline">¶</a></h1>
 <p>Tools for dealing with activity DAGs.</p>
 <dl class="function">
 <dt id="rever.dag.find_path">
@@ -70,35 +79,38 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>dag</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict of names to activities</span></dt>
-<dd><p class="first last">A DAG of all possible activities</p>
-</dd>
-<dt><strong>ends</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str</span></dt>
-<dd><p class="first last">End points to compute.</p>
-</dd>
-<dt><strong>done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
-<dd><p class="first last">The nodes that have already been computed</p>
-</dd>
-<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str, optional</span></dt>
-<dd><p class="first last">This is the return value of which activities to execute in which order.</p>
-</dd>
-<dt><strong>already_done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first last">The return value  of the activities that have already been computed
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dag</strong> : dict of names to activities</p>
+<blockquote>
+<div><p>A DAG of all possible activities</p>
+</div></blockquote>
+<p><strong>ends</strong> : set of str</p>
+<blockquote>
+<div><p>End points to compute.</p>
+</div></blockquote>
+<p><strong>done</strong> : set of str, optional</p>
+<blockquote>
+<div><p>The nodes that have already been computed</p>
+</div></blockquote>
+<p><strong>path</strong> : list of str, optional</p>
+<blockquote>
+<div><p>This is the return value of which activities to execute in which order.</p>
+</div></blockquote>
+<p><strong>already_done</strong> : list of str</p>
+<blockquote>
+<div><p>The return value  of the activities that have already been computed
 that would otherwise need to be computed.</p>
-</dd>
-</dl>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>path</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first last">The path through the DAG.</p>
-</dd>
-<dt><strong>already_done</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first last">Activities that have already been computed that would otherwise need to
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>path</strong> : list of str</p>
+<blockquote>
+<div><p>The path through the DAG.</p>
+</div></blockquote>
+<p><strong>already_done</strong> : list of str</p>
+<blockquote class="last">
+<div><p>Activities that have already been computed that would otherwise need to
 be computed.</p>
-</dd>
-</dl>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -119,12 +131,12 @@ be computed.</p>
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="activity.html"
-                          title="Previous page">&larr; Activity Base Class (<code class="docutils literal notranslate"><span class="pre">rever.acctivity</span></code>)</a></p>
+                          title="Previous page">&larr; Activity Base Class (<code class="docutils literal"><span class="pre">rever.cctivity</span></code>)</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
     <p class="topless"><a href="logger.html"
-                          title="Next page">&rarr; Logging (<code class="docutils literal notranslate"><span class="pre">rever.logger</span></code>)</a></p>
+                          title="Next page">&rarr; Logging (<code class="docutils literal"><span class="pre">rever.logger</span></code>)</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -135,14 +147,12 @@ be computed.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -181,7 +191,7 @@ be computed.</p>
           <a href="logger.html" title="Logging (rever.logger)"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="activity.html" title="Activity Base Class (rever.acctivity)"
+          <a href="activity.html" title="Activity Base Class (rever.cctivity)"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.2.5 documentation</a> &#187;</li>
 
@@ -192,7 +202,7 @@ be computed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

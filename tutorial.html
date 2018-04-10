@@ -6,13 +6,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Tutorial &#8212; rever 0.2.5 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -28,7 +36,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/tutorial.html"/>
 
-  </head><body>
+  </head>
+  <body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -64,7 +73,7 @@
 software with rever.  Let’s go sailing!</p>
 <div class="section" id="writing-custom-activities">
 <h2>Writing Custom Activities<a class="headerlink" href="#writing-custom-activities" title="Permalink to this headline">¶</a></h2>
-<p>In your <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file, you have the ability to provide additional, custom activies that
+<p>In your <code class="docutils literal"><span class="pre">rever.xsh</span></code> file, you have the ability to provide additional, custom activies that
 are specific to your project. Each activity is composed of a few different components:</p>
 <ul class="simple">
 <li>A string name that uniquely identifies the activity</li>
@@ -75,12 +84,12 @@ by default this is an empty set.</li>
 <li>A description of the activity</li>
 </ul>
 <p>There are a couple of ways to write activities. The easiest is to use the activity decorator.</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
 </pre></div>
 </div>
 <p>Simply use this on a function to create an activity of the name of the function.  For example,
 let’s write a simple activity that runs the test suite with pytest:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
 
 <span class="nd">@activity</span>
 <span class="k">def</span> <span class="nf">run_tests</span><span class="p">():</span>
@@ -94,7 +103,7 @@ let’s write a simple activity that runs the test suite with pytest:</p>
 <p>Furthermore, like with other activities, custom activities can accept arguments and keyword
 arguments. These are then settable by environment variables.  Let’s say that we only want to
 test specific files, but by default we want to test all of them. We could instead write the following,</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
 
 <span class="nd">@activity</span>
 <span class="k">def</span> <span class="nf">run_tests</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">()):</span>
@@ -111,9 +120,9 @@ test specific files, but by default we want to test all of them. We could instea
 </pre></div>
 </div>
 <p>Also note that in the above, the docstring of the function becomes the description for the
-activity automatically!  You can also set the <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">deps</span></code>, <code class="docutils literal notranslate"><span class="pre">undo</span></code>, and <code class="docutils literal notranslate"><span class="pre">desc</span></code>.  For
+activity automatically!  You can also set the <code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">deps</span></code>, <code class="docutils literal"><span class="pre">undo</span></code>, and <code class="docutils literal"><span class="pre">desc</span></code>.  For
 example, if you want to make the tests depenendent on another install activity, you could write:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nd">@activity</span><span class="p">(</span><span class="n">deps</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;install&#39;</span><span class="p">})</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nd">@activity</span><span class="p">(</span><span class="n">deps</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;install&#39;</span><span class="p">})</span>
 <span class="k">def</span> <span class="nf">run_tests</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">()):</span>
     <span class="sd">&quot;&quot;&quot;Running the test suite.&quot;&quot;&quot;</span>
     <span class="n">cd</span> <span class="n">tests</span>
@@ -123,10 +132,10 @@ example, if you want to make the tests depenendent on another install activity, 
 </div>
 <p>In certain situations, it is also useful for activities to know how to undo themselves. For example,
 consider the case where you want to build a source tarball. If the user rewinds this activity,
-the tarball should be deleted from the filesystem. Activities have an <code class="docutils literal notranslate"><span class="pre">undoer()</span></code> decorator
-(like <code class="docutils literal notranslate"><span class="pre">setter()</span></code> and <code class="docutils literal notranslate"><span class="pre">deleter()</span></code> for properties) that registers an undo function. Thus, our
+the tarball should be deleted from the filesystem. Activities have an <code class="docutils literal"><span class="pre">undoer()</span></code> decorator
+(like <code class="docutils literal"><span class="pre">setter()</span></code> and <code class="docutils literal"><span class="pre">deleter()</span></code> for properties) that registers an undo function. Thus, our
 source tarball activity could be implemented as:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">activity</span>
 
 <span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tarball&#39;</span><span class="p">]</span>
 
@@ -141,11 +150,11 @@ source tarball activity could be implemented as:</p>
 </pre></div>
 </div>
 <p>Alternatively, if you really need a lot of fine grained control or encapsulation, you can also
-import the <code class="docutils literal notranslate"><span class="pre">Activity</span></code> class and subclass it.  Note that when you define an activity this way,
-it does not register an instance of this activity for you in the <code class="docutils literal notranslate"><span class="pre">$DAG</span></code>.  You have to take
+import the <code class="docutils literal"><span class="pre">Activity</span></code> class and subclass it.  Note that when you define an activity this way,
+it does not register an instance of this activity for you in the <code class="docutils literal"><span class="pre">$DAG</span></code>.  You have to take
 care of this bookeeping yourself. For example, the tarball activity can be implemented as
 follows:</p>
-<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">Activity</span>
+<div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">Activity</span>
 
 <span class="k">class</span> <span class="nc">Tarball</span><span class="p">(</span><span class="n">Activity</span><span class="p">):</span>
 
@@ -206,14 +215,12 @@ follows:</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -262,7 +269,7 @@ follows:</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
