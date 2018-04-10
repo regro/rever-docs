@@ -6,21 +6,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Rever: Releaser of Versions! &#8212; rever 0.2.5 documentation</title>
+    <title>Rever: Releaser of Versions! &#8212; rever 0.2.6 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.2.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -35,8 +27,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="http://xon.sh/index.html"/>
 
-  </head>
-  <body>
+  </head><body>
     <div class="relbar-top">
         
     <div class="related" role="navigation" aria-label="related navigation">
@@ -51,7 +42,7 @@
         <li class="right" >
           <a href="dependencies.html" title="Dependencies"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
-    <li><a href="#">rever 0.2.5 documentation</a> &#187;</li>
+    <li><a href="#">rever 0.2.6 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -79,13 +70,13 @@ as easy as running a single command. Rever…</p>
 <p>There are a couple steps you should take to get the most out of rever.</p>
 <ol class="arabic">
 <li><p class="first">Install rever. Rever is on conda-forge so install via
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">rever</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code>, via pypi with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">re-ver</span></code>,
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">rever</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code>, via pypi with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">re-ver</span></code>,
 or from source.</p>
 </li>
-<li><p class="first">Setup a <code class="docutils literal"><span class="pre">rever.xsh</span></code> file in the root directory of your source repository.
-Here is a simplified example from <code class="docutils literal"><span class="pre">rever</span></code> itself,</p>
+<li><p class="first">Setup a <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file in the root directory of your source repository.
+Here is a simplified example from <code class="docutils literal notranslate"><span class="pre">rever</span></code> itself,</p>
 <blockquote>
-<div><div class="highlight-xonsh"><div class="highlight"><pre><span></span><span class="nv">$PROJECT</span> <span class="o">=</span> <span class="s1">&#39;rever&#39;</span>
+<div><div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$PROJECT</span> <span class="o">=</span> <span class="s1">&#39;rever&#39;</span>
 <span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span>
               <span class="s1">&#39;version_bump&#39;</span><span class="p">,</span>  <span class="c1"># Changes the version number in various source files (setup.py, __init__.py, etc)</span>
               <span class="s1">&#39;changelog&#39;</span><span class="p">,</span>  <span class="c1"># Uses files in the news folder to create a changelog for release</span>
@@ -101,7 +92,7 @@ Here is a simplified example from <code class="docutils literal"><span class="pr
                          <span class="p">]</span>
 <span class="nv">$CHANGELOG_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;CHANGELOG.rst&#39;</span>  <span class="c1"># Filename for the changelog</span>
 <span class="nv">$CHANGELOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;TEMPLATE.rst&#39;</span>  <span class="c1"># Filename for the news template</span>
-<span class="nv">$TAG_REMOTE</span> <span class="o">=</span> <span class="s1">&#39;git@github.com:regro/rever.git&#39;</span>  <span class="c1"># Repo to push tags to</span>
+<span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="s1">&#39;git@github.com:regro/rever.git&#39;</span>  <span class="c1"># Repo to push tags to</span>
 
 <span class="nv">$GITHUB_ORG</span> <span class="o">=</span> <span class="s1">&#39;regro&#39;</span>  <span class="c1"># Github org for Github releases and conda-forge</span>
 <span class="nv">$GITHUB_REPO</span> <span class="o">=</span> <span class="s1">&#39;rever&#39;</span>  <span class="c1"># Github repo for Github releases  and conda-forge</span>
@@ -109,11 +100,11 @@ Here is a simplified example from <code class="docutils literal"><span class="pr
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">After setting up the <code class="docutils literal"><span class="pre">rever.xsh</span></code> file run <code class="docutils literal"><span class="pre">rever</span> <span class="pre">setup</span></code> in the root
+<li><p class="first">After setting up the <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file run <code class="docutils literal notranslate"><span class="pre">rever</span> <span class="pre">setup</span></code> in the root
 directory of your source repository. This will setup files and other things
 needed for rever to operate.</p>
 </li>
-<li><p class="first">When you are ready to release run <code class="docutils literal"><span class="pre">rever</span> <span class="pre">&lt;new_version_number&gt;</span></code> and rever
+<li><p class="first">When you are ready to release run <code class="docutils literal notranslate"><span class="pre">rever</span> <span class="pre">&lt;new_version_number&gt;</span></code> and rever
 will take care of the rest.</p>
 </li>
 </ol>
@@ -290,12 +281,14 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -333,7 +326,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
         <li class="right" >
           <a href="dependencies.html" title="Dependencies"
              >next</a> &nbsp; &nbsp;</li>
-    <li><a href="#">rever 0.2.5 documentation</a> &#187;</li>
+    <li><a href="#">rever 0.2.6 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -341,7 +334,7 @@ hesitate to ask on the <a class="reference external" href="https://gitter.im/erg
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
