@@ -65,7 +65,7 @@
 <p>Activity for updating conda-forge feedstocks.</p>
 <dl class="class">
 <dt id="rever.activities.conda_forge.CondaForge">
-<em class="property">class </em><code class="descclassname">rever.activities.conda_forge.</code><code class="descname">CondaForge</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'tag'</em>, <em>'push_tag'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activities.conda_forge.</code><code class="descname">CondaForge</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'push_tag'</em>, <em>'tag'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates conda-forge feedstocks.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
@@ -144,10 +144,13 @@ set in the rever.xsh file</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
+<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string used to tag the version, by default
+this is ‘$VERSION’. Used to download project source.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
+<tr class="field-odd field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
 is where the GitHub credential files are stored by default.</td>
 </tr>
 </tbody>

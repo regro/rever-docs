@@ -335,10 +335,13 @@ set in the rever.xsh file</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
+<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string used to tag the version, by default
+this is ‘$VERSION’. Used to download project source.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
+<tr class="field-odd field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
 is where the GitHub credential files are stored by default.</td>
 </tr>
 </tbody>
@@ -348,7 +351,7 @@ is where the GitHub credential files are stored by default.</td>
 
 <span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="s1">&#39;ssh&#39;</span>
-<span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz&#39;</span>
+<span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$CONDA_FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="s1">&#39;sha256&#39;</span>
 <span class="nv">$CONDA_FORGE_PATTERNS</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  version:</span><span class="se">\\</span><span class="s1">s*[A-Za-z0-9._-]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  version: &quot;$VERSION&quot;&#39;</span><span class="p">),</span>
