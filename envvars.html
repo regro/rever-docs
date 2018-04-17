@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Environment Variables &#8212; rever 0.2.6 documentation</title>
+    <title>Environment Variables &#8212; rever 0.2.7 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="activities.html" title="Activities"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.2.6 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.2.7 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -135,18 +135,18 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x1520086ba048&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x15200802a898&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x1520080a49b0&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x152003e5d2b0&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x152003e687b8&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x152003e7cf28&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x152003e79860&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x152003e7c470&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x152003e7c3c8&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x152003e7cbe0&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x152003e791d0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x152003e48198&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f6777d64cf8&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f67767befd0&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f6775bc7d68&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f6776829c50&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f6774843ef0&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x7f6774843860&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f677483f898&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f6774821be0&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f6774821e48&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f6774821080&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x7f677483f710&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f677483f828&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -331,7 +331,7 @@ applicable.</p>
 <span id="id25"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x1520096e7ac8&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f677d74e780&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -347,7 +347,7 @@ applicable.</p>
 <span id="id27"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
+<p><strong>default:</strong> ‘/opt/conda/bin/python’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -355,7 +355,7 @@ applicable.</p>
 <span id="id28"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to rever configuration directory</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
+<p><strong>default:</strong> ‘/root/.config/rever’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -387,7 +387,7 @@ applicable.</p>
 <span id="id32"></span><h3>$REVER_USER<a class="headerlink" href="#rever-user" title="Permalink to this headline">¶</a></h3>
 <p>Name of the user who ran the rever command.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘travis’</p>
+<p><strong>default:</strong> ‘root’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -548,7 +548,7 @@ applicable.</p>
         <li class="right" >
           <a href="activities.html" title="Activities"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.2.6 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.2.7 documentation</a> &#187;</li>
  
       </ul>
     </div>
