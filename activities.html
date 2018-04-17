@@ -452,6 +452,16 @@ defaults to ‘’</td>
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str, string to append to the release notes,
 defaults to ‘’</td>
 </tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_ASSETS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">iterable of str or functions, Extra assests to
+upload to the GitHub release. This is ususally a tarball of the source
+code or a binary package. If the asset is a string, it is interpreted
+as a filename (and evalauated in the current environment). If the asset
+is a function, the function is called with no arguments and should return
+either a string filename or a list of string filenames. The asset
+functions will usually generate or acquire the asset. By default, this
+a tarball of the release tag will be uploaded.</td>
+</tr>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
@@ -474,6 +484,9 @@ is where the GitHub credential files are stored by default.</td>
 <tr class="field-odd field"><td>&#160;</td><td class="field-body">path to the latest release notes file
 created by the changelog activity.</td>
 </tr>
+<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">may used to find the tag name when creating the default
+asset.</td>
+</tr>
 </tbody>
 </table>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
@@ -483,6 +496,7 @@ created by the changelog activity.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x152003e6a268</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
