@@ -125,8 +125,13 @@ feedstock using conda-smithy, default True.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">bool, whether the activity should create a new fork of
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should create a new fork of
 the feedstock if it doesn’t exist already, default True.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK_ORG:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, the org to fork the recipe to or which holds
+the fork, if <code class="docutils literal notranslate"><span class="pre">''</span></code> use the registered gh username, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
 </td>
 </tr>
 </tbody>

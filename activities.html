@@ -316,8 +316,13 @@ feedstock using conda-smithy, default True.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">bool, whether the activity should create a new fork of
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should create a new fork of
 the feedstock if it doesn’t exist already, default True.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK_ORG:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, the org to fork the recipe to or which holds
+the fork, if <code class="docutils literal notranslate"><span class="pre">''</span></code> use the registered gh username, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
 </td>
 </tr>
 </tbody>
@@ -371,6 +376,7 @@ is where the GitHub credential files are stored by default.</td>
 <span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="nv">$CONDA_FORGE_FORK</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$CONDA_FORGE_FORK_ORG</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -496,7 +502,7 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x1541d9a942f0</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x149b7a203268</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
