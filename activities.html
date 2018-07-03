@@ -76,6 +76,12 @@ with rever.</p>
 <tr class="row-even"><td><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></td>
 <td>Updates conda-forge feedstocks.</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="#dockerbuild"><span class="std std-ref">DockerBuild</span></a></td>
+<td>Builds a Dockerfile.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#dockerpush"><span class="std std-ref">DockerPush</span></a></td>
+<td>Pushes a built Dockerfile.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
 <td>Activity for pushing documentation up to GitHub pages.</td>
 </tr>
@@ -381,8 +387,78 @@ is where the GitHub credential files are stored by default.</td>
 </div>
 <hr class="docutils" />
 </div>
+<div class="section" id="dockerbuild">
+<span id="id5"></span><h3>DockerBuild<a class="headerlink" href="#dockerbuild" title="Permalink to this headline">¶</a></h3>
+<p>The DockerBuild activity class is available via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerBuild</span>
+</pre></div>
+</div>
+<p>Builds a Dockerfile.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_BUILD_PATH:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, path to the Dockerfile, default (None) looks from
+reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$DOCKER_BUILD_CONTEXT:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, directory to execute the build within.
+An empty string indicates that the image should be built in directory
+containing the path. The default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_CONTEXT</span></code>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_BUILD_TAGS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, Tags the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
+and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$DOCKER_BUILD_CACHE:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">bool, Flag for whether or not to use the cache,
+default False.</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_build&#39;</span><span class="p">]</span>
+
+<span class="nv">$DOCKER_BUILD_PATH</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$DOCKER_BUILD_CONTEXT</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$DOCKER_BUILD_TAGS</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$DOCKER_BUILD_CACHE</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="dockerpush">
+<span id="id6"></span><h3>DockerPush<a class="headerlink" href="#dockerpush" title="Permalink to this headline">¶</a></h3>
+<p>The DockerPush activity class is available via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerPush</span>
+</pre></div>
+</div>
+<p>Pushes a built Dockerfile.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_PUSH_TAGS:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, Tags that the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
+and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_push&#39;</span><span class="p">]</span>
+
+<span class="nv">$DOCKER_PUSH_TAGS</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
 <div class="section" id="ghpages">
-<span id="id5"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
 <p>The GHPages activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
 </pre></div>
@@ -428,7 +504,7 @@ sphinx activity.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="ghrelease">
-<span id="id6"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
+<span id="id8"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
 <p>The GHRelease activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
 </pre></div>
@@ -502,13 +578,13 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x150d7e1822f0</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x14fb30980d90</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="nose">
-<span id="id7"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
+<span id="id9"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
 <p>The Nose activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
 </pre></div>
@@ -536,7 +612,7 @@ nose command. By default no additional arguments are sent.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="pushtag">
-<span id="id8"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
 <p>The PushTag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
 </pre></div>
@@ -584,7 +660,7 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="pypi">
-<span id="id9"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id11"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The PyPI activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -627,7 +703,7 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id10"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id12"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>The PyTest activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -655,7 +731,7 @@ behaviour of the conatiner that is used for testing.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id11"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id13"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>The Sphinx activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -710,7 +786,7 @@ of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id12"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id14"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>The Tag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -735,7 +811,7 @@ by default this is ‘$VERSION’</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id13"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id15"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>The VersionBump activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -805,6 +881,8 @@ variables.</li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
+<li><a class="reference internal" href="#dockerbuild">DockerBuild</a></li>
+<li><a class="reference internal" href="#dockerpush">DockerPush</a></li>
 <li><a class="reference internal" href="#ghpages">GHPages</a></li>
 <li><a class="reference internal" href="#ghrelease">GHRelease</a></li>
 <li><a class="reference internal" href="#nose">Nose</a></li>
