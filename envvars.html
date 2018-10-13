@@ -141,20 +141,20 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7fc844e27cf8&gt;,</dt>
-<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7fc842452128&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7fc841b676d8&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7fc842600748&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7fc84260c198&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7fc842605cf8&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7fc842605b38&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7fc842605780&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7fc84260ffd0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7fc8425d31d0&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7fc8425d3cc0&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7fc8425d3a58&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7fc8425d3f98&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7fc848e0c550&gt;}</dd>
+<dt><strong>default:</strong> {‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2ab730698f60&gt;,</dt>
+<dd>‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2ab732197d68&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2ab7321352b0&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2ab7321a2e48&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2ab732a5d128&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2ab731e70ef0&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2ab731e70da0&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2ab731aa4278&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2ab7321b44e0&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2ab7321b41d0&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2ab7321b4d30&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2ab7321b4a20&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2ab7321b49b0&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2ab7321b4b38&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -363,7 +363,7 @@ applicable.</p>
 <span id="id28"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7fc8426789e8&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2ab731d0eef0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -379,7 +379,7 @@ applicable.</p>
 <span id="id30"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/opt/conda/bin/python’</p>
+<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -387,7 +387,7 @@ applicable.</p>
 <span id="id31"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to rever configuration directory</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/root/.config/rever’</p>
+<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -419,7 +419,7 @@ applicable.</p>
 <span id="id35"></span><h3>$REVER_USER<a class="headerlink" href="#rever-user" title="Permalink to this headline">¶</a></h3>
 <p>Name of the user who ran the rever command.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘root’</p>
+<p><strong>default:</strong> ‘travis’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
