@@ -580,7 +580,7 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b60af8fd488</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x1551137a1048</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -634,6 +634,10 @@ this variable will default to <code class="docutils literal notranslate"><span c
 <tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, remote branch to push to once the tag has been made.
 The default is None, which uses the current branch.</td>
 </tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_PROTOCOL:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, the protocol to use to for the push, if
+None, use ssh. Available protocols are <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, and <code class="docutils literal notranslate"><span class="pre">ssh</span></code></td>
+</tr>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
@@ -657,6 +661,7 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</td>
 
 <span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$PUSH_TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$PUSH_TAG_PROTOCOL</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
