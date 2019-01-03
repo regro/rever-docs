@@ -31,6 +31,7 @@
 ./_sources/devguide.rst.txt
 ./_sources/envvars.rst.txt
 ./_sources/index.rst.txt
+./_sources/news.rst.txt
 ./_sources/tutorial.rst.txt
 ./_sources/usepatterns.rst.txt
 ./_static/ajax-loader.gif
@@ -57,6 +58,7 @@
 ./_static/jquery-3.2.1.js
 ./_static/jquery.cookie.js
 ./_static/jquery.js
+./_static/language_data.js
 ./_static/longship-256-white.png
 ./_static/longship-256.png
 ./_static/longship-512-white.png
@@ -106,6 +108,7 @@
 ./envvars.html
 ./genindex.html
 ./index.html
+./news.html
 ./objects.inv
 ./py-modindex.html
 ./search.html
