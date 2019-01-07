@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Overview: module code &#8212; rever 0.3.1 documentation</title>
+    <title>Authors (rever.authors) &#8212; rever 0.3.1 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -24,9 +24,11 @@
     <link rel="shortcut icon" href="../_static/longship.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer’s Guide" href="../devguide.html" />
+    <link rel="prev" title="GitHub Interface (rever.github)" href="github.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/_modules/index.html"/>
+    <link rel="canonical" href="http://xon.sh/api/authors.html"/>
 
   </head><body>
     <div class="relbar-top">
@@ -40,8 +42,15 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../devguide.html" title="Developer’s Guide"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="github.html" title="GitHub Interface (rever.github)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.3.1 documentation</a> &#187;</li>
- 
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
       </ul>
     </div>
     </div>
@@ -52,33 +61,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="rever/activities/authors.html">rever.activities.authors</a></li>
-<li><a href="rever/activities/bibtex.html">rever.activities.bibtex</a></li>
-<li><a href="rever/activities/changelog.html">rever.activities.changelog</a></li>
-<li><a href="rever/activities/command.html">rever.activities.command</a></li>
-<li><a href="rever/activities/conda_forge.html">rever.activities.conda_forge</a></li>
-<li><a href="rever/activities/docker.html">rever.activities.docker</a></li>
-<li><a href="rever/activities/ghpages.html">rever.activities.ghpages</a></li>
-<li><a href="rever/activities/ghrelease.html">rever.activities.ghrelease</a></li>
-<li><a href="rever/activities/nose.html">rever.activities.nose</a></li>
-<li><a href="rever/activities/pypi.html">rever.activities.pypi</a></li>
-<li><a href="rever/activities/pytest.html">rever.activities.pytest</a></li>
-<li><a href="rever/activities/sphinx.html">rever.activities.sphinx</a></li>
-<li><a href="rever/activities/tag.html">rever.activities.tag</a></li>
-<li><a href="rever/activities/version_bump.html">rever.activities.version_bump</a></li>
-<li><a href="rever/activity.html">rever.activity</a></li>
-<li><a href="rever/authors.html">rever.authors</a></li>
-<li><a href="rever/conda.html">rever.conda</a></li>
-<li><a href="rever/dag.html">rever.dag</a></li>
-<li><a href="rever/docker.html">rever.docker</a></li>
-<li><a href="rever/environ.html">rever.environ</a></li>
-<li><a href="rever/github.html">rever.github</a></li>
-<li><a href="rever/logger.html">rever.logger</a></li>
-<li><a href="rever/main.html">rever.main</a></li>
-<li><a href="rever/tools.html">rever.tools</a></li>
-<li><a href="rever/vcsutils.html">rever.vcsutils</a></li>
-</ul>
+  <div class="section" id="module-rever.authors">
+<span id="authors-rever-authors"></span><span id="rever-authors"></span><h1>Authors (<code class="docutils literal notranslate"><span class="pre">rever.authors</span></code>)<a class="headerlink" href="#module-rever.authors" title="Permalink to this headline">¶</a></h1>
+<p>Utilities for dealing with authorship files.</p>
+<dl class="function">
+<dt id="rever.authors.update_metadata">
+<code class="descclassname">rever.authors.</code><code class="descname">update_metadata</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a YAML metadata filename and updates it with the current repo
+information, if possible.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.authors.write_mailmap">
+<code class="descclassname">rever.authors.</code><code class="descname">write_mailmap</code><span class="sig-paren">(</span><em>metadata</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.write_mailmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a mailmap file from the metadata (list of author dicts) provided.</p>
+</dd></dl>
+
+</div>
+
 
           </div>
         </div>
@@ -88,6 +88,23 @@
         <p class="logo"><a href="../index.html" title="index">
           <img class="logo" src="../_static/longship-256.png" alt="Logo"/>
         </a></p>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="github.html"
+                          title="Previous page">&larr; GitHub Interface (<code class="docutils literal notranslate"><span class="pre">rever.github</span></code>)</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="../devguide.html"
+                          title="Next page">&rarr; Developer’s Guide</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/authors.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -132,8 +149,15 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../devguide.html" title="Developer’s Guide"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="github.html" title="GitHub Interface (rever.github)"
+             >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.3.1 documentation</a> &#187;</li>
- 
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
       </ul>
     </div>
     </div>

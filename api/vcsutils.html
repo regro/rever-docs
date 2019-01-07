@@ -65,6 +65,12 @@
 <span id="version-control-system-utilities-rever-vcsutils"></span><span id="rever-vcsutils"></span><h1>Version Control System Utilities (<code class="docutils literal notranslate"><span class="pre">rever.vcsutils</span></code>)<a class="headerlink" href="#module-rever.vcsutils" title="Permalink to this headline">¶</a></h1>
 <p>Some version control utilities for rever</p>
 <dl class="function">
+<dt id="rever.vcsutils.authors_emails">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">authors_emails</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.authors_emails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a set of (author, email) tuples</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="rever.vcsutils.checkout">
 <code class="descclassname">rever.vcsutils.</code><code class="descname">checkout</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.checkout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks out a revision.</p>
@@ -74,6 +80,18 @@
 <dt id="rever.vcsutils.commit">
 <code class="descclassname">rever.vcsutils.</code><code class="descname">commit</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commits a revision to the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.commits_per_author">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">commits_per_author</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping author names to commits</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.commits_per_email">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">commits_per_email</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping emails to commits</p>
 </dd></dl>
 
 <dl class="function">
@@ -101,6 +119,18 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="rever.vcsutils.first_commit_per_email">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">first_commit_per_email</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.first_commit_per_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping emails to the datetime of its first commit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_authors_emails">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_authors_emails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_authors_emails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a set of (author, email) tuples</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="rever.vcsutils.git_checkout">
 <code class="descclassname">rever.vcsutils.</code><code class="descname">git_checkout</code><span class="sig-paren">(</span><em>rev</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_checkout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks out a branch name, tag, or other revision.</p>
@@ -110,6 +140,19 @@
 <dt id="rever.vcsutils.git_commit">
 <code class="descclassname">rever.vcsutils.</code><code class="descname">git_commit</code><span class="sig-paren">(</span><em>message='Rever commit'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_commit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commits to the repo.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_commits_per_author">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_commits_per_author</code><span class="sig-paren">(</span><em>since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_commits_per_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping author names to commits</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_commits_per_email">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_commits_per_email</code><span class="sig-paren">(</span><em>since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_commits_per_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping emails to commits.
+Accepts a “since” argument, which specifies the lower boundary.</p>
 </dd></dl>
 
 <dl class="function">
@@ -134,6 +177,12 @@
 <dt id="rever.vcsutils.git_del_tag">
 <code class="descclassname">rever.vcsutils.</code><code class="descname">git_del_tag</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_del_tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a tag from the local repo</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.vcsutils.git_first_commit_per_email">
+<code class="descclassname">rever.vcsutils.</code><code class="descname">git_first_commit_per_email</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.git_first_commit_per_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary mapping emails to the datetime of its first commit</p>
 </dd></dl>
 
 <dl class="function">

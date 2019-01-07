@@ -1,6 +1,7 @@
 ./_modules/index.html
 ./_modules/rever/dag.html
 ./_sources/activities.rst.txt
+./_sources/api/activities/authors.rst.txt
 ./_sources/api/activities/bibtex.rst.txt
 ./_sources/api/activities/changelog.rst.txt
 ./_sources/api/activities/command.rst.txt
@@ -16,6 +17,7 @@
 ./_sources/api/activities/tag.rst.txt
 ./_sources/api/activities/version_bump.rst.txt
 ./_sources/api/activity.rst.txt
+./_sources/api/authors.rst.txt
 ./_sources/api/conda.rst.txt
 ./_sources/api/dag.rst.txt
 ./_sources/api/docker.rst.txt
@@ -26,6 +28,7 @@
 ./_sources/api/main.rst.txt
 ./_sources/api/tools.rst.txt
 ./_sources/api/vcsutils.rst.txt
+./_sources/authorship.rst.txt
 ./_sources/changelog.rst.txt
 ./_sources/dependencies.rst.txt
 ./_sources/devguide.rst.txt
@@ -77,6 +80,7 @@
 ./_static/up.png
 ./_static/websupport.js
 ./activities.html
+./api/activities/authors.html
 ./api/activities/bibtex.html
 ./api/activities/changelog.html
 ./api/activities/command.html
@@ -92,6 +96,7 @@
 ./api/activities/tag.html
 ./api/activities/version_bump.html
 ./api/activity.html
+./api/authors.html
 ./api/conda.html
 ./api/dag.html
 ./api/docker.html
@@ -102,6 +107,7 @@
 ./api/main.html
 ./api/tools.html
 ./api/vcsutils.html
+./authorship.html
 ./changelog.html
 ./dependencies.html
 ./devguide.html
