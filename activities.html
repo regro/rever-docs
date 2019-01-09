@@ -302,7 +302,8 @@ activity are:</p>
 </pre></div>
 </div>
 <p>Manages keeping a changelog up-to-date.</p>
-<p>This activity may be configured with the following envionment variables:</p>
+<blockquote>
+<div><p>This activity may be configured with the following envionment variables:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -349,12 +350,49 @@ in the current environment.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, filename of the template file in the
 news directory. The default is <code class="docutils literal notranslate"><span class="pre">'TEMPLATE'</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORIES:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">iterable of str, the news categories that are used.
+Default:<code class="docutils literal notranslate"><span class="pre">('Added',</span> <span class="pre">'Changed',</span> <span class="pre">'Deprecated',</span> <span class="pre">'Removed',</span> <span class="pre">'Fixed',</span> <span class="pre">'Security')</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORY_TITLE_FORMAT:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
+entry for formatting changelog and template category titles. If this is a callable,
+it is a function which takes a single category argument and returns the title string.
+The default is <a href="#id8"><span class="problematic" id="id9">``</span></a>”<strong>{category}:</strong></p>
 </td>
 </tr>
 </tbody>
 </table>
+</div></blockquote>
+<dl class="docutils">
+<dt>“<a href="#id10"><span class="problematic" id="id11">``</span></a>.</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_TITLE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
+activitiy is being run, this will append an authors section to this changelog entry
+that contains all of the authors that contributed to this version. This string is
+the section title and is formatted as if it were a category with
+<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_FORMAT:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, this is a format string that formats each author who
+contributed to this release, if an authors section will be appened. This is
+evaluated in the context of the authors, see the <code class="docutils literal notranslate"><span class="pre">authors</span></code> activity for more
+details on the available fields. The default is <a href="#id12"><span class="problematic" id="id13">``</span></a>”* {name}</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>“<a href="#id14"><span class="problematic" id="id15">``</span></a>.</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;changelog&#39;</span><span class="p">]</span>
 
@@ -365,12 +403,16 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 <span class="nv">$CHANGELOG_IGNORE</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$CHANGELOG_LATEST</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/LATEST&#39;</span>
 <span class="nv">$CHANGELOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;TEMPLATE&#39;</span>
+<span class="nv">$CHANGELOG_CATEGORIES</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Added&#39;</span><span class="p">,</span> <span class="s1">&#39;Changed&#39;</span><span class="p">,</span> <span class="s1">&#39;Deprecated&#39;</span><span class="p">,</span> <span class="s1">&#39;Removed&#39;</span><span class="p">,</span> <span class="s1">&#39;Fixed&#39;</span><span class="p">,</span> <span class="s1">&#39;Security&#39;</span><span class="p">)</span>
+<span class="nv">$CHANGELOG_CATEGORY_TITLE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;**{category}:**</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+<span class="nv">$CHANGELOG_AUTHORS_TITLE</span> <span class="o">=</span> <span class="s1">&#39;Authors&#39;</span>
+<span class="nv">$CHANGELOG_AUTHORS_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;* {name}</span><span class="se">\n</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="command">
-<span id="id8"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<span id="id16"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
 <p>The Command activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
 </pre></div>
@@ -385,7 +427,7 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 <hr class="docutils" />
 </div>
 <div class="section" id="condaforge">
-<span id="id9"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
+<span id="id17"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
 <p>The CondaForge activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
 </pre></div>
@@ -515,7 +557,7 @@ is where the GitHub credential files are stored by default.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerbuild">
-<span id="id10"></span><h3>DockerBuild<a class="headerlink" href="#dockerbuild" title="Permalink to this headline">¶</a></h3>
+<span id="id18"></span><h3>DockerBuild<a class="headerlink" href="#dockerbuild" title="Permalink to this headline">¶</a></h3>
 <p>The DockerBuild activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerBuild</span>
 </pre></div>
@@ -558,7 +600,7 @@ default False.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerpush">
-<span id="id11"></span><h3>DockerPush<a class="headerlink" href="#dockerpush" title="Permalink to this headline">¶</a></h3>
+<span id="id19"></span><h3>DockerPush<a class="headerlink" href="#dockerpush" title="Permalink to this headline">¶</a></h3>
 <p>The DockerPush activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerPush</span>
 </pre></div>
@@ -585,7 +627,7 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 <hr class="docutils" />
 </div>
 <div class="section" id="ghpages">
-<span id="id12"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
+<span id="id20"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
 <p>The GHPages activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
 </pre></div>
@@ -631,7 +673,7 @@ sphinx activity.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="ghrelease">
-<span id="id13"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
+<span id="id21"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
 <p>The GHRelease activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
 </pre></div>
@@ -705,13 +747,13 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2aff2117a378</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b331caaeb70</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="nose">
-<span id="id14"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
+<span id="id22"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
 <p>The Nose activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
 </pre></div>
@@ -739,7 +781,7 @@ nose command. By default no additional arguments are sent.</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="pushtag">
-<span id="id15"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
+<span id="id23"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
 <p>The PushTag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
 </pre></div>
@@ -792,7 +834,7 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="pypi">
-<span id="id16"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id24"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The PyPI activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -835,7 +877,7 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id17"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id25"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>The PyTest activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -863,7 +905,7 @@ behaviour of the conatiner that is used for testing.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id18"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id26"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>The Sphinx activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -918,7 +960,7 @@ of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id19"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id27"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>The Tag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -943,7 +985,7 @@ by default this is ‘$VERSION’</td>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id20"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id28"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>The VersionBump activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>

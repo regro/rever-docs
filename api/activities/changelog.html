@@ -69,7 +69,8 @@
 <dt id="rever.activities.changelog.Changelog">
 <em class="property">class </em><code class="descclassname">rever.activities.changelog.</code><code class="descname">Changelog</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manages keeping a changelog up-to-date.</p>
-<p>This activity may be configured with the following envionment variables:</p>
+<blockquote>
+<div><p>This activity may be configured with the following envionment variables:</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -116,12 +117,49 @@ in the current environment.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, filename of the template file in the
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, filename of the template file in the
 news directory. The default is <code class="docutils literal notranslate"><span class="pre">'TEMPLATE'</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORIES:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">iterable of str, the news categories that are used.
+Default:<code class="docutils literal notranslate"><span class="pre">('Added',</span> <span class="pre">'Changed',</span> <span class="pre">'Deprecated',</span> <span class="pre">'Removed',</span> <span class="pre">'Fixed',</span> <span class="pre">'Security')</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORY_TITLE_FORMAT:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
+entry for formatting changelog and template category titles. If this is a callable,
+it is a function which takes a single category argument and returns the title string.
+The default is <a href="#id1"><span class="problematic" id="id2">``</span></a>”<strong>{category}:</strong></p>
 </td>
 </tr>
 </tbody>
 </table>
+</div></blockquote>
+<dl class="docutils">
+<dt>“<a href="#id3"><span class="problematic" id="id4">``</span></a>.</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_TITLE:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
+activitiy is being run, this will append an authors section to this changelog entry
+that contains all of the authors that contributed to this version. This string is
+the section title and is formatted as if it were a category with
+<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_FORMAT:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">str, this is a format string that formats each author who
+contributed to this release, if an authors section will be appened. This is
+evaluated in the context of the authors, see the <code class="docutils literal notranslate"><span class="pre">authors</span></code> activity for more
+details on the available fields. The default is <a href="#id5"><span class="problematic" id="id6">``</span></a>”* {name}</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>“<a href="#id7"><span class="problematic" id="id8">``</span></a>.</p>
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.all_kwargs">
 <code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.all_kwargs" title="Permalink to this definition">¶</a></dt>
@@ -132,6 +170,12 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 <dt id="rever.activities.changelog.Changelog.clear_kwargs_from_env">
 <code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.changelog.Changelog.generate_authors">
+<code class="descname">generate_authors</code><span class="sig-paren">(</span><em>title_format</em>, <em>title</em>, <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.generate_authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates author portion of changelog.</p>
 </dd></dl>
 
 <dl class="method">
@@ -148,7 +192,7 @@ news directory. The default is <code class="docutils literal notranslate"><span 
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.merge_news">
-<code class="descname">merge_news</code><span class="sig-paren">(</span><em>news='news'</em>, <em>ignore=('TEMPLATE'</em>, <em>)</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.merge_news" title="Permalink to this definition">¶</a></dt>
+<code class="descname">merge_news</code><span class="sig-paren">(</span><em>news='news'</em>, <em>ignore=('TEMPLATE'</em>, <em>)</em>, <em>categories=('Added'</em>, <em>'Changed'</em>, <em>'Deprecated'</em>, <em>'Removed'</em>, <em>'Fixed'</em>, <em>'Security')</em>, <em>category_title_format='**{category}:**\n\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.merge_news" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads news files and merges them.</p>
 </dd></dl>
 
