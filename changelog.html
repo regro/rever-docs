@@ -58,6 +58,62 @@
             
   <div class="section" id="rever-change-log">
 <h1>Rever Change Log<a class="headerlink" href="#rever-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-3-3">
+<h2>v0.3.3<a class="headerlink" href="#v0-3-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<ul>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">rever</span> <span class="pre">check</span></code> command for checking that all activities can be run
+prior to actually performing a release. The intended workflow is:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ rever check
+$ rever X.Y.Z
+</pre></div>
+</div>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">Activitiy</span></code> class and <code class="docutils literal notranslate"><span class="pre">activity()</span></code> decorator have <code class="docutils literal notranslate"><span class="pre">check</span></code>
+and <code class="docutils literal notranslate"><span class="pre">requires</span></code> keyword arguments. The <code class="docutils literal notranslate"><span class="pre">check</span></code> parameter is a
+function for performing the necessary checks during <code class="docutils literal notranslate"><span class="pre">rever</span> <span class="pre">check</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">requires</span></code> parameter is a dict that specifies necessary
+command line utilites and modules for the activity to be run.</p>
+</li>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">Activity.check_requirements()</span></code> method for checking requirements.</p>
+</li>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">rever.authors.metadata_is_valid()</span></code> function for checking if
+an author metadata list is correct.</p>
+</li>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">rever.github.can_login()</span></code> functions checks if the user can
+login to GitHub.</p>
+</li>
+<li><p class="first">New SAT solving module, <code class="docutils literal notranslate"><span class="pre">rever.sat</span></code>, for defining satisfiability problems,
+and a <code class="docutils literal notranslate"><span class="pre">solve_2sat()</span></code> function for solving 2-SAT problems.</p>
+</li>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">rever.tools.download()</span></code> and <code class="docutils literal notranslate"><span class="pre">rever.tools.download_bytes()</span></code> function
+for downloading URLs as strings and bytes respetively.</p>
+</li>
+<li><p class="first">New <code class="docutils literal notranslate"><span class="pre">rever.vcsutils.have_push_permissions()</span></code> function for checking if the
+user has push permisions on a remote repository.</p>
+</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li>All existing activities have been updated to include <code class="docutils literal notranslate"><span class="pre">requires</span></code> dicts
+and <code class="docutils literal notranslate"><span class="pre">check</span></code> functions as needed.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">Authors</span></code> activitiy can now be configured with <code class="docutils literal notranslate"><span class="pre">$AUTHORS_INCLUDE_ORGS</span></code>
+for whether or not it should include organizations in the authors list.
+Organizations are entries in the authors listing that have the <code class="docutils literal notranslate"><span class="pre">is_org</span></code>
+field set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">rever.authors.update_metadata()</span></code> now attempts to add GitHub identifiers
+if <code class="docutils literal notranslate"><span class="pre">$GITHUB_ORG</span></code> is set.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Authors were not being added to the latest changelog release. now they are.</li>
+<li>Fixed bug where <code class="docutils literal notranslate"><span class="pre">$REVER_VCS</span></code> would be detyped as a boolean.</li>
+</ul>
+<p><strong>Authors:</strong></p>
+<ul class="simple">
+<li>Anthony Scopatz</li>
+</ul>
+</div>
 <div class="section" id="v0-3-2">
 <h2>v0.3.2<a class="headerlink" href="#v0-3-2" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
@@ -309,6 +365,7 @@ it shouldn’t have been doing that.</li>
     <h3><a href="index.html">Page contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Rever Change Log</a><ul>
+<li><a class="reference internal" href="#v0-3-3">v0.3.3</a></li>
 <li><a class="reference internal" href="#v0-3-2">v0.3.2</a></li>
 <li><a class="reference internal" href="#v0-3-1">v0.3.1</a></li>
 <li><a class="reference internal" href="#v0-3-0">v0.3.0</a></li>
