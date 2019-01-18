@@ -747,7 +747,7 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b11378dcb70</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b1bb8c73a60</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1015,10 +1015,10 @@ variables.</li>
 <p>For example:</p>
 <div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
-    (&#39;src/__init__.py&#39;, &#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
+    (&#39;src/__init__.py&#39;, r&#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
     # replace version in appveyor
-    (&#39;.appveyor.yml&#39;, &#39;version:\s*&#39;,
+    (&#39;.appveyor.yml&#39;, r&#39;version:\s*&#39;,
       (lambda ver: &#39;version: {0}.{{build}}&#39;.format(ver))),
   ...
 ]

@@ -93,10 +93,10 @@ variables.</li>
 <p>For example:</p>
 <div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
-    (&#39;src/__init__.py&#39;, &#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
+    (&#39;src/__init__.py&#39;, r&#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
     # replace version in appveyor
-    (&#39;.appveyor.yml&#39;, &#39;version:\s*&#39;,
+    (&#39;.appveyor.yml&#39;, r&#39;version:\s*&#39;,
       (lambda ver: &#39;version: {0}.{{build}}&#39;.format(ver))),
   ...
 ]
