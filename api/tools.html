@@ -65,11 +65,29 @@
 <span id="misc-tools-rever-tools"></span><span id="rever-tools"></span><h1>Misc. Tools (<code class="docutils literal notranslate"><span class="pre">rever.tools</span></code>)<a class="headerlink" href="#module-rever.tools" title="Permalink to this headline">¶</a></h1>
 <p>Some special rever tools</p>
 <dl class="function">
+<dt id="rever.tools.download">
+<code class="descclassname">rever.tools.</code><code class="descname">download</code><span class="sig-paren">(</span><em>url</em>, <em>encoding=None</em>, <em>errors=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a URL in a given encoding.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.tools.download_bytes">
+<code class="descclassname">rever.tools.</code><code class="descname">download_bytes</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the bytes from a URL</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="rever.tools.eval_version">
 <code class="descclassname">rever.tools.</code><code class="descname">eval_version</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.eval_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evalauates the argument either as a template string which contains
 $VERSION (or other environment variables) or a callable which
 takes a single argument (that is $VERSION) and returns a string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rever.tools.get_format_field_names">
+<code class="descclassname">rever.tools.</code><code class="descname">get_format_field_names</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.get_format_field_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the set of field names in a format string.</p>
 </dd></dl>
 
 <dl class="function">

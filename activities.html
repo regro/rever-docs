@@ -185,6 +185,7 @@ This file has the following format:</p>
 
   <span class="c1"># optional fields</span>
   <span class="nt">github</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bcup</span>
+  <span class="nt">is_org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
   <span class="nt">aliases</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Buttercup</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">beecup</span>
@@ -201,6 +202,10 @@ This file has the following format:</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Dread Pirate Roberts</span>
   <span class="nt">alternate_emails</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dpr@pirates.biz</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Florin</span>
+  <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">help@florin.gov</span>
+  <span class="nt">github</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">florin</span>
+  <span class="nt">is_org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </td>
@@ -215,8 +220,13 @@ the authors file. Valid options are:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_MAILMAP:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">str, bool, or None, If this is a non-empty string,
+<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_INCLUDE_ORGS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, Whether or not to include organizations in
+the authors file, defaults to False.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_MAILMAP:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, bool, or None, If this is a non-empty string,
 it will be interperted as a file path to a mailmap file that will be
 generated based on the metadata provided. The default value is  <code class="docutils literal notranslate"><span class="pre">&quot;.mailmap&quot;</span></code>.
 This is evaluated in the current environment.</p>
@@ -235,6 +245,7 @@ This is evaluated in the current environment.</p>
 <span class="nv">$AUTHORS_LATEST</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/LATEST-AUTHORS.json&#39;</span>
 <span class="nv">$AUTHORS_METADATA</span> <span class="o">=</span> <span class="s1">&#39;.authors.yml&#39;</span>
 <span class="nv">$AUTHORS_SORTBY</span> <span class="o">=</span> <span class="s1">&#39;num_commits&#39;</span>
+<span class="nv">$AUTHORS_INCLUDE_ORGS</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="nv">$AUTHORS_MAILMAP</span> <span class="o">=</span> <span class="s1">&#39;.mailmap&#39;</span>
 </pre></div>
 </div>
@@ -747,7 +758,7 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b1bb8c73a60</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b0a7b9af268</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -855,6 +866,9 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 </tr>
 <tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
 </tr>
+<tr class="field-even field"><th class="field-name">$PYPI_NAME:</th><td class="field-body">str or None, The name of the package on PyPI. If None,
+This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></td>
+</tr>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
@@ -872,6 +886,7 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <span class="nv">$PYPI_RC</span> <span class="o">=</span> <span class="s1">&#39;$HOME/.pypirc&#39;</span>
 <span class="nv">$PYPI_BUILD_COMMANDS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sdist&#39;</span><span class="p">,</span> <span class="p">)</span>
 <span class="nv">$PYPI_UPLOAD</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$PYPI_NAME</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />

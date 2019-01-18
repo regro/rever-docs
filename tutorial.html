@@ -156,6 +156,7 @@ follows:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;tarball&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;install&#39;</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Creates a source tarball&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">requires</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;tar&quot;</span><span class="p">:</span> <span class="s2">&quot;tar&quot;</span><span class="p">}}</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;project.tar.gz&#39;</span><span class="p">):</span>
         <span class="n">tar</span> <span class="n">czf</span> <span class="k">@</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="n">src</span><span class="o">/</span>

@@ -84,6 +84,9 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 </tr>
 <tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
 </tr>
+<tr class="field-even field"><th class="field-name">$PYPI_NAME:</th><td class="field-body">str or None, The name of the package on PyPI. If None,
+This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></td>
+</tr>
 </tbody>
 </table>
 <p>Other environment variables that affect the behavior are:</p>
@@ -102,6 +105,29 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 </dd></dl>
 
 <dl class="method">
+<dt id="rever.activities.pypi.PyPI.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activity’s check() function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.pypi.PyPI.check_func">
+<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.pypi.PyPI.check_requirements">
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that an activities requirements are actually available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.pypi.PyPI.checker">
+<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the check function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="rever.activities.pypi.PyPI.clear_kwargs_from_env">
 <code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
@@ -116,7 +142,7 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.setup">
 <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
+<dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">

@@ -66,7 +66,7 @@
 <span id="rever-command-activity"></span><h1>Command Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.command</span></code>)<a class="headerlink" href="#command-activity-rever-activities-command" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="rever.activities.command.command">
-<code class="descclassname">rever.activities.command.</code><code class="descname">command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.command" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rever.activities.command.</code><code class="descname">command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>requires=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a command activity</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -81,6 +81,9 @@
 </dd>
 <dt><strong>undo_command</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
 <dd><p class="first last">Command to undo the activity. Should be a valid xonsh command.</p>
+</dd>
+<dt><strong>requires</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or None, optional</span></dt>
+<dd><p class="first last">The requirements for this command.</p>
 </dd>
 </dl>
 </td>
@@ -99,7 +102,7 @@
 
 <dl class="class">
 <dt id="rever.activities.command.Command">
-<em class="property">class </em><code class="descclassname">rever.activities.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.Command" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activities.command.</code><code class="descname">Command</code><span class="sig-paren">(</span><em>name</em>, <em>command</em>, <em>undo_command=None</em>, <em>requires=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.command.Command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs a command</p>
 <p>Optionally, an undo command can also be given to undo the given command</p>
 <div class="admonition note">
@@ -120,6 +123,9 @@
 </dd>
 <dt><strong>undo_command</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
 <dd><p class="first last">Command to undo the activity. Should be a valid xonsh command.</p>
+</dd>
+<dt><strong>requires</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or None, optional</span></dt>
+<dd><p class="first last">The requirements for this command.</p>
 </dd>
 </dl>
 </td>

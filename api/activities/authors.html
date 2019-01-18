@@ -119,6 +119,7 @@ This file has the following format:</p>
 
   <span class="c1"># optional fields</span>
   <span class="nt">github</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bcup</span>
+  <span class="nt">is_org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
   <span class="nt">aliases</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Buttercup</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">beecup</span>
@@ -135,6 +136,10 @@ This file has the following format:</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Dread Pirate Roberts</span>
   <span class="nt">alternate_emails</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dpr@pirates.biz</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Florin</span>
+  <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">help@florin.gov</span>
+  <span class="nt">github</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">florin</span>
+  <span class="nt">is_org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </td>
@@ -149,8 +154,13 @@ the authors file. Valid options are:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_MAILMAP:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">str, bool, or None, If this is a non-empty string,
+<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_INCLUDE_ORGS:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, Whether or not to include organizations in
+the authors file, defaults to False.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_MAILMAP:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, bool, or None, If this is a non-empty string,
 it will be interperted as a file path to a mailmap file that will be
 generated based on the metadata provided. The default value is  <code class="docutils literal notranslate"><span class="pre">&quot;.mailmap&quot;</span></code>.
 This is evaluated in the current environment.</p>
@@ -164,6 +174,30 @@ This is evaluated in the current environment.</p>
 <dt id="rever.activities.authors.Authors.all_kwargs">
 <code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.authors.Authors.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activity’s check() function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.authors.Authors.check_func">
+<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.check_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that authors can be run.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.authors.Authors.check_requirements">
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that an activities requirements are actually available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.authors.Authors.checker">
+<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
@@ -181,7 +215,7 @@ This is evaluated in the current environment.</p>
 <dl class="method">
 <dt id="rever.activities.authors.Authors.setup">
 <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.authors.Authors.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
+<dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">

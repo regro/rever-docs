@@ -67,7 +67,7 @@
 <p>Activity for updating conda-forge feedstocks.</p>
 <dl class="class">
 <dt id="rever.activities.conda_forge.CondaForge">
-<em class="property">class </em><code class="descclassname">rever.activities.conda_forge.</code><code class="descname">CondaForge</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'push_tag'</em>, <em>'tag'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activities.conda_forge.</code><code class="descname">CondaForge</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({'tag'</em>, <em>'push_tag'})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates conda-forge feedstocks.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
@@ -169,6 +169,30 @@ is where the GitHub credential files are stored by default.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="rever.activities.conda_forge.CondaForge.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activity’s check() function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.conda_forge.CondaForge.check_func">
+<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that we can login</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.conda_forge.CondaForge.check_requirements">
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that an activities requirements are actually available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.conda_forge.CondaForge.checker">
+<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the check function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="rever.activities.conda_forge.CondaForge.clear_kwargs_from_env">
 <code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
@@ -183,7 +207,7 @@ is where the GitHub credential files are stored by default.</td>
 <dl class="method">
 <dt id="rever.activities.conda_forge.CondaForge.setup">
 <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
+<dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">

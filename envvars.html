@@ -145,21 +145,21 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="docutils">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b1bb303abe0&gt;,</dt>
-<dd>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b1bb3f077f0&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b1bb3eab358&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b1bb83ef358&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b1bb83ef668&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b1bb845a358&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b1bb845a320&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b1bb845ac88&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x2b1bb8957320&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b1bb8400240&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b1bb8957ba8&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b1bb8459ac8&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b1bb84594e0&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2b1bb8400898&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b1bb8400128&gt;}</dd>
+<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b0a7b98d828&gt;,</dt>
+<dd>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b0a7b98de48&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b0a7b7d4080&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b0a7b7d4cc0&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b0a7b999f28&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b0a7b999be0&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b0a7b999ef0&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b0a7b9997f0&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2b0a7b959ac8&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b0a7b7d9160&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b0a7b959dd8&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b0a7b9595c0&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b0a7b9599e8&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b0a7b7d9128&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b0a7b7d9f60&gt;}</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -368,7 +368,7 @@ applicable.</p>
 <span id="id28"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b1bb3cfa550&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b0a799374a8&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -438,7 +438,7 @@ applicable.</p>
 </div>
 <div class="section" id="rever-vcs">
 <span id="id37"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
-<p>Whether or not to force potentially unsafe activities in rever.</p>
+<p>Version control system used by rever. May be ‘None’ to not use version control.</p>
 <p><strong>configurable:</strong> True</p>
 <p><strong>default:</strong> ‘git’</p>
 <p><strong>store_as_str:</strong> False</p>

@@ -101,6 +101,24 @@ default False.</td>
 </dd></dl>
 
 <dl class="method">
+<dt id="rever.activities.docker.DockerBuild.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerBuild.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activity’s check() function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.docker.DockerBuild.check_requirements">
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerBuild.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that an activities requirements are actually available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.docker.DockerBuild.checker">
+<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerBuild.checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the check function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="rever.activities.docker.DockerBuild.clear_kwargs_from_env">
 <code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerBuild.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
@@ -115,7 +133,7 @@ default False.</td>
 <dl class="method">
 <dt id="rever.activities.docker.DockerBuild.setup">
 <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerBuild.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
+<dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
@@ -170,6 +188,30 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 </dd></dl>
 
 <dl class="method">
+<dt id="rever.activities.docker.DockerPush.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls this activity’s check() function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.docker.DockerPush.check_func">
+<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.check_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that we can push a docker container</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.docker.DockerPush.check_requirements">
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks that an activities requirements are actually available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rever.activities.docker.DockerPush.checker">
+<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.checker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that sets the check function for this activity.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="rever.activities.docker.DockerPush.clear_kwargs_from_env">
 <code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
@@ -184,7 +226,7 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 <dl class="method">
 <dt id="rever.activities.docker.DockerPush.setup">
 <code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.docker.DockerPush.setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls this activities setup() initialization function.</p>
+<dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
