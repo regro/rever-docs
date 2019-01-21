@@ -78,9 +78,10 @@
 
 <dl class="function">
 <dt id="rever.authors.update_metadata">
-<code class="descclassname">rever.authors.</code><code class="descname">update_metadata</code><span class="sig-paren">(</span><em>filename</em>, <em>write=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rever.authors.</code><code class="descname">update_metadata</code><span class="sig-paren">(</span><em>filename</em>, <em>write=True</em>, <em>validation_error=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a YAML metadata filename and updates it with the current repo
-information, if possible.</p>
+information, if possible. If validation_error is True, this will fail
+if the information is not consistent</p>
 </dd></dl>
 
 <dl class="function">
