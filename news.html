@@ -76,41 +76,8 @@ We suggest using the branchname:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">The news files have two formats depending on when the rever template
-was made.
-The first template looks like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Added</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Changed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Deprecated</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Removed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Fixed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Security</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-</pre></div>
-</div>
-<p>To add a news entry, remove the <code class="docutils literal notranslate"><span class="pre">None</span></code> from the category, add a
-newline and <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">My</span> <span class="pre">news</span> <span class="pre">entry</span></code>.
-For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Added</span><span class="p">:</span><span class="o">**</span>
-
-<span class="o">*</span> <span class="n">News</span> <span class="n">tutorial</span>
-
-<span class="o">**</span><span class="n">Changed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Deprecated</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Removed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Fixed</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-
-<span class="o">**</span><span class="n">Security</span><span class="p">:</span><span class="o">**</span> <span class="kc">None</span>
-</pre></div>
-</div>
-<p>The second <code class="docutils literal notranslate"><span class="pre">news</span></code> template looks like:</p>
+<li><p class="first">The news files are customizable in the <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> files. However, the
+default template looks like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Added</span><span class="p">:</span><span class="o">**</span>
 
 <span class="o">*</span> <span class="o">&lt;</span><span class="n">news</span> <span class="n">item</span><span class="o">&gt;</span>
@@ -136,7 +103,8 @@ For example:</p>
 <span class="o">*</span> <span class="o">&lt;</span><span class="n">news</span> <span class="n">item</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>In this case you can remove the <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">&lt;news</span> <span class="pre">item&gt;</span></code> and replace it with your own, eg:</p>
+<p>In this case you can remove the <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">&lt;news</span> <span class="pre">item&gt;</span></code> and replace it with your own
+news entries, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Added</span><span class="p">:</span><span class="o">**</span>
 
 <span class="o">*</span> <span class="n">New</span> <span class="n">news</span> <span class="n">template</span> <span class="n">tutorial</span>
@@ -168,8 +136,8 @@ For example:</p>
 </ol>
 <p>Feel free to update this file whenever you want! Please don’t use someone
 else’s file name. All of the files in this <code class="docutils literal notranslate"><span class="pre">news/</span></code> directory will be merged
-automatically at release time.  The <code class="docutils literal notranslate"><span class="pre">None</span></code> entries will be automatically
-filtered out too!</p>
+automatically at release time.  The <code class="docutils literal notranslate"><span class="pre">&lt;news</span> <span class="pre">item&gt;</span></code> entries will be
+automatically filtered out too!</p>
 <p>Once the project is ready for a release when running the <code class="docutils literal notranslate"><span class="pre">rever</span></code>
 command all the files, except the template, in the <code class="docutils literal notranslate"><span class="pre">news</span></code> folder will
 be collated and merged into a single changelog file.</p>
