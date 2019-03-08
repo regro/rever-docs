@@ -7,6 +7,7 @@
 ./_sources/api/activities/command.rst.txt
 ./_sources/api/activities/conda_forge.rst.txt
 ./_sources/api/activities/docker.rst.txt
+./_sources/api/activities/gcloud.rst.txt
 ./_sources/api/activities/ghpages.rst.txt
 ./_sources/api/activities/ghrelease.rst.txt
 ./_sources/api/activities/index.rst.txt
@@ -86,6 +87,7 @@
 ./api/activities/command.html
 ./api/activities/conda_forge.html
 ./api/activities/docker.html
+./api/activities/gcloud.html
 ./api/activities/ghpages.html
 ./api/activities/ghrelease.html
 ./api/activities/index.html
