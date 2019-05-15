@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>CHANGELOG Management Activity (rever.activities.changelog) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -67,26 +65,21 @@
 <p>Activity for keeping a changelog from news entries.</p>
 <dl class="class">
 <dt id="rever.activities.changelog.Changelog">
-<em class="property">class </em><code class="descclassname">rever.activities.changelog.</code><code class="descname">Changelog</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activities.changelog.</code><code class="descname">Changelog</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manages keeping a changelog up-to-date.</p>
 <blockquote>
 <div><p>This activity may be configured with the following envionment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_FILENAME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_PATTERN:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, Python regex that is used to find the location
+<dl class="field-list">
+<dt class="field-odd">$CHANGELOG_FILENAME</dt>
+<dd class="field-odd"><p>str, path to input file. The default is ‘CHANGELOG’.</p>
+</dd>
+<dt class="field-even">$CHANGELOG_PATTERN</dt>
+<dd class="field-even"><p>str, Python regex that is used to find the location
 in the file where new changelog entries should be placed. The default is
 <code class="docutils literal notranslate"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_HEADER:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or callable that accepts a single version argument,
+</dd>
+<dt class="field-odd">$CHANGELOG_HEADER</dt>
+<dd class="field-odd"><p>str or callable that accepts a single version argument,
 this is the replacement that goes above the new merge entries.
 This should contain a string that matches the pattern arg
 so that the next release may be inserted automatically.
@@ -98,144 +91,131 @@ v$VERSION
 ====================
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_NEWS:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to directory containing news files.
+</dd>
+<dt class="field-even">$CHANGELOG_NEWS</dt>
+<dd class="field-even"><p>str, path to directory containing news files.
 The default is <code class="docutils literal notranslate"><span class="pre">'news'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_IGNORE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory
+</dd>
+<dt class="field-odd">$CHANGELOG_IGNORE</dt>
+<dd class="field-odd"><p>list of str, regexes of filenames in the news directory
 to ignore. The default is to ignore the template file.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest part of the
+</dd>
+<dt class="field-even">$CHANGELOG_LATEST</dt>
+<dd class="field-even"><p>str, file to write just the latest part of the
 changelog to. This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
 in the current environment.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, filename of the template file in the
+</dd>
+<dt class="field-odd">$CHANGELOG_TEMPLATE</dt>
+<dd class="field-odd"><p>str, filename of the template file in the
 news directory. The default is <code class="docutils literal notranslate"><span class="pre">'TEMPLATE'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORIES:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">iterable of str, the news categories that are used.
+</dd>
+<dt class="field-even">$CHANGELOG_CATEGORIES</dt>
+<dd class="field-even"><p>iterable of str, the news categories that are used.
 Default:<code class="docutils literal notranslate"><span class="pre">('Added',</span> <span class="pre">'Changed',</span> <span class="pre">'Deprecated',</span> <span class="pre">'Removed',</span> <span class="pre">'Fixed',</span> <span class="pre">'Security')</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORY_TITLE_FORMAT:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
+</dd>
+<dt class="field-odd">$CHANGELOG_CATEGORY_TITLE_FORMAT</dt>
+<dd class="field-odd"><p>str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
 entry for formatting changelog and template category titles. If this is a callable,
 it is a function which takes a single category argument and returns the title string.
 The default is <a href="#id1"><span class="problematic" id="id2">``</span></a>”<strong>{category}:</strong></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div></blockquote>
-<dl class="docutils">
-<dt>“<a href="#id3"><span class="problematic" id="id4">``</span></a>.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_TITLE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
+<dl class="simple">
+<dt>“<a href="#id3"><span class="problematic" id="id4">``</span></a>.</dt><dd><dl class="field-list simple">
+<dt class="field-odd">$CHANGELOG_AUTHORS_TITLE</dt>
+<dd class="field-odd"><p>str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
 activitiy is being run, this will append an authors section to this changelog entry
 that contains all of the authors that contributed to this version. This string is
 the section title and is formatted as if it were a category with
-<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_FORMAT:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, this is a format string that formats each author who
+<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">$CHANGELOG_AUTHORS_FORMAT</dt>
+<dd class="field-even"><p>str, this is a format string that formats each author who
 contributed to this release, if an authors section will be appened. This is
 evaluated in the context of the authors, see the <code class="docutils literal notranslate"><span class="pre">authors</span></code> activity for more
-details on the available fields. The default is <a href="#id5"><span class="problematic" id="id6">``</span></a>”* {name}</td>
-</tr>
-</tbody>
-</table>
+details on the available fields. The default is <a href="#id5"><span class="problematic" id="id6">``</span></a>”* {name}</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>“<a href="#id7"><span class="problematic" id="id8">``</span></a>.</p>
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.generate_authors">
-<code class="descname">generate_authors</code><span class="sig-paren">(</span><em>title_format</em>, <em>title</em>, <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.generate_authors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_authors</code><span class="sig-paren">(</span><em>self</em>, <em>title_format</em>, <em>title</em>, <em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.generate_authors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates author portion of changelog.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.keep_file">
-<code class="descname">keep_file</code><span class="sig-paren">(</span><em>filename</em>, <em>ignore</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.keep_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keep_file</code><span class="sig-paren">(</span><em>self</em>, <em>filename</em>, <em>ignore</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.keep_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or not a file should be kept based on ignore rules.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.merge_news">
-<code class="descname">merge_news</code><span class="sig-paren">(</span><em>news='news'</em>, <em>ignore=('TEMPLATE'</em>, <em>)</em>, <em>categories=('Added'</em>, <em>'Changed'</em>, <em>'Deprecated'</em>, <em>'Removed'</em>, <em>'Fixed'</em>, <em>'Security')</em>, <em>category_title_format='**{category}:**\n\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.merge_news" title="Permalink to this definition">¶</a></dt>
+<code class="descname">merge_news</code><span class="sig-paren">(</span><em>self</em>, <em>news='news'</em>, <em>ignore=('TEMPLATE'</em>, <em>)</em>, <em>categories=('Added'</em>, <em>'Changed'</em>, <em>'Deprecated'</em>, <em>'Removed'</em>, <em>'Fixed'</em>, <em>'Security')</em>, <em>category_title_format='**{category}:**nn'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.merge_news" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads news files and merges them.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.setup_func">
-<code class="descname">setup_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setup_func" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup_func</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setup_func" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the changelog activity by starting a news dir, making
 a template file, and starting a changlog file.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -243,7 +223,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activities.changelog.Changelog.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.changelog.Changelog.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -290,8 +270,6 @@ varaibles that the activity looks for when it is executed.</p>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -344,7 +322,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Logging (rever.logger) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
@@ -69,29 +67,24 @@
 <em class="property">class </em><code class="descclassname">rever.logger.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>A logging object for rever that stores information in line-oriented JSON
 format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Path to logfile, if a realtive pathname is given it is relative to $REVER_DIR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>Path to logfile, if a realtive pathname is given it is relative to $REVER_DIR.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.logger.Logger.load">
-<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads all of the records from the logfile and returns a list of dicts.
 If the log file does not yet exist, this returns an empty list.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.logger.Logger.log">
-<code class="descname">log</code><span class="sig-paren">(</span><em>message</em>, <em>activity=None</em>, <em>category='misc'</em>, <em>data=None</em>, <em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log</code><span class="sig-paren">(</span><em>self</em>, <em>message</em>, <em>activity=None</em>, <em>category='misc'</em>, <em>data=None</em>, <em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs a message, the associated activity (optional), the timestamp, and the
 current revision to the log file.</p>
 </dd></dl>
@@ -155,8 +148,6 @@ current revision to the log file.</p>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -208,7 +199,7 @@ current revision to the log file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

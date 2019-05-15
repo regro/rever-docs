@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Environment Variables &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -65,76 +63,76 @@
 <p>The following displays information about the environment variables that
 affect xonsh performance in some way. It also lists their default values, if
 applicable.</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#activities"><span class="std std-ref">$ACTIVITIES</span></a></td>
-<td><a class="reference internal" href="#dag"><span class="std std-ref">$DAG</span></a></td>
-<td><a class="reference internal" href="#dockerfile"><span class="std std-ref">$DOCKERFILE</span></a></td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#activities"><span class="std std-ref">$ACTIVITIES</span></a></p></td>
+<td><p><a class="reference internal" href="#dag"><span class="std std-ref">$DAG</span></a></p></td>
+<td><p><a class="reference internal" href="#dockerfile"><span class="std std-ref">$DOCKERFILE</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#dockerfile-context"><span class="std std-ref">$DOCKERFILE_CONTEXT</span></a></td>
-<td><a class="reference internal" href="#dockerfile-tags"><span class="std std-ref">$DOCKERFILE_TAGS</span></a></td>
-<td><a class="reference internal" href="#docker-apt-deps"><span class="std std-ref">$DOCKER_APT_DEPS</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#dockerfile-context"><span class="std std-ref">$DOCKERFILE_CONTEXT</span></a></p></td>
+<td><p><a class="reference internal" href="#dockerfile-tags"><span class="std std-ref">$DOCKERFILE_TAGS</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-apt-deps"><span class="std std-ref">$DOCKER_APT_DEPS</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#docker-base-file"><span class="std std-ref">$DOCKER_BASE_FILE</span></a></td>
-<td><a class="reference internal" href="#docker-base-from"><span class="std std-ref">$DOCKER_BASE_FROM</span></a></td>
-<td><a class="reference internal" href="#docker-base-image"><span class="std std-ref">$DOCKER_BASE_IMAGE</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#docker-base-file"><span class="std std-ref">$DOCKER_BASE_FILE</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-base-from"><span class="std std-ref">$DOCKER_BASE_FROM</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-base-image"><span class="std std-ref">$DOCKER_BASE_IMAGE</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#docker-conda-channels"><span class="std std-ref">$DOCKER_CONDA_CHANNELS</span></a></td>
-<td><a class="reference internal" href="#docker-conda-deps"><span class="std std-ref">$DOCKER_CONDA_DEPS</span></a></td>
-<td><a class="reference internal" href="#docker-git-email"><span class="std std-ref">$DOCKER_GIT_EMAIL</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#docker-conda-channels"><span class="std std-ref">$DOCKER_CONDA_CHANNELS</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-conda-deps"><span class="std std-ref">$DOCKER_CONDA_DEPS</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-git-email"><span class="std std-ref">$DOCKER_GIT_EMAIL</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#docker-git-name"><span class="std std-ref">$DOCKER_GIT_NAME</span></a></td>
-<td><a class="reference internal" href="#docker-home"><span class="std std-ref">$DOCKER_HOME</span></a></td>
-<td><a class="reference internal" href="#docker-install-command"><span class="std std-ref">$DOCKER_INSTALL_COMMAND</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#docker-git-name"><span class="std std-ref">$DOCKER_GIT_NAME</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-home"><span class="std std-ref">$DOCKER_HOME</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-install-command"><span class="std std-ref">$DOCKER_INSTALL_COMMAND</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#docker-install-envvars"><span class="std std-ref">$DOCKER_INSTALL_ENVVARS</span></a></td>
-<td><a class="reference internal" href="#docker-install-file"><span class="std std-ref">$DOCKER_INSTALL_FILE</span></a></td>
-<td><a class="reference internal" href="#docker-install-image"><span class="std std-ref">$DOCKER_INSTALL_IMAGE</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#docker-install-envvars"><span class="std std-ref">$DOCKER_INSTALL_ENVVARS</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-install-file"><span class="std std-ref">$DOCKER_INSTALL_FILE</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-install-image"><span class="std std-ref">$DOCKER_INSTALL_IMAGE</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#docker-install-source"><span class="std std-ref">$DOCKER_INSTALL_SOURCE</span></a></td>
-<td><a class="reference internal" href="#docker-install-url"><span class="std std-ref">$DOCKER_INSTALL_URL</span></a></td>
-<td><a class="reference internal" href="#docker-pip-deps"><span class="std std-ref">$DOCKER_PIP_DEPS</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#docker-install-source"><span class="std std-ref">$DOCKER_INSTALL_SOURCE</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-install-url"><span class="std std-ref">$DOCKER_INSTALL_URL</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-pip-deps"><span class="std std-ref">$DOCKER_PIP_DEPS</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#docker-pip-requirements"><span class="std std-ref">$DOCKER_PIP_REQUIREMENTS</span></a></td>
-<td><a class="reference internal" href="#docker-root"><span class="std std-ref">$DOCKER_ROOT</span></a></td>
-<td><a class="reference internal" href="#docker-workdir"><span class="std std-ref">$DOCKER_WORKDIR</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#docker-pip-requirements"><span class="std std-ref">$DOCKER_PIP_REQUIREMENTS</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-root"><span class="std std-ref">$DOCKER_ROOT</span></a></p></td>
+<td><p><a class="reference internal" href="#docker-workdir"><span class="std std-ref">$DOCKER_WORKDIR</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gcloud-cluster"><span class="std std-ref">$GCLOUD_CLUSTER</span></a></td>
-<td><a class="reference internal" href="#gcloud-container-name"><span class="std std-ref">$GCLOUD_CONTAINER_NAME</span></a></td>
-<td><a class="reference internal" href="#gcloud-docker-org"><span class="std std-ref">$GCLOUD_DOCKER_ORG</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gcloud-cluster"><span class="std std-ref">$GCLOUD_CLUSTER</span></a></p></td>
+<td><p><a class="reference internal" href="#gcloud-container-name"><span class="std std-ref">$GCLOUD_CONTAINER_NAME</span></a></p></td>
+<td><p><a class="reference internal" href="#gcloud-docker-org"><span class="std std-ref">$GCLOUD_DOCKER_ORG</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gcloud-docker-repo"><span class="std std-ref">$GCLOUD_DOCKER_REPO</span></a></td>
-<td><a class="reference internal" href="#gcloud-project-id"><span class="std std-ref">$GCLOUD_PROJECT_ID</span></a></td>
-<td><a class="reference internal" href="#gcloud-zone"><span class="std std-ref">$GCLOUD_ZONE</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gcloud-docker-repo"><span class="std std-ref">$GCLOUD_DOCKER_REPO</span></a></p></td>
+<td><p><a class="reference internal" href="#gcloud-project-id"><span class="std std-ref">$GCLOUD_PROJECT_ID</span></a></p></td>
+<td><p><a class="reference internal" href="#gcloud-zone"><span class="std std-ref">$GCLOUD_ZONE</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#github-credfile"><span class="std std-ref">$GITHUB_CREDFILE</span></a></td>
-<td><a class="reference internal" href="#github-org"><span class="std std-ref">$GITHUB_ORG</span></a></td>
-<td><a class="reference internal" href="#github-repo"><span class="std std-ref">$GITHUB_REPO</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#github-credfile"><span class="std std-ref">$GITHUB_CREDFILE</span></a></p></td>
+<td><p><a class="reference internal" href="#github-org"><span class="std std-ref">$GITHUB_ORG</span></a></p></td>
+<td><p><a class="reference internal" href="#github-repo"><span class="std std-ref">$GITHUB_REPO</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#logger"><span class="std std-ref">$LOGGER</span></a></td>
-<td><a class="reference internal" href="#project"><span class="std std-ref">$PROJECT</span></a></td>
-<td><a class="reference internal" href="#python"><span class="std std-ref">$PYTHON</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#logger"><span class="std std-ref">$LOGGER</span></a></p></td>
+<td><p><a class="reference internal" href="#project"><span class="std std-ref">$PROJECT</span></a></p></td>
+<td><p><a class="reference internal" href="#python"><span class="std std-ref">$PYTHON</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#release-date"><span class="std std-ref">$RELEASE_DATE</span></a></td>
-<td><a class="reference internal" href="#rever-config-dir"><span class="std std-ref">$REVER_CONFIG_DIR</span></a></td>
-<td><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#release-date"><span class="std std-ref">$RELEASE_DATE</span></a></p></td>
+<td><p><a class="reference internal" href="#rever-config-dir"><span class="std std-ref">$REVER_CONFIG_DIR</span></a></p></td>
+<td><p><a class="reference internal" href="#rever-dir"><span class="std std-ref">$REVER_DIR</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#rever-forced"><span class="std std-ref">$REVER_FORCED</span></a></td>
-<td><a class="reference internal" href="#rever-quiet"><span class="std std-ref">$REVER_QUIET</span></a></td>
-<td><a class="reference internal" href="#rever-user"><span class="std std-ref">$REVER_USER</span></a></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#rever-forced"><span class="std std-ref">$REVER_FORCED</span></a></p></td>
+<td><p><a class="reference internal" href="#rever-quiet"><span class="std std-ref">$REVER_QUIET</span></a></p></td>
+<td><p><a class="reference internal" href="#rever-user"><span class="std std-ref">$REVER_USER</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></td>
-<td><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></td>
-<td><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rever-vcs"><span class="std std-ref">$REVER_VCS</span></a></p></td>
+<td><p><a class="reference internal" href="#running-activities"><span class="std std-ref">$RUNNING_ACTIVITIES</span></a></p></td>
+<td><p><a class="reference internal" href="#version"><span class="std std-ref">$VERSION</span></a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#website-url"><span class="std std-ref">$WEBSITE_URL</span></a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#website-url"><span class="std std-ref">$WEBSITE_URL</span></a></p></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -152,24 +150,24 @@ applicable.</p>
 <span id="id2"></span><h3>$DAG<a class="headerlink" href="#dag" title="Permalink to this headline">¶</a></h3>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
-<dl class="docutils">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b74ffaaaf60&gt;,</dt>
-<dd>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b7500c6f828&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b7500c6f358&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b7500b667b8&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x2b7500aabe80&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x2b7500b59c50&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b7500b61f60&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b7500b3f400&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b74fe739eb8&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b7500af62e8&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x2b7500af66a0&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b7500aab198&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b7500b7abe0&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b7500aab780&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b7500aab5c0&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2b7500aab4e0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b7500aab828&gt;}</dd>
+<dl class="simple">
+<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b0bb968a978&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b0bb968a438&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b0bb9652eb8&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b0bb95e4860&gt;,
+‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x2b0bb94d7c88&gt;,
+‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x2b0bb94d7cf8&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b0bb9511908&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b0bb94e05f8&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b0bb95aa160&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b0bb95aa550&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2b0bb95aaf28&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b0bb94d75f8&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b0bb71935f8&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b0bb95aa7f0&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b0bb95aa978&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b0bb95aad68&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b0bb94d79b0&gt;}</p>
+</dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
@@ -426,7 +424,7 @@ applicable.</p>
 <span id="id34"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b75006495c0&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b0bb7899710&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -442,7 +440,7 @@ applicable.</p>
 <span id="id36"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python’</p>
+<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python3.7’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -450,7 +448,7 @@ applicable.</p>
 <span id="id37"></span><h3>$RELEASE_DATE<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h3>
 <p>The date of the release, defaults to today, string representations have “YYYY-MM-DD” format.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> datetime.date(2019, 3, 19)</p>
+<p><strong>default:</strong> datetime.date(2019, 5, 15)</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -617,8 +615,6 @@ applicable.</p>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -669,7 +665,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

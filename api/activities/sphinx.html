@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Sphinx Documentation Activity (rever.activities.sphinx) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -72,91 +70,89 @@ built docs are available on the host.</p>
 <em class="property">class </em><code class="descclassname">rever.activities.sphinx.</code><code class="descname">Sphinx</code><a class="headerlink" href="#rever.activities.sphinx.Sphinx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs sphinx inside of a container.</p>
 <p>Environment variables that modify this activity’s behaviour are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
+<dl class="field-list simple">
+<dt class="field-odd">$SPHINX_DOCS_DIR</dt>
+<dd class="field-odd"><p>str, the directory in the container that is the root of
 the documentation. This must be an absolute path. Defaults to
-<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
-to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
+<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</p>
+</dd>
+<dt class="field-even">$SPHINX_HOST_DIR</dt>
+<dd class="field-even"><p>str, the directory on the host (ie outside of the container
+to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</p>
+</dd>
+<dt class="field-odd">$SPHINX_BUILD_DIR</dt>
+<dd class="field-odd"><p>str, the directory in the container where sphinx will
 build the docs, default <code class="docutils literal notranslate"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal notranslate"><span class="pre">'{docs_dir}'</span></code> is
 present in the string, then the string will be formated with the
-value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
-builders. Default to no extra options.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
+value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</p>
+</dd>
+<dt class="field-even">$SPHINX_OPTS</dt>
+<dd class="field-even"><p>str or list of str, Additional options to provide to the sphinx
+builders. Default to no extra options.</p>
+</dd>
+<dt class="field-odd">$SPHINX_PAPER</dt>
+<dd class="field-odd"><p>str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
-option.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
-This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</td>
-</tr>
-</tbody>
-</table>
+option.</p>
+</dd>
+<dt class="field-even">$SPHINX_BUILDER</dt>
+<dd class="field-even"><p>list of str, The build targets that sphinx should construct.
+This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</p>
+</dd>
+</dl>
 <p>As a dockerized activity, the docker environment variables affect the execution
 of the sphinx activity.</p>
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -164,7 +160,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activities.sphinx.Sphinx.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.sphinx.Sphinx.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -217,8 +213,6 @@ varaibles that the activity looks for when it is executed.</p>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -271,7 +265,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Activity Base Class (rever.acctivity) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
@@ -66,36 +64,27 @@
 <p>Provides basic activity funtionality.</p>
 <dl class="class">
 <dt id="rever.activity.Activity">
-<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">Activity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset()</em>, <em>func=None</em>, <em>undo=None</em>, <em>setup=None</em>, <em>check=None</em>, <em>requires=None</em>, <em>args=None</em>, <em>kwargs=None</em>, <em>desc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">Activity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset({})</em>, <em>func=None</em>, <em>undo=None</em>, <em>setup=None</em>, <em>check=None</em>, <em>requires=None</em>, <em>args=None</em>, <em>kwargs=None</em>, <em>desc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Activity representing a node in DAG of release tasks.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Name of the activity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the activity.</p>
 </dd>
-<dt><strong>deps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
-<dd><p class="first last">Set of activities that must be completed before this activity is
+<dt><strong>deps</strong><span class="classifier">set of str, optional</span></dt><dd><p>Set of activities that must be completed before this activity is
 executed.</p>
 </dd>
-<dt><strong>func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to perform as activity when this activities is executed (called).</p>
+<dt><strong>func</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to perform as activity when this activities is executed (called).</p>
 </dd>
-<dt><strong>undo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to undo this activities behaviour and reset the repo state.</p>
+<dt><strong>undo</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to undo this activities behaviour and reset the repo state.</p>
 </dd>
-<dt><strong>setup</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to help initialize the activity.</p>
+<dt><strong>setup</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to help initialize the activity.</p>
 </dd>
-<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to check if the activity can be run sucessfully on the
+<dt><strong>check</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to check if the activity can be run sucessfully on the
 user’s machine, with their credentials, etc. This function
 should return True if the activity can be run, and False otherwise.</p>
 </dd>
-<dt><strong>requires</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or None, optional</span></dt>
-<dd><p class="first">A dict of dicts of the following form that specifies the command line
+<dt><strong>requires</strong><span class="classifier">dict or None, optional</span></dt><dd><p>A dict of dicts of the following form that specifies the command line
 utility and import requirements for this activity.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;cli name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
@@ -103,74 +92,69 @@ utility and import requirements for this activity.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">The top-level keys are both optional, and this will default
+<p>The top-level keys are both optional, and this will default
 to an empty dict.</p>
 </dd>
-<dt><strong>args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">tuple, optional</span></dt>
-<dd><p class="first last">Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
+<dt><strong>args</strong><span class="classifier">tuple, optional</span></dt><dd><p>Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
 </dd>
-<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">mapping, optional</span></dt>
-<dd><p class="first last">Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
+<dt><strong>kwargs</strong><span class="classifier">mapping, optional</span></dt><dd><p>Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
 </dd>
-<dt><strong>desc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">A short description of this activity</p>
+<dt><strong>desc</strong><span class="classifier">str, optional</span></dt><dd><p>A short description of this activity</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activity.Activity.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.Activity.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -178,7 +162,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activity.Activity.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -193,35 +177,36 @@ varaibles that the activity looks for when it is executed.</p>
 
 <dl class="class">
 <dt id="rever.activity.DockerActivity">
-<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">DockerActivity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset()</em>, <em>func=None</em>, <em>undo=None</em>, <em>requires=None</em>, <em>check=None</em>, <em>desc=None</em>, <em>image=None</em>, <em>lang='xonsh'</em>, <em>run_args=('-c'</em>, <em>)</em>, <em>code=None</em>, <em>env=True</em>, <em>mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activity.</code><code class="descname">DockerActivity</code><span class="sig-paren">(</span><em>*</em>, <em>name=None</em>, <em>deps=frozenset({})</em>, <em>func=None</em>, <em>undo=None</em>, <em>requires=None</em>, <em>check=None</em>, <em>desc=None</em>, <em>image=None</em>, <em>lang='xonsh'</em>, <em>run_args=('-c'</em>, <em>)</em>, <em>code=None</em>, <em>env=True</em>, <em>mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>An activity that executes within a docker container.</p>
 <p>A Docker activity, by default will respect the following environment
 variables, if they are set:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_IMAGE:</th><td class="field-body">str, Name of the image to run, defaults to
+<dl class="field-list simple">
+<dt class="field-odd">$&lt;NAME&gt;_IMAGE</dt>
+<dd class="field-odd"><p>str, Name of the image to run, defaults to
 $DOCKER_INSTALL_IMAGE. Environment variables will be expanded when
-the activity is run.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_LANG:</th><td class="field-body">str, Language to execute the body in, default xonsh.
-This may also be a full path to an executable.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_ARGS:</th><td class="field-body">sequence of str, Extra arguments to pass in after
+the activity is run.</p>
+</dd>
+<dt class="field-even">$&lt;NAME&gt;_LANG</dt>
+<dd class="field-even"><p>str, Language to execute the body in, default xonsh.
+This may also be a full path to an executable.</p>
+</dd>
+<dt class="field-odd">$&lt;NAME&gt;_ARGS</dt>
+<dd class="field-odd"><p>sequence of str, Extra arguments to pass in after
 the executable but before the main body. Defaults to the standard
-compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$&lt;NAME&gt;_ENV:</th><td class="field-body">bool or dict, Environment to use. This has the same meaning as in
+compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
+</dd>
+<dt class="field-even">$&lt;NAME&gt;_ENV</dt>
+<dd class="field-even"><p>bool or dict, Environment to use. This has the same meaning as in
 <code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
-more details, default True.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$&lt;NAME&gt;_MOUNT:</th><td class="field-body">list of dict, Locations to mount in the running container.
+more details, default True.</p>
+</dd>
+<dt class="field-odd">$&lt;NAME&gt;_MOUNT</dt>
+<dd class="field-odd"><p>list of dict, Locations to mount in the running container.
 This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>.
-Please see that function for more details, default does not mount anything.</td>
-</tr>
-</tbody>
-</table>
+Please see that function for more details, default does not mount anything.</p>
+</dd>
+</dl>
 <p>Additionally, DockerActivities are macro context managers. This allows you
 to set the code block by entering the context:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>with! DockerActivity(name=&#39;myactivity&#39;):
@@ -230,32 +215,24 @@ to set the code block by entering the context:</p>
 </div>
 <p>Entering the context manager will also automatically register the
 activity in the DAG.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Name of the activity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the activity.</p>
 </dd>
-<dt><strong>deps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">set of str, optional</span></dt>
-<dd><p class="first last">Set of activities that must be completed before this activity is
+<dt><strong>deps</strong><span class="classifier">set of str, optional</span></dt><dd><p>Set of activities that must be completed before this activity is
 executed.</p>
 </dd>
-<dt><strong>func</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to perform as activity when this activities is executed
+<dt><strong>func</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to perform as activity when this activities is executed
 (called).  The default _func method is good enough for most cases.</p>
 </dd>
-<dt><strong>undo</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to undo this activities behaviour and reset the repo state.</p>
+<dt><strong>undo</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to undo this activities behaviour and reset the repo state.</p>
 </dd>
-<dt><strong>check</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable, optional</span></dt>
-<dd><p class="first last">Function to check if the activity can be run sucessfully on the
+<dt><strong>check</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to check if the activity can be run sucessfully on the
 user’s machine, with their credentials, etc. This function
 should return True if the activity can be run, and False otherwise.</p>
 </dd>
-<dt><strong>requires</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict or None, optional</span></dt>
-<dd><p class="first">A dict of dicts of the following form that specifies the command line
+<dt><strong>requires</strong><span class="classifier">dict or None, optional</span></dt><dd><p>A dict of dicts of the following form that specifies the command line
 utility and import requirements for this activity.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;cli name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
@@ -263,97 +240,88 @@ utility and import requirements for this activity.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="last">The top-level keys are both optional, and this will default
+<p>The top-level keys are both optional, and this will default
 to an empty dict.  The docker command will be automatically
 added to the commands dict.</p>
 </dd>
-<dt><strong>desc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">A short description of this activity</p>
+<dt><strong>desc</strong><span class="classifier">str, optional</span></dt><dd><p>A short description of this activity</p>
 </dd>
-<dt><strong>image</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
-<dd><p class="first last">Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE.
+<dt><strong>image</strong><span class="classifier">str or None, optional</span></dt><dd><p>Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE.
 Environment variables will be expanded when the activity is run.</p>
 </dd>
-<dt><strong>lang</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Language to execute the body in, default xonsh. This may also be a full
+<dt><strong>lang</strong><span class="classifier">str, optional</span></dt><dd><p>Language to execute the body in, default xonsh. This may also be a full
 path to an executable.</p>
 </dd>
-<dt><strong>run_args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str, optional</span></dt>
-<dd><p class="first last">Extra arguments to pass in after the executable but before the
+<dt><strong>run_args</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Extra arguments to pass in after the executable but before the
 main body. Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </dd>
-<dt><strong>code</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
-<dd><p class="first last">The code to execute in the docker container with lang. If this is
+<dt><strong>code</strong><span class="classifier">str or None, optional</span></dt><dd><p>The code to execute in the docker container with lang. If this is
 None, it may be on the instance itself, passed in when the activity
 is called, or set by entering the activity as a macro context manager.
 In this last case, the context block is set as the code.</p>
 </dd>
-<dt><strong>env</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or dict, optional</span></dt>
-<dd><p class="first last">Environment to use. This has the same meaning as in
+<dt><strong>env</strong><span class="classifier">bool or dict, optional</span></dt><dd><p>Environment to use. This has the same meaning as in
 <code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
 more details, default True.</p>
 </dd>
-<dt><strong>mounts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of dict, optional</span></dt>
-<dd><p class="first last">Locations to mount in the running container. This has the same meaning as
+<dt><strong>mounts</strong><span class="classifier">list of dict, optional</span></dt><dd><p>Locations to mount in the running container. This has the same meaning as
 ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activity.DockerActivity.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -361,7 +329,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activity.DockerActivity.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -429,8 +397,6 @@ as the DockerActivity class.</p>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -482,7 +448,7 @@ as the DockerActivity class.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

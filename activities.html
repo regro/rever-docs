@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Activities &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -64,61 +62,61 @@
 <h1>Activities<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h1>
 <p>The following displays information about the release activities that come stock
 with rever.</p>
-<table border="1" class="colwidths-auto docutils">
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#authors"><span class="std std-ref">Authors</span></a></td>
-<td>Manages keeping a contributors listing up-to-date.</td>
+<table class="colwidths-auto docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#authors"><span class="std std-ref">Authors</span></a></p></td>
+<td><p>Manages keeping a contributors listing up-to-date.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#bibtex"><span class="std std-ref">BibTex</span></a></td>
-<td>Writes a BibTex reference for the version of software.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#bibtex"><span class="std std-ref">BibTex</span></a></p></td>
+<td><p>Writes a BibTex reference for the version of software.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></td>
-<td>Manages keeping a changelog up-to-date.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></p></td>
+<td><p>Manages keeping a changelog up-to-date.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></td>
-<td>Runs a command</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></p></td>
+<td><p>Runs a command</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></td>
-<td>Updates conda-forge feedstocks.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></p></td>
+<td><p>Updates conda-forge feedstocks.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#deploytogcloud"><span class="std std-ref">DeploytoGCloud</span></a></td>
-<td>Deploys a docker container to the google cloud</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#deploytogcloud"><span class="std std-ref">DeploytoGCloud</span></a></p></td>
+<td><p>Deploys a docker container to the google cloud</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#deploytogcloudapp"><span class="std std-ref">DeploytoGCloudApp</span></a></td>
-<td>Deploys an app to the google cloud via the app engine</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#deploytogcloudapp"><span class="std std-ref">DeploytoGCloudApp</span></a></p></td>
+<td><p>Deploys an app to the google cloud via the app engine</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#dockerbuild"><span class="std std-ref">DockerBuild</span></a></td>
-<td>Builds a Dockerfile.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#dockerbuild"><span class="std std-ref">DockerBuild</span></a></p></td>
+<td><p>Builds a Dockerfile.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#dockerpush"><span class="std std-ref">DockerPush</span></a></td>
-<td>Pushes a built Dockerfile.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dockerpush"><span class="std std-ref">DockerPush</span></a></p></td>
+<td><p>Pushes a built Dockerfile.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></td>
-<td>Activity for pushing documentation up to GitHub pages.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></p></td>
+<td><p>Activity for pushing documentation up to GitHub pages.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#ghrelease"><span class="std std-ref">GHRelease</span></a></td>
-<td>Performs a github release.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ghrelease"><span class="std std-ref">GHRelease</span></a></p></td>
+<td><p>Performs a github release.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nose"><span class="std std-ref">Nose</span></a></td>
-<td>Runs nose tests inside of a container.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nose"><span class="std std-ref">Nose</span></a></p></td>
+<td><p>Runs nose tests inside of a container.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pushtag"><span class="std std-ref">PushTag</span></a></td>
-<td>Pushes the current tag up to a remote repository.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pushtag"><span class="std std-ref">PushTag</span></a></p></td>
+<td><p>Pushes the current tag up to a remote repository.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></td>
-<td>Uploads a package to the Python Package Index.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pypi"><span class="std std-ref">PyPI</span></a></p></td>
+<td><p>Uploads a package to the Python Package Index.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></td>
-<td>Runs pytest inside of a container.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytest"><span class="std std-ref">PyTest</span></a></p></td>
+<td><p>Runs pytest inside of a container.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></td>
-<td>Runs sphinx inside of a container.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sphinx"><span class="std std-ref">Sphinx</span></a></p></td>
+<td><p>Runs sphinx inside of a container.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></td>
-<td>Locally tags the current version.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tag"><span class="std std-ref">Tag</span></a></p></td>
+<td><p>Locally tags the current version.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></td>
-<td>Changes the version to the value of $VERSION.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#versionbump"><span class="std std-ref">VersionBump</span></a></p></td>
+<td><p>Changes the version to the value of $VERSION.</p></td>
 </tr>
 </tbody>
 </table>
@@ -133,16 +131,12 @@ with rever.</p>
 <p>Manages keeping a contributors listing up-to-date.</p>
 <blockquote>
 <div><p>This activity may be configured with the following envionment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_FILENAME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, path to input file. The default is ‘AUTHORS’.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_TEMPLATE:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, This value goes at the top of the
+<dl class="field-list">
+<dt class="field-odd">$AUTHORS_FILENAME</dt>
+<dd class="field-odd"><p>str, path to input file. The default is ‘AUTHORS’.</p>
+</dd>
+<dt class="field-even">$AUTHORS_TEMPLATE</dt>
+<dd class="field-even"><p>str, This value goes at the top of the
 authors file. The default value is:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>All of the people who have made at least one contribution to $PROJECT
 Authors are sorted by {sorting_text}.
@@ -152,37 +146,30 @@ Authors are sorted by {sorting_text}.
 </div>
 <p>This is evaluated in the current environment and,</p>
 <ul class="simple">
-<li>“{sorting_text}” is a special textual description of the sort method.</li>
-<li>“{authors}” is a contcatenated string of all formatted authors.</li>
+<li><p>“{sorting_text}” is a special textual description of the sort method.</p></li>
+<li><p>“{authors}” is a contcatenated string of all formatted authors.</p></li>
 </ul>
 <p>which the template is formatted with.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_FORMAT:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, the string that formats each author in the author file.
+</dd>
+<dt class="field-odd">$AUTHORS_FORMAT</dt>
+<dd class="field-odd"><p>str, the string that formats each author in the author file.
 The default is <a href="#id2"><span class="problematic" id="id3">``</span></a>”* {name}</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div></blockquote>
-<dl class="docutils">
-<dt>“<a href="#id4"><span class="problematic" id="id5">``</span></a>. The valid fields are all of those present</dt>
-<dd><blockquote class="first">
-<div>in the author metadata (see below).</div></blockquote>
-<table class="last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_LATEST:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest contribuors to, i.e.
+<dl>
+<dt>“<a href="#id4"><span class="problematic" id="id5">``</span></a>. The valid fields are all of those present</dt><dd><blockquote>
+<div><p>in the author metadata (see below).</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">$AUTHORS_LATEST</dt>
+<dd class="field-odd"><p>str, file to write just the latest contribuors to, i.e.
 this is the listing of the contributors for just this release.
 This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST-AUTHORS.json</span></code>. This is evaluated
 in the current environment.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_METADATA:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to YAML file that stores author metadata.
+</dd>
+<dt class="field-even">$AUTHORS_METADATA</dt>
+<dd class="field-even"><p>str, path to YAML file that stores author metadata.
 The default is ‘.authors.yml’. This is evaluated in the current environment.
 This file has the following format:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># required fields</span>
@@ -214,32 +201,27 @@ This file has the following format:</p>
   <span class="nt">is_org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_SORTBY:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, flag that specifies how authors should be sorted in
+</dd>
+<dt class="field-odd">$AUTHORS_SORTBY</dt>
+<dd class="field-odd"><p>str, flag that specifies how authors should be sorted in
 the authors file. Valid options are:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&quot;num_commits&quot;</span></code>: Number of commits per author</li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;first_commit&quot;</span></code>: Sort by first commit.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;alpha&quot;</span></code>: Alphabetically.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;num_commits&quot;</span></code>: Number of commits per author</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;first_commit&quot;</span></code>: Sort by first commit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;alpha&quot;</span></code>: Alphabetically.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$AUTHORS_INCLUDE_ORGS:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, Whether or not to include organizations in
+</dd>
+<dt class="field-even">$AUTHORS_INCLUDE_ORGS</dt>
+<dd class="field-even"><p>bool, Whether or not to include organizations in
 the authors file, defaults to False.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$AUTHORS_MAILMAP:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, bool, or None, If this is a non-empty string,
+</dd>
+<dt class="field-odd">$AUTHORS_MAILMAP</dt>
+<dd class="field-odd"><p>str, bool, or None, If this is a non-empty string,
 it will be interperted as a file path to a mailmap file that will be
 generated based on the metadata provided. The default value is  <code class="docutils literal notranslate"><span class="pre">&quot;.mailmap&quot;</span></code>.
 This is evaluated in the current environment.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
@@ -266,41 +248,37 @@ This is evaluated in the current environment.</p>
 <p>Writes a BibTex reference for the version of software.</p>
 <p>Environment variables that directly affect the behaviour of this
 activity are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_BIBFILE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, The filename to create. Defaults to
-<code class="docutils literal notranslate"><span class="pre">'bibtex.bib'</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$BIBTEX_PROJECT_NAME:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, The name of the project. This is expanded
-in the current envrionment, default <code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$BIBTEX_AUTHORS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, The name of the authors to credit
-in the citation. Default has no authors.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$BIBTEX_URL:</th><td class="field-body">str, URL to the project. This is expanded in the current
-environment, default <code class="docutils literal notranslate"><span class="pre">'$WEBSITE_URL'</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$BIBTEX_BIBFILE</dt>
+<dd class="field-odd"><p>str, The filename to create. Defaults to
+<code class="docutils literal notranslate"><span class="pre">'bibtex.bib'</span></code>.</p>
+</dd>
+<dt class="field-even">$BIBTEX_PROJECT_NAME</dt>
+<dd class="field-even"><p>str, The name of the project. This is expanded
+in the current envrionment, default <code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code>.</p>
+</dd>
+<dt class="field-odd">$BIBTEX_AUTHORS</dt>
+<dd class="field-odd"><p>list of str, The name of the authors to credit
+in the citation. Default has no authors.</p>
+</dd>
+<dt class="field-even">$BIBTEX_URL</dt>
+<dd class="field-even"><p>str, URL to the project. This is expanded in the current
+environment, default <code class="docutils literal notranslate"><span class="pre">'$WEBSITE_URL'</span></code>.</p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behaviour of the bibtex
 activity are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PROJECT:</th><td class="field-body">Used as the default project name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$WEBSITE_URL:</th><td class="field-body">Used as the default URL.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$VERSION:</th><td class="field-body">Used in the bibtex entry as part of the identifier.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$PROJECT</dt>
+<dd class="field-odd"><p>Used as the default project name.</p>
+</dd>
+<dt class="field-even">$WEBSITE_URL</dt>
+<dd class="field-even"><p>Used as the default URL.</p>
+</dd>
+<dt class="field-odd">$VERSION</dt>
+<dd class="field-odd"><p>Used in the bibtex entry as part of the identifier.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bibtex&#39;</span><span class="p">]</span>
 
@@ -321,22 +299,17 @@ activity are:</p>
 <p>Manages keeping a changelog up-to-date.</p>
 <blockquote>
 <div><p>This activity may be configured with the following envionment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_FILENAME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, path to input file. The default is ‘CHANGELOG’.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_PATTERN:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, Python regex that is used to find the location
+<dl class="field-list">
+<dt class="field-odd">$CHANGELOG_FILENAME</dt>
+<dd class="field-odd"><p>str, path to input file. The default is ‘CHANGELOG’.</p>
+</dd>
+<dt class="field-even">$CHANGELOG_PATTERN</dt>
+<dd class="field-even"><p>str, Python regex that is used to find the location
 in the file where new changelog entries should be placed. The default is
 <code class="docutils literal notranslate"><span class="pre">'..</span> <span class="pre">current</span> <span class="pre">developments'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_HEADER:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or callable that accepts a single version argument,
+</dd>
+<dt class="field-odd">$CHANGELOG_HEADER</dt>
+<dd class="field-odd"><p>str or callable that accepts a single version argument,
 this is the replacement that goes above the new merge entries.
 This should contain a string that matches the pattern arg
 so that the next release may be inserted automatically.
@@ -348,65 +321,52 @@ v$VERSION
 ====================
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_NEWS:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, path to directory containing news files.
+</dd>
+<dt class="field-even">$CHANGELOG_NEWS</dt>
+<dd class="field-even"><p>str, path to directory containing news files.
 The default is <code class="docutils literal notranslate"><span class="pre">'news'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_IGNORE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of str, regexes of filenames in the news directory
+</dd>
+<dt class="field-odd">$CHANGELOG_IGNORE</dt>
+<dd class="field-odd"><p>list of str, regexes of filenames in the news directory
 to ignore. The default is to ignore the template file.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, file to write just the latest part of the
+</dd>
+<dt class="field-even">$CHANGELOG_LATEST</dt>
+<dd class="field-even"><p>str, file to write just the latest part of the
 changelog to. This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
 in the current environment.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_TEMPLATE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, filename of the template file in the
+</dd>
+<dt class="field-odd">$CHANGELOG_TEMPLATE</dt>
+<dd class="field-odd"><p>str, filename of the template file in the
 news directory. The default is <code class="docutils literal notranslate"><span class="pre">'TEMPLATE'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORIES:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">iterable of str, the news categories that are used.
+</dd>
+<dt class="field-even">$CHANGELOG_CATEGORIES</dt>
+<dd class="field-even"><p>iterable of str, the news categories that are used.
 Default:<code class="docutils literal notranslate"><span class="pre">('Added',</span> <span class="pre">'Changed',</span> <span class="pre">'Deprecated',</span> <span class="pre">'Removed',</span> <span class="pre">'Fixed',</span> <span class="pre">'Security')</span></code></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_CATEGORY_TITLE_FORMAT:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
+</dd>
+<dt class="field-odd">$CHANGELOG_CATEGORY_TITLE_FORMAT</dt>
+<dd class="field-odd"><p>str or callable, a format string with <code class="docutils literal notranslate"><span class="pre">{category}</span></code>
 entry for formatting changelog and template category titles. If this is a callable,
 it is a function which takes a single category argument and returns the title string.
 The default is <a href="#id8"><span class="problematic" id="id9">``</span></a>”<strong>{category}:</strong></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div></blockquote>
-<dl class="docutils">
-<dt>“<a href="#id10"><span class="problematic" id="id11">``</span></a>.</dt>
-<dd><table class="first last docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_TITLE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
+<dl class="simple">
+<dt>“<a href="#id10"><span class="problematic" id="id11">``</span></a>.</dt><dd><dl class="field-list simple">
+<dt class="field-odd">$CHANGELOG_AUTHORS_TITLE</dt>
+<dd class="field-odd"><p>str or bool, If this is a non-empty string and the <code class="docutils literal notranslate"><span class="pre">authors</span></code>
 activitiy is being run, this will append an authors section to this changelog entry
 that contains all of the authors that contributed to this version. This string is
 the section title and is formatted as if it were a category with
-<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CHANGELOG_AUTHORS_FORMAT:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, this is a format string that formats each author who
+<code class="docutils literal notranslate"><span class="pre">$CHANGELOG_CATEGORY_TITLE_FORMAT</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">&quot;Authors&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">$CHANGELOG_AUTHORS_FORMAT</dt>
+<dd class="field-even"><p>str, this is a format string that formats each author who
 contributed to this release, if an authors section will be appened. This is
 evaluated in the context of the authors, see the <code class="docutils literal notranslate"><span class="pre">authors</span></code> activity for more
-details on the available fields. The default is <a href="#id12"><span class="problematic" id="id13">``</span></a>”* {name}</td>
-</tr>
-</tbody>
-</table>
+details on the available fields. The default is <a href="#id12"><span class="problematic" id="id13">``</span></a>”* {name}</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>“<a href="#id14"><span class="problematic" id="id15">``</span></a>.</p>
@@ -437,8 +397,8 @@ details on the available fields. The default is <a href="#id12"><span class="pro
 <p>Runs a command</p>
 <p>Optionally, an undo command can also be given to undo the given command</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The recommended way to create a command is with the
+<p class="admonition-title">Note</p>
+<p>The recommended way to create a command is with the
 <a class="reference internal" href="api/activities/command.html#rever.activities.command.command" title="rever.activities.command.command"><code class="xref py py-func docutils literal notranslate"><span class="pre">rever.activities.command.command()</span></code></a> function.</p>
 </div>
 <hr class="docutils" />
@@ -452,97 +412,84 @@ details on the available fields. The default is <a href="#id12"><span class="pro
 <p>Updates conda-forge feedstocks.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FEEDSTOCK:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str or None, feedstock name or URL,
+<dl class="field-list">
+<dt class="field-odd">$CONDA_FORGE_FEEDSTOCK</dt>
+<dd class="field-odd"><p>str or None, feedstock name or URL,
 default <code class="docutils literal notranslate"><span class="pre">$PROJECT-feedstock</span></code>.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_PROTOCOL:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, one of <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'http'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'https'</span></code>
+</dd>
+<dt class="field-even">$CONDA_FORGE_PROTOCOL</dt>
+<dd class="field-even"><p>str, one of <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'http'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'https'</span></code>
 that specifies how the activity should interact with github when
 cloning, pulling, or pushing to the feedstock repo. Note that
 <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
 The default  is <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_SOURCE_URL:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">str, the URL that the recipe will use to
+</dd>
+<dt class="field-odd">$CONDA_FORGE_SOURCE_URL</dt>
+<dd class="field-odd"><p>str, the URL that the recipe will use to
 download the source code. This is needed so that we may update the
 hash of the downloaded file. This string is evaluated with the current
 environment. Default
 <code class="docutils literal notranslate"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_HASH_TYPE:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">str, the type of hash that the recipe uses, eg
+</dd>
+<dt class="field-even">$CONDA_FORGE_HASH_TYPE</dt>
+<dd class="field-even"><p>str, the type of hash that the recipe uses, eg
 <code class="docutils literal notranslate"><span class="pre">'md5'</span></code> or <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_PATTERNS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list or 3-tuples of str, this is list of
+</dd>
+<dt class="field-odd">$CONDA_FORGE_PATTERNS</dt>
+<dd class="field-odd"><p>list or 3-tuples of str, this is list of
 (filename, pattern-regex, replacement) tuples that is evaluated
 inside of the recipe directory. This is similar to the version bump
 pattern structure. Both the pattern-regex str and the replacement str
 will have environment variables expanded. The following environment
 variables are added for this evaluation:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</li>
-<li><code class="docutils literal notranslate"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</p></li>
 </ul>
 <p>The default patterns match most standard recipes.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_PULL_REQUEST:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should open
+</dd>
+<dt class="field-even">$CONDA_FORGE_PULL_REQUEST</dt>
+<dd class="field-even"><p>bool, whether the activity should open
 a pull request to the upstream conda-forge feestock, default True.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_RERENDER:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should rerender the
+</dd>
+<dt class="field-odd">$CONDA_FORGE_RERENDER</dt>
+<dd class="field-odd"><p>bool, whether the activity should rerender the
 feedstock using conda-smithy, default True.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">bool, whether the activity should create a new fork of
+</dd>
+<dt class="field-even">$CONDA_FORGE_FORK</dt>
+<dd class="field-even"><p>bool, whether the activity should create a new fork of
 the feedstock if it doesn’t exist already, default True.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CONDA_FORGE_FORK_ORG:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">str, the org to fork the recipe to or which holds
+</dd>
+<dt class="field-odd">$CONDA_FORGE_FORK_ORG</dt>
+<dd class="field-odd"><p>str, the org to fork the recipe to or which holds
 the fork, if <code class="docutils literal notranslate"><span class="pre">''</span></code> use the registered gh username, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GITHUB_CREDFILE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the credential file to use. This should NOT be
-set in the rever.xsh file</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">the github organization that the project belongs to.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string used to tag the version, by default
-this is ‘$VERSION’. Used to download project source.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$PROJECT:</th><td class="field-body">the name of the project being released.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
-is where the GitHub credential files are stored by default.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$GITHUB_CREDFILE</dt>
+<dd class="field-odd"><p>the credential file to use. This should NOT be
+set in the rever.xsh file</p>
+</dd>
+<dt class="field-even">$GITHUB_ORG</dt>
+<dd class="field-even"><p>the github organization that the project belongs to.</p>
+</dd>
+<dt class="field-odd">$GITHUB_REPO</dt>
+<dd class="field-odd"><p>the github repository of the project.</p>
+</dd>
+<dt class="field-even">$TAG_TEMPLATE</dt>
+<dd class="field-even"><p>str, the template string used to tag the version, by default
+this is ‘$VERSION’. Used to download project source.</p>
+</dd>
+<dt class="field-odd">$PROJECT</dt>
+<dd class="field-odd"><p>the name of the project being released.</p>
+</dd>
+<dt class="field-even">$REVER_CONFIG_DIR</dt>
+<dd class="field-even"><p>the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
 
@@ -581,32 +528,30 @@ is where the GitHub credential files are stored by default.</td>
 </div>
 <p>Deploys a docker container to the google cloud</p>
 <p>This activity may be configured with the following environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GCLOUD_PROJECT_ID:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the gcloud project id</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GCLOUD_CLUSTER:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str the kubernetes cluster to deploy to</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GCLOUD_ZONE:</th><td class="field-body">str, the gcloud zone</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GCLOUD_CONTAINER_NAME:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the name of the container image to deploy to</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GCLOUD_DOCKER_ORG:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the name of the docker org to pull the container
-from</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GCLOUD_DOCKER_REPO:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the name of the docker container repo to use</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$VERSION:</th><td class="field-body">str, the version of the container to use</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$GCLOUD_PROJECT_ID</dt>
+<dd class="field-odd"><p>str, the gcloud project id</p>
+</dd>
+<dt class="field-even">$GCLOUD_CLUSTER</dt>
+<dd class="field-even"><p>str the kubernetes cluster to deploy to</p>
+</dd>
+<dt class="field-odd">$GCLOUD_ZONE</dt>
+<dd class="field-odd"><p>str, the gcloud zone</p>
+</dd>
+<dt class="field-even">$GCLOUD_CONTAINER_NAME</dt>
+<dd class="field-even"><p>str, the name of the container image to deploy to</p>
+</dd>
+<dt class="field-odd">$GCLOUD_DOCKER_ORG</dt>
+<dd class="field-odd"><p>str, the name of the docker org to pull the container
+from</p>
+</dd>
+<dt class="field-even">$GCLOUD_DOCKER_REPO</dt>
+<dd class="field-even"><p>str, the name of the docker container repo to use</p>
+</dd>
+<dt class="field-odd">$VERSION</dt>
+<dd class="field-odd"><p>str, the version of the container to use</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;deploy_to_gcloud&#39;</span><span class="p">]</span>
 
@@ -628,17 +573,14 @@ from</td>
 </div>
 <p>Deploys an app to the google cloud via the app engine</p>
 <p>This activity may be configured with the following environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GCLOUD_PROJECT_ID:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the gcloud project id</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GCLOUD_ZONE:</th><td class="field-body">str, the gcloud zone</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$GCLOUD_PROJECT_ID</dt>
+<dd class="field-odd"><p>str, the gcloud project id</p>
+</dd>
+<dt class="field-even">$GCLOUD_ZONE</dt>
+<dd class="field-even"><p>str, the gcloud zone</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;deploy_to_gcloud_app&#39;</span><span class="p">]</span>
 
@@ -657,29 +599,25 @@ from</td>
 <p>Builds a Dockerfile.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_BUILD_PATH:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, path to the Dockerfile, default (None) looks from
-reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$DOCKER_BUILD_CONTEXT:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, directory to execute the build within.
+<dl class="field-list simple">
+<dt class="field-odd">$DOCKER_BUILD_PATH</dt>
+<dd class="field-odd"><p>str, path to the Dockerfile, default (None) looks from
+reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code>.</p>
+</dd>
+<dt class="field-even">$DOCKER_BUILD_CONTEXT</dt>
+<dd class="field-even"><p>str, directory to execute the build within.
 An empty string indicates that the image should be built in directory
-containing the path. The default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_CONTEXT</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_BUILD_TAGS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, Tags the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
-and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$DOCKER_BUILD_CACHE:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">bool, Flag for whether or not to use the cache,
-default False.</td>
-</tr>
-</tbody>
-</table>
+containing the path. The default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_CONTEXT</span></code>.</p>
+</dd>
+<dt class="field-odd">$DOCKER_BUILD_TAGS</dt>
+<dd class="field-odd"><p>list of str, Tags the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
+and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</p>
+</dd>
+<dt class="field-even">$DOCKER_BUILD_CACHE</dt>
+<dd class="field-even"><p>bool, Flag for whether or not to use the cache,
+default False.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_build&#39;</span><span class="p">]</span>
 
@@ -700,16 +638,12 @@ default False.</td>
 <p>Pushes a built Dockerfile.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$DOCKER_PUSH_TAGS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">list of str, Tags that the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
-and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$DOCKER_PUSH_TAGS</dt>
+<dd class="field-odd"><p>list of str, Tags that the <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE</span></code> should be built
+and pushed with. Default (None) reads from <code class="docutils literal notranslate"><span class="pre">$DOCKERFILE_TAGS</span></code>.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_push&#39;</span><span class="p">]</span>
 
@@ -726,18 +660,17 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 </div>
 <p>Activity for pushing documentation up to GitHub pages.</p>
 <p>This activity uses the following environment variable:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$GHPAGES_REPO:</th><td class="field-body">str, the URL of the GitHUb pages repository.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHPAGES_BRANCH:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the GitHub pages branch name, i.e. either
+<dl class="field-list simple">
+<dt class="field-odd">$GHPAGES_REPO</dt>
+<dd class="field-odd"><p>str, the URL of the GitHUb pages repository.</p>
+</dd>
+<dt class="field-even">$GHPAGES_BRANCH</dt>
+<dd class="field-even"><p>str, the GitHub pages branch name, i.e. either
 <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code>.  If not provided, the activity will
-attempt to deduce it from the repo name.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GHPAGES_COPY:</th><td class="field-body">list or str 2-tuples, This is a list of (src, dst)
+attempt to deduce it from the repo name.</p>
+</dd>
+<dt class="field-odd">$GHPAGES_COPY</dt>
+<dd class="field-odd"><p>list or str 2-tuples, This is a list of (src, dst)
 pairs of files to copy from the project into the gh-pages repo.
 These pairs will have environment variables expanded and it is
 evaluated in the current directory (where rever was run from).
@@ -747,10 +680,9 @@ Additionally, the environment variable <code class="docutils literal notranslate
 is added to allow easy access to the local clone of the
 repo, which is at <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/ghpages-repo</span></code>. By default,
 this will look in the sphinx html directory created by the
-sphinx activity.</td>
-</tr>
-</tbody>
-</table>
+sphinx activity.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghpages&#39;</span><span class="p">]</span>
 
@@ -773,65 +705,60 @@ sphinx activity.</td>
 <p>Performs a github release.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_NAME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, Name of the release.  This is evaluated with the
-version. Default is <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_NOTES:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, Release notes to send to the release
+<dl class="field-list simple">
+<dt class="field-odd">$GHRELEASE_NAME</dt>
+<dd class="field-odd"><p>str, Name of the release.  This is evaluated with the
+version. Default is <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code></p>
+</dd>
+<dt class="field-even">$GHRELEASE_NOTES</dt>
+<dd class="field-even"><p>str or None, Release notes to send to the release
 page. If None (the default), this is read from <code class="docutils literal notranslate"><span class="pre">$CHANGELOG_LATEST</span></code>,
 if present, or failing that <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. If neither file exists,
-an empty string is passes in.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_PREPEND:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, string to prepend to the release notes,
-defaults to ‘’</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_APPEND:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, string to append to the release notes,
-defaults to ‘’</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_ASSETS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">iterable of str or functions, Extra assests to
+an empty string is passes in.</p>
+</dd>
+<dt class="field-odd">$GHRELEASE_PREPEND</dt>
+<dd class="field-odd"><p>str, string to prepend to the release notes,
+defaults to ‘’</p>
+</dd>
+<dt class="field-even">$GHRELEASE_APPEND</dt>
+<dd class="field-even"><p>str, string to append to the release notes,
+defaults to ‘’</p>
+</dd>
+<dt class="field-odd">$GHRELEASE_ASSETS</dt>
+<dd class="field-odd"><p>iterable of str or functions, Extra assests to
 upload to the GitHub release. This is ususally a tarball of the source
 code or a binary package. If the asset is a string, it is interpreted
 as a filename (and evalauated in the current environment). If the asset
 is a function, the function is called with no arguments and should return
 either a string filename or a list of string filenames. The asset
 functions will usually generate or acquire the asset. By default, this
-a tarball of the release tag will be uploaded.</td>
-</tr>
-</tbody>
-</table>
+a tarball of the release tag will be uploaded.</p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GITHUB_CREDFILE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the credential file to use.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">the github organization that the project belongs to.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
-is where the GitHub credential files are stored by default.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">path to the latest release notes file
-created by the changelog activity.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">may used to find the tag name when creating the default
-asset.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$GITHUB_CREDFILE</dt>
+<dd class="field-odd"><p>the credential file to use.</p>
+</dd>
+<dt class="field-even">$GITHUB_ORG</dt>
+<dd class="field-even"><p>the github organization that the project belongs to.</p>
+</dd>
+<dt class="field-odd">$GITHUB_REPO</dt>
+<dd class="field-odd"><p>the github repository of the project.</p>
+</dd>
+<dt class="field-even">$REVER_CONFIG_DIR</dt>
+<dd class="field-even"><p>the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</p>
+</dd>
+<dt class="field-odd">$CHANGELOG_LATEST</dt>
+<dd class="field-odd"><p>path to the latest release notes file
+created by the changelog activity.</p>
+</dd>
+<dt class="field-even">$TAG_TEMPLATE</dt>
+<dd class="field-even"><p>may used to find the tag name when creating the default
+asset.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghrelease&#39;</span><span class="p">]</span>
 
@@ -839,7 +766,7 @@ asset.</td>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b7500c53b70</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x2b0bb96ad510</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -852,17 +779,15 @@ asset.</td>
 </div>
 <p>Runs nose tests inside of a container.</p>
 <p>Environment variables that modify this activity’s behaviour are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$NOSE_COMMAND:</th><td class="field-body">str, nose command to execute, defaults to ‘nosetests’.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$NOSE_ARGS:</th><td class="field-body">str or list of str, additional arguments to send to the
-nose command. By default no additional arguments are sent.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$NOSE_COMMAND</dt>
+<dd class="field-odd"><p>str, nose command to execute, defaults to ‘nosetests’.</p>
+</dd>
+<dt class="field-even">$NOSE_ARGS</dt>
+<dd class="field-even"><p>str or list of str, additional arguments to send to the
+nose command. By default no additional arguments are sent.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nose&#39;</span><span class="p">]</span>
 
@@ -880,41 +805,37 @@ nose command. By default no additional arguments are sent.</td>
 </div>
 <p>Pushes the current tag up to a remote repository.</p>
 <p>This activity takes the following parameters:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_REMOTE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, remote URL to push tags to. If <code class="docutils literal notranslate"><span class="pre">$REVER_VCS</span></code> is
+<dl class="field-list simple">
+<dt class="field-odd">$PUSH_TAG_REMOTE</dt>
+<dd class="field-odd"><p>str or None, remote URL to push tags to. If <code class="docutils literal notranslate"><span class="pre">$REVER_VCS</span></code> is
 set to <code class="docutils literal notranslate"><span class="pre">'git'</span></code> and both <code class="docutils literal notranslate"><span class="pre">$GITHUB_ORG</span></code> and <code class="docutils literal notranslate"><span class="pre">$GITHUB_REPO</span></code> are also set,
-this variable will default to <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:$GITHUB_ORG/$GITHUB_REPO.git</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$PUSH_TAG_TARGET:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, remote branch to push to once the tag has been made.
-The default is None, which uses the current branch.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$PUSH_TAG_PROTOCOL:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str or None, the protocol to use to for the push, if
-None, use ssh. Available protocols are <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, and <code class="docutils literal notranslate"><span class="pre">ssh</span></code></td>
-</tr>
-</tbody>
-</table>
+this variable will default to <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:$GITHUB_ORG/$GITHUB_REPO.git</span></code>.</p>
+</dd>
+<dt class="field-even">$PUSH_TAG_TARGET</dt>
+<dd class="field-even"><p>str or None, remote branch to push to once the tag has been made.
+The default is None, which uses the current branch.</p>
+</dd>
+<dt class="field-odd">$PUSH_TAG_PROTOCOL</dt>
+<dd class="field-odd"><p>str or None, the protocol to use to for the push, if
+None, use ssh. Available protocols are <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, and <code class="docutils literal notranslate"><span class="pre">ssh</span></code></p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$REVER_VCS:</th><td class="field-body">str or None, is used to help specify default remote URLs.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">str or None, GitHub org to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">str or None GitHub repo to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
-by default this is ‘$VERSION’. This is used in undoing remote tags</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$REVER_VCS</dt>
+<dd class="field-odd"><p>str or None, is used to help specify default remote URLs.</p>
+</dd>
+<dt class="field-even">$GITHUB_ORG</dt>
+<dd class="field-even"><p>str or None, GitHub org to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></p>
+</dd>
+<dt class="field-odd">$GITHUB_REPO</dt>
+<dd class="field-odd"><p>str or None GitHub repo to push to if no <code class="docutils literal notranslate"><span class="pre">$PUSH_TAG_REMOTE</span></code></p>
+</dd>
+<dt class="field-even">$TAG_TEMPLATE</dt>
+<dd class="field-even"><p>str, the template string to tag the version with,
+by default this is ‘$VERSION’. This is used in undoing remote tags</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
 
@@ -934,33 +855,29 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</td>
 <p>Uploads a package to the Python Package Index.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PYPI_RC:</th><td class="field-body">str, path to the pypirc file, default <code class="docutils literal notranslate"><span class="pre">~/.pypirc</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$PYPI_BUILD_COMMANDS:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The commands to run in setup.py
+<dl class="field-list simple">
+<dt class="field-odd">$PYPI_RC</dt>
+<dd class="field-odd"><p>str, path to the pypirc file, default <code class="docutils literal notranslate"><span class="pre">~/.pypirc</span></code>.</p>
+</dd>
+<dt class="field-even">$PYPI_BUILD_COMMANDS</dt>
+<dd class="field-even"><p>list of str, The commands to run in setup.py
 that will build the project, default <code class="docutils literal notranslate"><span class="pre">['sdist']</span></code>.  Other examples
-include <code class="docutils literal notranslate"><span class="pre">'bdist'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bdist_wininst'</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$PYPI_NAME:</th><td class="field-body">str or None, The name of the package on PyPI. If None,
-This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></td>
-</tr>
-</tbody>
-</table>
+include <code class="docutils literal notranslate"><span class="pre">'bdist'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bdist_wininst'</span></code>.</p>
+</dd>
+<dt class="field-odd">$PYPI_UPLOAD</dt>
+<dd class="field-odd"><p>bool, whether or not to upload PyPI, default True.</p>
+</dd>
+<dt class="field-even">$PYPI_NAME</dt>
+<dd class="field-even"><p>str or None, The name of the package on PyPI. If None,
+This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PYTHON:</th><td class="field-body">the path to the Python interpreter.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$PYTHON</dt>
+<dd class="field-odd"><p>the path to the Python interpreter.</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pypi&#39;</span><span class="p">]</span>
 
@@ -980,16 +897,12 @@ This will default to the result of <code class="docutils literal notranslate"><s
 </div>
 <p>Runs pytest inside of a container.</p>
 <p>The environment variable that affects the behaviour of this activity is:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$PYTEST_COMMAND:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the test command to run. The defaults to
-<code class="docutils literal notranslate"><span class="pre">'pytest'</span></code>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$PYTEST_COMMAND</dt>
+<dd class="field-odd"><p>str, the test command to run. The defaults to
+<code class="docutils literal notranslate"><span class="pre">'pytest'</span></code>.</p>
+</dd>
+</dl>
 <p>Additionally, the <code class="docutils literal notranslate"><span class="pre">$DOCKER_*</span></code> environment variables will affect the
 behaviour of the conatiner that is used for testing.</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
@@ -1008,38 +921,36 @@ behaviour of the conatiner that is used for testing.</p>
 </div>
 <p>Runs sphinx inside of a container.</p>
 <p>Environment variables that modify this activity’s behaviour are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_DOCS_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container that is the root of
+<dl class="field-list simple">
+<dt class="field-odd">$SPHINX_DOCS_DIR</dt>
+<dd class="field-odd"><p>str, the directory in the container that is the root of
 the documentation. This must be an absolute path. Defaults to
-<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_HOST_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, the directory on the host (ie outside of the container
-to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$SPHINX_BUILD_DIR:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, the directory in the container where sphinx will
+<code class="docutils literal notranslate"><span class="pre">'$DOCKER_HOME/$PROJECT/docs'</span></code>.</p>
+</dd>
+<dt class="field-even">$SPHINX_HOST_DIR</dt>
+<dd class="field-even"><p>str, the directory on the host (ie outside of the container
+to place the built docs in, default <code class="docutils literal notranslate"><span class="pre">'$REVER_DIR/sphinx-build'</span></code>.</p>
+</dd>
+<dt class="field-odd">$SPHINX_BUILD_DIR</dt>
+<dd class="field-odd"><p>str, the directory in the container where sphinx will
 build the docs, default <code class="docutils literal notranslate"><span class="pre">'{docs_dir}/_build'</span></code>. If <code class="docutils literal notranslate"><span class="pre">'{docs_dir}'</span></code> is
 present in the string, then the string will be formated with the
-value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$SPHINX_OPTS:</th><td class="field-body">str or list of str, Additional options to provide to the sphinx
-builders. Default to no extra options.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$SPHINX_PAPER:</th><td class="field-body">str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
+value of $SPHINX_DOCS_DIR. Otherwise, enviroment variables will be expanded.</p>
+</dd>
+<dt class="field-even">$SPHINX_OPTS</dt>
+<dd class="field-even"><p>str or list of str, Additional options to provide to the sphinx
+builders. Default to no extra options.</p>
+</dd>
+<dt class="field-odd">$SPHINX_PAPER</dt>
+<dd class="field-odd"><p>str, The paper size to use in latex.  Maybe <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">'a4'</span></code>,
 <code class="docutils literal notranslate"><span class="pre">'letter'</span></code>, or similar.  Defaults to an empty string, which disables this
-option.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$SPHINX_BUILDER:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The build targets that sphinx should construct.
-This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</td>
-</tr>
-</tbody>
-</table>
+option.</p>
+</dd>
+<dt class="field-even">$SPHINX_BUILDER</dt>
+<dd class="field-even"><p>list of str, The build targets that sphinx should construct.
+This defaults to <code class="docutils literal notranslate"><span class="pre">['html']</span></code>.</p>
+</dd>
+</dl>
 <p>As a dockerized activity, the docker environment variables affect the execution
 of the sphinx activity.</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
@@ -1063,15 +974,12 @@ of the sphinx activity.</p>
 </div>
 <p>Locally tags the current version.</p>
 <p>This activity takes the following parameters:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">str, the template string to tag the version with,
-by default this is ‘$VERSION’</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$TAG_TEMPLATE</dt>
+<dd class="field-odd"><p>str, the template string to tag the version with,
+by default this is ‘$VERSION’</p>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span>
 
@@ -1089,27 +997,24 @@ by default this is ‘$VERSION’</td>
 <p>Changes the version to the value of $VERSION.</p>
 <p>This activity is parameterized by the following environment
 variable:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$VERSION_BUMP_PATTERNS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of 3-tuples of str,
+<dl class="field-list">
+<dt class="field-odd">$VERSION_BUMP_PATTERNS</dt>
+<dd class="field-odd"><p>list of 3-tuples of str,
 This activity is only usefule if replacement patterns are supplied to it.
 This argument is an iterable of 3-tuples consisting of:</p>
 <ul class="simple">
-<li>filename, str - file to update the version in</li>
-<li>pattern, str - A Python regular expression that specifies
+<li><p>filename, str - file to update the version in</p></li>
+<li><p>pattern, str - A Python regular expression that specifies
 how to find matching lines for the replacement string.
 Leading whitespace will be captured and replaced. The pattern
-here can start at the first non-whitespace character.</li>
-<li>new, str or function returning a string - the replacement
+here can start at the first non-whitespace character.</p></li>
+<li><p>new, str or function returning a string - the replacement
 template as a string or a simple callable that accepts the
 version. If it is a string, it is expanded with environment
-variables.</li>
+variables.</p></li>
 </ul>
 <p>For example:</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
     (&#39;src/__init__.py&#39;, r&#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
@@ -1120,10 +1025,8 @@ variables.</li>
 ]
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;version_bump&#39;</span><span class="p">]</span>
 
@@ -1195,8 +1098,6 @@ variables.</li>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -1247,7 +1148,7 @@ variables.</li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

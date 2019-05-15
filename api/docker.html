@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Docker Interface (rever.docker) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
@@ -78,41 +76,31 @@ a command of the following form within the container:</p>
 </div>
 <p>This allows you to run your own code within a container without having to
 worry about polluting the local namespace.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>image</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
-<dd><p class="first last">Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE. Environment
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>image</strong><span class="classifier">str or None, optional</span></dt><dd><p>Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE. Environment
 variables will be expanded.</p>
 </dd>
-<dt><strong>lang</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Language to execute the body in, default xonsh. This may also be a full
+<dt><strong>lang</strong><span class="classifier">str, optional</span></dt><dd><p>Language to execute the body in, default xonsh. This may also be a full
 path to an executable.</p>
 </dd>
-<dt><strong>args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str, optional</span></dt>
-<dd><p class="first last">Extra arguments to pass in after the executable but before the main body.
+<dt><strong>args</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Extra arguments to pass in after the executable but before the main body.
 Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </dd>
-<dt><strong>env</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or dict, optional</span></dt>
-<dd><p class="first last">Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
+<dt><strong>env</strong><span class="classifier">bool or dict, optional</span></dt><dd><p>Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
 Please see that function for more details, default True.</p>
 </dd>
-<dt><strong>mounts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of dict, optional</span></dt>
-<dd><p class="first last">Locations to mount in the running container. This has the same meaning as
+<dt><strong>mounts</strong><span class="classifier">list of dict, optional</span></dt><dd><p>Locations to mount in the running container. This has the same meaning as
 ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </dd>
-<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
-<dd><p class="first last">All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
+<dt><strong>kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
 context is entered.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -158,10 +146,10 @@ environment variable names to value strings.</p>
 <dd><p>This constructs a docker command detailing how to get the source
 code for the project. In order of precedence, this will use,</p>
 <ul class="simple">
-<li>A command as provided by source or $DOCKER_INSTALL_SOURCE</li>
-<li>A URL to clone with $REVER_VCS as provided by url or $DOCKER_INSTALL_URL</li>
-<li>A directory on the file system, defaulting to $DOCKER_ROOT or
-the root directory of the project repo.</li>
+<li><p>A command as provided by source or $DOCKER_INSTALL_SOURCE</p></li>
+<li><p>A URL to clone with $REVER_VCS as provided by url or $DOCKER_INSTALL_URL</p></li>
+<li><p>A directory on the file system, defaulting to $DOCKER_ROOT or
+the root directory of the project repo.</p></li>
 </ul>
 </dd></dl>
 
@@ -182,47 +170,36 @@ them if they haven’t.</p>
 <dt id="rever.docker.incontainer">
 <code class="descclassname">rever.docker.</code><code class="descname">incontainer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.incontainer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Macro context manager for running code within a container.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>image</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or None, optional</span></dt>
-<dd><p class="first last">Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE. Environment
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>image</strong><span class="classifier">str or None, optional</span></dt><dd><p>Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE. Environment
 variables will be expanded.</p>
 </dd>
-<dt><strong>lang</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Language to execute the body in, default xonsh. This may also be a full
+<dt><strong>lang</strong><span class="classifier">str, optional</span></dt><dd><p>Language to execute the body in, default xonsh. This may also be a full
 path to an executable.</p>
 </dd>
-<dt><strong>args</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str, optional</span></dt>
-<dd><p class="first last">Extra arguments to pass in after the executable but before the main body.
+<dt><strong>args</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Extra arguments to pass in after the executable but before the main body.
 Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
 </dd>
-<dt><strong>env</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or dict, optional</span></dt>
-<dd><p class="first last">Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
+<dt><strong>env</strong><span class="classifier">bool or dict, optional</span></dt><dd><p>Environment to use. This has the same meaning as in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>.
 Please see that function for more details, default True.</p>
 </dd>
-<dt><strong>mounts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of dict, optional</span></dt>
-<dd><p class="first last">Locations to mount in the running container. This has the same meaning as
+<dt><strong>mounts</strong><span class="classifier">list of dict, optional</span></dt><dd><p>Locations to mount in the running container. This has the same meaning as
 in <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
 does not mount anything.</p>
 </dd>
-<dt><strong>kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
-<dd><p class="first last">All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
+<dt><strong>kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>All other keyword arguments are passed into <code class="docutils literal notranslate"><span class="pre">ensure_images()</span></code> when the
 context is entered.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>New macro context manager InContainer instance.</strong></dt>
-<dd></dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>New macro context manager InContainer instance.</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -253,40 +230,32 @@ context is entered.</p>
 <dt id="rever.docker.run_in_container">
 <code class="descclassname">rever.docker.</code><code class="descname">run_in_container</code><span class="sig-paren">(</span><em>image</em>, <em>command</em>, <em>env=True</em>, <em>mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.run_in_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a command inside of a docker container.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>image</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Name of the image to start the container with.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>image</strong><span class="classifier">str</span></dt><dd><p>Name of the image to start the container with.</p>
 </dd>
-<dt><strong>command</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first last">The command to run inside of the container.</p>
+<dt><strong>command</strong><span class="classifier">list of str</span></dt><dd><p>The command to run inside of the container.</p>
 </dd>
-<dt><strong>env</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool or dict, optional</span></dt>
-<dd><p class="first last">If False, not environment variables are passed down to the container.
+<dt><strong>env</strong><span class="classifier">bool or dict, optional</span></dt><dd><p>If False, not environment variables are passed down to the container.
 If True, all rever environment variables are passed into the container (default).
 Otherwise, this is a dictionary of enviroment variable names (str) to values (str).</p>
 </dd>
-<dt><strong>mounts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of dict, optional</span></dt>
-<dd><p class="first">This is a list of dictionaries that specifies files or directories, volumes, or
+<dt><strong>mounts</strong><span class="classifier">list of dict, optional</span></dt><dd><p>This is a list of dictionaries that specifies files or directories, volumes, or
 temporary file systems to mount.  Valid keys in the dictionary are:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">'type'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'src'</span></code> or <code class="docutils literal notranslate"><span class="pre">'source'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'dst'</span></code> or <code class="docutils literal notranslate"><span class="pre">'destination'</span></code> or <code class="docutils literal notranslate"><span class="pre">'target'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'ro'</span></code> or  <code class="docutils literal notranslate"><span class="pre">'readonly'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'consistency'</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'type'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'src'</span></code> or <code class="docutils literal notranslate"><span class="pre">'source'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'dst'</span></code> or <code class="docutils literal notranslate"><span class="pre">'destination'</span></code> or <code class="docutils literal notranslate"><span class="pre">'target'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'ro'</span></code> or  <code class="docutils literal notranslate"><span class="pre">'readonly'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'consistency'</span></code></p></li>
 </ul>
-<p class="last">See <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems">https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems</a>
+<p>See <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems">https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems</a>
 for more information</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -322,7 +291,7 @@ don’t support –mount.</p>
 
 <dl class="function">
 <dt id="rever.docker.wrap">
-<code class="descclassname">rever.docker.</code><code class="descname">wrap</code><span class="sig-paren">(</span><em>s</em>, <em>indent=''</em>, <em>suffix=' \\'</em>, <em>width=70</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.wrap" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rever.docker.</code><code class="descname">wrap</code><span class="sig-paren">(</span><em>s</em>, <em>indent=''</em>, <em>suffix=' \'</em>, <em>width=70</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.wrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a dockerfile line.</p>
 </dd></dl>
 
@@ -360,8 +329,6 @@ don’t support –mount.</p>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -413,7 +380,7 @@ don’t support –mount.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

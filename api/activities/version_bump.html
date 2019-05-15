@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Version Bump Activity (rever.activities.version_bump) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -67,31 +65,28 @@
 <p>Activity for bumping version.</p>
 <dl class="class">
 <dt id="rever.activities.version_bump.VersionBump">
-<em class="property">class </em><code class="descclassname">rever.activities.version_bump.</code><code class="descname">VersionBump</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">rever.activities.version_bump.</code><code class="descname">VersionBump</code><span class="sig-paren">(</span><em>*</em>, <em>deps=frozenset({})</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the version to the value of $VERSION.</p>
 <p>This activity is parameterized by the following environment
 variable:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$VERSION_BUMP_PATTERNS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">list of 3-tuples of str,
+<dl class="field-list">
+<dt class="field-odd">$VERSION_BUMP_PATTERNS</dt>
+<dd class="field-odd"><p>list of 3-tuples of str,
 This activity is only usefule if replacement patterns are supplied to it.
 This argument is an iterable of 3-tuples consisting of:</p>
 <ul class="simple">
-<li>filename, str - file to update the version in</li>
-<li>pattern, str - A Python regular expression that specifies
+<li><p>filename, str - file to update the version in</p></li>
+<li><p>pattern, str - A Python regular expression that specifies
 how to find matching lines for the replacement string.
 Leading whitespace will be captured and replaced. The pattern
-here can start at the first non-whitespace character.</li>
-<li>new, str or function returning a string - the replacement
+here can start at the first non-whitespace character.</p></li>
+<li><p>new, str or function returning a string - the replacement
 template as a string or a simple callable that accepts the
 version. If it is a string, it is expanded with environment
-variables.</li>
+variables.</p></li>
 </ul>
 <p>For example:</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$VERSION_BUMP_PATTERNS = [
     # replace __version__ in init file
     (&#39;src/__init__.py&#39;, r&#39;__version__\s*=.*&#39;, &quot;__version__ = &#39;$VERSION&#39;&quot;),
 
@@ -102,61 +97,59 @@ variables.</li>
 ]
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -164,7 +157,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activities.version_bump.VersionBump.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.version_bump.VersionBump.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -211,8 +204,6 @@ varaibles that the activity looks for when it is executed.</p>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -265,7 +256,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Python Package Index Activity (rever.activities.pypi) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -71,89 +69,85 @@
 <dd><p>Uploads a package to the Python Package Index.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PYPI_RC:</th><td class="field-body">str, path to the pypirc file, default <code class="docutils literal notranslate"><span class="pre">~/.pypirc</span></code>.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$PYPI_BUILD_COMMANDS:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">list of str, The commands to run in setup.py
+<dl class="field-list simple">
+<dt class="field-odd">$PYPI_RC</dt>
+<dd class="field-odd"><p>str, path to the pypirc file, default <code class="docutils literal notranslate"><span class="pre">~/.pypirc</span></code>.</p>
+</dd>
+<dt class="field-even">$PYPI_BUILD_COMMANDS</dt>
+<dd class="field-even"><p>list of str, The commands to run in setup.py
 that will build the project, default <code class="docutils literal notranslate"><span class="pre">['sdist']</span></code>.  Other examples
-include <code class="docutils literal notranslate"><span class="pre">'bdist'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bdist_wininst'</span></code>.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$PYPI_UPLOAD:</th><td class="field-body">bool, whether or not to upload PyPI, default True.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$PYPI_NAME:</th><td class="field-body">str or None, The name of the package on PyPI. If None,
-This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></td>
-</tr>
-</tbody>
-</table>
+include <code class="docutils literal notranslate"><span class="pre">'bdist'</span></code> or <code class="docutils literal notranslate"><span class="pre">'bdist_wininst'</span></code>.</p>
+</dd>
+<dt class="field-odd">$PYPI_UPLOAD</dt>
+<dd class="field-odd"><p>bool, whether or not to upload PyPI, default True.</p>
+</dd>
+<dt class="field-even">$PYPI_NAME</dt>
+<dd class="field-even"><p>str or None, The name of the package on PyPI. If None,
+This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">$PYTHON:</th><td class="field-body">the path to the Python interpreter.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$PYTHON</dt>
+<dd class="field-odd"><p>the path to the Python interpreter.</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.check_func">
-<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_func" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_func</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -161,7 +155,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activities.pypi.PyPI.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.pypi.PyPI.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -220,8 +214,6 @@ varaibles that the activity looks for when it is executed.</p>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -274,7 +266,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

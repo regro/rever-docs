@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Version Control System Utilities (rever.vcsutils) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
@@ -256,36 +254,27 @@ Accepts a “since” argument, which specifies the lower boundary.</p>
 <code class="descclassname">rever.vcsutils.</code><code class="descname">make_vcs_dispatcher</code><span class="sig-paren">(</span><em>vcsfuncs</em>, <em>name='vcs_dispatcher'</em>, <em>doc='dispatches to a version control function'</em>, <em>err='no func for handling the version contol system !{r}'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.make_vcs_dispatcher" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a function that dispatches to different version control systems,
 depending on the users setting for $REVER_VCS.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>vcsfuncs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Maps the string names of version control systems (e.g. ‘git’ or ‘hg’) to
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>vcsfuncs</strong><span class="classifier">dict</span></dt><dd><p>Maps the string names of version control systems (e.g. ‘git’ or ‘hg’) to
 a function for handling that particular action.</p>
 </dd>
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Dispatcher funtion name.</p>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Dispatcher funtion name.</p>
 </dd>
-<dt><strong>doc</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Doctring for the dispatcher.</p>
+<dt><strong>doc</strong><span class="classifier">str, optional</span></dt><dd><p>Doctring for the dispatcher.</p>
 </dd>
-<dt><strong>err</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
-<dd><p class="first last">Error message if the version control system name is not found in vcsfuncs.
+<dt><strong>err</strong><span class="classifier">str, optional</span></dt><dd><p>Error message if the version control system name is not found in vcsfuncs.
 This is formatted with the value of $REVER_VCS.</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>vcs_dispatcher</strong> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd></dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>vcs_dispatcher</strong><span class="classifier">function</span></dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -364,8 +353,6 @@ This is formatted with the value of $REVER_VCS.</p>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -417,7 +404,7 @@ This is formatted with the value of $REVER_VCS.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

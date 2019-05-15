@@ -1,18 +1,16 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>GitHub Release Activity (rever.activities.ghrelease) &#8212; rever 0.3.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
@@ -71,121 +69,116 @@
 <dd><p>Performs a github release.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_NAME:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, Name of the release.  This is evaluated with the
-version. Default is <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_NOTES:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str or None, Release notes to send to the release
+<dl class="field-list simple">
+<dt class="field-odd">$GHRELEASE_NAME</dt>
+<dd class="field-odd"><p>str, Name of the release.  This is evaluated with the
+version. Default is <code class="docutils literal notranslate"><span class="pre">$VERSION</span></code></p>
+</dd>
+<dt class="field-even">$GHRELEASE_NOTES</dt>
+<dd class="field-even"><p>str or None, Release notes to send to the release
 page. If None (the default), this is read from <code class="docutils literal notranslate"><span class="pre">$CHANGELOG_LATEST</span></code>,
 if present, or failing that <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. If neither file exists,
-an empty string is passes in.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_PREPEND:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">str, string to prepend to the release notes,
-defaults to ‘’</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$GHRELEASE_APPEND:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">str, string to append to the release notes,
-defaults to ‘’</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$GHRELEASE_ASSETS:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">iterable of str or functions, Extra assests to
+an empty string is passes in.</p>
+</dd>
+<dt class="field-odd">$GHRELEASE_PREPEND</dt>
+<dd class="field-odd"><p>str, string to prepend to the release notes,
+defaults to ‘’</p>
+</dd>
+<dt class="field-even">$GHRELEASE_APPEND</dt>
+<dd class="field-even"><p>str, string to append to the release notes,
+defaults to ‘’</p>
+</dd>
+<dt class="field-odd">$GHRELEASE_ASSETS</dt>
+<dd class="field-odd"><p>iterable of str or functions, Extra assests to
 upload to the GitHub release. This is ususally a tarball of the source
 code or a binary package. If the asset is a string, it is interpreted
 as a filename (and evalauated in the current environment). If the asset
 is a function, the function is called with no arguments and should return
 either a string filename or a list of string filenames. The asset
 functions will usually generate or acquire the asset. By default, this
-a tarball of the release tag will be uploaded.</td>
-</tr>
-</tbody>
-</table>
+a tarball of the release tag will be uploaded.</p>
+</dd>
+</dl>
 <p>Other environment variables that affect the behavior are:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">$GITHUB_CREDFILE:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">the credential file to use.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$GITHUB_ORG:</th><td class="field-body">the github organization that the project belongs to.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">$GITHUB_REPO:</th><td class="field-body">the github repository of the project.</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">$REVER_CONFIG_DIR:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">the user’s config directory for rever, which
-is where the GitHub credential files are stored by default.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">$CHANGELOG_LATEST:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">path to the latest release notes file
-created by the changelog activity.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">$TAG_TEMPLATE:</th><td class="field-body">may used to find the tag name when creating the default
-asset.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">$GITHUB_CREDFILE</dt>
+<dd class="field-odd"><p>the credential file to use.</p>
+</dd>
+<dt class="field-even">$GITHUB_ORG</dt>
+<dd class="field-even"><p>the github organization that the project belongs to.</p>
+</dd>
+<dt class="field-odd">$GITHUB_REPO</dt>
+<dd class="field-odd"><p>the github repository of the project.</p>
+</dd>
+<dt class="field-even">$REVER_CONFIG_DIR</dt>
+<dd class="field-even"><p>the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</p>
+</dd>
+<dt class="field-odd">$CHANGELOG_LATEST</dt>
+<dd class="field-odd"><p>path to the latest release notes file
+created by the changelog activity.</p>
+</dd>
+<dt class="field-even">$TAG_TEMPLATE</dt>
+<dd class="field-even"><p>may used to find the tag name when creating the default
+asset.</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.all_kwargs">
-<code class="descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">all_kwargs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.check">
-<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.check_func">
-<code class="descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_func" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_func</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.check_requirements">
-<code class="descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_requirements</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.checker">
-<code class="descname">checker</code><span class="sig-paren">(</span><em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.checker" title="Permalink to this definition">¶</a></dt>
+<code class="descname">checker</code><span class="sig-paren">(</span><em>self</em>, <em>check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.clear_kwargs_from_env">
-<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.kwargs_from_env">
-<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">kwargs_from_env</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.setupper">
-<code class="descname">setupper</code><span class="sig-paren">(</span><em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setupper</code><span class="sig-paren">(</span><em>self</em>, <em>setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.undo">
-<code class="descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undo</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -193,7 +186,7 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="method">
 <dt id="rever.activities.ghrelease.GHRelease.undoer">
-<code class="descname">undoer</code><span class="sig-paren">(</span><em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">undoer</code><span class="sig-paren">(</span><em>self</em>, <em>undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
@@ -258,8 +251,6 @@ varaibles that the activity looks for when it is executed.</p>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -312,7 +303,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
