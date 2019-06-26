@@ -63,7 +63,7 @@
 <p>The following displays information about the environment variables that
 affect xonsh performance in some way. It also lists their default values, if
 applicable.</p>
-<table class="docutils align-center">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -151,22 +151,22 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="simple">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2ad7a3132160&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2ad7a31a9160&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2ad7a31a39b0&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2ad7a2fef550&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x2ad7a30d1fd0&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x2ad7a30d15c0&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2ad7a2ff76a0&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2ad7a2ff7198&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2ad7a30c8400&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2ad7a30efc88&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x2ad7a30ecd30&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2ad7a301d9b0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2ad7a30ec780&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2ad7a30cc550&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2ad7a30cc710&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x2ad7a301d8d0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2ad7a301d588&gt;}</p>
+<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b0a29372860&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b0a2b6b79e8&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b0a2b6c4cc0&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b0a2b83f588&gt;,
+‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x2b0a2a9258d0&gt;,
+‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x2b0a2b7ee7f0&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b0a2b7e4be0&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b0a2b7e4860&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b0a2b754198&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b0a2b754128&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2b0a2b754dd8&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b0a2b847048&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b0a2b648fd0&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b0a2b7f8898&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b0a2b847208&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b0a2b847eb8&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b0a2b7ee5c0&gt;}</p>
 </dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
@@ -424,7 +424,7 @@ applicable.</p>
 <span id="id34"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2ad7a27e4898&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b0a2b26a9e8&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -448,7 +448,7 @@ applicable.</p>
 <span id="id37"></span><h3>$RELEASE_DATE<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h3>
 <p>The date of the release, defaults to today, string representations have “YYYY-MM-DD” format.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> datetime.date(2019, 5, 21)</p>
+<p><strong>default:</strong> datetime.date(2019, 6, 26)</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -610,10 +610,10 @@ applicable.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -665,7 +665,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

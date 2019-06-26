@@ -64,7 +64,7 @@
 <p>Dockers tools for rever.</p>
 <dl class="class">
 <dt id="rever.docker.InContainer">
-<em class="property">class </em><code class="descclassname">rever.docker.</code><code class="descname">InContainer</code><span class="sig-paren">(</span><em>image=None</em>, <em>lang='xonsh'</em>, <em>args=('-c'</em>, <em>)</em>, <em>env=True</em>, <em>mounts=()</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.InContainer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">InContainer</code><span class="sig-paren">(</span><em class="sig-param">image=None</em>, <em class="sig-param">lang='xonsh'</em>, <em class="sig-param">args=('-c'</em>, <em class="sig-param">)</em>, <em class="sig-param">env=True</em>, <em class="sig-param">mounts=()</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.InContainer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Macro context manager for running code within a container. This runs
 a command of the following form within the container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lang</span> <span class="n">args</span> <span class="n">block</span>
@@ -105,44 +105,44 @@ context is entered.</p>
 
 <dl class="function">
 <dt id="rever.docker.apt_deps">
-<code class="descclassname">rever.docker.</code><code class="descname">apt_deps</code><span class="sig-paren">(</span><em>apt=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.apt_deps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">apt_deps</code><span class="sig-paren">(</span><em class="sig-param">apt=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.apt_deps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs apt-based install command</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.build_image">
-<code class="descclassname">rever.docker.</code><code class="descname">build_image</code><span class="sig-paren">(</span><em>dockerfile</em>, <em>image</em>, <em>maker</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.build_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">build_image</code><span class="sig-paren">(</span><em class="sig-param">dockerfile</em>, <em class="sig-param">image</em>, <em class="sig-param">maker</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.build_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds a docker image.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.collate_deps">
-<code class="descclassname">rever.docker.</code><code class="descname">collate_deps</code><span class="sig-paren">(</span><em>apt=None</em>, <em>conda=None</em>, <em>conda_channels=None</em>, <em>pip=None</em>, <em>pip_requirements=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.collate_deps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">collate_deps</code><span class="sig-paren">(</span><em class="sig-param">apt=None</em>, <em class="sig-param">conda=None</em>, <em class="sig-param">conda_channels=None</em>, <em class="sig-param">pip=None</em>, <em class="sig-param">pip_requirements=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.collate_deps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a string that installs all known dependencies.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.conda_deps">
-<code class="descclassname">rever.docker.</code><code class="descname">conda_deps</code><span class="sig-paren">(</span><em>conda=None</em>, <em>conda_channels=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.conda_deps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">conda_deps</code><span class="sig-paren">(</span><em class="sig-param">conda=None</em>, <em class="sig-param">conda_channels=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.conda_deps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs conda-based install command</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.docker_envvars">
-<code class="descclassname">rever.docker.</code><code class="descname">docker_envvars</code><span class="sig-paren">(</span><em>envvars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_envvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">docker_envvars</code><span class="sig-paren">(</span><em class="sig-param">envvars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_envvars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a string that sets envvars in docker from a dictionary mapping
 environment variable names to value strings.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.docker_root">
-<code class="descclassname">rever.docker.</code><code class="descname">docker_root</code><span class="sig-paren">(</span><em>root=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_root" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">docker_root</code><span class="sig-paren">(</span><em class="sig-param">root=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the root-level directory for the repo that docker should use.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.docker_source_from">
-<code class="descclassname">rever.docker.</code><code class="descname">docker_source_from</code><span class="sig-paren">(</span><em>source=None</em>, <em>url=None</em>, <em>root=None</em>, <em>workdir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_source_from" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">docker_source_from</code><span class="sig-paren">(</span><em class="sig-param">source=None</em>, <em class="sig-param">url=None</em>, <em class="sig-param">root=None</em>, <em class="sig-param">workdir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.docker_source_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>This constructs a docker command detailing how to get the source
 code for the project. In order of precedence, this will use,</p>
 <ul class="simple">
@@ -155,20 +155,20 @@ the root directory of the project repo.</p></li>
 
 <dl class="function">
 <dt id="rever.docker.ensure_images">
-<code class="descclassname">rever.docker.</code><code class="descname">ensure_images</code><span class="sig-paren">(</span><em>base_file=None</em>, <em>base_image=None</em>, <em>force_base=False</em>, <em>base_from=None</em>, <em>apt=None</em>, <em>conda=None</em>, <em>conda_channels=None</em>, <em>pip=None</em>, <em>pip_requirements=None</em>, <em>install_file=None</em>, <em>install_image=None</em>, <em>force_install=False</em>, <em>root=None</em>, <em>command=None</em>, <em>envvars=None</em>, <em>workdir=None</em>, <em>url=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.ensure_images" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">ensure_images</code><span class="sig-paren">(</span><em class="sig-param">base_file=None</em>, <em class="sig-param">base_image=None</em>, <em class="sig-param">force_base=False</em>, <em class="sig-param">base_from=None</em>, <em class="sig-param">apt=None</em>, <em class="sig-param">conda=None</em>, <em class="sig-param">conda_channels=None</em>, <em class="sig-param">pip=None</em>, <em class="sig-param">pip_requirements=None</em>, <em class="sig-param">install_file=None</em>, <em class="sig-param">install_image=None</em>, <em class="sig-param">force_install=False</em>, <em class="sig-param">root=None</em>, <em class="sig-param">command=None</em>, <em class="sig-param">envvars=None</em>, <em class="sig-param">workdir=None</em>, <em class="sig-param">url=None</em>, <em class="sig-param">source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.ensure_images" title="Permalink to this definition">¶</a></dt>
 <dd><p>This verifies that docker images have been built for rever, and builds
 them if they haven’t.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.git_configure">
-<code class="descclassname">rever.docker.</code><code class="descname">git_configure</code><span class="sig-paren">(</span><em>name=None</em>, <em>email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.git_configure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">git_configure</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.git_configure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make basic git configuration.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.incontainer">
-<code class="descclassname">rever.docker.</code><code class="descname">incontainer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.incontainer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">incontainer</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.incontainer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Macro context manager for running code within a container.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -204,31 +204,31 @@ context is entered.</p>
 
 <dl class="function">
 <dt id="rever.docker.make_base_dockerfile">
-<code class="descclassname">rever.docker.</code><code class="descname">make_base_dockerfile</code><span class="sig-paren">(</span><em>base_from=None</em>, <em>apt=None</em>, <em>conda=None</em>, <em>conda_channels=None</em>, <em>pip=None</em>, <em>pip_requirements=None</em>, <em>git_name=None</em>, <em>git_email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.make_base_dockerfile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">make_base_dockerfile</code><span class="sig-paren">(</span><em class="sig-param">base_from=None</em>, <em class="sig-param">apt=None</em>, <em class="sig-param">conda=None</em>, <em class="sig-param">conda_channels=None</em>, <em class="sig-param">pip=None</em>, <em class="sig-param">pip_requirements=None</em>, <em class="sig-param">git_name=None</em>, <em class="sig-param">git_email=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.make_base_dockerfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs the base dockerfile.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.make_install_dockerfile">
-<code class="descclassname">rever.docker.</code><code class="descname">make_install_dockerfile</code><span class="sig-paren">(</span><em>base=None</em>, <em>root=None</em>, <em>command=None</em>, <em>envvars=None</em>, <em>workdir=None</em>, <em>url=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.make_install_dockerfile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">make_install_dockerfile</code><span class="sig-paren">(</span><em class="sig-param">base=None</em>, <em class="sig-param">root=None</em>, <em class="sig-param">command=None</em>, <em class="sig-param">envvars=None</em>, <em class="sig-param">workdir=None</em>, <em class="sig-param">url=None</em>, <em class="sig-param">source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.make_install_dockerfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs a dockerfile that installs the source code.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.mount_argument">
-<code class="descclassname">rever.docker.</code><code class="descname">mount_argument</code><span class="sig-paren">(</span><em>mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.mount_argument" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">mount_argument</code><span class="sig-paren">(</span><em class="sig-param">mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.mount_argument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a mount command argument from a mount dictionary.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.pip_deps">
-<code class="descclassname">rever.docker.</code><code class="descname">pip_deps</code><span class="sig-paren">(</span><em>pip=None</em>, <em>pip_requirements=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.pip_deps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">pip_deps</code><span class="sig-paren">(</span><em class="sig-param">pip=None</em>, <em class="sig-param">pip_requirements=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.pip_deps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructs pip-based install command</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.run_in_container">
-<code class="descclassname">rever.docker.</code><code class="descname">run_in_container</code><span class="sig-paren">(</span><em>image</em>, <em>command</em>, <em>env=True</em>, <em>mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.run_in_container" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">run_in_container</code><span class="sig-paren">(</span><em class="sig-param">image</em>, <em class="sig-param">command</em>, <em class="sig-param">env=True</em>, <em class="sig-param">mounts=()</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.run_in_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a command inside of a docker container.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -260,38 +260,38 @@ for more information</p>
 
 <dl class="function">
 <dt id="rever.docker.should_build_image">
-<code class="descclassname">rever.docker.</code><code class="descname">should_build_image</code><span class="sig-paren">(</span><em>dockerfile</em>, <em>image</em>, <em>maker</em>, <em>force=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.should_build_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">should_build_image</code><span class="sig-paren">(</span><em class="sig-param">dockerfile</em>, <em class="sig-param">image</em>, <em class="sig-param">maker</em>, <em class="sig-param">force=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.should_build_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines if we should (re)build the dockerfile image.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.supports_mount">
-<code class="descclassname">rever.docker.</code><code class="descname">supports_mount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.supports_mount" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">supports_mount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.supports_mount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if docker run supports the –mount option.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.text_wrapper">
-<code class="descclassname">rever.docker.</code><code class="descname">text_wrapper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.text_wrapper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">text_wrapper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.text_wrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains docker text wrapper.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.validate_mount">
-<code class="descclassname">rever.docker.</code><code class="descname">validate_mount</code><span class="sig-paren">(</span><em>mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.validate_mount" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">validate_mount</code><span class="sig-paren">(</span><em class="sig-param">mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.validate_mount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validates a docker mount description. Returns a boolean flag and a message.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.volume_arguments">
-<code class="descclassname">rever.docker.</code><code class="descname">volume_arguments</code><span class="sig-paren">(</span><em>mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.volume_arguments" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">volume_arguments</code><span class="sig-paren">(</span><em class="sig-param">mount</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.volume_arguments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a list of volume arguments for older versions of docker that
 don’t support –mount.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.docker.wrap">
-<code class="descclassname">rever.docker.</code><code class="descname">wrap</code><span class="sig-paren">(</span><em>s</em>, <em>indent=''</em>, <em>suffix=' \'</em>, <em>width=70</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.wrap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">wrap</code><span class="sig-paren">(</span><em class="sig-param">s</em>, <em class="sig-param">indent=''</em>, <em class="sig-param">suffix=' \'</em>, <em class="sig-param">width=70</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.wrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a dockerfile line.</p>
 </dd></dl>
 
@@ -324,10 +324,10 @@ don’t support –mount.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -380,7 +380,7 @@ don’t support –mount.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

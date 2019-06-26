@@ -64,7 +64,7 @@
 <p>Logging tools for rever</p>
 <dl class="class">
 <dt id="rever.logger.Logger">
-<em class="property">class </em><code class="descclassname">rever.logger.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">Logger</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>A logging object for rever that stores information in line-oriented JSON
 format.</p>
 <dl class="field-list simple">
@@ -77,40 +77,40 @@ format.</p>
 </dl>
 <dl class="method">
 <dt id="rever.logger.Logger.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads all of the records from the logfile and returns a list of dicts.
 If the log file does not yet exist, this returns an empty list.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="rever.logger.Logger.log">
-<code class="descname">log</code><span class="sig-paren">(</span><em>self</em>, <em>message</em>, <em>activity=None</em>, <em>category='misc'</em>, <em>data=None</em>, <em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">message</em>, <em class="sig-param">activity=None</em>, <em class="sig-param">category='misc'</em>, <em class="sig-param">data=None</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs a message, the associated activity (optional), the timestamp, and the
 current revision to the log file.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="rever.logger.Logger.argparser">
-<code class="descname">argparser</code><a class="headerlink" href="#rever.logger.Logger.argparser" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">argparser</code><a class="headerlink" href="#rever.logger.Logger.argparser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an argument parser for the logger</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="rever.logger.Logger.filename">
-<code class="descname">filename</code><a class="headerlink" href="#rever.logger.Logger.filename" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#rever.logger.Logger.filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.logger.current_logger">
-<code class="descclassname">rever.logger.</code><code class="descname">current_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.current_logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">current_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.current_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retuns the current logger instance.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="rever.logger.log">
-<code class="descclassname">rever.logger.</code><code class="descname">log</code><span class="sig-paren">(</span><em>args</em>, <em>stdin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">args</em>, <em class="sig-param">stdin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Command line interface for logging a message</p>
 </dd></dl>
 
@@ -143,10 +143,10 @@ current revision to the log file.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -199,7 +199,7 @@ current revision to the log file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
