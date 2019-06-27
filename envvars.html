@@ -151,22 +151,22 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="simple">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x7f82898f6668&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f8283697b70&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f8283653550&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f8283653d68&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7f828363b2b0&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7f828363be10&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7f82836b7dd8&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7f82836b7a20&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f8283641208&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f82836b9cf8&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7f8283699550&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f82836866a0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f8283699940&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f82836994e0&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f828803c978&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7f8283686be0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f828363bd68&gt;}</p>
+<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x2b53f3d5f828&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x2b53f5c840b8&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x2b53f5ffab70&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x2b53f6144240&gt;,
+‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x2b53f6127668&gt;,
+‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x2b53f6127ba8&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x2b53f62164a8&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x2b53f62161d0&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x2b53f620ff28&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x2b53f620f320&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x2b53f620f9b0&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x2b53f61272b0&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x2b53f620fc50&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x2b53f6234978&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x2b53f4074048&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x2b53f6234ba8&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x2b53f6127d68&gt;}</p>
 </dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
@@ -424,7 +424,7 @@ applicable.</p>
 <span id="id34"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f8288a02b38&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x2b53f5c4e780&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -440,7 +440,7 @@ applicable.</p>
 <span id="id36"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/opt/conda/bin/python3.6’</p>
+<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python3.7’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -456,7 +456,7 @@ applicable.</p>
 <span id="id38"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
 <p>Path to rever configuration directory</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/root/.config/rever’</p>
+<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -488,7 +488,7 @@ applicable.</p>
 <span id="id42"></span><h3>$REVER_USER<a class="headerlink" href="#rever-user" title="Permalink to this headline">¶</a></h3>
 <p>Name of the user who ran the rever command.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘root’</p>
+<p><strong>default:</strong> ‘travis’</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
