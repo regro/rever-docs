@@ -77,6 +77,62 @@
 nose command. By default no additional arguments are sent.</p>
 </dd>
 </dl>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the activity.</p>
+</dd>
+<dt><strong>deps</strong><span class="classifier">set of str, optional</span></dt><dd><p>Set of activities that must be completed before this activity is
+executed.</p>
+</dd>
+<dt><strong>func</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to perform as activity when this activities is executed
+(called).  The default _func method is good enough for most cases.</p>
+</dd>
+<dt><strong>undo</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to undo this activities behaviour and reset the repo state.</p>
+</dd>
+<dt><strong>check</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to check if the activity can be run sucessfully on the
+user’s machine, with their credentials, etc. This function
+should return True if the activity can be run, and False otherwise.</p>
+</dd>
+<dt><strong>requires</strong><span class="classifier">dict or None, optional</span></dt><dd><p>A dict of dicts of the following form that specifies the command line
+utility and import requirements for this activity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;cli name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+    <span class="s2">&quot;imports&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;module name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The top-level keys are both optional, and this will default
+to an empty dict.  The docker command will be automatically
+added to the commands dict.</p>
+</dd>
+<dt><strong>desc</strong><span class="classifier">str, optional</span></dt><dd><p>A short description of this activity</p>
+</dd>
+<dt><strong>image</strong><span class="classifier">str or None, optional</span></dt><dd><p>Name of the image to run, defaults to $DOCKER_INSTALL_IMAGE.
+Environment variables will be expanded when the activity is run.</p>
+</dd>
+<dt><strong>lang</strong><span class="classifier">str, optional</span></dt><dd><p>Language to execute the body in, default xonsh. This may also be a full
+path to an executable.</p>
+</dd>
+<dt><strong>run_args</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Extra arguments to pass in after the executable but before the
+main body. Defaults to the standard compile flag <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>.</p>
+</dd>
+<dt><strong>code</strong><span class="classifier">str or None, optional</span></dt><dd><p>The code to execute in the docker container with lang. If this is
+None, it may be on the instance itself, passed in when the activity
+is called, or set by entering the activity as a macro context manager.
+In this last case, the context block is set as the code.</p>
+</dd>
+<dt><strong>env</strong><span class="classifier">bool or dict, optional</span></dt><dd><p>Environment to use. This has the same meaning as in
+<code class="docutils literal notranslate"><span class="pre">rever.docker.run_in_container()</span></code>. Please see that function for
+more details, default True.</p>
+</dd>
+<dt><strong>mounts</strong><span class="classifier">list of dict, optional</span></dt><dd><p>Locations to mount in the running container. This has the same meaning as
+ing <code class="docutils literal notranslate"><span class="pre">run_in_container()</span></code>. Please see that function for more details, default
+does not mount anything.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activities.nose.Nose.all_kwargs">
 <code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.all_kwargs" title="Permalink to this definition">¶</a></dt>
@@ -240,7 +296,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

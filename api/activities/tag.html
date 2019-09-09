@@ -74,6 +74,44 @@
 by default this is ‘$VERSION’</p>
 </dd>
 </dl>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the activity.</p>
+</dd>
+<dt><strong>deps</strong><span class="classifier">set of str, optional</span></dt><dd><p>Set of activities that must be completed before this activity is
+executed.</p>
+</dd>
+<dt><strong>func</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to perform as activity when this activities is executed (called).</p>
+</dd>
+<dt><strong>undo</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to undo this activities behaviour and reset the repo state.</p>
+</dd>
+<dt><strong>setup</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to help initialize the activity.</p>
+</dd>
+<dt><strong>check</strong><span class="classifier">callable, optional</span></dt><dd><p>Function to check if the activity can be run sucessfully on the
+user’s machine, with their credentials, etc. This function
+should return True if the activity can be run, and False otherwise.</p>
+</dd>
+<dt><strong>requires</strong><span class="classifier">dict or None, optional</span></dt><dd><p>A dict of dicts of the following form that specifies the command line
+utility and import requirements for this activity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;cli name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+    <span class="s2">&quot;imports&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;&lt;module name&gt;&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;package name&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The top-level keys are both optional, and this will default
+to an empty dict.</p>
+</dd>
+<dt><strong>args</strong><span class="classifier">tuple, optional</span></dt><dd><p>Arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(*args)</span></code>, if needed.</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">mapping, optional</span></dt><dd><p>Keyword arguments to be supplied to the <code class="docutils literal notranslate"><span class="pre">func(**kwargs)</span></code>, if needed.</p>
+</dd>
+<dt><strong>desc</strong><span class="classifier">str, optional</span></dt><dd><p>A short description of this activity</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <dl class="method">
 <dt id="rever.activities.tag.Tag.all_kwargs">
 <code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.all_kwargs" title="Permalink to this definition">¶</a></dt>
@@ -229,7 +267,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
