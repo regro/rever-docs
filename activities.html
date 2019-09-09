@@ -333,7 +333,8 @@ to ignore. The default is to ignore the template file.</p>
 <dt class="field-even">$CHANGELOG_LATEST</dt>
 <dd class="field-even"><p>str, file to write just the latest part of the
 changelog to. This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
-in the current environment.</p>
+in the current environment. If this file is not within <code class="docutils literal notranslate"><span class="pre">$REVER_DIR</span></code>,
+it is added to the repository.</p>
 </dd>
 <dt class="field-odd">$CHANGELOG_TEMPLATE</dt>
 <dd class="field-odd"><p>str, filename of the template file in the
@@ -766,7 +767,7 @@ asset.</p>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7f2597134d08</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7fe5640896a8</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />

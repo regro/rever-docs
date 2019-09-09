@@ -103,7 +103,8 @@ to ignore. The default is to ignore the template file.</p>
 <dt class="field-even">$CHANGELOG_LATEST</dt>
 <dd class="field-even"><p>str, file to write just the latest part of the
 changelog to. This defaults to <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/LATEST</span></code>. This is evaluated
-in the current environment.</p>
+in the current environment. If this file is not within <code class="docutils literal notranslate"><span class="pre">$REVER_DIR</span></code>,
+it is added to the repository.</p>
 </dd>
 <dt class="field-odd">$CHANGELOG_TEMPLATE</dt>
 <dd class="field-odd"><p>str, filename of the template file in the
