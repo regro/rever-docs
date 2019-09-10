@@ -85,6 +85,11 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <dd class="field-even"><p>str or None, The name of the package on PyPI. If None,
 This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></p>
 </dd>
+<dt class="field-odd">$PYPI_SIGN</dt>
+<dd class="field-odd"><p>bool or None, whether the packages should be signed
+(with gpg) when uploaded. If None (default), packages will be
+signed if a gpg key is available and skipped otherwise.</p>
+</dd>
 </dl>
 <p>Other environment variables that affect the behavior are:</p>
 <dl class="field-list simple">

@@ -767,7 +767,7 @@ asset.</p>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7fe5640896a8</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7f50b82d0e18</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -872,6 +872,11 @@ include <code class="docutils literal notranslate"><span class="pre">'bdist'</sp
 <dd class="field-even"><p>str or None, The name of the package on PyPI. If None,
 This will default to the result of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code></p>
 </dd>
+<dt class="field-odd">$PYPI_SIGN</dt>
+<dd class="field-odd"><p>bool or None, whether the packages should be signed
+(with gpg) when uploaded. If None (default), packages will be
+signed if a gpg key is available and skipped otherwise.</p>
+</dd>
 </dl>
 <p>Other environment variables that affect the behavior are:</p>
 <dl class="field-list simple">
@@ -886,6 +891,7 @@ This will default to the result of <code class="docutils literal notranslate"><s
 <span class="nv">$PYPI_BUILD_COMMANDS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sdist&#39;</span><span class="p">,</span> <span class="p">)</span>
 <span class="nv">$PYPI_UPLOAD</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="nv">$PYPI_NAME</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$PYPI_SIGN</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
