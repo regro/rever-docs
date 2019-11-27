@@ -11,14 +11,29 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
-    <script type="text/javascript" src="_static/cloud.base.js"></script>
-    <script type="text/javascript" src="_static/cloud.js"></script>
+
+    
+    
+     
+        <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script type="text/javascript" src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script type="text/javascript" src="_static/cloud.js"></script>
+    
+
     <link rel="shortcut icon" href="_static/longship.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -228,12 +243,12 @@ This is evaluated in the current environment.</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;authors&#39;</span><span class="p">]</span>
 
 <span class="nv">$AUTHORS_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;AUTHORS&#39;</span>
-<span class="nv">$AUTHORS_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;All of the people who have made at least one contribution to $PROJECT.</span><span class="se">\n</span><span class="s1">Authors are sorted {sorting_text}.</span><span class="se">\n\n</span><span class="s1">{authors}</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="nv">$AUTHORS_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;* {name}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nv">$AUTHORS_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;All of the people who have made at least one contribution to $PROJECT.</span><span class="se">\n</span><span class="s1">Authors are sorted </span><span class="si">{sorting_text}</span><span class="s1">.</span><span class="se">\n\n</span><span class="si">{authors}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nv">$AUTHORS_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;* </span><span class="si">{name}</span><span class="se">\n</span><span class="s1">&#39;</span>
 <span class="nv">$AUTHORS_LATEST</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/LATEST-AUTHORS.json&#39;</span>
 <span class="nv">$AUTHORS_METADATA</span> <span class="o">=</span> <span class="s1">&#39;.authors.yml&#39;</span>
 <span class="nv">$AUTHORS_SORTBY</span> <span class="o">=</span> <span class="s1">&#39;num_commits&#39;</span>
-<span class="nv">$AUTHORS_INCLUDE_ORGS</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="nv">$AUTHORS_INCLUDE_ORGS</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="nv">$AUTHORS_MAILMAP</span> <span class="o">=</span> <span class="s1">&#39;.mailmap&#39;</span>
 </pre></div>
 </div>
@@ -378,13 +393,13 @@ details on the available fields. The default is <a href="#id12"><span class="pro
 <span class="nv">$CHANGELOG_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;.. current developments&#39;</span>
 <span class="nv">$CHANGELOG_HEADER</span> <span class="o">=</span> <span class="s1">&#39;.. current developments</span><span class="se">\n\n</span><span class="s1">v$VERSION</span><span class="se">\n</span><span class="s1">====================</span><span class="se">\n\n</span><span class="s1">&#39;</span>
 <span class="nv">$CHANGELOG_NEWS</span> <span class="o">=</span> <span class="s1">&#39;news&#39;</span>
-<span class="nv">$CHANGELOG_IGNORE</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$CHANGELOG_IGNORE</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$CHANGELOG_LATEST</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/LATEST&#39;</span>
 <span class="nv">$CHANGELOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;TEMPLATE&#39;</span>
 <span class="nv">$CHANGELOG_CATEGORIES</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Added&#39;</span><span class="p">,</span> <span class="s1">&#39;Changed&#39;</span><span class="p">,</span> <span class="s1">&#39;Deprecated&#39;</span><span class="p">,</span> <span class="s1">&#39;Removed&#39;</span><span class="p">,</span> <span class="s1">&#39;Fixed&#39;</span><span class="p">,</span> <span class="s1">&#39;Security&#39;</span><span class="p">)</span>
-<span class="nv">$CHANGELOG_CATEGORY_TITLE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;**{category}:**</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+<span class="nv">$CHANGELOG_CATEGORY_TITLE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;**</span><span class="si">{category}</span><span class="s1">:**</span><span class="se">\n\n</span><span class="s1">&#39;</span>
 <span class="nv">$CHANGELOG_AUTHORS_TITLE</span> <span class="o">=</span> <span class="s1">&#39;Authors&#39;</span>
-<span class="nv">$CHANGELOG_AUTHORS_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;* {name}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nv">$CHANGELOG_AUTHORS_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;* </span><span class="si">{name}</span><span class="se">\n</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -494,9 +509,9 @@ is where the GitHub credential files are stored by default.</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
 
-<span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="s1">&#39;ssh&#39;</span>
-<span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$CONDA_FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="s1">&#39;sha256&#39;</span>
 <span class="nv">$CONDA_FORGE_PATTERNS</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  version:</span><span class="se">\\</span><span class="s1">s*[A-Za-z0-9._-]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  version: &quot;$VERSION&quot;&#39;</span><span class="p">),</span>
@@ -513,9 +528,9 @@ is where the GitHub credential files are stored by default.</p>
     <span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE:</span><span class="se">\\</span><span class="s1">s*[0-9A-Fa-f]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE: $HASH&#39;</span><span class="p">),</span>
 <span class="p">)</span>
-<span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nv">$CONDA_FORGE_FORK</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$CONDA_FORGE_FORK</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="nv">$CONDA_FORGE_FORK_ORG</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
@@ -542,15 +557,18 @@ is where the GitHub credential files are stored by default.</p>
 <dt class="field-even">$GCLOUD_CONTAINER_NAME</dt>
 <dd class="field-even"><p>str, the name of the container image to deploy to</p>
 </dd>
-<dt class="field-odd">$GCLOUD_DOCKER_ORG</dt>
-<dd class="field-odd"><p>str, the name of the docker org to pull the container
+<dt class="field-odd">$GCLOUD_DOCKER_HOST</dt>
+<dd class="field-odd"><p>str, the name of the docker host to pull the container from, defaults to docker.io</p>
+</dd>
+<dt class="field-even">$GCLOUD_DOCKER_ORG</dt>
+<dd class="field-even"><p>str, the name of the docker org to pull the container
 from</p>
 </dd>
-<dt class="field-even">$GCLOUD_DOCKER_REPO</dt>
-<dd class="field-even"><p>str, the name of the docker container repo to use</p>
+<dt class="field-odd">$GCLOUD_DOCKER_REPO</dt>
+<dd class="field-odd"><p>str, the name of the docker container repo to use</p>
 </dd>
-<dt class="field-odd">$VERSION</dt>
-<dd class="field-odd"><p>str, the version of the container to use</p>
+<dt class="field-even">$VERSION</dt>
+<dd class="field-even"><p>str, the version of the container to use</p>
 </dd>
 </dl>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
@@ -622,10 +640,10 @@ default False.</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_build&#39;</span><span class="p">]</span>
 
-<span class="nv">$DOCKER_BUILD_PATH</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$DOCKER_BUILD_CONTEXT</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$DOCKER_BUILD_TAGS</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$DOCKER_BUILD_CACHE</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="nv">$DOCKER_BUILD_PATH</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$DOCKER_BUILD_CONTEXT</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$DOCKER_BUILD_TAGS</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$DOCKER_BUILD_CACHE</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -648,7 +666,7 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;docker_push&#39;</span><span class="p">]</span>
 
-<span class="nv">$DOCKER_PUSH_TAGS</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$DOCKER_PUSH_TAGS</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -688,7 +706,7 @@ sphinx activity.</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghpages&#39;</span><span class="p">]</span>
 
 <span class="nv">$GHPAGES_REPO</span> <span class="o">=</span> <span class="s1">&#39;&lt;no default value&gt;&#39;</span>
-<span class="nv">$GHPAGES_BRANCH</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$GHPAGES_BRANCH</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$GHPAGES_COPY</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">(</span><span class="s1">&#39;$SPHINX_HOST_DIR/html&#39;</span><span class="p">,</span> <span class="s1">&#39;$GHPAGES_REPO_DIR&#39;</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;$REVER_DIR/sphinx-build/html&#39;</span><span class="p">,</span> <span class="s1">&#39;$GHPAGES_REPO_DIR&#39;</span><span class="p">),</span>
@@ -764,10 +782,10 @@ asset.</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ghrelease&#39;</span><span class="p">]</span>
 
 <span class="nv">$GHRELEASE_NAME</span> <span class="o">=</span> <span class="s1">&#39;$VERSION&#39;</span>
-<span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7fa0221ed950</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7f46b2490a70</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -840,9 +858,9 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</p>
 <p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;push_tag&#39;</span><span class="p">]</span>
 
-<span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$PUSH_TAG_TARGET</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$PUSH_TAG_PROTOCOL</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$PUSH_TAG_REMOTE</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$PUSH_TAG_TARGET</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$PUSH_TAG_PROTOCOL</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -889,9 +907,9 @@ signed if a gpg key is available and skipped otherwise.</p>
 
 <span class="nv">$PYPI_RC</span> <span class="o">=</span> <span class="s1">&#39;$HOME/.pypirc&#39;</span>
 <span class="nv">$PYPI_BUILD_COMMANDS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sdist&#39;</span><span class="p">,</span> <span class="p">)</span>
-<span class="nv">$PYPI_UPLOAD</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="nv">$PYPI_NAME</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="nv">$PYPI_SIGN</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="nv">$PYPI_UPLOAD</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$PYPI_NAME</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$PYPI_SIGN</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -965,7 +983,7 @@ of the sphinx activity.</p>
 
 <span class="nv">$SPHINX_DOCS_DIR</span> <span class="o">=</span> <span class="s1">&#39;$DOCKER_HOME/$PROJECT/docs&#39;</span>
 <span class="nv">$SPHINX_HOST_DIR</span> <span class="o">=</span> <span class="s1">&#39;$REVER_DIR/sphinx-build&#39;</span>
-<span class="nv">$SPHINX_BUILD_DIR</span> <span class="o">=</span> <span class="s1">&#39;{docs_dir}/_build&#39;</span>
+<span class="nv">$SPHINX_BUILD_DIR</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{docs_dir}</span><span class="s1">/_build&#39;</span>
 <span class="nv">$SPHINX_OPTS</span> <span class="o">=</span> <span class="p">()</span>
 <span class="nv">$SPHINX_PAPER</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$SPHINX_BUILDERS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="p">)</span>
@@ -1155,7 +1173,7 @@ variables.</p></li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
