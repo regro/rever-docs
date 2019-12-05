@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Environment Variables &#8212; rever 0.4.2 documentation</title>
+    <title>Environment Variables &#8212; rever 0.4.3 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -61,7 +61,7 @@
         <li class="right" >
           <a href="activities.html" title="Activities"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.4.2 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.4.3 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -166,22 +166,22 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="simple">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x7f46b21d0390&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f46b39355d0&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f46b22edd50&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f46b21f6d10&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7f46b22f2610&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7f46b2205710&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7f46b2177590&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7f46b21fb750&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f46b2232210&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f46b249e350&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7f46b216b710&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f46b2205fd0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f46b249e890&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f46b40ba2d0&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f46b2205d50&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7f46b40ba0d0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f46b2205650&gt;}</p>
+<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x7fe43c69a510&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7fe43c890450&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7fe43d10cd50&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7fe43c5f0090&gt;,
+‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7fe43c714050&gt;,
+‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7fe43c6b41d0&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7fe43c76a910&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7fe43c5d5190&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7fe43c76a710&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7fe43f04d410&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x7fe43c5d55d0&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7fe43c624110&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7fe43c66c190&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7fe43c66cc50&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7fe43e23b8d0&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x7fe43c714b50&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7fe43e23b850&gt;}</p>
 </dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
@@ -447,7 +447,7 @@ applicable.</p>
 <span id="id35"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f46b2439050&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7fe43c86ce90&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -471,7 +471,7 @@ applicable.</p>
 <span id="id38"></span><h3>$RELEASE_DATE<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h3>
 <p>The date of the release, defaults to today, string representations have “YYYY-MM-DD” format.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> datetime.date(2019, 11, 27)</p>
+<p><strong>default:</strong> datetime.date(2019, 12, 5)</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -681,7 +681,7 @@ applicable.</p>
         <li class="right" >
           <a href="activities.html" title="Activities"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.4.2 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.4.3 documentation</a> &#187;</li>
  
       </ul>
     </div>
@@ -689,7 +689,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
