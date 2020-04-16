@@ -1,4 +1,6 @@
 ./_modules/index.html
+./_modules/rever/activities/nose.html
+./_modules/rever/activities/pytest.html
 ./_modules/rever/dag.html
 ./_sources/activities.rst.txt
 ./_sources/api/activities/authors.rst.txt

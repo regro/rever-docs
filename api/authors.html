@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Authors (rever.authors) &#8212; rever 0.4.3 documentation</title>
@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
 
     
     
      
-        <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+        <script src="../_static/jquery.cookie.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.base.js"></script>
+        <script src="../_static/cloud.base.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.js"></script>
+        <script src="../_static/cloud.js"></script>
     
 
     <link rel="shortcut icon" href="../_static/longship.ico"/>
@@ -77,29 +77,29 @@
   <div class="section" id="module-rever.authors">
 <span id="authors-rever-authors"></span><span id="rever-authors"></span><h1>Authors (<code class="docutils literal notranslate"><span class="pre">rever.authors</span></code>)<a class="headerlink" href="#module-rever.authors" title="Permalink to this headline">¶</a></h1>
 <p>Utilities for dealing with authorship files.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="rever.authors.load_metadata">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">load_metadata</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">return_yaml=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.load_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">load_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">return_yaml</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.load_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads author metadata file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.authors.metadata_is_valid">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">metadata_is_valid</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">emails=None</em>, <em class="sig-param">fields=None</em>, <em class="sig-param">filename='the authors file'</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.metadata_is_valid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">metadata_is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">emails</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'the authors file'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.metadata_is_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the author metadata is valid.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.authors.update_metadata">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">update_metadata</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">write=True</em>, <em class="sig-param">validation_error=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">update_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">write</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">validation_error</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a YAML metadata filename and updates it with the current repo
 information, if possible. If validation_error is True, this will fail
 if the information is not consistent</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.authors.write_mailmap">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">write_mailmap</code><span class="sig-paren">(</span><em class="sig-param">metadata</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.write_mailmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">write_mailmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.write_mailmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes a mailmap file from the metadata (list of author dicts) provided.</p>
 </dd></dl>
 
@@ -140,7 +140,7 @@ if the information is not consistent</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
     
@@ -188,7 +188,7 @@ if the information is not consistent</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

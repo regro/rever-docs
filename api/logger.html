@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Logging (rever.logger) &#8212; rever 0.4.3 documentation</title>
@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
 
     
     
      
-        <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+        <script src="../_static/jquery.cookie.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.base.js"></script>
+        <script src="../_static/cloud.base.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.js"></script>
+        <script src="../_static/cloud.js"></script>
     
 
     <link rel="shortcut icon" href="../_static/longship.ico"/>
@@ -77,9 +77,9 @@
   <div class="section" id="module-rever.logger">
 <span id="logging-rever-logger"></span><span id="rever-logger"></span><h1>Logging (<code class="docutils literal notranslate"><span class="pre">rever.logger</span></code>)<a class="headerlink" href="#module-rever.logger" title="Permalink to this headline">¶</a></h1>
 <p>Logging tools for rever</p>
-<dl class="class">
+<dl class="py class">
 <dt id="rever.logger.Logger">
-<em class="property">class </em><code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">Logger</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">Logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>A logging object for rever that stores information in line-oriented JSON
 format.</p>
 <dl class="field-list simple">
@@ -90,42 +90,42 @@ format.</p>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="rever.logger.Logger.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads all of the records from the logfile and returns a list of dicts.
 If the log file does not yet exist, this returns an empty list.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.logger.Logger.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">message</em>, <em class="sig-param">activity=None</em>, <em class="sig-param">category='misc'</em>, <em class="sig-param">data=None</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">activity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">'misc'</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs a message, the associated activity (optional), the timestamp, and the
 current revision to the log file.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.logger.Logger.argparser">
 <em class="property">property </em><code class="sig-name descname">argparser</code><a class="headerlink" href="#rever.logger.Logger.argparser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an argument parser for the logger</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.logger.Logger.filename">
 <em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#rever.logger.Logger.filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.logger.current_logger">
 <code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">current_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.current_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retuns the current logger instance.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.logger.log">
-<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">args</em>, <em class="sig-param">stdin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em>, <em class="sig-param"><span class="n">stdin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Command line interface for logging a message</p>
 </dd></dl>
 
@@ -166,7 +166,7 @@ current revision to the log file.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
     
@@ -214,7 +214,7 @@ current revision to the log file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

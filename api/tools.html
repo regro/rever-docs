@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Misc. Tools (rever.tools) &#8212; rever 0.4.3 documentation</title>
@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
 
     
     
      
-        <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+        <script src="../_static/jquery.cookie.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.base.js"></script>
+        <script src="../_static/cloud.base.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.js"></script>
+        <script src="../_static/cloud.js"></script>
     
 
     <link rel="shortcut icon" href="../_static/longship.ico"/>
@@ -77,60 +77,60 @@
   <div class="section" id="module-rever.tools">
 <span id="misc-tools-rever-tools"></span><span id="rever-tools"></span><h1>Misc. Tools (<code class="docutils literal notranslate"><span class="pre">rever.tools</span></code>)<a class="headerlink" href="#module-rever.tools" title="Permalink to this headline">¶</a></h1>
 <p>Some special rever tools</p>
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.check_gpg">
 <code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">check_gpg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.check_gpg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that gpg is available and useable.
 Returns a boolean and message.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.download">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">errors=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">errors=None</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a URL in a given encoding.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.download_bytes">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">download_bytes</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download_bytes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">download_bytes</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.download_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the bytes from a URL</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.eval_version">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">eval_version</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.eval_version" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">eval_version</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.eval_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evalauates the argument either as a template string which contains
 $VERSION (or other environment variables) or a callable which
 takes a single argument (that is $VERSION) and returns a string.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.get_format_field_names">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">get_format_field_names</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.get_format_field_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">get_format_field_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.get_format_field_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the set of field names in a format string.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.hash_url">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">hash_url</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">hash='sha256'</em>, <em class="sig-param">quiet=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.hash_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">hash_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">hash</span><span class="o">=</span><span class="default_value">'sha256'</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.hash_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hashes a URL, with a progress bar, and returns the hex representation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.indir">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">indir</code><span class="sig-paren">(</span><em class="sig-param">d</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.indir" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">indir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.indir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Context manager for temporarily entering into a directory.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.progress">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">progress</code><span class="sig-paren">(</span><em class="sig-param">count</em>, <em class="sig-param">total=None</em>, <em class="sig-param">prefix=''</em>, <em class="sig-param">suffix=''</em>, <em class="sig-param">width=60</em>, <em class="sig-param">file=None</em>, <em class="sig-param">fill='`·.</em>, <em class="sig-param">¸</em>, <em class="sig-param">.·*¯`·.</em>, <em class="sig-param">¸</em>, <em class="sig-param">.·*¯'</em>, <em class="sig-param">color=None</em>, <em class="sig-param">empty=' '</em>, <em class="sig-param">quiet=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.progress" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">progress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">total</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prefix</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">suffix</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">60</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fill</span><span class="o">=</span><span class="default_value">'`·.,¸,.·\\*¯`·.,¸,.·\\*¯'</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">empty</span><span class="o">=</span><span class="default_value">' '</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.progress" title="Permalink to this definition">¶</a></dt>
 <dd><p>CLI progress bar</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.render_authors">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">render_authors</code><span class="sig-paren">(</span><em class="sig-param">authors</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.render_authors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">render_authors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">authors</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.render_authors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a list of of tuples of authors into valid bibtex</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -150,17 +150,17 @@ information about how to format your name for bibtex</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.replace_in_file">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">replace_in_file</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">new</em>, <em class="sig-param">fname</em>, <em class="sig-param">leading_whitespace=True</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.replace_in_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">replace_in_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">new</span></em>, <em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">leading_whitespace</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.replace_in_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces a given pattern in a file. If leading whitespace is True,
 whitespace at the begining of a line will be captured and preserved.
 Otherwise, the pattern itself must contain all leading whitespace.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.stream_url_progress">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">stream_url_progress</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">verb='downloading'</em>, <em class="sig-param">chunksize=1024</em>, <em class="sig-param">width=60</em>, <em class="sig-param">quiet=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.stream_url_progress" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">stream_url_progress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">verb</span><span class="o">=</span><span class="default_value">'downloading'</span></em>, <em class="sig-param"><span class="n">chunksize</span><span class="o">=</span><span class="default_value">1024</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">60</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.stream_url_progress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator yielding successive bytes from a URL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -183,9 +183,9 @@ Otherwise, the pattern itself must contain all leading whitespace.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.tools.user_group">
-<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">user_group</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">return_ids=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.user_group" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.tools.</code><code class="sig-name descname">user_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">return_ids</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.tools.user_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the user and group name for a file, and optionally ids too.
 returns (user_name, group_name) if return_ids is False. If True, returns
 (user_name, group_name, user_id, group_id).  On windows, the
@@ -230,7 +230,7 @@ as the user name.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
     
@@ -278,7 +278,7 @@ as the user name.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

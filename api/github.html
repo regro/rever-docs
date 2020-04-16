@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>GitHub Interface (rever.github) &#8212; rever 0.4.3 documentation</title>
@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
 
     
     
      
-        <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+        <script src="../_static/jquery.cookie.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.base.js"></script>
+        <script src="../_static/cloud.base.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../_static/cloud.js"></script>
+        <script src="../_static/cloud.js"></script>
     
 
     <link rel="shortcut icon" href="../_static/longship.ico"/>
@@ -77,52 +77,52 @@
   <div class="section" id="module-rever.github">
 <span id="github-interface-rever-github"></span><span id="rever-github"></span><h1>GitHub Interface (<code class="docutils literal notranslate"><span class="pre">rever.github</span></code>)<a class="headerlink" href="#module-rever.github" title="Permalink to this headline">¶</a></h1>
 <p>This module contains tools for interacting with GitHub.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.authorizations">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">authorizations</code><span class="sig-paren">(</span><em class="sig-param">gh</em>, <em class="sig-param">number=-1</em>, <em class="sig-param">etag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.authorizations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">authorizations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gh</span></em>, <em class="sig-param"><span class="n">number</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">etag</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.authorizations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generator that is API independent of getting the authorizations</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.can_login">
 <code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">can_login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.can_login" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that we can login to GitHub</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.credfilename">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">credfilename</code><span class="sig-paren">(</span><em class="sig-param">credfile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.credfilename" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">credfilename</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credfile</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.credfilename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the path to the creditial file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.ensure_github">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">ensure_github</code><span class="sig-paren">(</span><em class="sig-param">f</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.ensure_github" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">ensure_github</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.ensure_github" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ensure we have github3 befire running a function.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.login">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">login</code><span class="sig-paren">(</span><em class="sig-param">credfile=None</em>, <em class="sig-param">return_username=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.login" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">login</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credfile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_username</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.login" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a github object that is logged in.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.read_credfile">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">read_credfile</code><span class="sig-paren">(</span><em class="sig-param">credfile=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.read_credfile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">read_credfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credfile</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.read_credfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads in a credentials file and returns the username, token, and id.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.two_factor">
 <code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">two_factor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.two_factor" title="Permalink to this definition">¶</a></dt>
 <dd><p>2 Factor Authentication callback function, called by
 <code class="docutils literal notranslate"><span class="pre">github3.authorize()</span></code> as needed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="rever.github.write_credfile">
-<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">write_credfile</code><span class="sig-paren">(</span><em class="sig-param">credfile=None</em>, <em class="sig-param">username=''</em>, <em class="sig-param">password=''</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.write_credfile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.github.</code><code class="sig-name descname">write_credfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">credfile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">username</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">password</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.github.write_credfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Acquires a github token and writes a credentials file.</p>
 </dd></dl>
 
@@ -163,7 +163,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
     
@@ -211,7 +211,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

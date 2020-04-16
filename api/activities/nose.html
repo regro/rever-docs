@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Nose Tests Activity (rever.activities.nose) &#8212; rever 0.4.3 documentation</title>
@@ -12,26 +12,26 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
 
     
     
      
-        <script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+        <script src="../../_static/jquery.cookie.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../../_static/cloud.base.js"></script>
+        <script src="../../_static/cloud.base.js"></script>
     
 
     
      
-        <script type="text/javascript" src="../../_static/cloud.js"></script>
+        <script src="../../_static/cloud.js"></script>
     
 
     <link rel="shortcut icon" href="../../_static/longship.ico"/>
@@ -78,9 +78,9 @@
   <div class="section" id="module-rever.activities.nose">
 <span id="nose-tests-activity-rever-activities-nose"></span><span id="rever-activities-nose"></span><h1>Nose Tests Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.nose</span></code>)<a class="headerlink" href="#module-rever.activities.nose" title="Permalink to this headline">¶</a></h1>
 <p>Activity for running nosetests inside of a container.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="rever.activities.nose.Nose">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activities.nose.</code><code class="sig-name descname">Nose</code><a class="headerlink" href="#rever.activities.nose.Nose" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rever.activities.nose.</code><code class="sig-name descname">Nose</code><a class="reference internal" href="../../_modules/rever/activities/nose.html#Nose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rever.activities.nose.Nose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs nose tests inside of a container.</p>
 <p>Environment variables that modify this activity’s behaviour are:</p>
 <dl class="field-list simple">
@@ -148,75 +148,75 @@ does not mount anything.</p>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.check" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">check</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.checker" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">setup</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">undo</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.nose.Nose.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.code">
 <em class="property">property </em><code class="sig-name descname">code</code><a class="headerlink" href="#rever.activities.nose.Nose.code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get’s the code to execute in the docker container.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="rever.activities.nose.Nose.env_names">
 <em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activities.nose.Nose.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
@@ -262,7 +262,7 @@ varaibles that the activity looks for when it is executed.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
     
@@ -311,7 +311,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
