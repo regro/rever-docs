@@ -79,7 +79,7 @@
 <p>Dockers tools for rever.</p>
 <dl class="py class">
 <dt id="rever.docker.InContainer">
-<em class="property">class </em><code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">InContainer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'xonsh'</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">'-c'</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mounts</span><span class="o">=</span><span class="default_value"></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.InContainer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">InContainer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'xonsh'</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">'-c'</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mounts</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.InContainer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Macro context manager for running code within a container. This runs
 a command of the following form within the container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lang</span> <span class="n">args</span> <span class="n">block</span>
@@ -243,7 +243,7 @@ context is entered.</p>
 
 <dl class="py function">
 <dt id="rever.docker.run_in_container">
-<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">run_in_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mounts</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.run_in_container" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.docker.</code><code class="sig-name descname">run_in_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mounts</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.docker.run_in_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a command inside of a docker container.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -395,7 +395,7 @@ don’t support –mount.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

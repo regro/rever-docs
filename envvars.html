@@ -166,22 +166,23 @@ applicable.</p>
 <p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
 <dl class="simple">
-<dt><strong>default:</strong> {‘authors’: &lt;rever.activities.authors.Authors object at 0x7f9038330a90&gt;,</dt><dd><p>‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f903833ea10&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f90383d2910&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f90383d2b50&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7f90384a2a50&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7f9038341110&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7f9038492e90&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7f903946aa50&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f9038319090&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f903946a810&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7f90384d5550&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f90384e1fd0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f9038407b50&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f903a7a49d0&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f903838f950&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7f90384addd0&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f9038407810&gt;}</p>
+<dt><strong>default:</strong> {‘appimage’: &lt;rever.activities.appimage.AppImage object at 0x7f2a518b8710&gt;,</dt><dd><p>‘authors’: &lt;rever.activities.authors.Authors object at 0x7f2a51725dd0&gt;,
+‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f2a518b6b50&gt;,
+‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f2a5171d810&gt;,
+‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f2a5174ee10&gt;,
+‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7f2a51735b50&gt;,
+‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7f2a5192f890&gt;,
+‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7f2a5172be90&gt;,
+‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7f2a51855710&gt;,
+‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f2a517256d0&gt;,
+‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f2a5186b310&gt;,
+‘nose’: &lt;rever.activities.nose.Nose object at 0x7f2a518d6d10&gt;,
+‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f2a518e9b10&gt;,
+‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f2a518d6510&gt;,
+‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f2a518e94d0&gt;,
+‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f2a54520610&gt;,
+‘tag’: &lt;rever.activities.tag.Tag object at 0x7f2a5192fad0&gt;,
+‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f2a518e93d0&gt;}</p>
 </dd>
 </dl>
 <p><strong>store_as_str:</strong> False</p>
@@ -447,7 +448,7 @@ applicable.</p>
 <span id="id35"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
 <p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f9038f8acd0&gt;</p>
+<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f2a53040e10&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -471,7 +472,7 @@ applicable.</p>
 <span id="id38"></span><h3>$RELEASE_DATE<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h3>
 <p>The date of the release, defaults to today, string representations have “YYYY-MM-DD” format.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> datetime.date(2020, 4, 16)</p>
+<p><strong>default:</strong> datetime.date(2020, 5, 23)</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
@@ -689,7 +690,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
