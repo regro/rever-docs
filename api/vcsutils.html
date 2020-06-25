@@ -6,6 +6,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Version Control System Utilities (rever.vcsutils) &#8212; rever 0.4.3 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -63,7 +64,8 @@
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.4.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Rever API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Version Control System Utilities (<code class="docutils literal notranslate"><span class="pre">rever.vcsutils</span></code>)</a></li> 
       </ul>
     </div>
     </div>
@@ -79,61 +81,61 @@
 <p>Some version control utilities for rever</p>
 <dl class="py function">
 <dt id="rever.vcsutils.authors_emails">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">authors_emails</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.authors_emails" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">authors_emails</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.authors_emails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a set of (author, email) tuples</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.checkout">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">checkout</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.checkout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">checkout</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.checkout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks out a revision.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.commit">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commit</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commit</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commits a revision to the repo.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.commits_per_author">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commits_per_author</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_author" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commits_per_author</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_author" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary mapping author names to commits</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.commits_per_email">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commits_per_email</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_email" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">commits_per_email</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.commits_per_email" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary mapping emails to commits</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.current_branch">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">current_branch</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_branch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">current_branch</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_branch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current branch for the user’s version control system.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.current_rev">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">current_rev</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_rev" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">current_rev</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.current_rev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current revision for the user’s version control system.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.del_remote_tag">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">del_remote_tag</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_remote_tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">del_remote_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_remote_tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a tag from the remote repository.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.del_tag">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">del_tag</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">del_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.del_tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a tag from the local repository.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.first_commit_per_email">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">first_commit_per_email</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.first_commit_per_email" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">first_commit_per_email</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.first_commit_per_email" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary mapping emails to the datetime of its first commit</p>
 </dd></dl>
 
@@ -254,13 +256,13 @@ Accepts a “since” argument, which specifies the lower boundary.</p>
 
 <dl class="py function">
 <dt id="rever.vcsutils.have_push_permissions">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">have_push_permissions</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.have_push_permissions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">have_push_permissions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.have_push_permissions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that we have push permission to a remote repository.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.latest_tag">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">latest_tag</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.latest_tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">latest_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.latest_tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the most recent tag in the repo.</p>
 </dd></dl>
 
@@ -294,49 +296,50 @@ This is formatted with the value of $REVER_VCS.</p>
 
 <dl class="py function">
 <dt id="rever.vcsutils.merge">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.merge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.merge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merges one revision into another.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.push">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pushes up to a remote URL a target branch or revision.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.push_tags">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">push_tags</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push_tags" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">push_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.push_tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pushes up tags to a remote URL.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.rewind">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">rewind</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.rewind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">rewind</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.rewind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version control system to a previous state.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.root">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">root</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.root" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">root</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the root repository directory.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.tag">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">tag</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.tag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tags the current head.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.vcsutils.track">
-<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">track</code><span class="sig-paren">(</span><em class="sig-param">\*args</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.track" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.vcsutils.</code><code class="sig-name descname">track</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.vcsutils.track" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify files to track in the repo.</p>
 </dd></dl>
 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -412,14 +415,15 @@ This is formatted with the value of $REVER_VCS.</p>
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">rever 0.4.3 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Rever API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Version Control System Utilities (<code class="docutils literal notranslate"><span class="pre">rever.vcsutils</span></code>)</a></li> 
       </ul>
     </div>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
