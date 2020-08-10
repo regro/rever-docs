@@ -103,8 +103,8 @@ Here is a simplified example from <code class="docutils literal notranslate"><sp
               <span class="s1">&#39;ghrelease&#39;</span>  <span class="c1"># Creates a Github release entry for the new tag</span>
                <span class="p">]</span>
 <span class="nv">$VERSION_BUMP_PATTERNS</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># These note where/how to find the version numbers</span>
-                         <span class="p">(</span><span class="s1">&#39;rever/__init__.py&#39;</span><span class="p">,</span> <span class="s1">&#39;__version__\s*=.*&#39;</span><span class="p">,</span> <span class="s2">&quot;__version__ = &#39;$VERSION&#39;&quot;</span><span class="p">),</span>
-                         <span class="p">(</span><span class="s1">&#39;setup.py&#39;</span><span class="p">,</span> <span class="s1">&#39;version\s*=.*,&#39;</span><span class="p">,</span> <span class="s2">&quot;version=&#39;$VERSION&#39;,&quot;</span><span class="p">)</span>
+                         <span class="p">(</span><span class="s1">&#39;rever/__init__.py&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;__version__\s*=.*&#39;</span><span class="p">,</span> <span class="s2">&quot;__version__ = &#39;$VERSION&#39;&quot;</span><span class="p">),</span>
+                         <span class="p">(</span><span class="s1">&#39;setup.py&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;version\s*=.*,&#39;</span><span class="p">,</span> <span class="s2">&quot;version=&#39;$VERSION&#39;,&quot;</span><span class="p">)</span>
                          <span class="p">]</span>
 <span class="nv">$CHANGELOG_FILENAME</span> <span class="o">=</span> <span class="s1">&#39;CHANGELOG.rst&#39;</span>  <span class="c1"># Filename for the changelog</span>
 <span class="nv">$CHANGELOG_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;TEMPLATE.rst&#39;</span>  <span class="c1"># Filename for the news template</span>
