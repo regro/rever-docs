@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Environment Variables &#8212; rever 0.4.3 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -157,396 +157,330 @@ applicable.</p>
 <h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="activities">
 <span id="id1"></span><h3>$ACTIVITIES<a class="headerlink" href="#activities" title="Permalink to this headline">¶</a></h3>
-<p>Default list of activity names for rever to execute, if they have not already been executed.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dag">
 <span id="id2"></span><h3>$DAG<a class="headerlink" href="#dag" title="Permalink to this headline">¶</a></h3>
-<p>Directed acyclic graph of activities as represented by a dict with str keys and Activity objects as values.</p>
 <p><strong>configurable:</strong> True</p>
-<dl class="simple">
-<dt><strong>default:</strong> {‘appimage’: &lt;rever.activities.appimage.AppImage object at 0x7f6eae4b6910&gt;,</dt><dd><p>‘authors’: &lt;rever.activities.authors.Authors object at 0x7f6eae4dfd10&gt;,
-‘bibtex’: &lt;rever.activities.bibtex.BibTex object at 0x7f6eae3c2350&gt;,
-‘changelog’: &lt;rever.activities.changelog.Changelog object at 0x7f6eae4929d0&gt;,
-‘conda_forge’: &lt;rever.activities.conda_forge.CondaForge object at 0x7f6eae4a4850&gt;,
-‘deploy_to_gcloud’: &lt;rever.activities.gcloud.DeploytoGCloud object at 0x7f6eae300f90&gt;,
-‘deploy_to_gcloud_app’: &lt;rever.activities.gcloud.DeploytoGCloudApp object at 0x7f6eae300550&gt;,
-‘docker_build’: &lt;rever.activities.docker.DockerBuild object at 0x7f6eae4310d0&gt;,
-‘docker_push’: &lt;rever.activities.docker.DockerPush object at 0x7f6eae4a1fd0&gt;,
-‘ghpages’: &lt;rever.activities.ghpages.GHPages object at 0x7f6eae4fe550&gt;,
-‘ghrelease’: &lt;rever.activities.ghrelease.GHRelease object at 0x7f6eae3edad0&gt;,
-‘nose’: &lt;rever.activities.nose.Nose object at 0x7f6eae4eebd0&gt;,
-‘push_tag’: &lt;rever.activities.push_tag.PushTag object at 0x7f6eae4ba9d0&gt;,
-‘pypi’: &lt;rever.activities.pypi.PyPI object at 0x7f6eae4486d0&gt;,
-‘pytest’: &lt;rever.activities.pytest.PyTest object at 0x7f6eae4a10d0&gt;,
-‘sphinx’: &lt;rever.activities.sphinx.Sphinx object at 0x7f6eae4a45d0&gt;,
-‘tag’: &lt;rever.activities.tag.Tag object at 0x7f6eae419c50&gt;,
-‘version_bump’: &lt;rever.activities.version_bump.VersionBump object at 0x7f6eae393450&gt;}</p>
-</dd>
-</dl>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerfile">
 <span id="id3"></span><h3>$DOCKERFILE<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h3>
-<p>Path to Dockerfile, default is empty string.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerfile-context">
 <span id="id4"></span><h3>$DOCKERFILE_CONTEXT<a class="headerlink" href="#dockerfile-context" title="Permalink to this headline">¶</a></h3>
-<p>Context (ie the directory) that the $DOCKERFILE should be built in. The default (an empty string) indicates that the image should be built in directory containing the $DOCKERFILE.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerfile-tags">
 <span id="id5"></span><h3>$DOCKERFILE_TAGS<a class="headerlink" href="#dockerfile-tags" title="Permalink to this headline">¶</a></h3>
-<p>Tag that the $DOCKERFILE should be built and pushed with. The default is <code class="docutils literal notranslate"><span class="pre">[&quot;$REVER_USER/$PROJECT:$VERSION&quot;,</span> <span class="pre">&quot;$REVER_USER/$PROJECT:latest&quot;]</span></code>.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> (‘$REVER_USER/$PROJECT:$VERSION’, ‘$REVER_USER/$PROJECT:latest’)</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-apt-deps">
 <span id="id6"></span><h3>$DOCKER_APT_DEPS<a class="headerlink" href="#docker-apt-deps" title="Permalink to this headline">¶</a></h3>
-<p>Dependencies to install in the base container via apt-get.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-base-file">
 <span id="id7"></span><h3>$DOCKER_BASE_FILE<a class="headerlink" href="#docker-base-file" title="Permalink to this headline">¶</a></h3>
-<p>Path to base dockerfile, default <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/rever-base.dockerfile</span></code></p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘$REVER_DIR/rever-base.dockerfile’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-base-from">
 <span id="id8"></span><h3>$DOCKER_BASE_FROM<a class="headerlink" href="#docker-base-from" title="Permalink to this headline">¶</a></h3>
-<p>Image to include in the base rever image.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘debian:latest’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-base-image">
 <span id="id9"></span><h3>$DOCKER_BASE_IMAGE<a class="headerlink" href="#docker-base-image" title="Permalink to this headline">¶</a></h3>
-<p>Image name for the base docker image. This is evaluated in the current environment, default $PROJECT/rever-base</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘$PROJECT/rever-base’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-conda-channels">
 <span id="id10"></span><h3>$DOCKER_CONDA_CHANNELS<a class="headerlink" href="#docker-conda-channels" title="Permalink to this headline">¶</a></h3>
-<p>Conda channels to use, in order of decreasing precedence. Defaults to conda-forge</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> (‘conda-forge’,)</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-conda-deps">
 <span id="id11"></span><h3>$DOCKER_CONDA_DEPS<a class="headerlink" href="#docker-conda-deps" title="Permalink to this headline">¶</a></h3>
-<p>Dependencies to install in the base container via conda.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-git-email">
 <span id="id12"></span><h3>$DOCKER_GIT_EMAIL<a class="headerlink" href="#docker-git-email" title="Permalink to this headline">¶</a></h3>
-<p>Email to configure for git in the docker container</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-git-name">
 <span id="id13"></span><h3>$DOCKER_GIT_NAME<a class="headerlink" href="#docker-git-name" title="Permalink to this headline">¶</a></h3>
-<p>Username to configure for git in the docker container</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-home">
 <span id="id14"></span><h3>$DOCKER_HOME<a class="headerlink" href="#docker-home" title="Permalink to this headline">¶</a></h3>
-<p>Home directory in the docker container, default /root</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/root’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-command">
 <span id="id15"></span><h3>$DOCKER_INSTALL_COMMAND<a class="headerlink" href="#docker-install-command" title="Permalink to this headline">¶</a></h3>
-<p>Command for installing the project that is used in docker.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-envvars">
 <span id="id16"></span><h3>$DOCKER_INSTALL_ENVVARS<a class="headerlink" href="#docker-install-envvars" title="Permalink to this headline">¶</a></h3>
-<p>Environment variables to set at the end of the docker install. May be either a Python dictionary mapping string variable names to string values or None, default None.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> None</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-file">
 <span id="id17"></span><h3>$DOCKER_INSTALL_FILE<a class="headerlink" href="#docker-install-file" title="Permalink to this headline">¶</a></h3>
-<p>Path to base dockerfile, odefault <code class="docutils literal notranslate"><span class="pre">$REVER_DIR/rever-install.dockerfile</span></code></p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘$REVER_DIR/rever-install.dockerfile’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-image">
 <span id="id18"></span><h3>$DOCKER_INSTALL_IMAGE<a class="headerlink" href="#docker-install-image" title="Permalink to this headline">¶</a></h3>
-<p>Image name for the install docker image. This is evaluated in the current environment, default $PROJECT/rever-install</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘$PROJECT/rever-install’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-source">
 <span id="id19"></span><h3>$DOCKER_INSTALL_SOURCE<a class="headerlink" href="#docker-install-source" title="Permalink to this headline">¶</a></h3>
-<p>Command for obtaining the source code in the install container.This command shoudl create the $DOCKER_WORKDIR.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-install-url">
 <span id="id20"></span><h3>$DOCKER_INSTALL_URL<a class="headerlink" href="#docker-install-url" title="Permalink to this headline">¶</a></h3>
-<p>URL to clone to in docker in the install image.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-pip-deps">
 <span id="id21"></span><h3>$DOCKER_PIP_DEPS<a class="headerlink" href="#docker-pip-deps" title="Permalink to this headline">¶</a></h3>
-<p>Dependencies to install in the base container via pip.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-pip-requirements">
 <span id="id22"></span><h3>$DOCKER_PIP_REQUIREMENTS<a class="headerlink" href="#docker-pip-requirements" title="Permalink to this headline">¶</a></h3>
-<p>Requirements files to use in pip install.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-root">
 <span id="id23"></span><h3>$DOCKER_ROOT<a class="headerlink" href="#docker-root" title="Permalink to this headline">¶</a></h3>
-<p>Root directory for docker to use.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="docker-workdir">
 <span id="id24"></span><h3>$DOCKER_WORKDIR<a class="headerlink" href="#docker-workdir" title="Permalink to this headline">¶</a></h3>
-<p>The working directory for the docker container. This is evaluated in the container itself, default $HOME/$PROJECT</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘$HOME/$PROJECT’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-cluster">
 <span id="id25"></span><h3>$GCLOUD_CLUSTER<a class="headerlink" href="#gcloud-cluster" title="Permalink to this headline">¶</a></h3>
-<p>The kubernetes cluster to deploy to</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-container-name">
 <span id="id26"></span><h3>$GCLOUD_CONTAINER_NAME<a class="headerlink" href="#gcloud-container-name" title="Permalink to this headline">¶</a></h3>
-<p>The name of the container image to deploy to</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-docker-host">
 <span id="id27"></span><h3>$GCLOUD_DOCKER_HOST<a class="headerlink" href="#gcloud-docker-host" title="Permalink to this headline">¶</a></h3>
-<p>The name of the docker host to pull the container from</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘docker.io’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-docker-org">
 <span id="id28"></span><h3>$GCLOUD_DOCKER_ORG<a class="headerlink" href="#gcloud-docker-org" title="Permalink to this headline">¶</a></h3>
-<p>The name of the docker org to pull the container from</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-docker-repo">
 <span id="id29"></span><h3>$GCLOUD_DOCKER_REPO<a class="headerlink" href="#gcloud-docker-repo" title="Permalink to this headline">¶</a></h3>
-<p>The name of the docker container repo to use</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-project-id">
 <span id="id30"></span><h3>$GCLOUD_PROJECT_ID<a class="headerlink" href="#gcloud-project-id" title="Permalink to this headline">¶</a></h3>
-<p>The ID for the gcloud project</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="gcloud-zone">
 <span id="id31"></span><h3>$GCLOUD_ZONE<a class="headerlink" href="#gcloud-zone" title="Permalink to this headline">¶</a></h3>
-<p>The gcloud zone</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘us-central1-a’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="github-credfile">
 <span id="id32"></span><h3>$GITHUB_CREDFILE<a class="headerlink" href="#github-credfile" title="Permalink to this headline">¶</a></h3>
-<p>GitHub credential file to use</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="github-org">
 <span id="id33"></span><h3>$GITHUB_ORG<a class="headerlink" href="#github-org" title="Permalink to this headline">¶</a></h3>
-<p>GitHub organization name</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="github-repo">
 <span id="id34"></span><h3>$GITHUB_REPO<a class="headerlink" href="#github-repo" title="Permalink to this headline">¶</a></h3>
-<p>GitHub repository name</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="logger">
 <span id="id35"></span><h3>$LOGGER<a class="headerlink" href="#logger" title="Permalink to this headline">¶</a></h3>
-<p>Rever logger object. Setting this variable to a string will change the filename of the logger.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;rever.logger.Logger object at 0x7f6eaf8c2090&gt;</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="project">
 <span id="id36"></span><h3>$PROJECT<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
-<p>Project name</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="python">
 <span id="id37"></span><h3>$PYTHON<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
-<p>Path to Python executable that rever is run with or “python”.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/home/travis/miniconda/bin/python3.7’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="release-date">
 <span id="id38"></span><h3>$RELEASE_DATE<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h3>
-<p>The date of the release, defaults to today, string representations have “YYYY-MM-DD” format.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> datetime.date(2020, 6, 25)</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-config-dir">
 <span id="id39"></span><h3>$REVER_CONFIG_DIR<a class="headerlink" href="#rever-config-dir" title="Permalink to this headline">¶</a></h3>
-<p>Path to rever configuration directory</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘/home/travis/.config/rever’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-dir">
 <span id="id40"></span><h3>$REVER_DIR<a class="headerlink" href="#rever-dir" title="Permalink to this headline">¶</a></h3>
-<p>Path to directory used for storing rever temporary files.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘rever’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-forced">
 <span id="id41"></span><h3>$REVER_FORCED<a class="headerlink" href="#rever-forced" title="Permalink to this headline">¶</a></h3>
-<p>Path to directory used for storing rever temporary files.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> False</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-quiet">
 <span id="id42"></span><h3>$REVER_QUIET<a class="headerlink" href="#rever-quiet" title="Permalink to this headline">¶</a></h3>
-<p>If True do not write progress during hashing</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> False</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-user">
 <span id="id43"></span><h3>$REVER_USER<a class="headerlink" href="#rever-user" title="Permalink to this headline">¶</a></h3>
-<p>Name of the user who ran the rever command.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘travis’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="rever-vcs">
 <span id="id44"></span><h3>$REVER_VCS<a class="headerlink" href="#rever-vcs" title="Permalink to this headline">¶</a></h3>
-<p>Version control system used by rever. May be ‘None’ to not use version control.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘git’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="running-activities">
 <span id="id45"></span><h3>$RUNNING_ACTIVITIES<a class="headerlink" href="#running-activities" title="Permalink to this headline">¶</a></h3>
-<p>List of activity names that rever is actually executing.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> []</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="version">
 <span id="id46"></span><h3>$VERSION<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
-<p>Version string of new version that is being released.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘x.y.z’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="website-url">
 <span id="id47"></span><h3>$WEBSITE_URL<a class="headerlink" href="#website-url" title="Permalink to this headline">¶</a></h3>
-<p>Project URL, usually for docs.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> ‘’</p>
+<p><strong>default:</strong> &lt;xonsh.tools.DefaultNotGivenType object at 0x7f70326bdeb0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 </div>
 </div>
@@ -694,7 +628,7 @@ applicable.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

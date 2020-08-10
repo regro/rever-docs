@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Environment (rever.environ) &#8212; rever 0.4.3 documentation</title>
     <link rel="stylesheet" href="../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -94,7 +94,7 @@ safely.</p>
 
 <dl class="py function">
 <dt id="rever.environ.default_dag">
-<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">default_dag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.default_dag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">default_dag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">env</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.default_dag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a default activity DAG.</p>
 </dd></dl>
 
@@ -117,6 +117,12 @@ safely.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="rever.environ.is_logger">
+<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">is_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.is_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates if something is a valid logger</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="rever.environ.list_to_csv">
 <code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">list_to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.list_to_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a list of str to a comma-separated string.</p>
@@ -124,7 +130,7 @@ safely.</p>
 
 <dl class="py function">
 <dt id="rever.environ.rever_config_dir">
-<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">rever_config_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.rever_config_dir" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">rever_config_dir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">env</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.rever_config_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ensures and returns the $REVER_CONFIG_DIR</p>
 </dd></dl>
 
@@ -162,6 +168,12 @@ environment variables.</p>
 <code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">to_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.to_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>If x is a string, this will be set as $LOGGER.filename and then returns $LOGGER.
 Otherwise, returns x if x is a Logger already.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="rever.environ.today">
+<code class="sig-prename descclassname">rever.environ.</code><code class="sig-name descname">today</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">env</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.environ.today" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides today’s date</p>
 </dd></dl>
 
 </div>
@@ -251,7 +263,7 @@ Otherwise, returns x if x is a Logger already.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
