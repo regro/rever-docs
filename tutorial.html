@@ -175,6 +175,7 @@ follows:</p>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;project.tar.gz&#39;</span><span class="p">):</span>
         <span class="n">tar</span> <span class="n">czf</span> <span class="k">@</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="n">src</span><span class="o">/</span>
+        <span class="k">return</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
