@@ -93,23 +93,29 @@ with rever.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#changelog"><span class="std std-ref">Changelog</span></a></p></td>
 <td><p>Manages keeping a changelog up-to-date.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#check"><span class="std std-ref">Check</span></a></p></td>
+<td><p>Run <cite>rever check</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#command"><span class="std std-ref">Command</span></a></p></td>
 <td><p>Runs a command</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#condaforge"><span class="std std-ref">CondaForge</span></a></p></td>
 <td><p>Updates conda-forge feedstocks.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#deploytogcloud"><span class="std std-ref">DeploytoGCloud</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#deploytogcloud"><span class="std std-ref">DeploytoGCloud</span></a></p></td>
 <td><p>Deploys a docker container to the google cloud</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#deploytogcloudapp"><span class="std std-ref">DeploytoGCloudApp</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#deploytogcloudapp"><span class="std std-ref">DeploytoGCloudApp</span></a></p></td>
 <td><p>Deploys an app to the google cloud via the app engine</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dockerbuild"><span class="std std-ref">DockerBuild</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#dockerbuild"><span class="std std-ref">DockerBuild</span></a></p></td>
 <td><p>Builds a Dockerfile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dockerpush"><span class="std std-ref">DockerPush</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dockerpush"><span class="std std-ref">DockerPush</span></a></p></td>
 <td><p>Pushes a built Dockerfile.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#forge"><span class="std std-ref">Forge</span></a></p></td>
+<td><p>Updates a forge feedstock.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ghpages"><span class="std std-ref">GHPages</span></a></p></td>
 <td><p>Activity for pushing documentation up to GitHub pages.</p></td>
@@ -424,8 +430,22 @@ details on the available fields. The default is <a href="#id13"><span class="pro
 </div>
 <hr class="docutils" />
 </div>
+<div class="section" id="check">
+<span id="id17"></span><h3>Check<a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h3>
+<p>The Check activity class is available via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.check</span> <span class="kn">import</span> <span class="n">Check</span>
+</pre></div>
+</div>
+<p>Run <cite>rever check</cite>.</p>
+<p>This activity takes no parameters.</p>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;check&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
 <div class="section" id="command">
-<span id="id17"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
+<span id="id18"></span><h3>Command<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h3>
 <p>The Command activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.command</span> <span class="kn">import</span> <span class="n">Command</span>
 </pre></div>
@@ -440,7 +460,7 @@ details on the available fields. The default is <a href="#id13"><span class="pro
 <hr class="docutils" />
 </div>
 <div class="section" id="condaforge">
-<span id="id18"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
+<span id="id19"></span><h3>CondaForge<a class="headerlink" href="#condaforge" title="Permalink to this headline">¶</a></h3>
 <p>The CondaForge activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">CondaForge</span>
 </pre></div>
@@ -530,34 +550,20 @@ is where the GitHub credential files are stored by default.</p>
 <div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conda_forge&#39;</span><span class="p">]</span>
 
 <span class="nv">$CONDA_FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="s1">&#39;ssh&#39;</span>
+<span class="nv">$CONDA_FORGE_PROTOCOL</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$CONDA_FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="nv">$CONDA_FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="s1">&#39;sha256&#39;</span>
-<span class="nv">$CONDA_FORGE_PATTERNS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  version:</span><span class="se">\\</span><span class="s1">s*[A-Za-z0-9._-]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  version: &quot;$VERSION&quot;&#39;</span><span class="p">),</span>
-    <span class="p">(</span>
-        <span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et version = &quot;.*&quot; %}&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et version = &quot;$VERSION&quot; %}&#39;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  number:.*&#39;</span><span class="p">,</span> <span class="s1">&#39;  number: 0&#39;</span><span class="p">),</span>
-    <span class="p">(</span>
-        <span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et $HASH_TYPE = &quot;[0-9A-Fa-f]+&quot; %}&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;{</span><span class="si">% s</span><span class="s1">et $HASH_TYPE = &quot;$HASH&quot; %}&#39;</span><span class="p">,</span>
-    <span class="p">),</span>
-    <span class="p">(</span><span class="s1">&#39;meta.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE:</span><span class="se">\\</span><span class="s1">s*[0-9A-Fa-f]+&#39;</span><span class="p">,</span> <span class="s1">&#39;  $HASH_TYPE: $HASH&#39;</span><span class="p">),</span>
-<span class="p">)</span>
+<span class="nv">$CONDA_FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$CONDA_FORGE_PATTERNS</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$CONDA_FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="nv">$CONDA_FORGE_RERENDER</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="nv">$CONDA_FORGE_FORK</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="nv">$CONDA_FORGE_FORK_ORG</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="nv">$CONDA_FORGE_FORK_ORG</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="deploytogcloud">
-<span id="id19"></span><h3>DeploytoGCloud<a class="headerlink" href="#deploytogcloud" title="Permalink to this headline">¶</a></h3>
+<span id="id20"></span><h3>DeploytoGCloud<a class="headerlink" href="#deploytogcloud" title="Permalink to this headline">¶</a></h3>
 <p>The DeploytoGCloud activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.gcloud</span> <span class="kn">import</span> <span class="n">DeploytoGCloud</span>
 </pre></div>
@@ -605,7 +611,7 @@ from</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="deploytogcloudapp">
-<span id="id20"></span><h3>DeploytoGCloudApp<a class="headerlink" href="#deploytogcloudapp" title="Permalink to this headline">¶</a></h3>
+<span id="id21"></span><h3>DeploytoGCloudApp<a class="headerlink" href="#deploytogcloudapp" title="Permalink to this headline">¶</a></h3>
 <p>The DeploytoGCloudApp activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.gcloud</span> <span class="kn">import</span> <span class="n">DeploytoGCloudApp</span>
 </pre></div>
@@ -630,7 +636,7 @@ from</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerbuild">
-<span id="id21"></span><h3>DockerBuild<a class="headerlink" href="#dockerbuild" title="Permalink to this headline">¶</a></h3>
+<span id="id22"></span><h3>DockerBuild<a class="headerlink" href="#dockerbuild" title="Permalink to this headline">¶</a></h3>
 <p>The DockerBuild activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerBuild</span>
 </pre></div>
@@ -669,7 +675,7 @@ default False.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="dockerpush">
-<span id="id22"></span><h3>DockerPush<a class="headerlink" href="#dockerpush" title="Permalink to this headline">¶</a></h3>
+<span id="id23"></span><h3>DockerPush<a class="headerlink" href="#dockerpush" title="Permalink to this headline">¶</a></h3>
 <p>The DockerPush activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.docker</span> <span class="kn">import</span> <span class="n">DockerPush</span>
 </pre></div>
@@ -691,8 +697,124 @@ and pushed with. Default (None) reads from <code class="docutils literal notrans
 </div>
 <hr class="docutils" />
 </div>
+<div class="section" id="forge">
+<span id="id24"></span><h3>Forge<a class="headerlink" href="#forge" title="Permalink to this headline">¶</a></h3>
+<p>The Forge activity class is available via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.conda_forge</span> <span class="kn">import</span> <span class="n">Forge</span>
+</pre></div>
+</div>
+<p>Updates a forge feedstock.</p>
+<p>The behaviour of this activity may be adjusted through the following
+environment variables:</p>
+<dl class="field-list">
+<dt class="field-odd">$FORGE_FEEDSTOCK</dt>
+<dd class="field-odd"><p>str or None, feedstock name or URL,
+default <code class="docutils literal notranslate"><span class="pre">$PROJECT-feedstock</span></code>.</p>
+</dd>
+<dt class="field-even">$FORGE_PROTOCOL</dt>
+<dd class="field-even"><p>str, one of <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'http'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'https'</span></code>
+that specifies how the activity should interact with github when
+cloning, pulling, or pushing to the feedstock repo. Note that
+<code class="docutils literal notranslate"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
+The default  is <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>.</p>
+</dd>
+<dt class="field-odd">$FORGE_SOURCE_URL</dt>
+<dd class="field-odd"><p>str, the URL that the recipe will use to
+download the source code. This is needed so that we may update the
+hash of the downloaded file. This string is evaluated with the current
+environment. Default
+<code class="docutils literal notranslate"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
+</dd>
+<dt class="field-even">$FORGE_HASH_TYPE</dt>
+<dd class="field-even"><p>str, the type of hash that the recipe uses, eg
+<code class="docutils literal notranslate"><span class="pre">'md5'</span></code> or <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>.</p>
+</dd>
+<dt class="field-odd">$FORGE_PATTERNS</dt>
+<dd class="field-odd"><p>list or 3-tuples of str, this is list of
+(filename, pattern-regex, replacement) tuples that is evaluated
+inside of the recipe directory. This is similar to the version bump
+pattern structure. Both the pattern-regex str and the replacement str
+will have environment variables expanded. The following environment
+variables are added for this evaluation (only if $FORGE_USE_GIT_URL is False):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HASH</span></code>: the hexdigest of <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</p></li>
+</ul>
+<p>The default patterns match most standard recipes.</p>
+</dd>
+<dt class="field-even">$FORGE_PULL_REQUEST</dt>
+<dd class="field-even"><p>bool, whether the activity should open
+a pull request to the upstream conda-forge feestock, default True.</p>
+</dd>
+<dt class="field-odd">$FORGE_RERENDER</dt>
+<dd class="field-odd"><p>bool, whether the activity should rerender the
+feedstock using conda-smithy, default True.</p>
+</dd>
+<dt class="field-even">$FORGE_FEEDSTOCK_ORG</dt>
+<dd class="field-even"><p>str, specify the feedstock organization. Must be set.</p>
+</dd>
+<dt class="field-odd">$FORGE_FORK</dt>
+<dd class="field-odd"><p>bool, whether the activity should create a new fork of
+the feedstock if it doesn’t exist already, default True.</p>
+</dd>
+<dt class="field-even">$FORGE_FORK_ORG</dt>
+<dd class="field-even"><p>str, the org to fork the recipe to or which holds
+the fork, if <code class="docutils literal notranslate"><span class="pre">''</span></code> use the registered gh username, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+<dt class="field-odd">$FORGE_USE_GIT_URL</dt>
+<dd class="field-odd"><p>bool, whether or not to use <cite>git_url</cite> in the recipe source
+url, default True.</p>
+</dd>
+<dt class="field-even">$FORGE_RECIPE_DIR</dt>
+<dd class="field-even"><p>str, the name of the recipe folder, default is ‘recipe’.</p>
+</dd>
+</dl>
+<p>Other environment variables that affect the behavior are:</p>
+<dl class="field-list simple">
+<dt class="field-odd">$GITHUB_CREDFILE</dt>
+<dd class="field-odd"><p>the credential file to use. This should NOT be
+set in the rever.xsh file</p>
+</dd>
+<dt class="field-even">$GITHUB_ORG</dt>
+<dd class="field-even"><p>the github organization that the project belongs to.</p>
+</dd>
+<dt class="field-odd">$GITHUB_REPO</dt>
+<dd class="field-odd"><p>the github repository of the project.</p>
+</dd>
+<dt class="field-even">$TAG_TEMPLATE</dt>
+<dd class="field-even"><p>str, the template string used to tag the version, by default
+this is ‘$VERSION’. Used to download project source.</p>
+</dd>
+<dt class="field-odd">$PROJECT</dt>
+<dd class="field-odd"><p>the name of the project being released.</p>
+</dd>
+<dt class="field-even">$REVER_CONFIG_DIR</dt>
+<dd class="field-even"><p>the user’s config directory for rever, which
+is where the GitHub credential files are stored by default.</p>
+</dd>
+</dl>
+<p>This activity’s defaults are equivalent to the following <code class="docutils literal notranslate"><span class="pre">rever.xsh</span></code> file:</p>
+<div class="highlight-xonsh notranslate"><div class="highlight"><pre><span></span><span class="nv">$ACTIVITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;forge&#39;</span><span class="p">]</span>
+
+<span class="nv">$FORGE_FEEDSTOCK</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_FEEDSTOCK_ORG</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_PROTOCOL</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_SOURCE_URL</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_HASH_TYPE</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_PATTERNS</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_PULL_REQUEST</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$FORGE_RERENDER</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$FORGE_FORK</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nv">$FORGE_FORK_ORG</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nv">$FORGE_USE_GIT_URL</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nv">$FORGE_RECIPE_DIR</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
 <div class="section" id="ghpages">
-<span id="id23"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
+<span id="id25"></span><h3>GHPages<a class="headerlink" href="#ghpages" title="Permalink to this headline">¶</a></h3>
 <p>The GHPages activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghpages</span> <span class="kn">import</span> <span class="n">GHPages</span>
 </pre></div>
@@ -736,7 +858,7 @@ sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="ghrelease">
-<span id="id24"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
+<span id="id26"></span><h3>GHRelease<a class="headerlink" href="#ghrelease" title="Permalink to this headline">¶</a></h3>
 <p>The GHRelease activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.ghrelease</span> <span class="kn">import</span> <span class="n">GHRelease</span>
 </pre></div>
@@ -805,13 +927,13 @@ asset.</p>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7faff1f6fa60</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7f12de31cf70</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
 </div>
 <div class="section" id="nose">
-<span id="id25"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
+<span id="id27"></span><h3>Nose<a class="headerlink" href="#nose" title="Permalink to this headline">¶</a></h3>
 <p>The Nose activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.nose</span> <span class="kn">import</span> <span class="n">Nose</span>
 </pre></div>
@@ -837,7 +959,7 @@ nose command. By default no additional arguments are sent.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="pushtag">
-<span id="id26"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
+<span id="id28"></span><h3>PushTag<a class="headerlink" href="#pushtag" title="Permalink to this headline">¶</a></h3>
 <p>The PushTag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.push_tag</span> <span class="kn">import</span> <span class="n">PushTag</span>
 </pre></div>
@@ -886,7 +1008,7 @@ by default this is ‘$VERSION’. This is used in undoing remote tags</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="pypi">
-<span id="id27"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
+<span id="id29"></span><h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>The PyPI activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pypi</span> <span class="kn">import</span> <span class="n">PyPI</span>
 </pre></div>
@@ -935,7 +1057,7 @@ signed if a gpg key is available and skipped otherwise.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="pytest">
-<span id="id28"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
+<span id="id30"></span><h3>PyTest<a class="headerlink" href="#pytest" title="Permalink to this headline">¶</a></h3>
 <p>The PyTest activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.pytest</span> <span class="kn">import</span> <span class="n">PyTest</span>
 </pre></div>
@@ -959,7 +1081,7 @@ behaviour of the conatiner that is used for testing.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="sphinx">
-<span id="id29"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<span id="id31"></span><h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>The Sphinx activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.sphinx</span> <span class="kn">import</span> <span class="n">Sphinx</span>
 </pre></div>
@@ -1012,7 +1134,7 @@ of the sphinx activity.</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="tag">
-<span id="id30"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<span id="id32"></span><h3>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
 <p>The Tag activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.tag</span> <span class="kn">import</span> <span class="n">Tag</span>
 </pre></div>
@@ -1034,7 +1156,7 @@ by default this is ‘$VERSION’</p>
 <hr class="docutils" />
 </div>
 <div class="section" id="versionbump">
-<span id="id31"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
+<span id="id33"></span><h3>VersionBump<a class="headerlink" href="#versionbump" title="Permalink to this headline">¶</a></h3>
 <p>The VersionBump activity class is available via:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rever.activities.version_bump</span> <span class="kn">import</span> <span class="n">VersionBump</span>
 </pre></div>
@@ -1100,12 +1222,14 @@ variables.</p></li>
 <li><a class="reference internal" href="#authors">Authors</a></li>
 <li><a class="reference internal" href="#bibtex">BibTex</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
+<li><a class="reference internal" href="#check">Check</a></li>
 <li><a class="reference internal" href="#command">Command</a></li>
 <li><a class="reference internal" href="#condaforge">CondaForge</a></li>
 <li><a class="reference internal" href="#deploytogcloud">DeploytoGCloud</a></li>
 <li><a class="reference internal" href="#deploytogcloudapp">DeploytoGCloudApp</a></li>
 <li><a class="reference internal" href="#dockerbuild">DockerBuild</a></li>
 <li><a class="reference internal" href="#dockerpush">DockerPush</a></li>
+<li><a class="reference internal" href="#forge">Forge</a></li>
 <li><a class="reference internal" href="#ghpages">GHPages</a></li>
 <li><a class="reference internal" href="#ghrelease">GHRelease</a></li>
 <li><a class="reference internal" href="#nose">Nose</a></li>

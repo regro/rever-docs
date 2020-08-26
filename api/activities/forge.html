@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conda Forge Activity (rever.activities.conda_forge) &#8212; rever 0.4.4 documentation</title>
+    <title>Forge Activity (rever.activities.forge) &#8212; rever 0.4.4 documentation</title>
     <link rel="stylesheet" href="../../_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -38,11 +38,9 @@
     <link rel="shortcut icon" href="../../_static/longship.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Docker Activities (rever.activities.docker)" href="docker.html" />
-    <link rel="prev" title="Command Activity (rever.activities.command)" href="command.html" />
      
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://xon.sh/api/activities/conda_forge.html"/>
+    <link rel="canonical" href="http://xon.sh/api/activities/forge.html"/>
 
   </head><body>
     <div class="relbar-top">
@@ -56,17 +54,9 @@
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="docker.html" title="Docker Activities (rever.activities.docker)"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="command.html" title="Command Activity (rever.activities.command)"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">rever 0.4.4 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Stock Activities API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Conda Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.conda_forge</span></code>)</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.forge</span></code>)</a></li> 
       </ul>
     </div>
     </div>
@@ -77,45 +67,45 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-rever.activities.conda_forge">
-<span id="conda-forge-activity-rever-activities-conda-forge"></span><span id="rever-activities-conda-forge"></span><h1>Conda Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.conda_forge</span></code>)<a class="headerlink" href="#module-rever.activities.conda_forge" title="Permalink to this headline">¶</a></h1>
-<p>Activity for updating conda-forge feedstocks.</p>
+  <div class="section" id="module-rever.activities.forge">
+<span id="forge-activity-rever-activities-forge"></span><span id="rever-activities-forge"></span><h1>Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.forge</span></code>)<a class="headerlink" href="#module-rever.activities.forge" title="Permalink to this headline">¶</a></h1>
+<p>Activity for updating a forge feedstock.</p>
 <dl class="py class">
-<dt id="rever.activities.conda_forge.CondaForge">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activities.conda_forge.</code><code class="sig-name descname">CondaForge</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({'push_tag', 'tag'})</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/rever/activities/conda_forge.html#CondaForge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rever.activities.conda_forge.CondaForge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates conda-forge feedstocks.</p>
+<dt id="rever.activities.forge.Forge">
+<em class="property">class </em><code class="sig-prename descclassname">rever.activities.forge.</code><code class="sig-name descname">Forge</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({'push_tag', 'tag'})</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a forge feedstock.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
 <dl class="field-list">
-<dt class="field-odd">$CONDA_FORGE_FEEDSTOCK</dt>
+<dt class="field-odd">$FORGE_FEEDSTOCK</dt>
 <dd class="field-odd"><p>str or None, feedstock name or URL,
 default <code class="docutils literal notranslate"><span class="pre">$PROJECT-feedstock</span></code>.</p>
 </dd>
-<dt class="field-even">$CONDA_FORGE_PROTOCOL</dt>
+<dt class="field-even">$FORGE_PROTOCOL</dt>
 <dd class="field-even"><p>str, one of <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'http'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'https'</span></code>
 that specifies how the activity should interact with github when
 cloning, pulling, or pushing to the feedstock repo. Note that
 <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code> requires you to have an SSH key registered with github.
 The default  is <code class="docutils literal notranslate"><span class="pre">'ssh'</span></code>.</p>
 </dd>
-<dt class="field-odd">$CONDA_FORGE_SOURCE_URL</dt>
+<dt class="field-odd">$FORGE_SOURCE_URL</dt>
 <dd class="field-odd"><p>str, the URL that the recipe will use to
 download the source code. This is needed so that we may update the
 hash of the downloaded file. This string is evaluated with the current
 environment. Default
 <code class="docutils literal notranslate"><span class="pre">'https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz'</span></code>.</p>
 </dd>
-<dt class="field-even">$CONDA_FORGE_HASH_TYPE</dt>
+<dt class="field-even">$FORGE_HASH_TYPE</dt>
 <dd class="field-even"><p>str, the type of hash that the recipe uses, eg
 <code class="docutils literal notranslate"><span class="pre">'md5'</span></code> or <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>. Default <code class="docutils literal notranslate"><span class="pre">'sha256'</span></code>.</p>
 </dd>
-<dt class="field-odd">$CONDA_FORGE_PATTERNS</dt>
+<dt class="field-odd">$FORGE_PATTERNS</dt>
 <dd class="field-odd"><p>list or 3-tuples of str, this is list of
 (filename, pattern-regex, replacement) tuples that is evaluated
 inside of the recipe directory. This is similar to the version bump
 pattern structure. Both the pattern-regex str and the replacement str
 will have environment variables expanded. The following environment
-variables are added for this evaluation:</p>
+variables are added for this evaluation (only if $FORGE_USE_GIT_URL is False):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>: the fully expanded source code URL.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$HASH_TYPE</span></code>: the hash type used to hash <code class="docutils literal notranslate"><span class="pre">$SOURCE_URL</span></code>.</p></li>
@@ -123,21 +113,31 @@ variables are added for this evaluation:</p>
 </ul>
 <p>The default patterns match most standard recipes.</p>
 </dd>
-<dt class="field-even">$CONDA_FORGE_PULL_REQUEST</dt>
+<dt class="field-even">$FORGE_PULL_REQUEST</dt>
 <dd class="field-even"><p>bool, whether the activity should open
 a pull request to the upstream conda-forge feestock, default True.</p>
 </dd>
-<dt class="field-odd">$CONDA_FORGE_RERENDER</dt>
+<dt class="field-odd">$FORGE_RERENDER</dt>
 <dd class="field-odd"><p>bool, whether the activity should rerender the
 feedstock using conda-smithy, default True.</p>
 </dd>
-<dt class="field-even">$CONDA_FORGE_FORK</dt>
-<dd class="field-even"><p>bool, whether the activity should create a new fork of
+<dt class="field-even">$FORGE_FEEDSTOCK_ORG</dt>
+<dd class="field-even"><p>str, specify the feedstock organization. Must be set.</p>
+</dd>
+<dt class="field-odd">$FORGE_FORK</dt>
+<dd class="field-odd"><p>bool, whether the activity should create a new fork of
 the feedstock if it doesn’t exist already, default True.</p>
 </dd>
-<dt class="field-odd">$CONDA_FORGE_FORK_ORG</dt>
-<dd class="field-odd"><p>str, the org to fork the recipe to or which holds
+<dt class="field-even">$FORGE_FORK_ORG</dt>
+<dd class="field-even"><p>str, the org to fork the recipe to or which holds
 the fork, if <code class="docutils literal notranslate"><span class="pre">''</span></code> use the registered gh username, defaults to <code class="docutils literal notranslate"><span class="pre">''</span></code></p>
+</dd>
+<dt class="field-odd">$FORGE_USE_GIT_URL</dt>
+<dd class="field-odd"><p>bool, whether or not to use <cite>git_url</cite> in the recipe source
+url, default True.</p>
+</dd>
+<dt class="field-even">$FORGE_RECIPE_DIR</dt>
+<dd class="field-even"><p>str, the name of the recipe folder, default is ‘recipe’.</p>
 </dd>
 </dl>
 <p>Other environment variables that affect the behavior are:</p>
@@ -203,101 +203,119 @@ to an empty dict.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.all_kwargs">
+<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.check_func">
-<code class="sig-name descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check_func" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.check_func">
+<code class="sig-name descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.check_func" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that we can rerender and login</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.check_requirements" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.check_requirements">
+<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.checker" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.checker">
+<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.clear_kwargs_from_env">
+<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.kwargs_from_env">
+<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.setup" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.setupper" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.setupper">
+<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.undo" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.undoer" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.undoer">
+<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.Forge.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="rever.activities.conda_forge.CondaForge.CONDA_FORGE_FEEDSTOCK_ORG">
-<code class="sig-name descname">CONDA_FORGE_FEEDSTOCK_ORG</code><em class="property"> = 'conda-forge'</em><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.CONDA_FORGE_FEEDSTOCK_ORG" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.DEFAULT_HASH_TYPE">
+<code class="sig-name descname">DEFAULT_HASH_TYPE</code><em class="property"> = 'sha256'</em><a class="headerlink" href="#rever.activities.forge.Forge.DEFAULT_HASH_TYPE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="rever.activities.conda_forge.CondaForge.DEFAULT_HASH_TYPE">
-<code class="sig-name descname">DEFAULT_HASH_TYPE</code><em class="property"> = 'sha256'</em><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.DEFAULT_HASH_TYPE" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.DEFAULT_PROTOCOL">
+<code class="sig-name descname">DEFAULT_PROTOCOL</code><em class="property"> = 'ssh'</em><a class="headerlink" href="#rever.activities.forge.Forge.DEFAULT_PROTOCOL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="rever.activities.conda_forge.CondaForge.DEFAULT_PROTOCOL">
-<code class="sig-name descname">DEFAULT_PROTOCOL</code><em class="property"> = 'ssh'</em><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.DEFAULT_PROTOCOL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="rever.activities.conda_forge.CondaForge.DEFAULT_RECIPE_DIR">
-<code class="sig-name descname">DEFAULT_RECIPE_DIR</code><em class="property"> = 'recipe'</em><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.DEFAULT_RECIPE_DIR" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.DEFAULT_RECIPE_DIR">
+<code class="sig-name descname">DEFAULT_RECIPE_DIR</code><em class="property"> = 'recipe'</em><a class="headerlink" href="#rever.activities.forge.Forge.DEFAULT_RECIPE_DIR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="rever.activities.conda_forge.CondaForge.env_names">
-<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activities.conda_forge.CondaForge.env_names" title="Permalink to this definition">¶</a></dt>
+<dt id="rever.activities.forge.Forge.env_names">
+<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activities.forge.Forge.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
 varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
 
 </dd></dl>
+
+<dl class="py function">
+<dt id="rever.activities.forge.get_feedstock_repo_name">
+<code class="sig-prename descclassname">rever.activities.forge.</code><code class="sig-name descname">get_feedstock_repo_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feedstock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.get_feedstock_repo_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the name of the feedstock repository.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="rever.activities.forge.get_feedstock_url">
+<code class="sig-prename descclassname">rever.activities.forge.</code><code class="sig-name descname">get_feedstock_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feedstock</span></em>, <em class="sig-param"><span class="n">feedstock_org</span></em>, <em class="sig-param"><span class="n">protocol</span><span class="o">=</span><span class="default_value">'ssh'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.get_feedstock_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the URL for a forge feedstock.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="rever.activities.forge.get_fork_url">
+<code class="sig-prename descclassname">rever.activities.forge.</code><code class="sig-name descname">get_fork_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feedstock_url</span></em>, <em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">feedstock_org</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.get_fork_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the URL of the user’s fork.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="rever.activities.forge.get_source_url">
+<code class="sig-prename descclassname">rever.activities.forge.</code><code class="sig-name descname">get_source_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.forge.get_source_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -311,20 +329,10 @@ varaibles that the activity looks for when it is executed.</p>
         <p class="logo"><a href="../../index.html" title="index">
           <img class="logo" src="../../_static/longship-256.png" alt="Logo"/>
         </a></p>
-  <div class="sphinxprev">
-    <h4>Previous page</h4>
-    <p class="topless"><a href="command.html"
-                          title="Previous page">&larr; Command Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.command</span></code>)</a></p>
-  </div>
-  <div class="sphinxnext">
-    <h4>Next page</h4>
-    <p class="topless"><a href="docker.html"
-                          title="Next page">&rarr; Docker Activities (<code class="docutils literal notranslate"><span class="pre">rever.activities.docker</span></code>)</a></p>
-  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/api/activities/conda_forge.rst.txt"
+      <li><a href="../../_sources/api/activities/forge.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -370,17 +378,9 @@ varaibles that the activity looks for when it is executed.</p>
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="docker.html" title="Docker Activities (rever.activities.docker)"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="command.html" title="Command Activity (rever.activities.command)"
-             >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">rever 0.4.4 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Rever API</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >Stock Activities API</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Conda Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.conda_forge</span></code>)</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Forge Activity (<code class="docutils literal notranslate"><span class="pre">rever.activities.forge</span></code>)</a></li> 
       </ul>
     </div>
     </div>

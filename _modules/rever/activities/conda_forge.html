@@ -1,0 +1,244 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rever.activities.conda_forge &#8212; rever 0.4.4 documentation</title>
+    <link rel="stylesheet" href="../../../_static/numpy_friendly.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../../_static/longship.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://xon.sh/_modules/rever/activities/conda_forge.html"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">rever 0.4.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">rever.activities.conda_forge</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for rever.activities.conda_forge</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Activity for updating conda-forge feedstocks.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">rever.activity</span> <span class="kn">import</span> <span class="n">Activity</span>
+<span class="kn">from</span> <span class="nn">rever.activities.forge</span> <span class="kn">import</span> <span class="n">Forge</span>
+
+
+<div class="viewcode-block" id="CondaForge"><a class="viewcode-back" href="../../../api/activities/conda_forge.html#rever.activities.conda_forge.CondaForge">[docs]</a><span class="k">class</span> <span class="nc">CondaForge</span><span class="p">(</span><span class="n">Forge</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Updates conda-forge feedstocks.</span>
+
+<span class="sd">    The behaviour of this activity may be adjusted through the following</span>
+<span class="sd">    environment variables:</span>
+
+<span class="sd">    :$CONDA_FORGE_FEEDSTOCK: str or None, feedstock name or URL,</span>
+<span class="sd">        default ``$PROJECT-feedstock``.</span>
+<span class="sd">    :$CONDA_FORGE_PROTOCOL: str, one of ``&#39;ssh&#39;``, ``&#39;http&#39;``, or ``&#39;https&#39;``</span>
+<span class="sd">        that specifies how the activity should interact with github when</span>
+<span class="sd">        cloning, pulling, or pushing to the feedstock repo. Note that</span>
+<span class="sd">        ``&#39;ssh&#39;`` requires you to have an SSH key registered with github.</span>
+<span class="sd">        The default  is ``&#39;ssh&#39;``.</span>
+<span class="sd">    :$CONDA_FORGE_SOURCE_URL: str, the URL that the recipe will use to</span>
+<span class="sd">        download the source code. This is needed so that we may update the</span>
+<span class="sd">        hash of the downloaded file. This string is evaluated with the current</span>
+<span class="sd">        environment. Default</span>
+<span class="sd">        ``&#39;https://github.com/$GITHUB_ORG/$GITHUB_REPO/archive/$VERSION.tar.gz&#39;``.</span>
+<span class="sd">    :$CONDA_FORGE_HASH_TYPE: str, the type of hash that the recipe uses, eg</span>
+<span class="sd">        ``&#39;md5&#39;`` or ``&#39;sha256&#39;``. Default ``&#39;sha256&#39;``.</span>
+<span class="sd">    :$CONDA_FORGE_PATTERNS: list or 3-tuples of str, this is list of</span>
+<span class="sd">        (filename, pattern-regex, replacement) tuples that is evaluated</span>
+<span class="sd">        inside of the recipe directory. This is similar to the version bump</span>
+<span class="sd">        pattern structure. Both the pattern-regex str and the replacement str</span>
+<span class="sd">        will have environment variables expanded. The following environment</span>
+<span class="sd">        variables are added for this evaluation:</span>
+
+<span class="sd">        * ``$SOURCE_URL``: the fully expanded source code URL.</span>
+<span class="sd">        * ``$HASH_TYPE``: the hash type used to hash ``$SOURCE_URL``.</span>
+<span class="sd">        * ``$HASH``: the hexdigest of ``$SOURCE_URL``.</span>
+
+<span class="sd">        The default patterns match most standard recipes.</span>
+<span class="sd">    :$CONDA_FORGE_PULL_REQUEST: bool, whether the activity should open</span>
+<span class="sd">        a pull request to the upstream conda-forge feestock, default True.</span>
+<span class="sd">    :$CONDA_FORGE_RERENDER: bool, whether the activity should rerender the</span>
+<span class="sd">        feedstock using conda-smithy, default True.</span>
+<span class="sd">    :$CONDA_FORGE_FORK: bool, whether the activity should create a new fork of</span>
+<span class="sd">        the feedstock if it doesn&#39;t exist already, default True.</span>
+<span class="sd">    :$CONDA_FORGE_FORK_ORG: str, the org to fork the recipe to or which holds</span>
+<span class="sd">        the fork, if ``&#39;&#39;`` use the registered gh username, defaults to ``&#39;&#39;``</span>
+
+<span class="sd">    Other environment variables that affect the behavior are:</span>
+
+<span class="sd">    :$GITHUB_CREDFILE: the credential file to use. This should NOT be</span>
+<span class="sd">        set in the rever.xsh file</span>
+<span class="sd">    :$GITHUB_ORG: the github organization that the project belongs to.</span>
+<span class="sd">    :$GITHUB_REPO: the github repository of the project.</span>
+<span class="sd">    :$TAG_TEMPLATE: str, the template string used to tag the version, by default</span>
+<span class="sd">        this is &#39;$VERSION&#39;. Used to download project source.</span>
+<span class="sd">    :$PROJECT: the name of the project being released.</span>
+<span class="sd">    :$REVER_CONFIG_DIR: the user&#39;s config directory for rever, which</span>
+<span class="sd">      is where the GitHub credential files are stored by default.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">CONDA_FORGE_FEEDSTOCK_ORG</span> <span class="o">=</span> <span class="s2">&quot;conda-forge&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">deps</span><span class="o">=</span><span class="nb">frozenset</span><span class="p">((</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span> <span class="s2">&quot;push_tag&quot;</span><span class="p">))):</span>
+        <span class="n">requires</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;imports&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;github3.exceptions&quot;</span><span class="p">:</span> <span class="s2">&quot;github3.py&quot;</span><span class="p">},</span>
+            <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;conda&quot;</span><span class="p">:</span> <span class="s2">&quot;conda&quot;</span><span class="p">,</span> <span class="s2">&quot;conda-smithy&quot;</span><span class="p">:</span> <span class="s2">&quot;conda-smithy&quot;</span><span class="p">},</span>
+        <span class="p">}</span>
+
+        <span class="n">Activity</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;conda_forge&quot;</span><span class="p">,</span>
+            <span class="n">deps</span><span class="o">=</span><span class="n">deps</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_func</span><span class="p">,</span>
+            <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Updates a conda-forge feedstock&quot;</span><span class="p">,</span>
+            <span class="n">requires</span><span class="o">=</span><span class="n">requires</span><span class="p">,</span>
+            <span class="n">check</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_func</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">feedstock</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">source_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">hash_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pull_request</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">rerender</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">fork</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">fork_org</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_func</span><span class="p">(</span>
+            <span class="n">feedstock</span><span class="o">=</span><span class="n">feedstock</span><span class="p">,</span>
+            <span class="n">feedstock_org</span><span class="o">=</span><span class="n">CondaForge</span><span class="o">.</span><span class="n">CONDA_FORGE_FEEDSTOCK_ORG</span><span class="p">,</span>
+            <span class="n">protocol</span><span class="o">=</span><span class="n">protocol</span><span class="p">,</span>
+            <span class="n">source_url</span><span class="o">=</span><span class="n">source_url</span><span class="p">,</span>
+            <span class="n">hash_type</span><span class="o">=</span><span class="n">hash_type</span><span class="p">,</span>
+            <span class="n">patterns</span><span class="o">=</span><span class="n">patterns</span><span class="p">,</span>
+            <span class="n">pull_request</span><span class="o">=</span><span class="n">pull_request</span><span class="p">,</span>
+            <span class="n">rerender</span><span class="o">=</span><span class="n">rerender</span><span class="p">,</span>
+            <span class="n">fork</span><span class="o">=</span><span class="n">fork</span><span class="p">,</span>
+            <span class="n">fork_org</span><span class="o">=</span><span class="n">fork_org</span><span class="p">,</span>
+            <span class="n">use_git_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">recipe_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../../index.html" title="index">
+          <img class="logo" src="../../../_static/longship-256.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">rever 0.4.4 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">rever.activities.conda_forge</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Anthony Scopatz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
