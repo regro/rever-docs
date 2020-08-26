@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rever Change Log &#8212; rever 0.4.4 documentation</title>
+    <title>Rever Change Log &#8212; rever 0.4.5 documentation</title>
     <link rel="stylesheet" href="_static/numpy_friendly.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -58,7 +58,7 @@
         <li class="right" >
           <a href="devguide.html" title="Developer’s Guide"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.4.4 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.4.5 documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">Rever Change Log</a></li> 
       </ul>
@@ -73,6 +73,27 @@
             
   <div class="section" id="rever-change-log">
 <h1>Rever Change Log<a class="headerlink" href="#rever-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-4-5">
+<h2>v0.4.5<a class="headerlink" href="#v0-4-5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>A new <cite>Forge</cite> activity available as <cite>forge</cite>. It allows updating a forge feedstock on a forge different than the conda-forge.</p></li>
+<li><p>A new <cite>Check</cite> activity available as <cite>check</cite> that runs <cite>rever check</cite>.</p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>example activity’s __call__ needs to return True in documentation</p></li>
+<li><p>Fixed issue where rever could not be run from within Bash by setting
+<code class="docutils literal notranslate"><span class="pre">$THREAD_SUBPROCS</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p></li>
+<li><p>a typo in the documentation</p></li>
+</ul>
+<p><strong>Authors:</strong></p>
+<ul class="simple">
+<li><p>Anthony Scopatz</p></li>
+<li><p>Hadrien Mary</p></li>
+<li><p>Julian Rüth</p></li>
+</ul>
+</div>
 <div class="section" id="v0-4-4">
 <h2>v0.4.4<a class="headerlink" href="#v0-4-4" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
@@ -552,6 +573,7 @@ it shouldn’t have been doing that.</p></li>
     <h3><a href="index.html">Page contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Rever Change Log</a><ul>
+<li><a class="reference internal" href="#v0-4-5">v0.4.5</a></li>
 <li><a class="reference internal" href="#v0-4-4">v0.4.4</a></li>
 <li><a class="reference internal" href="#v0-4-3">v0.4.3</a></li>
 <li><a class="reference internal" href="#v0-4-2">v0.4.2</a></li>
@@ -640,7 +662,7 @@ it shouldn’t have been doing that.</p></li>
         <li class="right" >
           <a href="devguide.html" title="Developer’s Guide"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">rever 0.4.4 documentation</a> &#187;</li>
+    <li><a href="index.html">rever 0.4.5 documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">Rever Change Log</a></li> 
       </ul>
