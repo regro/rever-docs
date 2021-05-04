@@ -895,6 +895,11 @@ either a string filename or a list of string filenames. The asset
 functions will usually generate or acquire the asset. By default, this
 a tarball of the release tag will be uploaded.</p>
 </dd>
+<dt class="field-even">$GHRELEASE_TARGET</dt>
+<dd class="field-even"><p>str or None, the git branch/commit to target for the release.
+If this value is None, it will use the default branch name, as specified on
+the GitHub repo.</p>
+</dd>
 </dl>
 <p>Other environment variables that affect the behavior are:</p>
 <dl class="field-list simple">
@@ -927,7 +932,8 @@ asset.</p>
 <span class="nv">$GHRELEASE_NOTES</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nv">$GHRELEASE_PREPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="nv">$GHRELEASE_APPEND</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7f20b01c6820</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_ASSETS</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">git_archive_asset</span> <span class="n">at</span> <span class="mh">0x7fc6dde49550</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nv">$GHRELEASE_TARGET</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <hr class="docutils" />

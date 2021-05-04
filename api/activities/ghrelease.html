@@ -114,6 +114,11 @@ either a string filename or a list of string filenames. The asset
 functions will usually generate or acquire the asset. By default, this
 a tarball of the release tag will be uploaded.</p>
 </dd>
+<dt class="field-even">$GHRELEASE_TARGET</dt>
+<dd class="field-even"><p>str or None, the git branch/commit to target for the release.
+If this value is None, it will use the default branch name, as specified on
+the GitHub repo.</p>
+</dd>
 </dl>
 <p>Other environment variables that affect the behavior are:</p>
 <dl class="field-list simple">
