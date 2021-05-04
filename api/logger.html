@@ -17,7 +17,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
 
     
     
@@ -81,7 +80,7 @@
 <p>Logging tools for rever</p>
 <dl class="py class">
 <dt id="rever.logger.Logger">
-<em class="property">class </em><code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">Logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">rever.logger.</span></code><code class="sig-name descname"><span class="pre">Logger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>A logging object for rever that stores information in line-oriented JSON
 format.</p>
 <dl class="field-list simple">
@@ -94,40 +93,40 @@ format.</p>
 </dl>
 <dl class="py method">
 <dt id="rever.logger.Logger.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads all of the records from the logfile and returns a list of dicts.
 If the log file does not yet exist, this returns an empty list.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.logger.Logger.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">activity</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">'misc'</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">log</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'misc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.Logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logs a message, the associated activity (optional), the timestamp, and the
 current revision to the log file.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.logger.Logger.argparser">
-<em class="property">property </em><code class="sig-name descname">argparser</code><a class="headerlink" href="#rever.logger.Logger.argparser" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">argparser</span></code><a class="headerlink" href="#rever.logger.Logger.argparser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an argument parser for the logger</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.logger.Logger.filename">
-<em class="property">property </em><code class="sig-name descname">filename</code><a class="headerlink" href="#rever.logger.Logger.filename" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">filename</span></code><a class="headerlink" href="#rever.logger.Logger.filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.logger.current_logger">
-<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">current_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.current_logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.logger.</span></code><code class="sig-name descname"><span class="pre">current_logger</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.current_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retuns the current logger instance.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.logger.log">
-<code class="sig-prename descclassname">rever.logger.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em>, <em class="sig-param"><span class="n">stdin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.logger.</span></code><code class="sig-name descname"><span class="pre">log</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.logger.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Command line interface for logging a message</p>
 </dd></dl>
 
@@ -218,7 +217,7 @@ current revision to the log file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

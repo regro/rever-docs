@@ -17,7 +17,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
 
     
     
@@ -82,7 +81,7 @@
 <p>Activity for performing a GitHub release.</p>
 <dl class="py class">
 <dt id="rever.activities.ghrelease.GHRelease">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activities.ghrelease.</code><code class="sig-name descname">GHRelease</code><a class="headerlink" href="#rever.activities.ghrelease.GHRelease" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">rever.activities.ghrelease.</span></code><code class="sig-name descname"><span class="pre">GHRelease</span></code><a class="headerlink" href="#rever.activities.ghrelease.GHRelease" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a github release.</p>
 <p>The behaviour of this activity may be adjusted through the following
 environment variables:</p>
@@ -180,60 +179,60 @@ to an empty dict.</p>
 </dl>
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">all_kwargs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.check_func">
-<code class="sig-name descname">check_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_func" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_func</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_requirements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.checker" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">checker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear_kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setupper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -241,13 +240,13 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undoer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.ghrelease.GHRelease.env_names">
-<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.env_names" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">env_names</span></code><a class="headerlink" href="#rever.activities.ghrelease.GHRelease.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
 varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
@@ -256,19 +255,19 @@ varaibles that the activity looks for when it is executed.</p>
 
 <dl class="py function">
 <dt id="rever.activities.ghrelease.find_notes">
-<code class="sig-prename descclassname">rever.activities.ghrelease.</code><code class="sig-name descname">find_notes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.find_notes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.activities.ghrelease.</span></code><code class="sig-name descname"><span class="pre">find_notes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.find_notes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tries to find the release notes in a variety of places.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.activities.ghrelease.git_archive_asset">
-<code class="sig-prename descclassname">rever.activities.ghrelease.</code><code class="sig-name descname">git_archive_asset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.git_archive_asset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.activities.ghrelease.</span></code><code class="sig-name descname"><span class="pre">git_archive_asset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.git_archive_asset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides tarball of the repository as an asset.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.activities.ghrelease.read_file_if_exists">
-<code class="sig-prename descclassname">rever.activities.ghrelease.</code><code class="sig-name descname">read_file_if_exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.read_file_if_exists" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.activities.ghrelease.</span></code><code class="sig-name descname"><span class="pre">read_file_if_exists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.ghrelease.read_file_if_exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads file if it exists, returns None otherwise</p>
 </dd></dl>
 
@@ -360,7 +359,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

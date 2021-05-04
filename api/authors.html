@@ -17,7 +17,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
 
     
     
@@ -81,19 +80,19 @@
 <p>Utilities for dealing with authorship files.</p>
 <dl class="py function">
 <dt id="rever.authors.load_metadata">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">load_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">return_yaml</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.load_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.authors.</span></code><code class="sig-name descname"><span class="pre">load_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_yaml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.load_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads author metadata file.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.authors.metadata_is_valid">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">metadata_is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">emails</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'the authors file'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.metadata_is_valid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.authors.</span></code><code class="sig-name descname"><span class="pre">metadata_is_valid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emails</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'the</span> <span class="pre">authors</span> <span class="pre">file'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.metadata_is_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the author metadata is valid.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="rever.authors.update_metadata">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">update_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">write</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">validation_error</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.authors.</span></code><code class="sig-name descname"><span class="pre">update_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.update_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a YAML metadata filename and updates it with the current repo
 information, if possible. If validation_error is True, this will fail
 if the information is not consistent</p>
@@ -101,7 +100,7 @@ if the information is not consistent</p>
 
 <dl class="py function">
 <dt id="rever.authors.write_mailmap">
-<code class="sig-prename descclassname">rever.authors.</code><code class="sig-name descname">write_mailmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em>, <em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.write_mailmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.authors.</span></code><code class="sig-name descname"><span class="pre">write_mailmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.authors.write_mailmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes a mailmap file from the metadata (list of author dicts) provided.</p>
 </dd></dl>
 
@@ -192,7 +191,7 @@ if the information is not consistent</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

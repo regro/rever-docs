@@ -17,7 +17,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
 
     
     
@@ -82,7 +81,7 @@
 <p>Activity for locally creating tags.</p>
 <dl class="py class">
 <dt id="rever.activities.tag.Tag">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activities.tag.</code><code class="sig-name descname">Tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({'changelog', 'version_bump'})</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">rever.activities.tag.</span></code><code class="sig-name descname"><span class="pre">Tag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({'changelog',</span> <span class="pre">'version_bump'})</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locally tags the current version.</p>
 <p>This activity takes the following parameters:</p>
 <dl class="field-list simple">
@@ -131,67 +130,67 @@ to an empty dict.</p>
 </dl>
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">all_kwargs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.check" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_requirements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.checker" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">checker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear_kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setupper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Undoes the tagging operation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undoer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activities.tag.Tag.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activities.tag.Tag.env_names">
-<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activities.tag.Tag.env_names" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">env_names</span></code><a class="headerlink" href="#rever.activities.tag.Tag.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
 varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
@@ -286,7 +285,7 @@ varaibles that the activity looks for when it is executed.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

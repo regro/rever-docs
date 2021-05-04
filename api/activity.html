@@ -17,7 +17,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
 
     
     
@@ -81,7 +80,7 @@
 <p>Provides basic activity funtionality.</p>
 <dl class="py class">
 <dt id="rever.activity.Activity">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activity.</code><code class="sig-name descname">Activity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({})</span></em>, <em class="sig-param"><span class="n">func</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">undo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">setup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">requires</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">desc</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">rever.activity.</span></code><code class="sig-name descname"><span class="pre">Activity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Activity representing a node in DAG of release tasks.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -123,55 +122,55 @@ to an empty dict.</p>
 </dl>
 <dl class="py method">
 <dt id="rever.activity.Activity.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">all_kwargs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_requirements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.checker" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">checker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear_kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setupper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -179,13 +178,13 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undoer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.Activity.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.Activity.env_names">
-<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activity.Activity.env_names" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">env_names</span></code><a class="headerlink" href="#rever.activity.Activity.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
 varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
@@ -194,7 +193,7 @@ varaibles that the activity looks for when it is executed.</p>
 
 <dl class="py class">
 <dt id="rever.activity.DockerActivity">
-<em class="property">class </em><code class="sig-prename descclassname">rever.activity.</code><code class="sig-name descname">DockerActivity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({})</span></em>, <em class="sig-param"><span class="n">func</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">undo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">requires</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">desc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang</span><span class="o">=</span><span class="default_value">'xonsh'</span></em>, <em class="sig-param"><span class="n">run_args</span><span class="o">=</span><span class="default_value">('-c')</span></em>, <em class="sig-param"><span class="n">code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">env</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mounts</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">rever.activity.</span></code><code class="sig-name descname"><span class="pre">DockerActivity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xonsh'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('-c')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mounts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>An activity that executes within a docker container.</p>
 <p>A Docker activity, by default will respect the following environment
 variables, if they are set:</p>
@@ -290,55 +289,55 @@ does not mount anything.</p>
 </dl>
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.all_kwargs">
-<code class="sig-name descname">all_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.all_kwargs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">all_kwargs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.all_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all kwargs for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s check() function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.check_requirements">
-<code class="sig-name descname">check_requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check_requirements" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">check_requirements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.check_requirements" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks that an activities requirements are actually available.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.checker">
-<code class="sig-name descname">checker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">check</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.checker" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">checker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.checker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the check function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.clear_kwargs_from_env">
-<code class="sig-name descname">clear_kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear_kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.clear_kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes kwarg from the environment, if they exist.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.kwargs_from_env">
-<code class="sig-name descname">kwargs_from_env</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kwargs_from_env</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.kwargs_from_env" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtains possible func() kwarg from the environment.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls this activity’s setup() initialization function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.setupper">
-<code class="sig-name descname">setupper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setup</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setupper" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">setupper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.setupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the setup function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.undo">
-<code class="sig-name descname">undo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts to the last instance of this activity. This default implementation
 uses the revision in the log file from the last time that the activity was
 started. This may be overridden in a subclass.</p>
@@ -346,19 +345,19 @@ started. This may be overridden in a subclass.</p>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.undoer">
-<code class="sig-name descname">undoer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">undo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undoer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">undoer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">undo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.DockerActivity.undoer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorator that sets the undo function for this activity.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.code">
-<em class="property">property </em><code class="sig-name descname">code</code><a class="headerlink" href="#rever.activity.DockerActivity.code" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">code</span></code><a class="headerlink" href="#rever.activity.DockerActivity.code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get’s the code to execute in the docker container.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="rever.activity.DockerActivity.env_names">
-<em class="property">property </em><code class="sig-name descname">env_names</code><a class="headerlink" href="#rever.activity.DockerActivity.env_names" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">env_names</span></code><a class="headerlink" href="#rever.activity.DockerActivity.env_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dictionary mapping parameter names to the names of environment
 varaibles that the activity looks for when it is executed.</p>
 </dd></dl>
@@ -367,7 +366,7 @@ varaibles that the activity looks for when it is executed.</p>
 
 <dl class="py function">
 <dt id="rever.activity.activity">
-<code class="sig-prename descclassname">rever.activity.</code><code class="sig-name descname">activity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deps</span><span class="o">=</span><span class="default_value">frozenset({})</span></em>, <em class="sig-param"><span class="n">undo</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">setup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">desc</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.activity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.activity.</span></code><code class="sig-name descname"><span class="pre">activity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">frozenset({})</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.activity" title="Permalink to this definition">¶</a></dt>
 <dd><p>A decorator that turns the function into an activity. The arguments here have the
 same meaning as they do in the Activity class constructor. This decorator also
 registers the activity in the $DAG.</p>
@@ -375,7 +374,7 @@ registers the activity in the $DAG.</p>
 
 <dl class="py function">
 <dt id="rever.activity.dockeractivity">
-<code class="sig-prename descclassname">rever.activity.</code><code class="sig-name descname">dockeractivity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.dockeractivity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">rever.activity.</span></code><code class="sig-name descname"><span class="pre">dockeractivity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rever.activity.dockeractivity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new docker activity. This accepts the same keyword arguments
 as the DockerActivity class.</p>
 </dd></dl>
@@ -467,7 +466,7 @@ as the DockerActivity class.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Anthony Scopatz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
